@@ -29,8 +29,8 @@ namespace SimpleClassCreatorUI
             InitializeComponent();
 
             //Test Data
-            txtAssemblyFullFilePath.Text = @"F:\Dev\Unfuddle\SimpleClassCreator\Test\Connect.Entities.dll";
-            txtFullyQualifiedClassName.Text = "Connect.Entities.UnitsResidentsBase";
+            txtAssemblyFullFilePath.Text = @"C:\Dev\YourAssemblyName.dll";
+            txtFullyQualifiedClassName.Text = "Namespace1.Namespace2.ClassName";
         }
 
         private void btnAssemblyOpenDialog_Click(object sender, RoutedEventArgs e)
