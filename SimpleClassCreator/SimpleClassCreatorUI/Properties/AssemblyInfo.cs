@@ -8,10 +8,10 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SimpleClassCreatorUI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("If you found this application to be useful or just enjoyed it then please consider giving me a tip. There is a link located below. This application is free to use and distribute always. http://dyslexicanaboko.blogspot.com/p/dyslexicapps.html")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SimpleClassCreatorUI")]
+[assembly: AssemblyCompany("Dyslexic Apps")]
+[assembly: AssemblyProduct("Simple Class Creator")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
