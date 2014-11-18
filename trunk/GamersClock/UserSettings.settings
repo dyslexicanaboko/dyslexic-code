@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GamersClock" GeneratedClassName="UserSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ColorForeground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">white</Value>
+    </Setting>
+    <Setting Name="ColorBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">black</Value>
+    </Setting>
+    <Setting Name="FormatDatePart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MM/dd/yyyy</Value>
+    </Setting>
+    <Setting Name="FormatTimePart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hh:mm:ss tt</Value>
+    </Setting>
+    <Setting Name="DateTimeFont" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Calibri</Value>
+    </Setting>
+    <Setting Name="ShowElapsedTimeLabel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
