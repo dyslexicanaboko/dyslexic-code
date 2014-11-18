@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfMergingToolLib", "PdfMergingToolLib\PdfMergingToolLib.csproj", "{4257A434-C489-438F-859F-BBD0AE1ABE81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfMergingToolUi", "PdfMergingToolUi\PdfMergingToolUi.csproj", "{7CB02825-D688-4DC2-A539-DE08846EF86D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4257A434-C489-438F-859F-BBD0AE1ABE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4257A434-C489-438F-859F-BBD0AE1ABE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4257A434-C489-438F-859F-BBD0AE1ABE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4257A434-C489-438F-859F-BBD0AE1ABE81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB02825-D688-4DC2-A539-DE08846EF86D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB02825-D688-4DC2-A539-DE08846EF86D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB02825-D688-4DC2-A539-DE08846EF86D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB02825-D688-4DC2-A539-DE08846EF86D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
