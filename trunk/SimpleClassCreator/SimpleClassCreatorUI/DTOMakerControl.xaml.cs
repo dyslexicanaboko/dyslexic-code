@@ -27,10 +27,6 @@ namespace SimpleClassCreatorUI
         public DTOMakerControl()
         {
             InitializeComponent();
-
-            //Test Data
-            txtAssemblyFullFilePath.Text = @"C:\Dev\YourAssemblyName.dll";
-            txtFullyQualifiedClassName.Text = "Namespace1.Namespace2.ClassName";
         }
 
         private void btnAssemblyOpenDialog_Click(object sender, RoutedEventArgs e)

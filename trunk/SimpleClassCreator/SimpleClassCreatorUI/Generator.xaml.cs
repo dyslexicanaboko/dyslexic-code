@@ -52,13 +52,6 @@ namespace SimpleClassCreatorUI
             VerifiedConnections = new ConnectionManager();
 
             cbConnectionString_Refresh();
-
-            //Test Code
-            //txtConnectionString.Text = @"Data Source=.\SQLEXPRESS;Initial Catalog=DB1;Integrated Security=SSPI;";
-            //txtSource.Text = "AccruedInterest";
-
-            //txtConnectionString.Text = @"Data Source=C4QADB01.fsrit.local;Initial Catalog=DB2;Integrated Security=SSPI;";
-            //txtSource.Text = "TemporaryRoute";
         }
 
         private void cbConnectionString_Refresh()
@@ -465,6 +458,14 @@ namespace SimpleClassCreatorUI
             catch (Exception ex)
             {
                 Error(ex);
+            }
+        }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            using (AboutSimpleClassCreator obj = new AboutSimpleClassCreator())
+            {
+                obj.ShowDialog();
             }
         }
     }
