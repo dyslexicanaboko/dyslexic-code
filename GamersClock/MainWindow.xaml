@@ -1,0 +1,31 @@
+﻿<Window x:Class="GamersClock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DyslexicApps: Gamer's Clock" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="228" Width="269" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18*" />
+            <RowDefinition Height="64*" />
+            <RowDefinition Height="32*" />
+            <RowDefinition Height="75*" />
+        </Grid.RowDefinitions>
+        <Menu IsMainMenu="True" Grid.Row="0">
+            <MenuItem Header="File" Name="miFile" >
+                <MenuItem Name="miDateTimeFormat" Header="Date/Time Format" Click="MenuItemSettings_Click" />
+                <MenuItem Name="miColor" Header="Color" Click="MenuItemSettings_Click" />
+                <MenuItem Name="miFont" Header="Font" Click="MenuItemSettings_Click" />
+                <MenuItem Name="miToggleElapsed" Header="Show Elapsed Time" IsCheckable="True" Checked="miToggleElapsed_OnCheckChanged" Unchecked="miToggleElapsed_OnCheckChanged" />
+            </MenuItem>
+            <MenuItem Header="About" Click="MenuItemAbout_Click" HorizontalContentAlignment="Right" />
+        </Menu>
+        <Viewbox Margin="40,5,51,0" Name="vbCurrentTime" Stretch="Uniform" Grid.Row="1">
+            <Label Content="Time Part" Name="lblCurrentTime" FontSize="40" FontFamily="Calibri" Grid.Row="1" />
+        </Viewbox>
+        <Viewbox Grid.Row="2" Margin="40,0,51,0">
+            <Label Content="Elapsed" Name="lblElapsedTime" FontFamily="Calibri" FontSize="80" Margin="0,0,0,0" Grid.Row="2" MouseDoubleClick="lblElapsedTime_MouseDoubleClick" />
+        </Viewbox>
+        <Viewbox Name="vbCurrentDate" Stretch="Uniform" Margin="52,0,64,18" Grid.Row="3">
+            <Label Content="Date Part" Name="lblCurrentDate" FontFamily="Calibri" Grid.Row="3" />
+        </Viewbox>
+    </Grid>
+</Window>
