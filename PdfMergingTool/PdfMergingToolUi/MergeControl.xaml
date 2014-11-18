@@ -1,0 +1,23 @@
+﻿<UserControl Name="MergeUi"
+             x:Class="PdfMergingToolUi.MergeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="497" Height="293">
+    <Grid Background="#FFE5E5E5">
+        <DataGrid x:Name="dgFiles" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="157" Width="478" Loaded="dgFiles_Loaded" CanUserAddRows="False" IsReadOnly="True" Drop="dgFiles_Drop" AllowDrop="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=FileName}" />
+                <DataGridTextColumn Header="Full Path" Binding="{Binding Path=FullFilePath}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAddFiles" Content="Add File(s)" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" Width="75" Click="btnAddFiles_Click" ToolTip="Add one or multiple files at a time"/>
+        <TextBox x:Name="txtSaveAs" HorizontalAlignment="Left" Height="23" Margin="57,248,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="217" ToolTip="By default files will be saved in the same directory as where the assembly is executing."/>
+        <Button x:Name="btnBrowse" Content="..." HorizontalAlignment="Left" Margin="279,249,0,0" VerticalAlignment="Top" Width="19" RenderTransformOrigin="0.5,0.5" Click="btnBrowse_Click"/>
+        <Button x:Name="btnMerge" Content="Merge" HorizontalAlignment="Left" Margin="303,172,0,0" VerticalAlignment="Top" Width="185" Height="113" FontSize="48" Background="#FFF34D4D" Click="btnMerge_Click"/>
+        <CheckBox x:Name="cbDontOverwriteFiles" Content="Don't overwrite existing files" HorizontalAlignment="Left" Margin="11,200,0,0" VerticalAlignment="Top" IsChecked="False" />
+        <CheckBox x:Name="cbOpenSaveAsFolder" Content="Open target folder after merge" HorizontalAlignment="Left" Margin="11,221,0,0" VerticalAlignment="Top" IsChecked="False" />
+        <Label Content="Save As" HorizontalAlignment="Left" Margin="3,245,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>
