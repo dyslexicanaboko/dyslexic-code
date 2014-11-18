@@ -6,8 +6,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" Height="302" Width="312">
     <Grid Background="#FFE5E5E5">
-        <TextBox x:Name="txtFrontSet" HorizontalAlignment="Left" Height="23" Margin="49,13,0,0" TextWrapping="NoWrap" Text="Drag and Drop or Double Click" VerticalAlignment="Top" Width="232" Drop="txtSideSet_Drop" MouseDoubleClick="txtSideSet_MouseDoubleClick" AllowDrop="True" DragOver="txtSideSet_DragOver" />
-        <TextBox x:Name="txtBackSet" HorizontalAlignment="Left" Height="23" Margin="49,41,0,0" TextWrapping="NoWrap" Text="Drag and Drop or Double Click" VerticalAlignment="Top" Width="232" MouseDoubleClick="txtSideSet_MouseDoubleClick" Drop="txtSideSet_Drop" AllowDrop="True" DragOver="txtSideSet_DragOver" />
+        <TextBox x:Name="txtFrontSet" HorizontalAlignment="Left" Height="23" Margin="49,13,0,0" TextWrapping="NoWrap" Text="Double click to select front set" VerticalAlignment="Top" Width="232" Drop="txtSideSet_Drop" MouseDoubleClick="txtSideSet_MouseDoubleClick" AllowDrop="True" DragOver="txtSideSet_DragOver" />
+        <TextBox x:Name="txtBackSet" HorizontalAlignment="Left" Height="23" Margin="49,41,0,0" TextWrapping="NoWrap" Text="Double click to select back set" VerticalAlignment="Top" Width="232" MouseDoubleClick="txtSideSet_MouseDoubleClick" Drop="txtSideSet_Drop" AllowDrop="True" DragOver="txtSideSet_DragOver" />
         <Label Content="Front" HorizontalAlignment="Left" Margin="6,13,0,0" VerticalAlignment="Top"/>
         <Label Content="Back" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="cbBackSideReversed" Content="Back set is in reverse order" HorizontalAlignment="Left" Margin="49,69,0,0" VerticalAlignment="Top" IsChecked="True" />
