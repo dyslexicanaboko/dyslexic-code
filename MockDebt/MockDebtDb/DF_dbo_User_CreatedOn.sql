@@ -1,0 +1,4 @@
+﻿ALTER TABLE [dbo].[User]
+	ADD	CONSTRAINT DF_dbo_User_CreatedOn 
+	DEFAULT CURRENT_TIMESTAMP
+	FOR CreatedOn

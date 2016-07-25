@@ -1,0 +1,5 @@
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtDb\bin\Debug\MockDebtDb.dacpac
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtDb\bin\Debug\MockDebtDb.dll
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtDb\bin\Debug\MockDebtDb.pdb
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtDb\obj\Debug\MockDebtDb.dll
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtDb\obj\Debug\MockDebtDb.pdb

@@ -1,0 +1,10 @@
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\MockDebt.Data.dll.config
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\MockDebt.Data.dll
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\MockDebt.Data.pdb
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\EntityFramework.dll
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\EntityFramework.SqlServer.dll
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\EntityFramework.xml
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\bin\Debug\EntityFramework.SqlServer.xml
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\obj\Debug\MockDebt.Data.csprojResolveAssemblyReference.cache
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\obj\Debug\MockDebt.Data.dll
+F:\Dev\GitHub\dyslexic-code\git\MockDebt\MockDebtData\obj\Debug\MockDebt.Data.pdb

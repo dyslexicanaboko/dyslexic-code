@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MockDebtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SavingsUnit">
+    <Key>
+      <PropertyRef Name="SavingsUnitId" />
+    </Key>
+    <Property Name="SavingsUnitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ItemLink" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="User" Relationship="Self.FK_dbo_User_dbo_SavingsUnit_UserId" FromRole="SavingsUnit" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="SavingsUnits" Relationship="Self.FK_dbo_User_dbo_SavingsUnit_UserId" FromRole="User" ToRole="SavingsUnit" />
+  </EntityType>
+  <Association Name="FK_dbo_User_dbo_SavingsUnit_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="SavingsUnit" Type="Self.SavingsUnit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SavingsUnit">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MockDebtEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SavingsUnits" EntityType="Self.SavingsUnit" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_dbo_User_dbo_SavingsUnit_UserId" Association="Self.FK_dbo_User_dbo_SavingsUnit_UserId">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SavingsUnit" EntitySet="SavingsUnits" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
