@@ -1,0 +1,22 @@
+﻿Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\NETFXSDK\4.6]
+"InstallationFolder"="C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\"
+"ProductVersion"="4.6.00081"
+"ProductName"="Microsoft .NET Framework 4.6 SDK"
+"KitsInstallationFolder"="\\"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\NETFXSDK\4.6\WinSDK-NetFx40Tools]
+"ProductVersion"="4.6.00081"
+"ComponentName"="Microsoft .NET Framework 4.6 SDK"
+"InstallationFolder"="\\"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\NETFXSDK\4.6\WinSDK-NetFx40Tools-x64]
+"ProductVersion"="4.6.00081"
+"ComponentName"="Microsoft .NET Framework 4.6 SDK"
+"InstallationFolder"="\\"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\NETFXSDK\4.6\WinSDK-NetFx40Tools-x86]
+"ProductVersion"="4.6.00081"
+"ComponentName"="Microsoft .NET Framework 4.6 SDK"
+"InstallationFolder"="\\"
