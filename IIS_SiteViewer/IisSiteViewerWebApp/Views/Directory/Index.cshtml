@@ -1,0 +1,107 @@
+﻿@model IEnumerable<IisManagementTools.SiteInfo>
+
+@{
+    ViewBag.Title = "Site Directory";
+}
+
+<script type="text/javascript">
+    function getFilterParameters() {
+        var ident =  $('#ddlIdentityType').val();
+        var sa = $('#ddlServiceAccount').val();
+
+        console.dir(ident);
+        console.dir(sa);
+
+        $.ajax({
+            url: '@Url.Action("IndexFilter","Directory")',
+            cache: false,
+            type: "POST", //Or GET
+            dataType: "json",
+            data: { IdentityType: ident, ServiceAccount: sa }, //here you set your dropdown selected value
+            success: function (data) {
+                //$("#results").append(data); //append your data from controller
+                console.dir(data);
+            }
+        });
+    }
+</script>
+
+<h2>Directory</h2>
+
+<fieldset>
+    <legend>Filter</legend>
+    <div>
+        <div>Identity Type @Html.DropDownList("ddlIdentityType",
+EnumHelper.GetSelectList(typeof(Microsoft.Web.Administration.ProcessModelIdentityType)),
+"All",
+new { @class = "form-control" })
+        </div>
+        <div>Service Account @Html.DropDownList("ddlServiceAccount",
+            Model.SelectMany(x => x.Applications.Select(y => y.ApplicationPool.IdentityUser))
+                 .Distinct()
+                 .Select(x => new SelectListItem() { Text = x, Value = x }),
+            "All")
+        </div>
+        <div><button type="submit" onclick="getFilterParameters()">Filter</button></div>
+    </div>
+</fieldset>
+<table class="table">
+    <tr>
+        <th>Site</th>
+        <th>State</th>
+        <th>Applications</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @(item.Name)
+            </td>
+            <td>
+                @(item.State)
+            </td>
+            <td>
+                <table class="table">
+                    <tr>
+                        <th>Select</th>
+                        <th>Application</th>
+                        <th>Bindings</th>
+                        <th>Application Pool</th>
+                        <th>PID</th>
+                        <th>State</th>
+                        <th>32-Bit</th>
+                        <th>Pipeline Mode</th>
+                        <th>Identity Type</th>
+                        <th>Service Account</th>
+                    </tr>
+                    @foreach (var a in item.Applications)
+                {
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>@(a.Name)</td>
+                            <td>
+                                <table class="table">
+                                    @foreach (var u in a.Uris.Select(x => x.ToString()).ToList())
+                                    {
+                                        <tr>
+                                            <td>
+                                                <a href="@(u)" target="_blank">@(u)</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </td>
+                            <td>@(a.ApplicationPool.Name)</td>
+                            <td>@(a.ApplicationPool.ProcessId)</td>
+                            <td>@(a.ApplicationPool.State)</td>
+                            <td>@(a.ApplicationPool.Is32Bit)</td>
+                            <td>@(a.ApplicationPool.PipelineMode)</td>
+                            <td>@(a.ApplicationPool.IdentityType)</td>
+                            <td>@(a.ApplicationPool.IdentityUser)</td>
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+    }
+</table>
