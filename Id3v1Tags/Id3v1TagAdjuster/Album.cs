@@ -7,7 +7,7 @@ namespace Id3v1TagAdjuster
 {
     public class Album : IMusicMetaData<Artist>
     {
-        public Album(Artist artistReference, string path)
+        public Album(Artist artistReference, string path, bool useWholeName)
         {
             ParentNode = artistReference;
             
@@ -15,18 +15,26 @@ namespace Id3v1TagAdjuster
 
             Tracks = new List<Track>();
 
-            LoadMetaDataFromPath(path);
+            LoadMetaDataFromPath(path, useWholeName);
 
-            LoadTracks();
+            LoadTracks(useWholeName);
         }
 
-        public void LoadMetaDataFromPath(string path)
+        public void LoadMetaDataFromPath(string path, bool useWholeName)
         {
-            string[] arr = new DirectoryInfo(path).Name.Split(' ');
+            string strName = new DirectoryInfo(path).Name;
 
-            Year = Convert.ToInt32(arr[0]);
+            if (useWholeName)
+                Name = strName;
+            else
+            {
+                //This case is crappy because it assumes too much
+                string[] arr = strName.Split(' ');
 
-            Name = string.Join(" ", arr.Skip(1).ToArray());
+                Year = Convert.ToInt32(arr[0]);
+
+                Name = string.Join(" ", arr.Skip(1).ToArray());
+            }
         }
 
         public string GetArtistName()
@@ -44,17 +52,17 @@ namespace Id3v1TagAdjuster
 
         public List<Track> Tracks { get; set; }
 
-        public void AddTrack(string trackPath)
+        public void AddTrack(string trackPath, bool useWholeName)
         {
-            Tracks.Add(new Track(this, trackPath));
+            Tracks.Add(new Track(this, trackPath, useWholeName));
         }
 
-        public void LoadTracks()
+        public void LoadTracks(bool useWholeName)
         {
             List<string> lst = Directory.EnumerateFiles(FullPath, "*.mp3", SearchOption.AllDirectories).ToList();
 
             foreach (string mp3 in lst)
-                AddTrack(mp3);
+                AddTrack(mp3, useWholeName);
         }
     }
 }

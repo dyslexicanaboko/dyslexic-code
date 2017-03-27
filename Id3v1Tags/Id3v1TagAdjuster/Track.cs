@@ -5,13 +5,13 @@ namespace Id3v1TagAdjuster
 {
     public class Track : IMusicMetaData<Album>, TagLib.File.IFileAbstraction
     {
-        public Track(Album albumReference, string path)
+        public Track(Album albumReference, string path, bool useWholeName)
         {
             ParentNode = albumReference;
 
             FullPath = path;
 
-            LoadMetaDataFromPath(path);
+            LoadMetaDataFromPath(path, useWholeName);
         }
 
         public string FullPath { get; set; }
@@ -34,13 +34,21 @@ namespace Id3v1TagAdjuster
             return ParentNode.Name;
         }
 
-        public void LoadMetaDataFromPath(string path)
+        public void LoadMetaDataFromPath(string path, bool useWholeName)
         {
-            string[] arr = new DirectoryInfo(path).Name.Split(new string[] { " - " }, StringSplitOptions.None);
+            string strName = new DirectoryInfo(path).Name;
 
-            TrackNumber = Convert.ToInt32(arr[0]);
+            if (useWholeName)
+                Title = strName;
+            else
+            {
+                //This case is crappy because it assumes too much
+                string[] arr = strName.Split(new string[] { " - " }, StringSplitOptions.None);
 
-            Title = arr[1].Replace(".mp3", string.Empty);
+                TrackNumber = Convert.ToInt32(arr[0]);
+
+                Title = arr[1].Replace(".mp3", string.Empty);
+            }
         }
 
         private Stream _fileStream;
@@ -67,6 +75,18 @@ namespace Id3v1TagAdjuster
         public Stream WriteStream
         {
             get { return GetStream(); }
+        }
+
+        public string GetArtistAlbumTrackString(string trackId = null)
+        {
+            string strName = null;
+
+            if (!string.IsNullOrWhiteSpace(trackId))
+                strName = trackId + " " + Name;
+            else
+                strName = Name;
+
+            return GetArtistName() + " # " + GetAlbumName() + " # " + strName;
         }
     }
 }

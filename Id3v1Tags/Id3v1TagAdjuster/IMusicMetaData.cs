@@ -9,6 +9,6 @@ namespace Id3v1TagAdjuster
         
         P ParentNode { get; set; }
         
-        void LoadMetaDataFromPath(string path);
+        void LoadMetaDataFromPath(string path, bool useWholeName);
     }
 }
