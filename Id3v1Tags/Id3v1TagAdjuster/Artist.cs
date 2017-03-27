@@ -6,7 +6,7 @@ namespace Id3v1TagAdjuster
 {
     public class Artist
     {
-        public Artist(string path)
+        public Artist(string path, bool useWholeName)
         {
             FullPath = path;
 
@@ -14,7 +14,7 @@ namespace Id3v1TagAdjuster
 
             Albums = new List<Album>();
 
-            LoadAlbums();
+            LoadAlbums(useWholeName);
         }
 
         public string Name { get; set; }
@@ -23,9 +23,9 @@ namespace Id3v1TagAdjuster
 
         public string FullPath { get; set; }
 
-        public void AddAlbum(string albumPath)
+        public void AddAlbum(string albumPath, bool useWholeName)
         {
-            Albums.Add(new Album(this, albumPath));
+            Albums.Add(new Album(this, albumPath, useWholeName));
         }
 
         public int CountTotalTracks()
@@ -33,12 +33,12 @@ namespace Id3v1TagAdjuster
             return Albums.Sum(x => x.Tracks.Count);
         }
 
-        private void LoadAlbums()
+        private void LoadAlbums(bool useWholeName)
         {
             string[] arrDir = Directory.GetDirectories(FullPath);
 
             foreach (string dir in arrDir)
-                AddAlbum(dir);
+                AddAlbum(dir, useWholeName);
         }
     }
 }

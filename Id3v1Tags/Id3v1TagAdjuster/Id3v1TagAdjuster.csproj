@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Album.cs" />
     <Compile Include="Artist.cs" />
+    <Compile Include="TrackMover.cs" />
+    <Compile Include="FileTransformer.cs" />
     <Compile Include="IMusicMetaData.cs" />
     <Compile Include="TagAdjuster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

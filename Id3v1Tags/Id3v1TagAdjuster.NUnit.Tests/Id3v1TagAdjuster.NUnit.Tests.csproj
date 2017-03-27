@@ -64,11 +64,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneralTests.cs" />
+    <Compile Include="FileTransformerTests.cs" />
+    <Compile Include="TagAdjusterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Id3v1TagAdjuster\Id3v1TagAdjuster.csproj">
