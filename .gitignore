@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/IIS_SiteViewer/IisManagementTools.Test/obj/Debug
+/IIS_SiteViewer/AppPoolCredSecurityHoleConsoleApp/bin/Debug
+/IIS_SiteViewer/AppPoolCredSecurityHoleConsoleApp/obj/Debug
+/IIS_SiteViewer/IisManagementTools/obj/Debug
+/IIS_SiteViewer/IisManagementTools/bin/Debug
+/IIS_SiteViewer/IIS_SiteViewerWebApp/packages
+/IIS_SiteViewer/IIS_SiteViewerWebApp/.vs/config
+/IIS_SiteViewer/IisSiteViewerWebApp/obj/Debug
+/IIS_SiteViewer/IisSiteViewerWebApp/bin

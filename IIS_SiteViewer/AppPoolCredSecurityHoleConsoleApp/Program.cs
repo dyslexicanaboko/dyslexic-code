@@ -1,8 +1,8 @@
 ﻿using IisManagementTools;
 using System;
 using System.Collections.Generic;
-using System.Security.Principal;
 using System.Linq;
+using System.Security.Principal;
 
 namespace AppPoolCredSecurityHoleConsoleApp
 {
@@ -19,6 +19,29 @@ namespace AppPoolCredSecurityHoleConsoleApp
                 return;
             }
 
+            //UpdateApplicationPoolPasswords();
+
+            PrintOutApplicationPools();
+
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Press any key to continue...");
+            Console.Read();
+        }
+
+        public static void UpdateApplicationPoolPasswords()
+        {
+            using (var svc = new IisManagementService())
+            {
+                List<ApplicationPoolCredential> lst = svc.GetApplicationPoolCredentials();
+
+                foreach (var ap in lst)
+                    svc.ChangeCredentials("Your username here", "Your password here", ap.ApplicationPoolName);
+            }
+        }
+
+        public static void PrintOutApplicationPools()
+        {
             try
             {
                 using (var svc = new IisManagementService())
@@ -59,11 +82,6 @@ namespace AppPoolCredSecurityHoleConsoleApp
             {
                 Console.WriteLine(ex.ToString());
             }
-
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Press any key to continue...");
-            Console.Read();
         }
 
         public static int TakeLargerNumber(int largestValue, string header)
