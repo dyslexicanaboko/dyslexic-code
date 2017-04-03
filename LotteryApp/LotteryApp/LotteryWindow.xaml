@@ -1,0 +1,38 @@
+﻿<Window x:Class="LotteryApp.LotteryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LotteryWindow" Height="300" Width="491">
+    <Grid>
+        <Button Content="Did I Win?!" Height="22" HorizontalAlignment="Left" Margin="137,173,0,0" Name="btnSubmit" VerticalAlignment="Top" Width="75" TabIndex="7" Click="btnSubmit_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="175,14,0,0" Name="txtLotto1" VerticalAlignment="Top" Width="23" Text="00" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="204,14,0,0" Name="txtLotto2" Text="00" VerticalAlignment="Top" Width="23" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="233,14,0,0" Name="txtLotto3" Text="00" VerticalAlignment="Top" Width="23" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="262,14,0,0" Name="txtLotto4" Text="00" VerticalAlignment="Top" Width="23" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="291,15,0,0" Name="txtLotto5" Text="00" VerticalAlignment="Top" Width="23" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="320,15,0,0" Name="txtLotto6" Text="00" VerticalAlignment="Top" Width="23" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="175,43,0,0" Name="txtPlayer1" Text="00" VerticalAlignment="Top" Width="23" TabIndex="1" TextChanged="Player_TextChanged" GotFocus="Player_GotFocus" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="204,43,0,0" Name="txtPlayer2" Text="00" VerticalAlignment="Top" Width="23" TabIndex="2" TextChanged="Player_TextChanged" GotFocus="Player_GotFocus" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="233,43,0,0" Name="txtPlayer3" Text="00" VerticalAlignment="Top" Width="23" TabIndex="3" TextChanged="Player_TextChanged" GotFocus="Player_GotFocus" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="262,43,0,0" Name="txtPlayer4" Text="00" VerticalAlignment="Top" Width="23" TabIndex="4" TextChanged="Player_TextChanged" GotFocus="Player_GotFocus" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="291,43,0,0" Name="txtPlayer5" Text="00" VerticalAlignment="Top" Width="23" TabIndex="5" TextChanged="Player_TextChanged" GotFocus="Player_GotFocus" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="320,43,0,0" Name="txtPlayer6" Text="00" VerticalAlignment="Top" Width="23" TabIndex="6" TextChanged="Player_TextChanged" GotFocus="Player_GotFocus" />
+        <CheckBox Content="Save My Numbers" Height="16" HorizontalAlignment="Left" Margin="201,72,0,0" Name="cbxSavePlayerNumbers" VerticalAlignment="Top" Checked="cbxSavePlayerNumbers_Checked" />
+        <Label Content="Winning Numbers" Height="28" HorizontalAlignment="Left" Margin="63,12,0,0" Name="lblWinningNumbers" VerticalAlignment="Top" />
+        <Label Content="Your Numbers" Height="28" HorizontalAlignment="Left" Margin="63,36,0,0" Name="lblYourNumbers" VerticalAlignment="Top" />
+        <Label Content="Status:" Height="28" HorizontalAlignment="Left" Margin="97,97,0,0" Name="lblLottoStatus" VerticalAlignment="Top" Foreground="#FFDE1414" />
+        <Label Content="Press the button below to see if you won!" Height="48" HorizontalAlignment="Left" Margin="63,131,0,0" Name="lblPlayerStatus" VerticalAlignment="Top" Width="369" HorizontalContentAlignment="Center" />
+        <Label Content="0 of 6" Height="28" HorizontalAlignment="Left" Margin="358,41,0,0" Name="lblNumbersHit" VerticalAlignment="Top" />
+        <StatusBar Height="31" HorizontalAlignment="Left" Margin="0,230,0,0" Name="statusBarMessages" VerticalAlignment="Top" Width="469">
+            <StatusBarItem Foreground="#fff" HorizontalContentAlignment="Left">
+                <Label Name="lblStatus" Content="" />
+            </StatusBarItem>
+            <StatusBarItem Foreground="#fff" HorizontalContentAlignment="Right">
+                <Label Name="lblTimeStamp" Content="--/--/-- --:-- --" ToolTip="Last refresh timestamp" />
+            </StatusBarItem>
+        </StatusBar>
+        <Label Content="Jackpot:" Height="28" Margin="233,97,0,0" Name="lblJackpot" VerticalAlignment="Top" Foreground="#FF54AD54" HorizontalAlignment="Left" Width="52" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="148,102,0,0" Name="tbLottoStatus" Text="" VerticalAlignment="Top" Width="79" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="291,102,0,0" Name="tbLottoJackpot" Text="" VerticalAlignment="Top" Width="79" />
+        <ProgressBar Height="22" HorizontalAlignment="Left" Margin="243,173,0,0" Name="pbarServiceCall" VerticalAlignment="Top" Width="127" IsIndeterminate="False" />
+    </Grid>
+</Window>

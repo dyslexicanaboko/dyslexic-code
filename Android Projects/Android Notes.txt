@@ -1,0 +1,44 @@
+Android Hello, Form Stuff
+http://developer.android.com/guide/tutorials/views/hello-formstuff.html
+
+Links
+http://java.dzone.com/articles/google-android-tutorial?page=0,3
+www.anddev.org 
+www.androidguys.com 
+www.helloandroid.com
+
+-It seems that when running an application, the AVD has to be setup to handle that application's version.
+
+-If you get the error message: "Cannot Resolve [widget name]", then make sure first that anything obvious
+ is not broken. Try saving the project, then try recompiling the project. If this is for an event of some
+ kind and multiple widgets are using a single listener, make sure that listener is declared before the
+ widgets reference the listener.
+
+-WARNING - Eclipse fucking sucks, so if you are seeing that a number of widgets cannot be resolved or they
+ don't exists or they cannot be found, then make sure the imports are pointed to the right place.
+ Example: you should be using "import android.view.View.OnClickListener;" if you see something else for the
+ onClickListerns, then it is WRONG!
+ Something I noticed is, you can just ignore and try to run anyhow, this will work if there really is no error.
+
+-WARNING - Android SDK Fucking Sucks - If you try to assign an event listener for an item that is not visible
+at the moment (setContentView(R.layout.layoutThatIsntInViewCurrently);) because the layout is not the current
+layout being used, this will throw an exception.
+
+-Every time you change views, the view loses its state, so this means that data is lost as well - specifically
+the data that is related to the view, so the widgets and stuff that is on the form (form items).
+ 
+Eclipse Notes:
+============================================================
+When it comes to moving workspaces and what not, eclipse is retarded about this.
+So when we move workspaces, which will restart eclipse for some unknown reason,
+you need to reimport all of your projects. Right click on the Package Explorer
+and click on import, follow the obvious there.
+
+If the Package Explorer is not visible, make it visible by going to
+Window > Show View > Package Explorer.
+
+When the "Layout" is referred to, use "main.xml"
+
+If you are still recieving a build error for something you know is absolutely fine
+and correct, then cut it out of the document, save, build, repaste and rebuild. If
+you recieve another error then your coding is bad.

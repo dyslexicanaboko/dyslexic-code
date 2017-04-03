@@ -1,0 +1,15 @@
+﻿<Window x:Class="LotteryApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="Hello World it is: " Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lblHello" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="89,68,0,0" Name="txtXValue" VerticalAlignment="Top" Width="120" />
+        <Button Content="Add Numbers" Height="23" HorizontalAlignment="Left" Margin="210,184,0,0" Name="btnAddNumbers" VerticalAlignment="Top" Width="84" Click="btnAddNumbers_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="89,131,0,0" Name="txtYValue" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="73,71,0,0" Name="textBlock1" Text="X:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="73,0,0,154" Name="textBlock2" Text="Y:" VerticalAlignment="Bottom" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="292,98,0,0" Name="txtResult" VerticalAlignment="Top" Width="120" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="246,98,0,0" Name="textBlock3" Text="SUM:" VerticalAlignment="Top" />
+    </Grid>
+</Window>

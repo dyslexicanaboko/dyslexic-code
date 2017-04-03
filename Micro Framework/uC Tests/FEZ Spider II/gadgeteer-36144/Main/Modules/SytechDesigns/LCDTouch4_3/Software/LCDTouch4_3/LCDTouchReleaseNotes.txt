@@ -1,0 +1,18 @@
+﻿V 1.0.5.0
+13 Feb 2012
+
+Initial Release
+Supports XVGA 480 * 272 pixels.
+Supports Touch
+
+Future Support
+Screen Rotation and auto Touch Calibration functions.
+
+Touch can be calibrated and settings persisted in EWR, as per normal Micro Framework methods, support
+to be added to integrate this into Gadgeteer and allow calibration to be set to flash ( reqiures firmware change
+in the NANO).
+
+Support to be added to allow the display to be rotated and Gadgeteer core to understand this.
+Display can currently be rotated, but Gadgeteer core will fight this on start up, detecting it as a different display
+and resetting to the default setting for the display - cancelling the rotation!
+Support to be added to change the Touch calibration to respond to display rotations.

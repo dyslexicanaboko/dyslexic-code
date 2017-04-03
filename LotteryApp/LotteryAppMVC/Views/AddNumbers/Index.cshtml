@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Add Numbers Test";
+    LotteryAppMVC.Models.AddNumbersModels model = new LotteryAppMVC.Models.AddNumbersModels();
+}
+<h2>Add Numbers Test</h2>
+<div>
+    <table border="0">
+@using (Html.BeginForm())
+{ 
+        <tr><td>@Html.TextBoxFor(model => model.X)</td></tr>            
+        <tr><td>@Html.TextBoxFor(model => model.Y)</td></tr>            
+}
+        <tr><td><input id="txtZ" name="z" type="text" value="0" /></td></tr>            
+        <tr>
+            <td style="float:right;">
+                <input id="btnAdd" type="submit" value="Add" />
+            </td>
+        </tr>
+    </table>
+</div>

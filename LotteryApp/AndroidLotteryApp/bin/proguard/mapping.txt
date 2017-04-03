@@ -1,0 +1,118 @@
+com.dyslexicApps.DateTime -> com.dyslexicApps.a:
+    java.util.Date _baseDate -> a
+    java.util.Calendar _baseCalendar -> b
+    int _year -> c
+    int _month -> d
+    int _day -> e
+    int _hour -> f
+    int _minute -> g
+    int _second -> h
+    int _AMPM -> i
+    com.dyslexicApps.DateTime Today() -> a
+    java.lang.String toString() -> toString
+    void SetDateTimeComponents() -> b
+    java.lang.String pad2(int) -> a
+com.dyslexicApps.LotteryInfo -> com.dyslexicApps.b:
+    java.lang.String Number -> a
+    java.lang.String Status -> b
+    java.lang.String Jackpot -> c
+com.dyslexicApps.LotteryNumbers -> com.dyslexicApps.c:
+    java.util.List m_numbers -> c
+    java.lang.String Jackpot -> a
+    java.lang.String Status -> b
+    java.util.List Numbers() -> a
+    int getNumber1() -> b
+    int getNumber2() -> c
+    int getNumber3() -> d
+    int getNumber4() -> e
+    int getNumber5() -> f
+    int getNumber6() -> g
+    void setNumber(int,int) -> a
+    void ParseString(java.lang.String) -> b
+    com.dyslexicApps.LotteryNumbers ParseLotteryNumberString(java.lang.String) -> a
+    java.util.Map crossExamineSets(com.dyslexicApps.LotteryNumbers,com.dyslexicApps.LotteryNumbers) -> a
+    boolean hasDuplicateValues() -> h
+    int sum() -> i
+    java.lang.String toString() -> toString
+    int ConvertToInt(java.lang.String) -> c
+com.dyslexicApps.MyActivity -> com.dyslexicApps.MyActivity:
+    android.app.ProgressDialog _waitDialog -> a
+    java.lang.String _playerLotteryString -> b
+    com.dyslexicApps.LotteryNumbers _winningLotteryNumbers -> c
+    com.dyslexicApps.LotteryNumbers _playerLotteryNumbers -> d
+    java.util.LinkedList _colors -> e
+    int _previousSum -> f
+    void onCreate(android.os.Bundle) -> onCreate
+    void StartUp() -> b
+    void loadColors() -> c
+    void btnSubmit_onClick(android.view.View) -> btnSubmit_onClick
+    void btnAbout_onClick(android.view.View) -> btnAbout_onClick
+    void cbxSavePlayerNumbers_Checked(android.widget.CompoundButton,boolean) -> a
+    void loadPlayerNumbers(com.dyslexicApps.LotteryNumbers) -> a
+    void loadWinningNumbers(com.dyslexicApps.LotteryNumbers) -> b
+    void clearStatuses() -> d
+    void savePlayerNumbers() -> e
+    void getWinningLotteryNumbers() -> f
+    void setWinningLotteryNumbers(java.lang.String) -> e
+    com.dyslexicApps.LotteryNumbers getPlayerNumbers() -> g
+    void setCheckBoxListenerState(boolean) -> a
+    void loadPlayerLotteryNumberFromConfig() -> h
+    void resetControlStates() -> i
+    void resetTextBoxBackResource(android.widget.EditText,android.widget.EditText) -> a
+    void setTextBoxBackColor(android.widget.EditText,android.widget.EditText,int) -> a
+    android.widget.EditText getWinningBox(int) -> a
+    android.widget.EditText getPlayerBox(int) -> b
+    void checkForMatches(java.util.Map) -> a
+    void setPlayerStatus(int) -> c
+    void checkPlayerNumberSum() -> j
+    boolean isEmpty(java.lang.String) -> a
+    void ErrorMessage(java.lang.Exception) -> a
+    void ErrorMessage(java.lang.String) -> b
+    boolean IsNullOrWhiteSpace(java.lang.String) -> c
+    java.lang.String getPlayerLotteryNumber() -> a
+    void setPlayerLotteryNumber(java.lang.String) -> d
+    void setTextBoxText(int,java.lang.String) -> a
+    void setLabelText(int,java.lang.String) -> b
+    android.widget.CheckBox getCheckBox(int) -> d
+    android.widget.TextView getLabel(int) -> e
+    android.widget.EditText getTextBox(int) -> f
+    void showMessageBox(java.lang.String,java.lang.String) -> a
+    void showToastMessage(java.lang.String) -> f
+    java.lang.String getRString(int) -> g
+    android.widget.Button getButton(int) -> h
+    java.lang.String pad2(int) -> i
+    void access$100(com.dyslexicApps.MyActivity,android.widget.CompoundButton,boolean) -> a
+    void access$200(com.dyslexicApps.MyActivity,java.lang.String) -> a
+com.dyslexicApps.MyActivity$1 -> com.dyslexicApps.d:
+    com.dyslexicApps.MyActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dyslexicApps.MyActivity$2 -> com.dyslexicApps.e:
+    com.dyslexicApps.MyActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.dyslexicApps.MyActivity$3 -> com.dyslexicApps.f:
+    com.dyslexicApps.MyActivity this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.dyslexicApps.MyActivity$4 -> com.dyslexicApps.g:
+    com.dyslexicApps.MyActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.dyslexicApps.MyActivity$LotteryException -> com.dyslexicApps.h:
+    java.lang.String message -> b
+    com.dyslexicApps.MyActivity$Reason _reason -> c
+    com.dyslexicApps.MyActivity this$0 -> a
+    java.lang.String toString() -> toString
+    java.lang.String getMessage() -> getMessage
+com.dyslexicApps.MyActivity$LottoProxy -> com.dyslexicApps.i:
+    java.lang.Exception exception -> b
+    com.dyslexicApps.MyActivity this$0 -> a
+    java.lang.String doInBackground(java.lang.String[]) -> a
+    void onPostExecute(java.lang.String) -> a
+    void onPostExecute(java.lang.Object) -> onPostExecute
+    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+com.dyslexicApps.MyActivity$Reason -> com.dyslexicApps.j:
+    com.dyslexicApps.MyActivity$Reason EmptyString -> a
+    com.dyslexicApps.MyActivity$Reason InvalidString -> b
+    com.dyslexicApps.MyActivity$Reason InvalidRange -> c
+    com.dyslexicApps.MyActivity$Reason DuplicateFound -> d
+    com.dyslexicApps.MyActivity$Reason[] $VALUES -> e
+    com.dyslexicApps.MyActivity$Reason[] values() -> values
+    com.dyslexicApps.MyActivity$Reason valueOf(java.lang.String) -> valueOf

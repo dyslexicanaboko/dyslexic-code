@@ -1,0 +1,32 @@
+﻿13 Feb 2012 V1.0.5.0
+All install package version numbers have been synchronised at 1.0.5.0
+Kit install version and all module versions match.
+
+IMPORTANT!!!!!!!
+NANO Mainboard firmware has had support for LCD Configuration change from the application and
+also Native BMP convert function added. Nano must have Micro Framework Build NANO_MXL_G firmware 
+to support these new 'native' features. This is build 4.1.40912.54877 Dated 5 Jan 2012 or later
+to work correctly.
+
+Changes
+NANO
+Any Device Solution SDK dependant dlls are now installed with the NANO Mainboard firmware package.
+There is no longer any requirement to install the DeviceSolution SDK - it is optional.
+Added support for LCD Configuration changes to flash to be accessed from the application layer.
+Added Native bitmap format convert function, so you can now use SPI displays such as the Seed OLED display
+
+SerialCamera
+Access tot he picture has been made more flexible. The OnPictureready event used to return a bitmap. It now returns
+an EventArgs, containing a Gadgeteer.Picture instance. This can return either the image as a bitmap, for use on displays
+or as the data buffer, for saving to files etc. The file data buffer format is JPEG.
+Added a Camera Ready event, fired after the camera has finshed initialising on start up. Camera is ready to use when this event has fired.
+
+13/1/12
+Updated Nano Package to support LCD config from Application and Native Bitmap convert.
+NANO install no longer dependant on Device Solutions SDK - all Device Solutions dependancies now
+installed with NANO package.
+LCD Touch Configuration settings modified - requires NANO MF firmware NANO_MXL_G dated 
+5/1/12 or later.
+
+Initial release of the Sytech Kit install sdk for .NET Gadgeteer
+9/12/11
