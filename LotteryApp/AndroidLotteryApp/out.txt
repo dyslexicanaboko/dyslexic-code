@@ -1,0 +1,131 @@
+Buildfile: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\build.xml
+
+-set-mode-check:
+
+-set-release-mode:
+
+-release-obfuscation-check:
+     [echo] proguard.config is C:\Program Files (x86)\Android\android-sdk/tools/proguard/proguard-android.txt:proguard-project.txt
+     [echo] Proguard.config is enabled
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 20.0.1
+ [checkenv] Installed at C:\Program Files (x86)\Android\android-sdk
+
+-setup:
+     [echo] Project Name: AndroidLotteryApp
+  [gettype] Project Type: Application
+
+-build-setup:
+     [echo] Resolving Build Target for AndroidLotteryApp...
+[gettarget] Project Target:   Android 4.0.3
+[gettarget] API level:        15
+     [echo] ----------
+     [echo] Creating output directories if needed...
+     [echo] ----------
+     [echo] Resolving Dependencies for AndroidLotteryApp...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+[dependency] API<=15: Adding annotations.jar to the classpath.
+     [echo] ----------
+     [echo] Building Libraries with 'release'...
+   [subant] No sub-builds to iterate on
+
+-pre-build:
+
+-code-gen:
+[mergemanifest] Found Deleted Target File
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+[renderscript] No RenderScript files to compile.
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Found Deleted Target File
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] No need to generate new BuildConfig.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 1 source file to F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\classes
+
+-post-compile:
+
+-obfuscate:
+   [delete] Deleting: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\original.jar
+   [delete] Deleting: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\obfuscated.jar
+      [jar] Building jar: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\original.jar
+ [proguard] ProGuard, version 4.7
+ [proguard] Reading input...
+ [proguard] Reading program jar [F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\original.jar]
+ [proguard] Reading program jar [C:\Program Files (x86)\Android\android-sdk\tools\support\annotations.jar]
+ [proguard] Reading library jar [C:\Program Files (x86)\Android\android-sdk\platforms\android-15\android.jar]
+ [proguard] Initializing...
+ [proguard] Note: the configuration refers to the unknown class 'com.google.vending.licensing.ILicensingService'
+ [proguard] Note: the configuration refers to the unknown class 'com.android.vending.licensing.ILicensingService'
+ [proguard] Note: there were 2 references to unknown classes.
+ [proguard]       You should check your configuration for typos.
+ [proguard] Ignoring unused library classes...
+ [proguard]   Original number of library classes: 3145
+ [proguard]   Final number of library classes:    302
+ [proguard] Printing kept classes, fields, and methods...
+ [proguard] Shrinking...
+ [proguard] Printing usage to [F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\usage.txt]...
+ [proguard] Removing unused program classes and class elements...
+ [proguard]   Original number of program classes: 18
+ [proguard]   Final number of program classes:    9
+ [proguard] Obfuscating...
+ [proguard] Printing mapping to [F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\mapping.txt]...
+ [proguard] Writing output...
+ [proguard] Preparing output jar [F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\obfuscated.jar]
+ [proguard]   Copying resources from program jar [F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\original.jar]
+ [proguard]   Copying resources from program jar [C:\Program Files (x86)\Android\android-sdk\tools\support\annotations.jar]
+ [proguard] Warning: can't write resource [META-INF/MANIFEST.MF] (Duplicate zip entry [annotations.jar:META-INF/MANIFEST.MF])
+ [proguard] Printing classes to [F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\proguard\dump.txt]...
+
+-dex:
+      [dex] Found Deleted Target File
+      [dex] Converting compiled files and external libraries into F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\classes.dex...
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\res
+   [crunch] To destination dir: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+     [aapt] Found Deleted Target File
+     [aapt] Creating full resource package...
+
+-package:
+[apkbuilder] Found Deleted Target File
+[apkbuilder] Creating AndroidLotteryApp-release-unsigned.apk for release...
+
+-post-package:
+
+-release-prompt-for-password:
+
+-release-nosign:
+
+-release-sign:
+     [echo] Signing final apk...
+ [zipalign] Running zip align on final apk...
+     [echo] Release Package: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\AndroidLotteryApp-release.apk
+[propertyfile] Updating property file: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\build.prop
+[propertyfile] Updating property file: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\build.prop
+[propertyfile] Updating property file: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\build.prop
+[propertyfile] Updating property file: F:\Dev\trunk\LotteryApp\AndroidLotteryApp\bin\build.prop
+
+-post-build:
+
+release:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds

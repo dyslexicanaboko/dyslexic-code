@@ -1,0 +1,38 @@
+android.annotation.SuppressLint
+android.annotation.TargetApi
+com.dyslexicApps.BuildConfig
+com.dyslexicApps.DateTime:
+    26:32:public DateTime(java.util.Date)
+    35:47:public DateTime(int,int,int)
+    84:84:public static long Subtract(com.dyslexicApps.DateTime,com.dyslexicApps.DateTime)
+    92:93:public void set_year(int)
+    96:96:public int get_year()
+    101:102:public void set_month(int)
+    105:105:public int get_month()
+    110:111:public void set_day(int)
+    114:114:public int get_day()
+com.dyslexicApps.LotteryNumbers:
+    32:32:public void setNumber1(int)
+    35:35:public void setNumber2(int)
+    38:38:public void setNumber3(int)
+    41:41:public void setNumber4(int)
+    44:44:public void setNumber5(int)
+    47:47:public void setNumber6(int)
+    54:55:public void setNumber(int,java.lang.String)
+com.dyslexicApps.MyActivity:
+    public static final java.lang.String CONFIG_FILE
+    private int _defaultEditTextBackgroundColor
+    602:603:public void ToastError(java.lang.Exception)
+    607:608:public void ToastError(java.lang.String)
+    22:22:static synthetic void access$300(com.dyslexicApps.MyActivity,java.lang.String)
+com.dyslexicApps.MyActivity$LotteryException:
+    767:771:public MyActivity$LotteryException(com.dyslexicApps.MyActivity,com.dyslexicApps.MyActivity$Reason)
+    781:783:public MyActivity$LotteryException(com.dyslexicApps.MyActivity,java.lang.Throwable)
+    799:799:public com.dyslexicApps.MyActivity$Reason getReason()
+    804:805:public void Handle()
+com.dyslexicApps.R
+com.dyslexicApps.R$attr
+com.dyslexicApps.R$drawable
+com.dyslexicApps.R$id
+com.dyslexicApps.R$layout
+com.dyslexicApps.R$string
