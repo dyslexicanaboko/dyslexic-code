@@ -7,9 +7,12 @@ using System.Web.Mvc;
 
 namespace IisSiteViewerWebApp.Controllers
 {
+    //[Authorize]
     public class DirectoryController : Controller
     {
-        // GET: Directory
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult IndexFilter(Models.DirectoryModel directory)
         {
             var identityType = directory.IdentityType;

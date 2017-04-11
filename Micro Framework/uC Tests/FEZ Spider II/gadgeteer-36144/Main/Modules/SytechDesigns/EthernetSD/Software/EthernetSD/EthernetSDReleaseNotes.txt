@@ -1,0 +1,7 @@
+﻿V 1.0.5.0
+13 Feb 2012
+Initial Release
+Module is a Manufacturer specific type, jsur for use in Sytech NANO.
+
+SD Card is SPI based interface, only supports SD cards that use SPI mode.
+In general these are cards with a capacity of 2GB or below

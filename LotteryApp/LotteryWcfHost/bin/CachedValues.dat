@@ -1,0 +1,11 @@
+1/23/2013 11:08:07 PM|<?xml version="1.0" encoding="utf-16"?>
+<LotteryNumbers xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Number1>12</Number1>
+  <Number2>13</Number2>
+  <Number3>21</Number3>
+  <Number4>26</Number4>
+  <Number5>46</Number5>
+  <Number6>48</Number6>
+  <Jackpot>$7 Million</Jackpot>
+  <Status>Rollover</Status>
+</LotteryNumbers>

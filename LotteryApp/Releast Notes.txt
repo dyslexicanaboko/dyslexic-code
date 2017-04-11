@@ -1,0 +1,24 @@
+http://developer.android.com/tools/publishing/publishing_overview.html
+http://developer.android.com/tools/publishing/preparing.html
+http://developer.android.com/distribute/googleplay/publish/index.html
+
+Configuring your application for release.
+At a minimum you need to remove Log calls and remove the android:debuggable attribute from your manifest file. You should also provide values for the android:versionCode and android:versionName attributes, which are located in the <manifest> element. You may also have to configure several other settings to meet Google Play requirements or accomodate whatever method you're using to release your application.
+
+You will also need to create an icon for your application, and you may want to prepare an End User License Agreement (EULA) to protect your person, organization, and intellectual property.
+
+To fully leverage the marketing and publicity capabilities of Google Play, you need to create promotional materials for your application, such as screenshots, videos, graphics, and promotional text.
+
+Setup Google Publisher Account
+Setup Google Checkout Merchant Account
+	Do steps in here:
+	http://developer.android.com/distribute/googleplay/publish/register.html
+
+Prepare the application for Release to Market:
+	http://developer.android.com/tools/publishing/preparing.html
+	
+	
+Password for Keystore: 279DDB89BD5F319B
+
+To Generate Keystore:
+keytool -genkey -v -keystore dyslexicapps.keystore -alias dyslexicapps -keyalg RSA -keysize 2048 -validity 10000

@@ -1,0 +1,14 @@
+﻿V 1.0.5.0
+13 Feb 2012
+
+Initial version synced to Kit version
+
+Supports thumb, 1/4 VGA and VGA resolution pictures.
+
+PictureReady Event changed to supplya Gadgeteer,Picture instance rather than just a nitmap.
+Now the bitmap and the raw file data are available.
+Added a CameraReady event, to signal when the camera has been initialised and is ready for use.
+
+Future Support
+Additional baud rates other than 38400
+Setting jpeg compression ration
