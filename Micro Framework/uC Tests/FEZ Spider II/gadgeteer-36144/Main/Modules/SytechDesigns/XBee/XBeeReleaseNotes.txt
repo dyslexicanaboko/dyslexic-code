@@ -1,0 +1,7 @@
+﻿V1.0.5.0
+13 Feb 2012
+
+Initial version
+Simple impelentation, just gives access to the the serial port connected to the module.
+
+Support to follow as addons for XBEE modules and Wifly xbee format WLAN modules

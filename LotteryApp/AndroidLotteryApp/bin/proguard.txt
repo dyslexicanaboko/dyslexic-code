@@ -1,0 +1,12 @@
+# view AndroidManifest.xml #generated:8
+-keep class com.dyslexicApps.MyActivity { <init>(...); }
+
+# onClick res/layout/lottery_checker.xml #generated:193
+-keepclassmembers class * { *** btnAbout_onClick(...); }
+
+# onClick res/layout/main.xml #generated:28
+-keepclassmembers class * { *** btnAdd_onClick(...); }
+
+# onClick res/layout/lottery_checker.xml #generated:159
+-keepclassmembers class * { *** btnSubmit_onClick(...); }
+

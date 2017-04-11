@@ -1,0 +1,5 @@
+http://lotteryservice.apphb.com/Service.svc
+http://lotteryservice.apphb.com/Service.svc?wsdl
+
+How to consume WCF or Webservices with Android:
+http://romenlaw.blogspot.com/2008/08/consuming-web-services-from-android.html

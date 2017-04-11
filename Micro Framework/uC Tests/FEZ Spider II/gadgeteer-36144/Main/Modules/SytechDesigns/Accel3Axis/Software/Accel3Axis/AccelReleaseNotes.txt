@@ -1,0 +1,10 @@
+﻿release V1.0.5.0 
+13 Feb 2012
+
+Initial Version
+Supports reading of the X, Y and Z axis.
+
+Future Support:
+Calibration
+Auto polling
+Acceleration level trigger events

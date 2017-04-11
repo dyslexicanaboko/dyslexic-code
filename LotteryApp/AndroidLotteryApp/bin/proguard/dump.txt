@@ -1,0 +1,4403 @@
+_____________________________________________________________________
++ Program class: com/dyslexicApps/a
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.dyslexicApps.a extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 99):
+  + String [ ]
+  + String [%02d]
+  + String [/]
+  + String [:]
+  + String [AM]
+  + String [PM]
+  + Class [com/dyslexicApps/a]
+  + Class [java/lang/Integer]
+  + Class [java/lang/Object]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [java/util/Calendar]
+  + Fieldref [com/dyslexicApps/a.a Ljava/util/Date;]
+  + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+  + Fieldref [com/dyslexicApps/a.c I]
+  + Fieldref [com/dyslexicApps/a.d I]
+  + Fieldref [com/dyslexicApps/a.e I]
+  + Fieldref [com/dyslexicApps/a.f I]
+  + Fieldref [com/dyslexicApps/a.g I]
+  + Fieldref [com/dyslexicApps/a.h I]
+  + Fieldref [com/dyslexicApps/a.i I]
+  + Methodref [com/dyslexicApps/a.<init> ()V]
+  + Methodref [com/dyslexicApps/a.a (I)Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/a.b ()V]
+  + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> ()V]
+  + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [java/util/Calendar.get (I)I]
+  + Methodref [java/util/Calendar.getInstance ()Ljava/util/Calendar;]
+  + Methodref [java/util/Calendar.getTime ()Ljava/util/Date;]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (I)Ljava/lang/String;]
+  + NameAndType [a Ljava/util/Date;]
+  + NameAndType [append (I)Ljava/lang/StringBuilder;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b ()V]
+  + NameAndType [b Ljava/util/Calendar;]
+  + NameAndType [c I]
+  + NameAndType [d I]
+  + NameAndType [e I]
+  + NameAndType [f I]
+  + NameAndType [format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + NameAndType [g I]
+  + NameAndType [get (I)I]
+  + NameAndType [getInstance ()Ljava/util/Calendar;]
+  + NameAndType [getTime ()Ljava/util/Date;]
+  + NameAndType [h I]
+  + NameAndType [i I]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (I)Ljava/lang/Integer;]
+  + Utf8 [ ]
+  + Utf8 [%02d]
+  + Utf8 [()Lcom/dyslexicApps/a;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()Ljava/util/Calendar;]
+  + Utf8 [()Ljava/util/Date;]
+  + Utf8 [()V]
+  + Utf8 [(I)I]
+  + Utf8 [(I)Ljava/lang/Integer;]
+  + Utf8 [(I)Ljava/lang/String;]
+  + Utf8 [(I)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [/]
+  + Utf8 [:]
+  + Utf8 [<init>]
+  + Utf8 [AM]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Ljava/util/Calendar;]
+  + Utf8 [Ljava/util/Date;]
+  + Utf8 [PM]
+  + Utf8 [a]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/dyslexicApps/a]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [format]
+  + Utf8 [g]
+  + Utf8 [get]
+  + Utf8 [getInstance]
+  + Utf8 [getTime]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [java/lang/Integer]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/util/Calendar]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 9):
+  + Field:        a Ljava/util/Date;
+    Access flags: 0x2
+      = private java.util.Date a
+  + Field:        b Ljava/util/Calendar;
+    Access flags: 0x2
+      = private java.util.Calendar b
+  + Field:        c I
+    Access flags: 0x2
+      = private int c
+  + Field:        d I
+    Access flags: 0x2
+      = private int d
+  + Field:        e I
+    Access flags: 0x2
+      = private int e
+  + Field:        f I
+    Access flags: 0x2
+      = private int f
+  + Field:        g I
+    Access flags: 0x2
+      = private int g
+  + Field:        h I
+    Access flags: 0x2
+      = private int h
+  + Field:        i I
+    Access flags: 0x2
+      = private int i
+
+Methods (count = 5):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 27, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] invokespecial #26
+        + Methodref [java/lang/Object.<init> ()V]
+      [4] aload_0 v0
+      [5] invokestatic #33
+        + Methodref [java/util/Calendar.getInstance ()Ljava/util/Calendar;]
+      [8] putfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [11] aload_0 v0
+      [12] aload_0 v0
+      [13] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [16] invokevirtual #34
+        + Methodref [java/util/Calendar.getTime ()Ljava/util/Date;]
+      [19] putfield #13
+        + Fieldref [com/dyslexicApps/a.a Ljava/util/Date;]
+      [22] aload_0 v0
+      [23] invokespecial #24
+        + Methodref [com/dyslexicApps/a.b ()V]
+      [26] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()Lcom/dyslexicApps/a;
+    Access flags: 0x9
+      = public static com.dyslexicApps.a a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 8, locals = 0, stack = 2):
+      [0] new #7
+        + Class [com/dyslexicApps/a]
+      [3] dup
+      [4] invokespecial #22
+        + Methodref [com/dyslexicApps/a.<init> ()V]
+      [7] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       toString()Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String toString()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 123, locals = 2, stack = 4):
+      [0] ldc #5
+        + String [AM]
+      [2] astore_1 v1
+      [3] aload_0 v0
+      [4] getfield #21
+        + Fieldref [com/dyslexicApps/a.i I]
+      [7] iconst_1
+      [8] ificmpne +6 (target=14)
+      [11] ldc #6
+        + String [PM]
+      [13] astore_1 v1
+      [14] new #11
+        + Class [java/lang/StringBuilder]
+      [17] dup
+      [18] invokespecial #28
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [21] aload_0 v0
+      [22] aload_0 v0
+      [23] getfield #16
+        + Fieldref [com/dyslexicApps/a.d I]
+      [26] iconst_1
+      [27] iadd
+      [28] invokespecial #23
+        + Methodref [com/dyslexicApps/a.a (I)Ljava/lang/String;]
+      [31] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [34] ldc #3
+        + String [/]
+      [36] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [39] aload_0 v0
+      [40] aload_0 v0
+      [41] getfield #17
+        + Fieldref [com/dyslexicApps/a.e I]
+      [44] invokespecial #23
+        + Methodref [com/dyslexicApps/a.a (I)Ljava/lang/String;]
+      [47] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [50] ldc #3
+        + String [/]
+      [52] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [55] aload_0 v0
+      [56] getfield #15
+        + Fieldref [com/dyslexicApps/a.c I]
+      [59] invokevirtual #29
+        + Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [62] ldc #1
+        + String [ ]
+      [64] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [67] aload_0 v0
+      [68] aload_0 v0
+      [69] getfield #18
+        + Fieldref [com/dyslexicApps/a.f I]
+      [72] invokespecial #23
+        + Methodref [com/dyslexicApps/a.a (I)Ljava/lang/String;]
+      [75] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [78] ldc #4
+        + String [:]
+      [80] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [83] aload_0 v0
+      [84] aload_0 v0
+      [85] getfield #19
+        + Fieldref [com/dyslexicApps/a.g I]
+      [88] invokespecial #23
+        + Methodref [com/dyslexicApps/a.a (I)Ljava/lang/String;]
+      [91] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [94] ldc #4
+        + String [:]
+      [96] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [99] aload_0 v0
+      [100] aload_0 v0
+      [101] getfield #20
+        + Fieldref [com/dyslexicApps/a.h I]
+      [104] invokespecial #23
+        + Methodref [com/dyslexicApps/a.a (I)Ljava/lang/String;]
+      [107] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [110] ldc #1
+        + String [ ]
+      [112] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [115] aload_1 v1
+      [116] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [119] invokevirtual #31
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [122] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b()V
+    Access flags: 0x2
+      = private void b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 89, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] aload_0 v0
+      [2] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [5] iconst_1
+      [6] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [9] putfield #15
+        + Fieldref [com/dyslexicApps/a.c I]
+      [12] aload_0 v0
+      [13] aload_0 v0
+      [14] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [17] iconst_2
+      [18] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [21] putfield #16
+        + Fieldref [com/dyslexicApps/a.d I]
+      [24] aload_0 v0
+      [25] aload_0 v0
+      [26] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [29] iconst_5
+      [30] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [33] putfield #17
+        + Fieldref [com/dyslexicApps/a.e I]
+      [36] aload_0 v0
+      [37] aload_0 v0
+      [38] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [41] bipush 10
+      [43] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [46] putfield #18
+        + Fieldref [com/dyslexicApps/a.f I]
+      [49] aload_0 v0
+      [50] aload_0 v0
+      [51] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [54] bipush 12
+      [56] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [59] putfield #19
+        + Fieldref [com/dyslexicApps/a.g I]
+      [62] aload_0 v0
+      [63] aload_0 v0
+      [64] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [67] bipush 13
+      [69] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [72] putfield #20
+        + Fieldref [com/dyslexicApps/a.h I]
+      [75] aload_0 v0
+      [76] aload_0 v0
+      [77] getfield #14
+        + Fieldref [com/dyslexicApps/a.b Ljava/util/Calendar;]
+      [80] bipush 9
+      [82] invokevirtual #32
+        + Methodref [java/util/Calendar.get (I)I]
+      [85] putfield #21
+        + Fieldref [com/dyslexicApps/a.i I]
+      [88] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 2, stack = 5):
+      [0] ldc #2
+        + String [%02d]
+      [2] iconst_1
+      [3] anewarray #9
+        + Class [java/lang/Object]
+      [6] dup
+      [7] iconst_0
+      [8] iload_1 v1
+      [9] invokestatic #25
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [12] aastore
+      [13] invokestatic #27
+        + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+      [16] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/b
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.dyslexicApps.b extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 14):
+  + Class [com/dyslexicApps/b]
+  + Class [java/lang/Object]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + Utf8 [()V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [a]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/dyslexicApps/b]
+  + Utf8 [java/lang/Object]
+
+Fields (count = 3):
+  + Field:        a Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String a
+  + Field:        b Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String b
+  + Field:        c Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String c
+
+Methods (count = 1):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #3
+        + Methodref [java/lang/Object.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/c
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.dyslexicApps.c extends java.lang.Object
+
+Interfaces (count = 0):
+
+Constant Pool (count = 139):
+  + String [%02d]
+  + String [-]
+  + Class [com/dyslexicApps/c]
+  + Class [java/lang/Exception]
+  + Class [java/lang/Integer]
+  + Class [java/lang/Object]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [java/util/ArrayList]
+  + Class [java/util/Collections]
+  + Class [java/util/HashMap]
+  + Class [java/util/Iterator]
+  + Class [java/util/List]
+  + Class [java/util/Map]
+  + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+  + Methodref [com/dyslexicApps/c.<init> (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/c.a ()Ljava/util/List;]
+  + Methodref [com/dyslexicApps/c.b (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/c.c (Ljava/lang/String;)I]
+  + Methodref [java/lang/Integer.intValue ()I]
+  + Methodref [java/lang/Integer.parseInt (Ljava/lang/String;)I]
+  + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/String.split (Ljava/lang/String;)[Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> ()V]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.deleteCharAt (I)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.length ()I]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [java/util/ArrayList.<init> ()V]
+  + Methodref [java/util/Collections.sort (Ljava/util/List;)V]
+  + Methodref [java/util/HashMap.<init> ()V]
+  + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+  + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+  + InterfaceMethodref [java/util/List.clear ()V]
+  + InterfaceMethodref [java/util/List.contains (Ljava/lang/Object;)Z]
+  + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
+  + InterfaceMethodref [java/util/List.set (ILjava/lang/Object;)Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/List.size ()I]
+  + InterfaceMethodref [java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [a ()Ljava/util/List;]
+  + NameAndType [add (Ljava/lang/Object;)Z]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b (Ljava/lang/String;)V]
+  + NameAndType [c (Ljava/lang/String;)I]
+  + NameAndType [c Ljava/util/List;]
+  + NameAndType [clear ()V]
+  + NameAndType [contains (Ljava/lang/Object;)Z]
+  + NameAndType [deleteCharAt (I)Ljava/lang/StringBuilder;]
+  + NameAndType [format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + NameAndType [get (I)Ljava/lang/Object;]
+  + NameAndType [hasNext ()Z]
+  + NameAndType [intValue ()I]
+  + NameAndType [iterator ()Ljava/util/Iterator;]
+  + NameAndType [length ()I]
+  + NameAndType [next ()Ljava/lang/Object;]
+  + NameAndType [parseInt (Ljava/lang/String;)I]
+  + NameAndType [put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+  + NameAndType [set (ILjava/lang/Object;)Ljava/lang/Object;]
+  + NameAndType [size ()I]
+  + NameAndType [sort (Ljava/util/List;)V]
+  + NameAndType [split (Ljava/lang/String;)[Ljava/lang/String;]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [valueOf (I)Ljava/lang/Integer;]
+  + Utf8 [%02d]
+  + Utf8 [()I]
+  + Utf8 [()Ljava/lang/Object;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()Ljava/util/Iterator;]
+  + Utf8 [()Ljava/util/List;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(I)Ljava/lang/Integer;]
+  + Utf8 [(I)Ljava/lang/Object;]
+  + Utf8 [(I)Ljava/lang/StringBuilder;]
+  + Utf8 [(II)V]
+  + Utf8 [(ILjava/lang/Object;)Ljava/lang/Object;]
+  + Utf8 [(Lcom/dyslexicApps/c;Lcom/dyslexicApps/c;)Ljava/util/Map;]
+  + Utf8 [(Ljava/lang/Object;)Z]
+  + Utf8 [(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+  + Utf8 [(Ljava/lang/String;)I]
+  + Utf8 [(Ljava/lang/String;)Lcom/dyslexicApps/c;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;)[Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [(Ljava/util/List;)V]
+  + Utf8 [-]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [Ljava/util/List;]
+  + Utf8 [a]
+  + Utf8 [add]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [clear]
+  + Utf8 [com/dyslexicApps/c]
+  + Utf8 [contains]
+  + Utf8 [d]
+  + Utf8 [deleteCharAt]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [format]
+  + Utf8 [g]
+  + Utf8 [get]
+  + Utf8 [h]
+  + Utf8 [hasNext]
+  + Utf8 [i]
+  + Utf8 [intValue]
+  + Utf8 [iterator]
+  + Utf8 [java/lang/Exception]
+  + Utf8 [java/lang/Integer]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/util/ArrayList]
+  + Utf8 [java/util/Collections]
+  + Utf8 [java/util/HashMap]
+  + Utf8 [java/util/Iterator]
+  + Utf8 [java/util/List]
+  + Utf8 [java/util/Map]
+  + Utf8 [length]
+  + Utf8 [next]
+  + Utf8 [parseInt]
+  + Utf8 [put]
+  + Utf8 [set]
+  + Utf8 [size]
+  + Utf8 [sort]
+  + Utf8 [split]
+  + Utf8 [toString]
+  + Utf8 [valueOf]
+
+Fields (count = 3):
+  + Field:        c Ljava/util/List;
+    Access flags: 0x2
+      = private java.util.List c
+  + Field:        a Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String a
+  + Field:        b Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String b
+
+Methods (count = 17):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public c()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 44, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] invokespecial #23
+        + Methodref [java/lang/Object.<init> ()V]
+      [4] aload_0 v0
+      [5] new #9
+        + Class [java/util/ArrayList]
+      [8] dup
+      [9] invokespecial #31
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [12] putfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [15] iconst_0
+      [16] istore_1 v1
+      [17] iload_1 v1
+      [18] bipush 6
+      [20] ificmpge +23 (target=43)
+      [23] aload_0 v0
+      [24] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [27] iconst_0
+      [28] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [31] invokeinterface #36
+        + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [36] pop
+      [37] iinc v1, 1
+      [40] goto -23 (target=17)
+      [43] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>(Ljava/lang/String;)V
+    Access flags: 0x1
+      = public c(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 21, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] invokespecial #23
+        + Methodref [java/lang/Object.<init> ()V]
+      [4] aload_0 v0
+      [5] new #9
+        + Class [java/util/ArrayList]
+      [8] dup
+      [9] invokespecial #31
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [12] putfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [15] aload_0 v0
+      [16] aload_1 v1
+      [17] invokespecial #18
+        + Methodref [com/dyslexicApps/c.b (Ljava/lang/String;)V]
+      [20] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()Ljava/util/List;
+    Access flags: 0x4
+      = protected java.util.List a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b()I
+    Access flags: 0x1
+      = public int b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iconst_0
+      [5] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [10] checkcast #5
+        + Class [java/lang/Integer]
+      [13] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c()I
+    Access flags: 0x1
+      = public int c()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iconst_1
+      [5] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [10] checkcast #5
+        + Class [java/lang/Integer]
+      [13] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d()I
+    Access flags: 0x1
+      = public int d()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iconst_2
+      [5] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [10] checkcast #5
+        + Class [java/lang/Integer]
+      [13] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e()I
+    Access flags: 0x1
+      = public int e()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iconst_3
+      [5] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [10] checkcast #5
+        + Class [java/lang/Integer]
+      [13] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       f()I
+    Access flags: 0x1
+      = public int f()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iconst_4
+      [5] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [10] checkcast #5
+        + Class [java/lang/Integer]
+      [13] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       g()I
+    Access flags: 0x1
+      = public int g()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iconst_5
+      [5] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [10] checkcast #5
+        + Class [java/lang/Integer]
+      [13] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [16] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(II)V
+    Access flags: 0x1
+      = public void a(int,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 16, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [4] iload_1 v1
+      [5] iload_2 v2
+      [6] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [9] invokeinterface #41
+        + InterfaceMethodref [java/util/List.set (ILjava/lang/Object;)Ljava/lang/Object;]
+      [14] pop
+      [15] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Ljava/lang/String;)V
+    Access flags: 0x2
+      = private void b(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 69, locals = 4, stack = 3):
+      [0] aload_1 v1
+      [1] ldc #2
+        + String [-]
+      [3] invokevirtual #25
+        + Methodref [java/lang/String.split (Ljava/lang/String;)[Ljava/lang/String;]
+      [6] astore_2 v2
+      [7] aload_0 v0
+      [8] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [11] invokeinterface #42
+        + InterfaceMethodref [java/util/List.size ()I]
+      [16] ifle +12 (target=28)
+      [19] aload_0 v0
+      [20] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [23] invokeinterface #37
+        + InterfaceMethodref [java/util/List.clear ()V]
+      [28] iconst_0
+      [29] istore_3 v3
+      [30] iload_3 v3
+      [31] aload_2 v2
+      [32] arraylength
+      [33] ificmpge +28 (target=61)
+      [36] aload_0 v0
+      [37] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [40] aload_2 v2
+      [41] iload_3 v3
+      [42] aaload
+      [43] invokestatic #19
+        + Methodref [com/dyslexicApps/c.c (Ljava/lang/String;)I]
+      [46] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [49] invokeinterface #36
+        + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [54] pop
+      [55] iinc v3, 1
+      [58] goto -28 (target=30)
+      [61] aload_0 v0
+      [62] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [65] invokestatic #32
+        + Methodref [java/util/Collections.sort (Ljava/util/List;)V]
+      [68] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;)Lcom/dyslexicApps/c;
+    Access flags: 0x9
+      = public static com.dyslexicApps.c a(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 1, stack = 3):
+      [0] new #3
+        + Class [com/dyslexicApps/c]
+      [3] dup
+      [4] aload_0 v0
+      [5] invokespecial #16
+        + Methodref [com/dyslexicApps/c.<init> (Ljava/lang/String;)V]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/dyslexicApps/c;Lcom/dyslexicApps/c;)Ljava/util/Map;
+    Access flags: 0x9
+      = public static java.util.Map a(com.dyslexicApps.c,com.dyslexicApps.c)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 80, locals = 5, stack = 3):
+      [0] new #11
+        + Class [java/util/HashMap]
+      [3] dup
+      [4] invokespecial #33
+        + Methodref [java/util/HashMap.<init> ()V]
+      [7] astore_2 v2
+      [8] iconst_0
+      [9] istore_3 v3
+      [10] iload_3 v3
+      [11] bipush 6
+      [13] ificmpge +65 (target=78)
+      [16] iconst_0
+      [17] istore v4
+      [19] iload v4
+      [21] bipush 6
+      [23] ificmpge +49 (target=72)
+      [26] aload_0 v0
+      [27] invokevirtual #17
+        + Methodref [com/dyslexicApps/c.a ()Ljava/util/List;]
+      [30] iload_3 v3
+      [31] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [36] aload_1 v1
+      [37] invokevirtual #17
+        + Methodref [com/dyslexicApps/c.a ()Ljava/util/List;]
+      [40] iload v4
+      [42] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [47] ifacmpne +19 (target=66)
+      [50] aload_2 v2
+      [51] iload_3 v3
+      [52] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [55] iload v4
+      [57] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [60] invokeinterface #43
+        + InterfaceMethodref [java/util/Map.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;]
+      [65] pop
+      [66] iinc v4, 1
+      [69] goto -50 (target=19)
+      [72] iinc v3, 1
+      [75] goto -65 (target=10)
+      [78] aload_2 v2
+      [79] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       h()Z
+    Access flags: 0x1
+      = public boolean h()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 100, locals = 4, stack = 2):
+      [0] new #9
+        + Class [java/util/ArrayList]
+      [3] dup
+      [4] invokespecial #31
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [7] astore_1 v1
+      [8] iconst_0
+      [9] istore_2 v2
+      [10] iconst_0
+      [11] istore_3 v3
+      [12] iload_3 v3
+      [13] aload_0 v0
+      [14] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [17] invokeinterface #42
+        + InterfaceMethodref [java/util/List.size ()I]
+      [22] ificmpge +54 (target=76)
+      [25] aload_0 v0
+      [26] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [29] iload_3 v3
+      [30] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [35] checkcast #5
+        + Class [java/lang/Integer]
+      [38] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [41] istore_2 v2
+      [42] iload_2 v2
+      [43] ifeq +27 (target=70)
+      [46] aload_1 v1
+      [47] iload_2 v2
+      [48] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [51] invokeinterface #38
+        + InterfaceMethodref [java/util/List.contains (Ljava/lang/Object;)Z]
+      [56] ifne +14 (target=70)
+      [59] aload_1 v1
+      [60] iload_2 v2
+      [61] invokestatic #22
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [64] invokeinterface #36
+        + InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [69] pop
+      [70] iinc v3, 1
+      [73] goto -61 (target=12)
+      [76] aload_0 v0
+      [77] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [80] invokeinterface #42
+        + InterfaceMethodref [java/util/List.size ()I]
+      [85] aload_1 v1
+      [86] invokeinterface #42
+        + InterfaceMethodref [java/util/List.size ()I]
+      [91] ificmpeq +7 (target=98)
+      [94] iconst_1
+      [95] goto +4 (target=99)
+      [98] iconst_0
+      [99] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       i()I
+    Access flags: 0x1
+      = public int i()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 43, locals = 4, stack = 2):
+      [0] iconst_0
+      [1] istore_1 v1
+      [2] aload_0 v0
+      [3] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [6] invokeinterface #40
+        + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
+      [11] astore_2 v2
+      [12] aload_2 v2
+      [13] invokeinterface #34
+        + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+      [18] ifeq +23 (target=41)
+      [21] aload_2 v2
+      [22] invokeinterface #35
+        + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+      [27] checkcast #5
+        + Class [java/lang/Integer]
+      [30] invokevirtual #20
+        + Methodref [java/lang/Integer.intValue ()I]
+      [33] istore_3 v3
+      [34] iload_1 v1
+      [35] iload_3 v3
+      [36] iadd
+      [37] istore_1 v1
+      [38] goto -26 (target=12)
+      [41] iload_1 v1
+      [42] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       toString()Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String toString()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 77, locals = 3, stack = 7):
+      [0] new #8
+        + Class [java/lang/StringBuilder]
+      [3] dup
+      [4] invokespecial #26
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [7] astore_1 v1
+      [8] iconst_0
+      [9] istore_2 v2
+      [10] iload_2 v2
+      [11] aload_0 v0
+      [12] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [15] invokeinterface #42
+        + InterfaceMethodref [java/util/List.size ()I]
+      [20] ificmpge +41 (target=61)
+      [23] aload_1 v1
+      [24] ldc #1
+        + String [%02d]
+      [26] iconst_1
+      [27] anewarray #6
+        + Class [java/lang/Object]
+      [30] dup
+      [31] iconst_0
+      [32] aload_0 v0
+      [33] getfield #15
+        + Fieldref [com/dyslexicApps/c.c Ljava/util/List;]
+      [36] iload_2 v2
+      [37] invokeinterface #39
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [42] aastore
+      [43] invokestatic #24
+        + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+      [46] invokevirtual #27
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [49] ldc #2
+        + String [-]
+      [51] invokevirtual #27
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [54] pop
+      [55] iinc v2, 1
+      [58] goto -48 (target=10)
+      [61] aload_1 v1
+      [62] aload_1 v1
+      [63] invokevirtual #29
+        + Methodref [java/lang/StringBuilder.length ()I]
+      [66] iconst_1
+      [67] isub
+      [68] invokevirtual #28
+        + Methodref [java/lang/StringBuilder.deleteCharAt (I)Ljava/lang/StringBuilder;]
+      [71] pop
+      [72] aload_1 v1
+      [73] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [76] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(Ljava/lang/String;)I
+    Access flags: 0xa
+      = private static int c(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 15, locals = 3, stack = 1):
+      [0] iconst_0
+      [1] istore_1 v1
+      [2] aload_0 v0
+      [3] invokestatic #21
+        + Methodref [java/lang/Integer.parseInt (Ljava/lang/String;)I]
+      [6] istore_1 v1
+      [7] goto +6 (target=13)
+      [10] astore_2 v2
+      [11] iconst_0
+      [12] istore_1 v1
+      [13] iload_1 v1
+      [14] ireturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (2 -> 7: 10):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/MyActivity
+  Superclass:    android/app/Activity
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.dyslexicApps.MyActivity extends android.app.Activity
+
+Interfaces (count = 0):
+
+Constant Pool (count = 588):
+  + Integer [-16711936]
+  + Integer [-7829368]
+  + Integer [-65536]
+  + Integer [17301528]
+  + Integer [17301529]
+  + Integer [2130903040]
+  + Integer [2130968582]
+  + Integer [2131034115]
+  + Integer [2131034116]
+  + Integer [2131034117]
+  + Integer [2131034118]
+  + Integer [2131034119]
+  + Integer [2131034120]
+  + Integer [2131034123]
+  + Integer [2131034124]
+  + Integer [2131034125]
+  + Integer [2131034126]
+  + Integer [2131034127]
+  + Integer [2131034128]
+  + Integer [2131034130]
+  + Integer [2131034131]
+  + Integer [2131034133]
+  + Integer [2131034135]
+  + Integer [2131034137]
+  + Integer [2131034138]
+  + Integer [2131034140]
+  + Integer [2131034141]
+  + Integer [2131034143]
+  + Float [12.0]
+  + Float [14.0]
+  + Float [16.0]
+  + Float [18.0]
+  + Float [20.0]
+  + Float [22.0]
+  + String []
+  + String [
+]
+  + String [ of 6]
+  + String [#0000FF]
+  + String [#008000]
+  + String [#40E0D0]
+  + String [#808080]
+  + String [#FF0000]
+  + String [#FFC0CB]
+  + String [#FFD700]
+  + String [%02d]
+  + String [A problem has occurred]
+  + String [About Flottery]
+  + String [At least it's something...]
+  + String [Better luck next time.]
+  + String [Better than a free ticket I guess...]
+  + String [Bugs?! - Please press the About Button.]
+  + String [Close]
+  + String [Congrats you are now wealthy!!!!]
+  + String [Duplicate values are not allowed!]
+  + String [Error: ]
+  + String [FloridaLotteryCheckerConfig]
+  + String [Getting latest Lottery drawing, Please Wait...]
+  + String [Jackpot]
+  + String [Lottery numbers must be between 1 and 53 inclusive.]
+  + String [Not a valid number!]
+  + String [Not what I was looking for, but hey I'll take it!]
+  + String [Number]
+  + String [Oh goody a free drawing... only if you paid for XTRA...]
+  + String [PlayerLotteryNumber]
+  + String [Status]
+  + String [The Lottery Checking Service is currently unreachable. Please try again later.]
+  + String [The lottery numbers you entered contained duplicate numbers!]
+  + String [The purpose of this application is to check your single set of Florida Lottery Numbers against the current drawn numbers. Comments, Questions or Bugs? Please email: DyslexicApps@gmail.com]
+  + String [Values cannot be blank!]
+  + String [Working]
+  + String [You changed your numbers! 
+Check the box again to save the new set.]
+  + String [Your numbers have been saved]
+  + Class [android/app/Activity]
+  + Class [android/app/AlertDialog]
+  + Class [android/app/AlertDialog$Builder]
+  + Class [android/app/ProgressDialog]
+  + Class [android/content/SharedPreferences]
+  + Class [android/content/SharedPreferences$Editor]
+  + Class [android/content/res/Resources]
+  + Class [android/graphics/Color]
+  + Class [android/widget/Button]
+  + Class [android/widget/CheckBox]
+  + Class [android/widget/EditText]
+  + Class [android/widget/TextView]
+  + Class [android/widget/Toast]
+  + Class [com/dyslexicApps/MyActivity]
+  + Class [com/dyslexicApps/a]
+  + Class [com/dyslexicApps/b]
+  + Class [com/dyslexicApps/c]
+  + Class [com/dyslexicApps/d]
+  + Class [com/dyslexicApps/e]
+  + Class [com/dyslexicApps/f]
+  + Class [com/dyslexicApps/g]
+  + Class [com/dyslexicApps/h]
+  + Class [com/dyslexicApps/i]
+  + Class [com/dyslexicApps/j]
+  + Class [java/lang/Exception]
+  + Class [java/lang/Integer]
+  + Class [java/lang/Math]
+  + Class [java/lang/Object]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [java/util/ArrayList]
+  + Class [java/util/Iterator]
+  + Class [java/util/LinkedList]
+  + Class [java/util/Map]
+  + Class [java/util/Map$Entry]
+  + Class [java/util/Set]
+  + Class [org/json/JSONObject]
+  + Fieldref [com/dyslexicApps/MyActivity.a Landroid/app/ProgressDialog;]
+  + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/MyActivity.c Lcom/dyslexicApps/c;]
+  + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+  + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+  + Fieldref [com/dyslexicApps/MyActivity.f I]
+  + Fieldref [com/dyslexicApps/b.a Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/b.b Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/b.c Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/c.a Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/c.b Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/j.a Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.d Lcom/dyslexicApps/j;]
+  + Methodref [android/app/Activity.<init> ()V]
+  + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+  + Methodref [android/app/AlertDialog.show ()V]
+  + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
+  + Methodref [android/app/AlertDialog$Builder.create ()Landroid/app/AlertDialog;]
+  + Methodref [android/app/AlertDialog$Builder.setCancelable (Z)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.setNegativeButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/AlertDialog$Builder.setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + Methodref [android/app/ProgressDialog.hide ()V]
+  + Methodref [android/app/ProgressDialog.show (Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;]
+  + Methodref [android/content/res/Resources.getString (I)Ljava/lang/String;]
+  + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+  + Methodref [android/widget/Button.setEnabled (Z)V]
+  + Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+  + Methodref [android/widget/CheckBox.isChecked ()Z]
+  + Methodref [android/widget/CheckBox.setChecked (Z)V]
+  + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+  + Methodref [android/widget/EditText.getText ()Landroid/text/Editable;]
+  + Methodref [android/widget/EditText.requestFocus ()Z]
+  + Methodref [android/widget/EditText.setBackgroundColor (I)V]
+  + Methodref [android/widget/EditText.setBackgroundResource (I)V]
+  + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [android/widget/TextView.setTextColor (I)V]
+  + Methodref [android/widget/TextView.setTextSize (F)V]
+  + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Methodref [android/widget/Toast.show ()V]
+  + Methodref [com/dyslexicApps/MyActivity.a ()Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/MyActivity.a (I)Landroid/widget/EditText;]
+  + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Landroid/widget/CompoundButton;Z)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Landroid/widget/EditText;Landroid/widget/EditText;)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Landroid/widget/EditText;Landroid/widget/EditText;I)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Lcom/dyslexicApps/c;)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/Exception;)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;)Z]
+  + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Ljava/util/Map;)V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Z)V]
+  + Methodref [com/dyslexicApps/MyActivity.b ()V]
+  + Methodref [com/dyslexicApps/MyActivity.b (I)Landroid/widget/EditText;]
+  + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.b (Lcom/dyslexicApps/c;)V]
+  + Methodref [com/dyslexicApps/MyActivity.b (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.c ()V]
+  + Methodref [com/dyslexicApps/MyActivity.c (I)V]
+  + Methodref [com/dyslexicApps/MyActivity.c (Ljava/lang/String;)Z]
+  + Methodref [com/dyslexicApps/MyActivity.d ()V]
+  + Methodref [com/dyslexicApps/MyActivity.d (I)Landroid/widget/CheckBox;]
+  + Methodref [com/dyslexicApps/MyActivity.d (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.e ()V]
+  + Methodref [com/dyslexicApps/MyActivity.e (I)Landroid/widget/TextView;]
+  + Methodref [com/dyslexicApps/MyActivity.e (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.f ()V]
+  + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+  + Methodref [com/dyslexicApps/MyActivity.f (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/MyActivity.findViewById (I)Landroid/view/View;]
+  + Methodref [com/dyslexicApps/MyActivity.g ()Lcom/dyslexicApps/c;]
+  + Methodref [com/dyslexicApps/MyActivity.g (I)Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/MyActivity.getApplicationContext ()Landroid/content/Context;]
+  + Methodref [com/dyslexicApps/MyActivity.getResources ()Landroid/content/res/Resources;]
+  + Methodref [com/dyslexicApps/MyActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+  + Methodref [com/dyslexicApps/MyActivity.h ()V]
+  + Methodref [com/dyslexicApps/MyActivity.h (I)Landroid/widget/Button;]
+  + Methodref [com/dyslexicApps/MyActivity.i ()V]
+  + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/MyActivity.j ()V]
+  + Methodref [com/dyslexicApps/MyActivity.setContentView (I)V]
+  + Methodref [com/dyslexicApps/a.a ()Lcom/dyslexicApps/a;]
+  + Methodref [com/dyslexicApps/a.toString ()Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/b.<init> ()V]
+  + Methodref [com/dyslexicApps/c.<init> ()V]
+  + Methodref [com/dyslexicApps/c.<init> (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/c.a (II)V]
+  + Methodref [com/dyslexicApps/c.a (Lcom/dyslexicApps/c;Lcom/dyslexicApps/c;)Ljava/util/Map;]
+  + Methodref [com/dyslexicApps/c.a (Ljava/lang/String;)Lcom/dyslexicApps/c;]
+  + Methodref [com/dyslexicApps/c.b ()I]
+  + Methodref [com/dyslexicApps/c.c ()I]
+  + Methodref [com/dyslexicApps/c.d ()I]
+  + Methodref [com/dyslexicApps/c.e ()I]
+  + Methodref [com/dyslexicApps/c.f ()I]
+  + Methodref [com/dyslexicApps/c.g ()I]
+  + Methodref [com/dyslexicApps/c.h ()Z]
+  + Methodref [com/dyslexicApps/c.i ()I]
+  + Methodref [com/dyslexicApps/c.toString ()Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/d.<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + Methodref [com/dyslexicApps/e.<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + Methodref [com/dyslexicApps/f.<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + Methodref [com/dyslexicApps/g.<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + Methodref [com/dyslexicApps/h.<init> (Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/j;Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/h.getMessage ()Ljava/lang/String;]
+  + Methodref [com/dyslexicApps/i.<init> (Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/d;)V]
+  + Methodref [com/dyslexicApps/i.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+  + Methodref [java/lang/Exception.<init> (Ljava/lang/String;)V]
+  + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+  + Methodref [java/lang/Exception.toString ()Ljava/lang/String;]
+  + Methodref [java/lang/Integer.intValue ()I]
+  + Methodref [java/lang/Integer.parseInt (Ljava/lang/String;)I]
+  + Methodref [java/lang/Integer.toString (I)Ljava/lang/String;]
+  + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+  + Methodref [java/lang/Math.abs (I)I]
+  + Methodref [java/lang/Object.toString ()Ljava/lang/String;]
+  + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Methodref [java/lang/String.length ()I]
+  + Methodref [java/lang/String.trim ()Ljava/lang/String;]
+  + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
+  + Methodref [java/lang/StringBuilder.<init> ()V]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [java/util/ArrayList.<init> ()V]
+  + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+  + Methodref [java/util/ArrayList.contains (Ljava/lang/Object;)Z]
+  + Methodref [java/util/LinkedList.<init> ()V]
+  + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+  + Methodref [java/util/LinkedList.iterator ()Ljava/util/Iterator;]
+  + Methodref [org/json/JSONObject.<init> (Ljava/lang/String;)V]
+  + Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+  + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
+  + InterfaceMethodref [android/content/SharedPreferences.getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+  + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
+  + InterfaceMethodref [android/content/SharedPreferences$Editor.putString (Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
+  + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+  + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/Map.entrySet ()Ljava/util/Set;]
+  + InterfaceMethodref [java/util/Map.size ()I]
+  + InterfaceMethodref [java/util/Map$Entry.getKey ()Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/Map$Entry.getValue ()Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/Set.iterator ()Ljava/util/Iterator;]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Landroid/content/Context;)V]
+  + NameAndType [<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + NameAndType [<init> (Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/d;)V]
+  + NameAndType [<init> (Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/j;Ljava/lang/String;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [a ()Lcom/dyslexicApps/a;]
+  + NameAndType [a ()Ljava/lang/String;]
+  + NameAndType [a (I)Landroid/widget/EditText;]
+  + NameAndType [a (II)V]
+  + NameAndType [a (ILjava/lang/String;)V]
+  + NameAndType [a (Landroid/widget/CompoundButton;Z)V]
+  + NameAndType [a (Landroid/widget/EditText;Landroid/widget/EditText;)V]
+  + NameAndType [a (Landroid/widget/EditText;Landroid/widget/EditText;I)V]
+  + NameAndType [a (Lcom/dyslexicApps/c;)V]
+  + NameAndType [a (Lcom/dyslexicApps/c;Lcom/dyslexicApps/c;)Ljava/util/Map;]
+  + NameAndType [a (Ljava/lang/Exception;)V]
+  + NameAndType [a (Ljava/lang/String;)Lcom/dyslexicApps/c;]
+  + NameAndType [a (Ljava/lang/String;)Z]
+  + NameAndType [a (Ljava/lang/String;Ljava/lang/String;)V]
+  + NameAndType [a (Ljava/util/Map;)V]
+  + NameAndType [a (Z)V]
+  + NameAndType [a Landroid/app/ProgressDialog;]
+  + NameAndType [a Lcom/dyslexicApps/j;]
+  + NameAndType [a Ljava/lang/String;]
+  + NameAndType [abs (I)I]
+  + NameAndType [add (Ljava/lang/Object;)Z]
+  + NameAndType [addLast (Ljava/lang/Object;)V]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b ()I]
+  + NameAndType [b ()V]
+  + NameAndType [b (I)Landroid/widget/EditText;]
+  + NameAndType [b (ILjava/lang/String;)V]
+  + NameAndType [b (Lcom/dyslexicApps/c;)V]
+  + NameAndType [b (Ljava/lang/String;)V]
+  + NameAndType [b Lcom/dyslexicApps/j;]
+  + NameAndType [b Ljava/lang/String;]
+  + NameAndType [c ()I]
+  + NameAndType [c ()V]
+  + NameAndType [c (I)V]
+  + NameAndType [c (Ljava/lang/String;)Z]
+  + NameAndType [c Lcom/dyslexicApps/c;]
+  + NameAndType [c Lcom/dyslexicApps/j;]
+  + NameAndType [c Ljava/lang/String;]
+  + NameAndType [commit ()Z]
+  + NameAndType [contains (Ljava/lang/Object;)Z]
+  + NameAndType [create ()Landroid/app/AlertDialog;]
+  + NameAndType [d ()I]
+  + NameAndType [d ()V]
+  + NameAndType [d (I)Landroid/widget/CheckBox;]
+  + NameAndType [d (Ljava/lang/String;)V]
+  + NameAndType [d Lcom/dyslexicApps/c;]
+  + NameAndType [d Lcom/dyslexicApps/j;]
+  + NameAndType [e ()I]
+  + NameAndType [e ()V]
+  + NameAndType [e (I)Landroid/widget/TextView;]
+  + NameAndType [e (Ljava/lang/String;)V]
+  + NameAndType [e Ljava/util/LinkedList;]
+  + NameAndType [edit ()Landroid/content/SharedPreferences$Editor;]
+  + NameAndType [entrySet ()Ljava/util/Set;]
+  + NameAndType [execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+  + NameAndType [f ()I]
+  + NameAndType [f ()V]
+  + NameAndType [f (I)Landroid/widget/EditText;]
+  + NameAndType [f (Ljava/lang/String;)V]
+  + NameAndType [f I]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + NameAndType [g ()I]
+  + NameAndType [g ()Lcom/dyslexicApps/c;]
+  + NameAndType [g (I)Ljava/lang/String;]
+  + NameAndType [getApplicationContext ()Landroid/content/Context;]
+  + NameAndType [getKey ()Ljava/lang/Object;]
+  + NameAndType [getMessage ()Ljava/lang/String;]
+  + NameAndType [getResources ()Landroid/content/res/Resources;]
+  + NameAndType [getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+  + NameAndType [getString (I)Ljava/lang/String;]
+  + NameAndType [getString (Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [getText ()Landroid/text/Editable;]
+  + NameAndType [getValue ()Ljava/lang/Object;]
+  + NameAndType [h ()V]
+  + NameAndType [h ()Z]
+  + NameAndType [h (I)Landroid/widget/Button;]
+  + NameAndType [hasNext ()Z]
+  + NameAndType [hide ()V]
+  + NameAndType [i ()I]
+  + NameAndType [i ()V]
+  + NameAndType [i (I)Ljava/lang/String;]
+  + NameAndType [intValue ()I]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [iterator ()Ljava/util/Iterator;]
+  + NameAndType [j ()V]
+  + NameAndType [length ()I]
+  + NameAndType [makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + NameAndType [next ()Ljava/lang/Object;]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [parseColor (Ljava/lang/String;)I]
+  + NameAndType [parseInt (Ljava/lang/String;)I]
+  + NameAndType [putString (Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
+  + NameAndType [requestFocus ()Z]
+  + NameAndType [setBackgroundColor (I)V]
+  + NameAndType [setBackgroundResource (I)V]
+  + NameAndType [setCancelable (Z)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [setChecked (Z)V]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setEnabled (Z)V]
+  + NameAndType [setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [setNegativeButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+  + NameAndType [setOnClickListener (Landroid/view/View$OnClickListener;)V]
+  + NameAndType [setText (Ljava/lang/CharSequence;)V]
+  + NameAndType [setTextColor (I)V]
+  + NameAndType [setTextSize (F)V]
+  + NameAndType [setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + NameAndType [show ()V]
+  + NameAndType [show (Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;]
+  + NameAndType [size ()I]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + NameAndType [toString (I)Ljava/lang/String;]
+  + NameAndType [trim ()Ljava/lang/String;]
+  + NameAndType [valueOf (I)Ljava/lang/Integer;]
+  + NameAndType [valueOf (I)Ljava/lang/String;]
+  + Utf8 []
+  + Utf8 [
+]
+  + Utf8 [ of 6]
+  + Utf8 [#0000FF]
+  + Utf8 [#008000]
+  + Utf8 [#40E0D0]
+  + Utf8 [#808080]
+  + Utf8 [#FF0000]
+  + Utf8 [#FFC0CB]
+  + Utf8 [#FFD700]
+  + Utf8 [%02d]
+  + Utf8 [()I]
+  + Utf8 [()Landroid/app/AlertDialog;]
+  + Utf8 [()Landroid/content/Context;]
+  + Utf8 [()Landroid/content/SharedPreferences$Editor;]
+  + Utf8 [()Landroid/content/res/Resources;]
+  + Utf8 [()Landroid/text/Editable;]
+  + Utf8 [()Lcom/dyslexicApps/a;]
+  + Utf8 [()Lcom/dyslexicApps/c;]
+  + Utf8 [()Ljava/lang/Object;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()Ljava/util/Iterator;]
+  + Utf8 [()Ljava/util/Set;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(F)V]
+  + Utf8 [(I)I]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)Landroid/widget/Button;]
+  + Utf8 [(I)Landroid/widget/CheckBox;]
+  + Utf8 [(I)Landroid/widget/EditText;]
+  + Utf8 [(I)Landroid/widget/TextView;]
+  + Utf8 [(I)Ljava/lang/Integer;]
+  + Utf8 [(I)Ljava/lang/String;]
+  + Utf8 [(I)V]
+  + Utf8 [(II)V]
+  + Utf8 [(ILjava/lang/String;)V]
+  + Utf8 [(Landroid/content/Context;)V]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+  + Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/view/View$OnClickListener;)V]
+  + Utf8 [(Landroid/view/View;)V]
+  + Utf8 [(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Landroid/widget/EditText;Landroid/widget/EditText;)V]
+  + Utf8 [(Landroid/widget/EditText;Landroid/widget/EditText;I)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/d;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/j;Ljava/lang/String;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Ljava/lang/String;)V]
+  + Utf8 [(Lcom/dyslexicApps/c;)V]
+  + Utf8 [(Lcom/dyslexicApps/c;Lcom/dyslexicApps/c;)Ljava/util/Map;]
+  + Utf8 [(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+  + Utf8 [(Ljava/lang/CharSequence;)V]
+  + Utf8 [(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+  + Utf8 [(Ljava/lang/Exception;)V]
+  + Utf8 [(Ljava/lang/Object;)V]
+  + Utf8 [(Ljava/lang/Object;)Z]
+  + Utf8 [(Ljava/lang/String;)I]
+  + Utf8 [(Ljava/lang/String;)Lcom/dyslexicApps/c;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;)Z]
+  + Utf8 [(Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+  + Utf8 [(Ljava/util/Map;)V]
+  + Utf8 [(Z)Landroid/app/AlertDialog$Builder;]
+  + Utf8 [(Z)V]
+  + Utf8 [([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+  + Utf8 [<init>]
+  + Utf8 [A problem has occurred]
+  + Utf8 [About Flottery]
+  + Utf8 [At least it's something...]
+  + Utf8 [Better luck next time.]
+  + Utf8 [Better than a free ticket I guess...]
+  + Utf8 [Bugs?! - Please press the About Button.]
+  + Utf8 [Close]
+  + Utf8 [Code]
+  + Utf8 [Congrats you are now wealthy!!!!]
+  + Utf8 [Duplicate values are not allowed!]
+  + Utf8 [Error: ]
+  + Utf8 [FloridaLotteryCheckerConfig]
+  + Utf8 [Getting latest Lottery drawing, Please Wait...]
+  + Utf8 [I]
+  + Utf8 [Jackpot]
+  + Utf8 [Landroid/app/ProgressDialog;]
+  + Utf8 [Lcom/dyslexicApps/c;]
+  + Utf8 [Lcom/dyslexicApps/j;]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [Ljava/util/LinkedList;]
+  + Utf8 [Lottery numbers must be between 1 and 53 inclusive.]
+  + Utf8 [Not a valid number!]
+  + Utf8 [Not what I was looking for, but hey I'll take it!]
+  + Utf8 [Number]
+  + Utf8 [Oh goody a free drawing... only if you paid for XTRA...]
+  + Utf8 [PlayerLotteryNumber]
+  + Utf8 [Status]
+  + Utf8 [The Lottery Checking Service is currently unreachable. Please try again later.]
+  + Utf8 [The lottery numbers you entered contained duplicate numbers!]
+  + Utf8 [The purpose of this application is to check your single set of Florida Lottery Numbers against the current drawn numbers. Comments, Questions or Bugs? Please email: DyslexicApps@gmail.com]
+  + Utf8 [Values cannot be blank!]
+  + Utf8 [Working]
+  + Utf8 [You changed your numbers! 
+Check the box again to save the new set.]
+  + Utf8 [Your numbers have been saved]
+  + Utf8 [a]
+  + Utf8 [abs]
+  + Utf8 [add]
+  + Utf8 [addLast]
+  + Utf8 [android/app/Activity]
+  + Utf8 [android/app/AlertDialog]
+  + Utf8 [android/app/AlertDialog$Builder]
+  + Utf8 [android/app/ProgressDialog]
+  + Utf8 [android/content/SharedPreferences]
+  + Utf8 [android/content/SharedPreferences$Editor]
+  + Utf8 [android/content/res/Resources]
+  + Utf8 [android/graphics/Color]
+  + Utf8 [android/widget/Button]
+  + Utf8 [android/widget/CheckBox]
+  + Utf8 [android/widget/EditText]
+  + Utf8 [android/widget/TextView]
+  + Utf8 [android/widget/Toast]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [btnAbout_onClick]
+  + Utf8 [btnSubmit_onClick]
+  + Utf8 [c]
+  + Utf8 [com/dyslexicApps/MyActivity]
+  + Utf8 [com/dyslexicApps/a]
+  + Utf8 [com/dyslexicApps/b]
+  + Utf8 [com/dyslexicApps/c]
+  + Utf8 [com/dyslexicApps/d]
+  + Utf8 [com/dyslexicApps/e]
+  + Utf8 [com/dyslexicApps/f]
+  + Utf8 [com/dyslexicApps/g]
+  + Utf8 [com/dyslexicApps/h]
+  + Utf8 [com/dyslexicApps/i]
+  + Utf8 [com/dyslexicApps/j]
+  + Utf8 [commit]
+  + Utf8 [contains]
+  + Utf8 [create]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [edit]
+  + Utf8 [entrySet]
+  + Utf8 [execute]
+  + Utf8 [f]
+  + Utf8 [findViewById]
+  + Utf8 [format]
+  + Utf8 [g]
+  + Utf8 [getApplicationContext]
+  + Utf8 [getKey]
+  + Utf8 [getMessage]
+  + Utf8 [getResources]
+  + Utf8 [getSharedPreferences]
+  + Utf8 [getString]
+  + Utf8 [getText]
+  + Utf8 [getValue]
+  + Utf8 [h]
+  + Utf8 [hasNext]
+  + Utf8 [hide]
+  + Utf8 [i]
+  + Utf8 [intValue]
+  + Utf8 [isChecked]
+  + Utf8 [iterator]
+  + Utf8 [j]
+  + Utf8 [java/lang/Exception]
+  + Utf8 [java/lang/Integer]
+  + Utf8 [java/lang/Math]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/util/ArrayList]
+  + Utf8 [java/util/Iterator]
+  + Utf8 [java/util/LinkedList]
+  + Utf8 [java/util/Map]
+  + Utf8 [java/util/Map$Entry]
+  + Utf8 [java/util/Set]
+  + Utf8 [length]
+  + Utf8 [makeText]
+  + Utf8 [next]
+  + Utf8 [onCreate]
+  + Utf8 [org/json/JSONObject]
+  + Utf8 [parseColor]
+  + Utf8 [parseInt]
+  + Utf8 [putString]
+  + Utf8 [requestFocus]
+  + Utf8 [setBackgroundColor]
+  + Utf8 [setBackgroundResource]
+  + Utf8 [setCancelable]
+  + Utf8 [setChecked]
+  + Utf8 [setContentView]
+  + Utf8 [setEnabled]
+  + Utf8 [setMessage]
+  + Utf8 [setNegativeButton]
+  + Utf8 [setOnCheckedChangeListener]
+  + Utf8 [setOnClickListener]
+  + Utf8 [setText]
+  + Utf8 [setTextColor]
+  + Utf8 [setTextSize]
+  + Utf8 [setTitle]
+  + Utf8 [show]
+  + Utf8 [size]
+  + Utf8 [toString]
+  + Utf8 [trim]
+  + Utf8 [valueOf]
+
+Fields (count = 6):
+  + Field:        a Landroid/app/ProgressDialog;
+    Access flags: 0x2
+      = private android.app.ProgressDialog a
+  + Field:        b Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String b
+  + Field:        c Lcom/dyslexicApps/c;
+    Access flags: 0x2
+      = private com.dyslexicApps.c c
+  + Field:        d Lcom/dyslexicApps/c;
+    Access flags: 0x2
+      = private com.dyslexicApps.c d
+  + Field:        e Ljava/util/LinkedList;
+    Access flags: 0x2
+      = private java.util.LinkedList e
+  + Field:        f I
+    Access flags: 0x2
+      = private int f
+
+Methods (count = 42):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public MyActivity()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #125
+        + Methodref [android/app/Activity.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 64, locals = 4, stack = 4):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #126
+        + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #6
+        + Integer [2130903040]
+      [8] invokevirtual #193
+        + Methodref [com/dyslexicApps/MyActivity.setContentView (I)V]
+      [11] aload_0 v0
+      [12] ldc #24
+        + Integer [2131034137]
+      [14] invokespecial #189
+        + Methodref [com/dyslexicApps/MyActivity.h (I)Landroid/widget/Button;]
+      [17] astore_2 v2
+      [18] aload_2 v2
+      [19] new #90
+        + Class [com/dyslexicApps/d]
+      [22] dup
+      [23] aload_0 v0
+      [24] invokespecial #211
+        + Methodref [com/dyslexicApps/d.<init> (Lcom/dyslexicApps/MyActivity;)V]
+      [27] invokevirtual #139
+        + Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [30] aload_0 v0
+      [31] ldc #28
+        + Integer [2131034143]
+      [33] invokespecial #189
+        + Methodref [com/dyslexicApps/MyActivity.h (I)Landroid/widget/Button;]
+      [36] astore_3 v3
+      [37] aload_3 v3
+      [38] new #91
+        + Class [com/dyslexicApps/e]
+      [41] dup
+      [42] aload_0 v0
+      [43] invokespecial #212
+        + Methodref [com/dyslexicApps/e.<init> (Lcom/dyslexicApps/MyActivity;)V]
+      [46] invokevirtual #139
+        + Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [49] aload_0 v0
+      [50] ldc #14
+        + Integer [2131034123]
+      [52] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [55] invokevirtual #144
+        + Methodref [android/widget/EditText.requestFocus ()Z]
+      [58] pop
+      [59] aload_0 v0
+      [60] invokespecial #165
+        + Methodref [com/dyslexicApps/MyActivity.b ()V]
+      [63] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b()V
+    Access flags: 0x2
+      = private void b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] invokespecial #170
+        + Methodref [com/dyslexicApps/MyActivity.c ()V]
+      [4] aload_0 v0
+      [5] invokespecial #188
+        + Methodref [com/dyslexicApps/MyActivity.h ()V]
+      [8] aload_0 v0
+      [9] aload_0 v0
+      [10] getfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [13] invokespecial #159
+        + Methodref [com/dyslexicApps/MyActivity.a (Lcom/dyslexicApps/c;)V]
+      [16] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c()V
+    Access flags: 0x2
+      = private void c()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 102, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] new #105
+        + Class [java/util/LinkedList]
+      [4] dup
+      [5] invokespecial #238
+        + Methodref [java/util/LinkedList.<init> ()V]
+      [8] putfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [11] aload_0 v0
+      [12] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [15] ldc #41
+        + String [#808080]
+      [17] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [20] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [23] invokevirtual #239
+        + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+      [26] aload_0 v0
+      [27] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [30] ldc #38
+        + String [#0000FF]
+      [32] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [35] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [38] invokevirtual #239
+        + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+      [41] aload_0 v0
+      [42] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [45] ldc #39
+        + String [#008000]
+      [47] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [50] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [53] invokevirtual #239
+        + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+      [56] aload_0 v0
+      [57] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [60] ldc #43
+        + String [#FFC0CB]
+      [62] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [65] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [68] invokevirtual #239
+        + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+      [71] aload_0 v0
+      [72] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [75] ldc #42
+        + String [#FF0000]
+      [77] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [80] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [83] invokevirtual #239
+        + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+      [86] aload_0 v0
+      [87] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [90] ldc #44
+        + String [#FFD700]
+      [92] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [95] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [98] invokevirtual #239
+        + Methodref [java/util/LinkedList.addLast (Ljava/lang/Object;)V]
+      [101] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       btnSubmit_onClick(Landroid/view/View;)V
+    Access flags: 0x1
+      = public void btnSubmit_onClick(android.view.View)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 46, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] invokespecial #173
+        + Methodref [com/dyslexicApps/MyActivity.d ()V]
+      [4] aload_0 v0
+      [5] ldc #27
+        + Integer [2131034141]
+      [7] invokestatic #194
+        + Methodref [com/dyslexicApps/a.a ()Lcom/dyslexicApps/a;]
+      [10] invokevirtual #195
+        + Methodref [com/dyslexicApps/a.toString ()Ljava/lang/String;]
+      [13] invokespecial #167
+        + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+      [16] aload_0 v0
+      [17] invokespecial #176
+        + Methodref [com/dyslexicApps/MyActivity.e ()V]
+      [20] aload_0 v0
+      [21] invokespecial #179
+        + Methodref [com/dyslexicApps/MyActivity.f ()V]
+      [24] goto +21 (target=45)
+      [27] astore_2 v2
+      [28] aload_0 v0
+      [29] aload_2 v2
+      [30] invokevirtual #216
+        + Methodref [com/dyslexicApps/h.getMessage ()Ljava/lang/String;]
+      [33] invokespecial #181
+        + Methodref [com/dyslexicApps/MyActivity.f (Ljava/lang/String;)V]
+      [36] goto +9 (target=45)
+      [39] astore_2 v2
+      [40] aload_0 v0
+      [41] aload_2 v2
+      [42] invokevirtual #160
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/Exception;)V]
+      [45] return
+      Code attribute exceptions (count = 2):
+      - ExceptionInfo (0 -> 24: 27):
+      + Class [com/dyslexicApps/h]
+      - ExceptionInfo (0 -> 24: 39):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 0):
+  + Method:       btnAbout_onClick(Landroid/view/View;)V
+    Access flags: 0x1
+      = public void btnAbout_onClick(android.view.View)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] ldc #47
+        + String [About Flottery]
+      [3] ldc #68
+        + String [The purpose of this application is to check your single set of Florida Lottery Numbers against the current drawn numbers. Comments, Questions or Bugs? Please email: DyslexicApps@gmail.com]
+      [5] invokespecial #162
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;Ljava/lang/String;)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x2
+      = private void a(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 21, locals = 4, stack = 2):
+      [0] iload_2 v2
+      [1] ifeq +19 (target=20)
+      [4] aload_0 v0
+      [5] invokespecial #176
+        + Methodref [com/dyslexicApps/MyActivity.e ()V]
+      [8] goto +12 (target=20)
+      [11] astore_3 v3
+      [12] aload_0 v0
+      [13] aload_3 v3
+      [14] invokevirtual #216
+        + Methodref [com/dyslexicApps/h.getMessage ()Ljava/lang/String;]
+      [17] invokespecial #181
+        + Methodref [com/dyslexicApps/MyActivity.f (Ljava/lang/String;)V]
+      [20] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (4 -> 8: 11):
+      + Class [com/dyslexicApps/h]
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/dyslexicApps/c;)V
+    Access flags: 0x2
+      = private void a(com.dyslexicApps.c)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 85, locals = 2, stack = 4):
+      [0] aload_0 v0
+      [1] ldc #14
+        + Integer [2131034123]
+      [3] aload_0 v0
+      [4] aload_1 v1
+      [5] invokevirtual #202
+        + Methodref [com/dyslexicApps/c.b ()I]
+      [8] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [11] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [14] aload_0 v0
+      [15] ldc #15
+        + Integer [2131034124]
+      [17] aload_0 v0
+      [18] aload_1 v1
+      [19] invokevirtual #203
+        + Methodref [com/dyslexicApps/c.c ()I]
+      [22] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [25] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [28] aload_0 v0
+      [29] ldc #16
+        + Integer [2131034125]
+      [31] aload_0 v0
+      [32] aload_1 v1
+      [33] invokevirtual #204
+        + Methodref [com/dyslexicApps/c.d ()I]
+      [36] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [39] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [42] aload_0 v0
+      [43] ldc #17
+        + Integer [2131034126]
+      [45] aload_0 v0
+      [46] aload_1 v1
+      [47] invokevirtual #205
+        + Methodref [com/dyslexicApps/c.e ()I]
+      [50] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [53] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [56] aload_0 v0
+      [57] ldc #18
+        + Integer [2131034127]
+      [59] aload_0 v0
+      [60] aload_1 v1
+      [61] invokevirtual #206
+        + Methodref [com/dyslexicApps/c.f ()I]
+      [64] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [67] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [70] aload_0 v0
+      [71] ldc #19
+        + Integer [2131034128]
+      [73] aload_0 v0
+      [74] aload_1 v1
+      [75] invokevirtual #207
+        + Methodref [com/dyslexicApps/c.g ()I]
+      [78] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [81] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [84] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Lcom/dyslexicApps/c;)V
+    Access flags: 0x2
+      = private void b(com.dyslexicApps.c)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 105, locals = 2, stack = 4):
+      [0] aload_0 v0
+      [1] ldc #8
+        + Integer [2131034115]
+      [3] aload_0 v0
+      [4] aload_1 v1
+      [5] invokevirtual #202
+        + Methodref [com/dyslexicApps/c.b ()I]
+      [8] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [11] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [14] aload_0 v0
+      [15] ldc #9
+        + Integer [2131034116]
+      [17] aload_0 v0
+      [18] aload_1 v1
+      [19] invokevirtual #203
+        + Methodref [com/dyslexicApps/c.c ()I]
+      [22] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [25] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [28] aload_0 v0
+      [29] ldc #10
+        + Integer [2131034117]
+      [31] aload_0 v0
+      [32] aload_1 v1
+      [33] invokevirtual #204
+        + Methodref [com/dyslexicApps/c.d ()I]
+      [36] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [39] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [42] aload_0 v0
+      [43] ldc #11
+        + Integer [2131034118]
+      [45] aload_0 v0
+      [46] aload_1 v1
+      [47] invokevirtual #205
+        + Methodref [com/dyslexicApps/c.e ()I]
+      [50] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [53] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [56] aload_0 v0
+      [57] ldc #12
+        + Integer [2131034119]
+      [59] aload_0 v0
+      [60] aload_1 v1
+      [61] invokevirtual #206
+        + Methodref [com/dyslexicApps/c.f ()I]
+      [64] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [67] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [70] aload_0 v0
+      [71] ldc #13
+        + Integer [2131034120]
+      [73] aload_0 v0
+      [74] aload_1 v1
+      [75] invokevirtual #207
+        + Methodref [com/dyslexicApps/c.g ()I]
+      [78] invokespecial #191
+        + Methodref [com/dyslexicApps/MyActivity.i (I)Ljava/lang/String;]
+      [81] invokespecial #155
+        + Methodref [com/dyslexicApps/MyActivity.a (ILjava/lang/String;)V]
+      [84] aload_0 v0
+      [85] ldc #21
+        + Integer [2131034131]
+      [87] aload_1 v1
+      [88] getfield #119
+        + Fieldref [com/dyslexicApps/c.a Ljava/lang/String;]
+      [91] invokespecial #167
+        + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+      [94] aload_0 v0
+      [95] ldc #20
+        + Integer [2131034130]
+      [97] aload_1 v1
+      [98] getfield #120
+        + Fieldref [com/dyslexicApps/c.b Ljava/lang/String;]
+      [101] invokespecial #167
+        + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+      [104] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d()V
+    Access flags: 0x2
+      = private void d()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 47, locals = 3, stack = 4):
+      [0] aload_0 v0
+      [1] ldc #26
+        + Integer [2131034140]
+      [3] invokespecial #177
+        + Methodref [com/dyslexicApps/MyActivity.e (I)Landroid/widget/TextView;]
+      [6] astore_1 v1
+      [7] aload_1 v1
+      [8] ldc #35
+        + String []
+      [10] invokevirtual #148
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [13] aload_1 v1
+      [14] iconst_m1
+      [15] invokevirtual #149
+        + Methodref [android/widget/TextView.setTextColor (I)V]
+      [18] iconst_0
+      [19] istore_2 v2
+      [20] iload_2 v2
+      [21] bipush 6
+      [23] ificmpge +23 (target=46)
+      [26] aload_0 v0
+      [27] aload_0 v0
+      [28] iload_2 v2
+      [29] invokespecial #154
+        + Methodref [com/dyslexicApps/MyActivity.a (I)Landroid/widget/EditText;]
+      [32] aload_0 v0
+      [33] iload_2 v2
+      [34] invokespecial #166
+        + Methodref [com/dyslexicApps/MyActivity.b (I)Landroid/widget/EditText;]
+      [37] invokespecial #157
+        + Methodref [com/dyslexicApps/MyActivity.a (Landroid/widget/EditText;Landroid/widget/EditText;)V]
+      [40] iinc v2, 1
+      [43] goto -23 (target=20)
+      [46] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e()V
+    Access flags: 0x2
+      = private void e()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 59, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] aload_0 v0
+      [2] invokespecial #183
+        + Methodref [com/dyslexicApps/MyActivity.g ()Lcom/dyslexicApps/c;]
+      [5] putfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [8] aload_0 v0
+      [9] aload_0 v0
+      [10] getfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [13] invokevirtual #210
+        + Methodref [com/dyslexicApps/c.toString ()Ljava/lang/String;]
+      [16] putfield #111
+        + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+      [19] aload_0 v0
+      [20] invokespecial #192
+        + Methodref [com/dyslexicApps/MyActivity.j ()V]
+      [23] aload_0 v0
+      [24] ldc #25
+        + Integer [2131034138]
+      [26] invokespecial #174
+        + Methodref [com/dyslexicApps/MyActivity.d (I)Landroid/widget/CheckBox;]
+      [29] invokevirtual #140
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [32] ifeq +20 (target=52)
+      [35] aload_0 v0
+      [36] aload_0 v0
+      [37] getfield #111
+        + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+      [40] invokevirtual #175
+        + Methodref [com/dyslexicApps/MyActivity.d (Ljava/lang/String;)V]
+      [43] aload_0 v0
+      [44] ldc #72
+        + String [Your numbers have been saved]
+      [46] invokespecial #181
+        + Methodref [com/dyslexicApps/MyActivity.f (Ljava/lang/String;)V]
+      [49] goto +9 (target=58)
+      [52] aload_0 v0
+      [53] ldc #35
+        + String []
+      [55] invokevirtual #175
+        + Methodref [com/dyslexicApps/MyActivity.d (Ljava/lang/String;)V]
+      [58] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       f()V
+    Access flags: 0x2
+      = private void f()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 65, locals = 2, stack = 5):
+      [0] aload_0 v0
+      [1] aload_0 v0
+      [2] ldc #70
+        + String [Working]
+      [4] ldc #57
+        + String [Getting latest Lottery drawing, Please Wait...]
+      [6] iconst_1
+      [7] invokestatic #135
+        + Methodref [android/app/ProgressDialog.show (Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;]
+      [10] putfield #110
+        + Fieldref [com/dyslexicApps/MyActivity.a Landroid/app/ProgressDialog;]
+      [13] aload_0 v0
+      [14] ldc #24
+        + Integer [2131034137]
+      [16] invokespecial #189
+        + Methodref [com/dyslexicApps/MyActivity.h (I)Landroid/widget/Button;]
+      [19] iconst_0
+      [20] invokevirtual #138
+        + Methodref [android/widget/Button.setEnabled (Z)V]
+      [23] aload_0 v0
+      [24] ldc #7
+        + Integer [2130968582]
+      [26] invokespecial #184
+        + Methodref [com/dyslexicApps/MyActivity.g (I)Ljava/lang/String;]
+      [29] astore_1 v1
+      [30] new #95
+        + Class [com/dyslexicApps/i]
+      [33] dup
+      [34] aload_0 v0
+      [35] aconst_null
+      [36] invokespecial #217
+        + Methodref [com/dyslexicApps/i.<init> (Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/d;)V]
+      [39] iconst_1
+      [40] anewarray #101
+        + Class [java/lang/String]
+      [43] dup
+      [44] iconst_0
+      [45] aload_1 v1
+      [46] aastore
+      [47] invokevirtual #218
+        + Methodref [com/dyslexicApps/i.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+      [50] pop
+      [51] goto +13 (target=64)
+      [54] astore_1 v1
+      [55] aload_0 v0
+      [56] aload_1 v1
+      [57] invokevirtual #160
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/Exception;)V]
+      [60] aload_0 v0
+      [61] invokespecial #190
+        + Methodref [com/dyslexicApps/MyActivity.i ()V]
+      [64] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 51: 54):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 0):
+  + Method:       e(Ljava/lang/String;)V
+    Access flags: 0x2
+      = private void e(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 213, locals = 6, stack = 4):
+      [0] aload_1 v1
+      [1] ifnull +176 (target=177)
+      [4] aload_0 v0
+      [5] aload_1 v1
+      [6] invokevirtual #161
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;)Z]
+      [9] ifne +168 (target=177)
+      [12] new #109
+        + Class [org/json/JSONObject]
+      [15] dup
+      [16] aload_1 v1
+      [17] invokespecial #241
+        + Methodref [org/json/JSONObject.<init> (Ljava/lang/String;)V]
+      [20] astore_2 v2
+      [21] new #88
+        + Class [com/dyslexicApps/b]
+      [24] dup
+      [25] invokespecial #196
+        + Methodref [com/dyslexicApps/b.<init> ()V]
+      [28] astore_3 v3
+      [29] aload_3 v3
+      [30] aload_2 v2
+      [31] ldc #58
+        + String [Jackpot]
+      [33] invokevirtual #242
+        + Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [36] putfield #118
+        + Fieldref [com/dyslexicApps/b.c Ljava/lang/String;]
+      [39] aload_3 v3
+      [40] aload_2 v2
+      [41] ldc #62
+        + String [Number]
+      [43] invokevirtual #242
+        + Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [46] putfield #116
+        + Fieldref [com/dyslexicApps/b.a Ljava/lang/String;]
+      [49] aload_3 v3
+      [50] aload_2 v2
+      [51] ldc #65
+        + String [Status]
+      [53] invokevirtual #242
+        + Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [56] putfield #117
+        + Fieldref [com/dyslexicApps/b.b Ljava/lang/String;]
+      [59] aload_0 v0
+      [60] ldc #21
+        + Integer [2131034131]
+      [62] aload_3 v3
+      [63] getfield #118
+        + Fieldref [com/dyslexicApps/b.c Ljava/lang/String;]
+      [66] invokespecial #167
+        + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+      [69] aload_0 v0
+      [70] ldc #20
+        + Integer [2131034130]
+      [72] aload_3 v3
+      [73] getfield #117
+        + Fieldref [com/dyslexicApps/b.b Ljava/lang/String;]
+      [76] invokespecial #167
+        + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+      [79] aload_0 v0
+      [80] new #89
+        + Class [com/dyslexicApps/c]
+      [83] dup
+      [84] aload_3 v3
+      [85] getfield #116
+        + Fieldref [com/dyslexicApps/b.a Ljava/lang/String;]
+      [88] invokespecial #198
+        + Methodref [com/dyslexicApps/c.<init> (Ljava/lang/String;)V]
+      [91] putfield #112
+        + Fieldref [com/dyslexicApps/MyActivity.c Lcom/dyslexicApps/c;]
+      [94] aload_0 v0
+      [95] getfield #112
+        + Fieldref [com/dyslexicApps/MyActivity.c Lcom/dyslexicApps/c;]
+      [98] aload_3 v3
+      [99] getfield #118
+        + Fieldref [com/dyslexicApps/b.c Ljava/lang/String;]
+      [102] putfield #119
+        + Fieldref [com/dyslexicApps/c.a Ljava/lang/String;]
+      [105] aload_0 v0
+      [106] getfield #112
+        + Fieldref [com/dyslexicApps/MyActivity.c Lcom/dyslexicApps/c;]
+      [109] aload_3 v3
+      [110] getfield #117
+        + Fieldref [com/dyslexicApps/b.b Ljava/lang/String;]
+      [113] putfield #120
+        + Fieldref [com/dyslexicApps/c.b Ljava/lang/String;]
+      [116] aload_0 v0
+      [117] aload_0 v0
+      [118] getfield #112
+        + Fieldref [com/dyslexicApps/MyActivity.c Lcom/dyslexicApps/c;]
+      [121] invokespecial #168
+        + Methodref [com/dyslexicApps/MyActivity.b (Lcom/dyslexicApps/c;)V]
+      [124] aload_0 v0
+      [125] getfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [128] invokevirtual #208
+        + Methodref [com/dyslexicApps/c.h ()Z]
+      [131] ifeq +28 (target=159)
+      [134] aload_0 v0
+      [135] ldc #26
+        + Integer [2131034140]
+      [137] invokespecial #177
+        + Methodref [com/dyslexicApps/MyActivity.e (I)Landroid/widget/TextView;]
+      [140] astore v4
+      [142] aload v4
+      [144] ldc #67
+        + String [The lottery numbers you entered contained duplicate numbers!]
+      [146] invokevirtual #148
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [149] aload v4
+      [151] ldc #3
+        + Integer [-65536]
+      [153] invokevirtual #149
+        + Methodref [android/widget/TextView.setTextColor (I)V]
+      [156] goto +18 (target=174)
+      [159] aload_0 v0
+      [160] aload_0 v0
+      [161] getfield #112
+        + Fieldref [com/dyslexicApps/MyActivity.c Lcom/dyslexicApps/c;]
+      [164] aload_0 v0
+      [165] getfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [168] invokestatic #200
+        + Methodref [com/dyslexicApps/c.a (Lcom/dyslexicApps/c;Lcom/dyslexicApps/c;)Ljava/util/Map;]
+      [171] invokespecial #163
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/util/Map;)V]
+      [174] goto +9 (target=183)
+      [177] aload_0 v0
+      [178] ldc #66
+        + String [The Lottery Checking Service is currently unreachable. Please try again later.]
+      [180] invokevirtual #169
+        + Methodref [com/dyslexicApps/MyActivity.b (Ljava/lang/String;)V]
+      [183] aload_0 v0
+      [184] invokespecial #190
+        + Methodref [com/dyslexicApps/MyActivity.i ()V]
+      [187] goto +25 (target=212)
+      [190] astore_2 v2
+      [191] aload_0 v0
+      [192] aload_2 v2
+      [193] invokevirtual #160
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/Exception;)V]
+      [196] aload_0 v0
+      [197] invokespecial #190
+        + Methodref [com/dyslexicApps/MyActivity.i ()V]
+      [200] goto +12 (target=212)
+      [203] astore v5
+      [205] aload_0 v0
+      [206] invokespecial #190
+        + Methodref [com/dyslexicApps/MyActivity.i ()V]
+      [209] aload v5
+      [211] athrow
+      [212] return
+      Code attribute exceptions (count = 4):
+      - ExceptionInfo (0 -> 183: 190):
+      + Class [java/lang/Exception]
+      - ExceptionInfo (0 -> 183: 203):
+      - ExceptionInfo (190 -> 196: 203):
+      - ExceptionInfo (203 -> 205: 203):
+      Code attribute attributes (attribute count = 0):
+  + Method:       g()Lcom/dyslexicApps/c;
+    Access flags: 0x2
+      = private com.dyslexicApps.c g()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 233, locals = 10, stack = 5):
+      [0] iconst_0
+      [1] istore_1 v1
+      [2] ldc #35
+        + String []
+      [4] astore_2 v2
+      [5] aconst_null
+      [6] astore_3 v3
+      [7] getstatic #122
+        + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+      [10] astore v4
+      [12] new #89
+        + Class [com/dyslexicApps/c]
+      [15] dup
+      [16] invokespecial #197
+        + Methodref [com/dyslexicApps/c.<init> ()V]
+      [19] astore v5
+      [21] new #103
+        + Class [java/util/ArrayList]
+      [24] dup
+      [25] invokespecial #235
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [28] astore v6
+      [30] iconst_0
+      [31] istore v7
+      [33] iload v7
+      [35] bipush 6
+      [37] ificmpge +193 (target=230)
+      [40] aload_0 v0
+      [41] iload v7
+      [43] invokespecial #166
+        + Methodref [com/dyslexicApps/MyActivity.b (I)Landroid/widget/EditText;]
+      [46] astore_3 v3
+      [47] aload_3 v3
+      [48] invokevirtual #143
+        + Methodref [android/widget/EditText.getText ()Landroid/text/Editable;]
+      [51] invokevirtual #227
+        + Methodref [java/lang/Object.toString ()Ljava/lang/String;]
+      [54] invokevirtual #230
+        + Methodref [java/lang/String.trim ()Ljava/lang/String;]
+      [57] astore_2 v2
+      [58] getstatic #122
+        + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+      [61] astore v4
+      [63] aload_0 v0
+      [64] aload_2 v2
+      [65] invokevirtual #161
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;)Z]
+      [68] ifeq +18 (target=86)
+      [71] getstatic #121
+        + Fieldref [com/dyslexicApps/j.a Lcom/dyslexicApps/j;]
+      [74] astore v4
+      [76] new #97
+        + Class [java/lang/Exception]
+      [79] dup
+      [80] ldc #69
+        + String [Values cannot be blank!]
+      [82] invokespecial #219
+        + Methodref [java/lang/Exception.<init> (Ljava/lang/String;)V]
+      [85] athrow
+      [86] aload_2 v2
+      [87] invokestatic #223
+        + Methodref [java/lang/Integer.parseInt (Ljava/lang/String;)I]
+      [90] istore_1 v1
+      [91] iload_1 v1
+      [92] ifge +16 (target=108)
+      [95] iload_1 v1
+      [96] invokestatic #226
+        + Methodref [java/lang/Math.abs (I)I]
+      [99] istore_1 v1
+      [100] aload_3 v3
+      [101] iload_1 v1
+      [102] invokestatic #224
+        + Methodref [java/lang/Integer.toString (I)Ljava/lang/String;]
+      [105] invokevirtual #147
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [108] iload_1 v1
+      [109] ifeq +9 (target=118)
+      [112] iload_1 v1
+      [113] bipush 53
+      [115] ificmple +18 (target=133)
+      [118] getstatic #123
+        + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+      [121] astore v4
+      [123] new #97
+        + Class [java/lang/Exception]
+      [126] dup
+      [127] ldc #59
+        + String [Lottery numbers must be between 1 and 53 inclusive.]
+      [129] invokespecial #219
+        + Methodref [java/lang/Exception.<init> (Ljava/lang/String;)V]
+      [132] athrow
+      [133] aload v6
+      [135] iload_1 v1
+      [136] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [139] invokevirtual #237
+        + Methodref [java/util/ArrayList.contains (Ljava/lang/Object;)Z]
+      [142] ifne +16 (target=158)
+      [145] aload v6
+      [147] iload_1 v1
+      [148] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [151] invokevirtual #236
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [154] pop
+      [155] goto +18 (target=173)
+      [158] getstatic #124
+        + Fieldref [com/dyslexicApps/j.d Lcom/dyslexicApps/j;]
+      [161] astore v4
+      [163] new #97
+        + Class [java/lang/Exception]
+      [166] dup
+      [167] ldc #54
+        + String [Duplicate values are not allowed!]
+      [169] invokespecial #219
+        + Methodref [java/lang/Exception.<init> (Ljava/lang/String;)V]
+      [172] athrow
+      [173] goto +43 (target=216)
+      [176] astore v8
+      [178] ldc #60
+        + String [Not a valid number!]
+      [180] astore v9
+      [182] aload_3 v3
+      [183] ldc #3
+        + Integer [-65536]
+      [185] invokevirtual #145
+        + Methodref [android/widget/EditText.setBackgroundColor (I)V]
+      [188] aload v4
+      [190] getstatic #122
+        + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+      [193] ifacmpeq +10 (target=203)
+      [196] aload v8
+      [198] invokevirtual #220
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [201] astore v9
+      [203] new #94
+        + Class [com/dyslexicApps/h]
+      [206] dup
+      [207] aload_0 v0
+      [208] aload v4
+      [210] aload v9
+      [212] invokespecial #215
+        + Methodref [com/dyslexicApps/h.<init> (Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/j;Ljava/lang/String;)V]
+      [215] athrow
+      [216] aload v5
+      [218] iload v7
+      [220] iload_1 v1
+      [221] invokevirtual #199
+        + Methodref [com/dyslexicApps/c.a (II)V]
+      [224] iinc v7, 1
+      [227] goto -194 (target=33)
+      [230] aload v5
+      [232] areturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (58 -> 173: 176):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Z)V
+    Access flags: 0x2
+      = private void a(boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 32, locals = 3, stack = 4):
+      [0] aload_0 v0
+      [1] ldc #25
+        + Integer [2131034138]
+      [3] invokespecial #174
+        + Methodref [com/dyslexicApps/MyActivity.d (I)Landroid/widget/CheckBox;]
+      [6] astore_2 v2
+      [7] iload_1 v1
+      [8] ifeq +18 (target=26)
+      [11] aload_2 v2
+      [12] new #92
+        + Class [com/dyslexicApps/f]
+      [15] dup
+      [16] aload_0 v0
+      [17] invokespecial #213
+        + Methodref [com/dyslexicApps/f.<init> (Lcom/dyslexicApps/MyActivity;)V]
+      [20] invokevirtual #142
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [23] goto +8 (target=31)
+      [26] aload_2 v2
+      [27] aconst_null
+      [28] invokevirtual #142
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [31] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       h()V
+    Access flags: 0x2
+      = private void h()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 114, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] iconst_0
+      [2] invokespecial #164
+        + Methodref [com/dyslexicApps/MyActivity.a (Z)V]
+      [5] aload_0 v0
+      [6] aload_0 v0
+      [7] invokevirtual #153
+        + Methodref [com/dyslexicApps/MyActivity.a ()Ljava/lang/String;]
+      [10] putfield #111
+        + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+      [13] aload_0 v0
+      [14] ldc #25
+        + Integer [2131034138]
+      [16] invokespecial #174
+        + Methodref [com/dyslexicApps/MyActivity.d (I)Landroid/widget/CheckBox;]
+      [19] astore_1 v1
+      [20] aload_1 v1
+      [21] aload_0 v0
+      [22] aload_0 v0
+      [23] getfield #111
+        + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+      [26] invokevirtual #172
+        + Methodref [com/dyslexicApps/MyActivity.c (Ljava/lang/String;)Z]
+      [29] ifne +7 (target=36)
+      [32] iconst_1
+      [33] goto +4 (target=37)
+      [36] iconst_0
+      [37] invokevirtual #141
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [40] aload_1 v1
+      [41] invokevirtual #140
+        + Methodref [android/widget/CheckBox.isChecked ()Z]
+      [44] ifeq +17 (target=61)
+      [47] aload_0 v0
+      [48] aload_0 v0
+      [49] getfield #111
+        + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+      [52] invokestatic #201
+        + Methodref [com/dyslexicApps/c.a (Ljava/lang/String;)Lcom/dyslexicApps/c;]
+      [55] putfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [58] goto +14 (target=72)
+      [61] aload_0 v0
+      [62] new #89
+        + Class [com/dyslexicApps/c]
+      [65] dup
+      [66] invokespecial #197
+        + Methodref [com/dyslexicApps/c.<init> ()V]
+      [69] putfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [72] aload_0 v0
+      [73] aload_0 v0
+      [74] getfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [77] invokevirtual #209
+        + Methodref [com/dyslexicApps/c.i ()I]
+      [80] putfield #115
+        + Fieldref [com/dyslexicApps/MyActivity.f I]
+      [83] aload_0 v0
+      [84] iconst_1
+      [85] invokespecial #164
+        + Methodref [com/dyslexicApps/MyActivity.a (Z)V]
+      [88] goto +25 (target=113)
+      [91] astore_1 v1
+      [92] aload_1 v1
+      [93] invokevirtual #221
+        + Methodref [java/lang/Exception.toString ()Ljava/lang/String;]
+      [96] pop
+      [97] aload_0 v0
+      [98] iconst_1
+      [99] invokespecial #164
+        + Methodref [com/dyslexicApps/MyActivity.a (Z)V]
+      [102] goto +11 (target=113)
+      [105] astore_2 v2
+      [106] aload_0 v0
+      [107] iconst_1
+      [108] invokespecial #164
+        + Methodref [com/dyslexicApps/MyActivity.a (Z)V]
+      [111] aload_2 v2
+      [112] athrow
+      [113] return
+      Code attribute exceptions (count = 4):
+      - ExceptionInfo (0 -> 83: 91):
+      + Class [java/lang/Exception]
+      - ExceptionInfo (0 -> 83: 105):
+      - ExceptionInfo (91 -> 97: 105):
+      - ExceptionInfo (105 -> 106: 105):
+      Code attribute attributes (attribute count = 0):
+  + Method:       i()V
+    Access flags: 0x2
+      = private void i()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 25, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #110
+        + Fieldref [com/dyslexicApps/MyActivity.a Landroid/app/ProgressDialog;]
+      [4] ifnull +10 (target=14)
+      [7] aload_0 v0
+      [8] getfield #110
+        + Fieldref [com/dyslexicApps/MyActivity.a Landroid/app/ProgressDialog;]
+      [11] invokevirtual #134
+        + Methodref [android/app/ProgressDialog.hide ()V]
+      [14] aload_0 v0
+      [15] ldc #24
+        + Integer [2131034137]
+      [17] invokespecial #189
+        + Methodref [com/dyslexicApps/MyActivity.h (I)Landroid/widget/Button;]
+      [20] iconst_1
+      [21] invokevirtual #138
+        + Methodref [android/widget/Button.setEnabled (Z)V]
+      [24] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Landroid/widget/EditText;Landroid/widget/EditText;)V
+    Access flags: 0x2
+      = private void a(android.widget.EditText,android.widget.EditText)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 13, locals = 3, stack = 2):
+      [0] aload_1 v1
+      [1] ldc #5
+        + Integer [17301529]
+      [3] invokevirtual #146
+        + Methodref [android/widget/EditText.setBackgroundResource (I)V]
+      [6] aload_2 v2
+      [7] ldc #4
+        + Integer [17301528]
+      [9] invokevirtual #146
+        + Methodref [android/widget/EditText.setBackgroundResource (I)V]
+      [12] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Landroid/widget/EditText;Landroid/widget/EditText;I)V
+    Access flags: 0x2
+      = private void a(android.widget.EditText,android.widget.EditText,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 11, locals = 4, stack = 2):
+      [0] aload_1 v1
+      [1] iload_3 v3
+      [2] invokevirtual #145
+        + Methodref [android/widget/EditText.setBackgroundColor (I)V]
+      [5] aload_2 v2
+      [6] iload_3 v3
+      [7] invokevirtual #145
+        + Methodref [android/widget/EditText.setBackgroundColor (I)V]
+      [10] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 107, locals = 3, stack = 2):
+      [0] aload_0 v0
+      [1] ldc #8
+        + Integer [2131034115]
+      [3] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [6] astore_2 v2
+      [7] iload_1 v1
+      [8] tableswitch (6 offsets, default=97) (target=105)
+        0: offset = 40, target = 48
+        1: offset = 50, target = 58
+        2: offset = 60, target = 68
+        3: offset = 70, target = 78
+        4: offset = 80, target = 88
+        5: offset = 90, target = 98
+        default: offset = 97, target = 105
+      [48] aload_0 v0
+      [49] ldc #8
+        + Integer [2131034115]
+      [51] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [54] astore_2 v2
+      [55] goto +50 (target=105)
+      [58] aload_0 v0
+      [59] ldc #9
+        + Integer [2131034116]
+      [61] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [64] astore_2 v2
+      [65] goto +40 (target=105)
+      [68] aload_0 v0
+      [69] ldc #10
+        + Integer [2131034117]
+      [71] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [74] astore_2 v2
+      [75] goto +30 (target=105)
+      [78] aload_0 v0
+      [79] ldc #11
+        + Integer [2131034118]
+      [81] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [84] astore_2 v2
+      [85] goto +20 (target=105)
+      [88] aload_0 v0
+      [89] ldc #12
+        + Integer [2131034119]
+      [91] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [94] astore_2 v2
+      [95] goto +10 (target=105)
+      [98] aload_0 v0
+      [99] ldc #13
+        + Integer [2131034120]
+      [101] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [104] astore_2 v2
+      [105] aload_2 v2
+      [106] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(I)Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText b(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 107, locals = 3, stack = 2):
+      [0] aload_0 v0
+      [1] ldc #14
+        + Integer [2131034123]
+      [3] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [6] astore_2 v2
+      [7] iload_1 v1
+      [8] tableswitch (6 offsets, default=97) (target=105)
+        0: offset = 40, target = 48
+        1: offset = 50, target = 58
+        2: offset = 60, target = 68
+        3: offset = 70, target = 78
+        4: offset = 80, target = 88
+        5: offset = 90, target = 98
+        default: offset = 97, target = 105
+      [48] aload_0 v0
+      [49] ldc #14
+        + Integer [2131034123]
+      [51] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [54] astore_2 v2
+      [55] goto +50 (target=105)
+      [58] aload_0 v0
+      [59] ldc #15
+        + Integer [2131034124]
+      [61] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [64] astore_2 v2
+      [65] goto +40 (target=105)
+      [68] aload_0 v0
+      [69] ldc #16
+        + Integer [2131034125]
+      [71] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [74] astore_2 v2
+      [75] goto +30 (target=105)
+      [78] aload_0 v0
+      [79] ldc #17
+        + Integer [2131034126]
+      [81] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [84] astore_2 v2
+      [85] goto +20 (target=105)
+      [88] aload_0 v0
+      [89] ldc #18
+        + Integer [2131034127]
+      [91] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [94] astore_2 v2
+      [95] goto +10 (target=105)
+      [98] aload_0 v0
+      [99] ldc #19
+        + Integer [2131034128]
+      [101] invokespecial #180
+        + Methodref [com/dyslexicApps/MyActivity.f (I)Landroid/widget/EditText;]
+      [104] astore_2 v2
+      [105] aload_2 v2
+      [106] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/util/Map;)V
+    Access flags: 0x2
+      = private void a(java.util.Map)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 146, locals = 5, stack = 4):
+      [0] aload_0 v0
+      [1] ldc #22
+        + Integer [2131034133]
+      [3] new #102
+        + Class [java/lang/StringBuilder]
+      [6] dup
+      [7] invokespecial #232
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [10] aload_1 v1
+      [11] invokeinterface #250
+        + InterfaceMethodref [java/util/Map.size ()I]
+      [16] invokestatic #231
+        + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
+      [19] invokevirtual #233
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [22] ldc #37
+        + String [ of 6]
+      [24] invokevirtual #233
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [27] invokevirtual #234
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [30] invokespecial #167
+        + Methodref [com/dyslexicApps/MyActivity.b (ILjava/lang/String;)V]
+      [33] aload_0 v0
+      [34] getfield #114
+        + Fieldref [com/dyslexicApps/MyActivity.e Ljava/util/LinkedList;]
+      [37] invokevirtual #240
+        + Methodref [java/util/LinkedList.iterator ()Ljava/util/Iterator;]
+      [40] astore_2 v2
+      [41] aload_1 v1
+      [42] invokeinterface #249
+        + InterfaceMethodref [java/util/Map.entrySet ()Ljava/util/Set;]
+      [47] invokeinterface #253
+        + InterfaceMethodref [java/util/Set.iterator ()Ljava/util/Iterator;]
+      [52] astore_3 v3
+      [53] aload_3 v3
+      [54] invokeinterface #247
+        + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
+      [59] ifeq +67 (target=126)
+      [62] aload_3 v3
+      [63] invokeinterface #248
+        + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+      [68] checkcast #107
+        + Class [java/util/Map$Entry]
+      [71] astore v4
+      [73] aload_0 v0
+      [74] aload_0 v0
+      [75] aload v4
+      [77] invokeinterface #251
+        + InterfaceMethodref [java/util/Map$Entry.getKey ()Ljava/lang/Object;]
+      [82] checkcast #98
+        + Class [java/lang/Integer]
+      [85] invokevirtual #222
+        + Methodref [java/lang/Integer.intValue ()I]
+      [88] invokespecial #154
+        + Methodref [com/dyslexicApps/MyActivity.a (I)Landroid/widget/EditText;]
+      [91] aload_0 v0
+      [92] aload v4
+      [94] invokeinterface #252
+        + InterfaceMethodref [java/util/Map$Entry.getValue ()Ljava/lang/Object;]
+      [99] checkcast #98
+        + Class [java/lang/Integer]
+      [102] invokevirtual #222
+        + Methodref [java/lang/Integer.intValue ()I]
+      [105] invokespecial #166
+        + Methodref [com/dyslexicApps/MyActivity.b (I)Landroid/widget/EditText;]
+      [108] aload_2 v2
+      [109] invokeinterface #248
+        + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
+      [114] checkcast #98
+        + Class [java/lang/Integer]
+      [117] invokevirtual #222
+        + Methodref [java/lang/Integer.intValue ()I]
+      [120] invokespecial #158
+        + Methodref [com/dyslexicApps/MyActivity.a (Landroid/widget/EditText;Landroid/widget/EditText;I)V]
+      [123] goto -70 (target=53)
+      [126] aload_0 v0
+      [127] aload_1 v1
+      [128] invokeinterface #250
+        + InterfaceMethodref [java/util/Map.size ()I]
+      [133] invokespecial #171
+        + Methodref [com/dyslexicApps/MyActivity.c (I)V]
+      [136] goto +9 (target=145)
+      [139] astore_2 v2
+      [140] aload_2 v2
+      [141] invokevirtual #221
+        + Methodref [java/lang/Exception.toString ()Ljava/lang/String;]
+      [144] pop
+      [145] return
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 136: 139):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(I)V
+    Access flags: 0x2
+      = private void c(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 149, locals = 6, stack = 2):
+      [0] fconst_0
+      [1] fstore_2 v2
+      [2] ldc #35
+        + String []
+      [4] astore_3 v3
+      [5] iload_1 v1
+      [6] tableswitch (5 offsets, default=106) (target=112)
+        2: offset = 93, target = 99
+        3: offset = 77, target = 83
+        4: offset = 63, target = 69
+        5: offset = 50, target = 56
+        6: offset = 34, target = 40
+        default: offset = 106, target = 112
+      [40] ldc #53
+        + String [Congrats you are now wealthy!!!!]
+      [42] astore_3 v3
+      [43] ldc #44
+        + String [#FFD700]
+      [45] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [48] istore v4
+      [50] ldc #34
+        + Float [22.0]
+      [52] fstore_2 v2
+      [53] goto +68 (target=121)
+      [56] ldc #61
+        + String [Not what I was looking for, but hey I'll take it!]
+      [58] astore_3 v3
+      [59] ldc #1
+        + Integer [-16711936]
+      [61] istore v4
+      [63] ldc #33
+        + Float [20.0]
+      [65] fstore_2 v2
+      [66] goto +55 (target=121)
+      [69] ldc #48
+        + String [At least it's something...]
+      [71] astore_3 v3
+      [72] sipush -256
+      [75] istore v4
+      [77] ldc #32
+        + Float [18.0]
+      [79] fstore_2 v2
+      [80] goto +41 (target=121)
+      [83] ldc #50
+        + String [Better than a free ticket I guess...]
+      [85] astore_3 v3
+      [86] ldc #40
+        + String [#40E0D0]
+      [88] invokestatic #137
+        + Methodref [android/graphics/Color.parseColor (Ljava/lang/String;)I]
+      [91] istore v4
+      [93] ldc #31
+        + Float [16.0]
+      [95] fstore_2 v2
+      [96] goto +25 (target=121)
+      [99] ldc #63
+        + String [Oh goody a free drawing... only if you paid for XTRA...]
+      [101] astore_3 v3
+      [102] ldc #2
+        + Integer [-7829368]
+      [104] istore v4
+      [106] ldc #30
+        + Float [14.0]
+      [108] fstore_2 v2
+      [109] goto +12 (target=121)
+      [112] ldc #49
+        + String [Better luck next time.]
+      [114] astore_3 v3
+      [115] iconst_m1
+      [116] istore v4
+      [118] ldc #29
+        + Float [12.0]
+      [120] fstore_2 v2
+      [121] aload_0 v0
+      [122] ldc #23
+        + Integer [2131034135]
+      [124] invokespecial #177
+        + Methodref [com/dyslexicApps/MyActivity.e (I)Landroid/widget/TextView;]
+      [127] astore v5
+      [129] aload v5
+      [131] aload_3 v3
+      [132] invokevirtual #148
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [135] aload v5
+      [137] iload v4
+      [139] invokevirtual #149
+        + Methodref [android/widget/TextView.setTextColor (I)V]
+      [142] aload v5
+      [144] fload_2 v2
+      [145] invokevirtual #150
+        + Methodref [android/widget/TextView.setTextSize (F)V]
+      [148] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       j()V
+    Access flags: 0x2
+      = private void j()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 38, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #113
+        + Fieldref [com/dyslexicApps/MyActivity.d Lcom/dyslexicApps/c;]
+      [4] invokevirtual #209
+        + Methodref [com/dyslexicApps/c.i ()I]
+      [7] istore_1 v1
+      [8] iload_1 v1
+      [9] aload_0 v0
+      [10] getfield #115
+        + Fieldref [com/dyslexicApps/MyActivity.f I]
+      [13] ificmpeq +24 (target=37)
+      [16] aload_0 v0
+      [17] ldc #25
+        + Integer [2131034138]
+      [19] invokespecial #174
+        + Methodref [com/dyslexicApps/MyActivity.d (I)Landroid/widget/CheckBox;]
+      [22] iconst_0
+      [23] invokevirtual #141
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [26] aload_0 v0
+      [27] iload_1 v1
+      [28] putfield #115
+        + Fieldref [com/dyslexicApps/MyActivity.f I]
+      [31] aload_0 v0
+      [32] ldc #71
+        + String [You changed your numbers! 
+Check the box again to save the new set.]
+      [34] invokespecial #181
+        + Methodref [com/dyslexicApps/MyActivity.f (Ljava/lang/String;)V]
+      [37] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;)Z
+    Access flags: 0x1
+      = public boolean a(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 13, locals = 2, stack = 1):
+      [0] aload_1 v1
+      [1] invokevirtual #229
+        + Methodref [java/lang/String.length ()I]
+      [4] ifne +7 (target=11)
+      [7] iconst_1
+      [8] goto +4 (target=12)
+      [11] iconst_0
+      [12] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/Exception;)V
+    Access flags: 0x1
+      = public void a(java.lang.Exception)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokevirtual #220
+        + Methodref [java/lang/Exception.getMessage ()Ljava/lang/String;]
+      [5] invokevirtual #169
+        + Methodref [com/dyslexicApps/MyActivity.b (Ljava/lang/String;)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Ljava/lang/String;)V
+    Access flags: 0x1
+      = public void b(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 36, locals = 2, stack = 4):
+      [0] aload_0 v0
+      [1] ldc #46
+        + String [A problem has occurred]
+      [3] new #102
+        + Class [java/lang/StringBuilder]
+      [6] dup
+      [7] invokespecial #232
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [10] ldc #55
+        + String [Error: ]
+      [12] invokevirtual #233
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [15] aload_1 v1
+      [16] invokevirtual #233
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [19] ldc #36
+        + String [
+]
+      [21] invokevirtual #233
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [24] ldc #51
+        + String [Bugs?! - Please press the About Button.]
+      [26] invokevirtual #233
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [29] invokevirtual #234
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [32] invokespecial #162
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;Ljava/lang/String;)V]
+      [35] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(Ljava/lang/String;)Z
+    Access flags: 0x1
+      = public boolean c(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 18, locals = 2, stack = 2):
+      [0] aload_1 v1
+      [1] ifnull +11 (target=12)
+      [4] aload_0 v0
+      [5] aload_1 v1
+      [6] invokevirtual #161
+        + Methodref [com/dyslexicApps/MyActivity.a (Ljava/lang/String;)Z]
+      [9] ifeq +7 (target=16)
+      [12] iconst_1
+      [13] goto +4 (target=17)
+      [16] iconst_0
+      [17] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 21, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] ldc #56
+        + String [FloridaLotteryCheckerConfig]
+      [3] iconst_0
+      [4] invokevirtual #187
+        + Methodref [com/dyslexicApps/MyActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+      [7] astore_1 v1
+      [8] aload_1 v1
+      [9] ldc #64
+        + String [PlayerLotteryNumber]
+      [11] aload_0 v0
+      [12] getfield #111
+        + Fieldref [com/dyslexicApps/MyActivity.b Ljava/lang/String;]
+      [15] invokeinterface #244
+        + InterfaceMethodref [android/content/SharedPreferences.getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
+      [20] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d(Ljava/lang/String;)V
+    Access flags: 0x1
+      = public void d(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 33, locals = 4, stack = 3):
+      [0] aload_0 v0
+      [1] ldc #56
+        + String [FloridaLotteryCheckerConfig]
+      [3] iconst_0
+      [4] invokevirtual #187
+        + Methodref [com/dyslexicApps/MyActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
+      [7] astore_2 v2
+      [8] aload_2 v2
+      [9] invokeinterface #243
+        + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
+      [14] astore_3 v3
+      [15] aload_3 v3
+      [16] ldc #64
+        + String [PlayerLotteryNumber]
+      [18] aload_1 v1
+      [19] invokeinterface #246
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.putString (Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
+      [24] pop
+      [25] aload_3 v3
+      [26] invokeinterface #245
+        + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
+      [31] pop
+      [32] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(ILjava/lang/String;)V
+    Access flags: 0x2
+      = private void a(int,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 15, locals = 4, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] invokevirtual #182
+        + Methodref [com/dyslexicApps/MyActivity.findViewById (I)Landroid/view/View;]
+      [5] checkcast #83
+        + Class [android/widget/EditText]
+      [8] astore_3 v3
+      [9] aload_3 v3
+      [10] aload_2 v2
+      [11] invokevirtual #147
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [14] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(ILjava/lang/String;)V
+    Access flags: 0x2
+      = private void b(int,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 3, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] invokespecial #177
+        + Methodref [com/dyslexicApps/MyActivity.e (I)Landroid/widget/TextView;]
+      [5] aload_2 v2
+      [6] invokevirtual #148
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d(I)Landroid/widget/CheckBox;
+    Access flags: 0x2
+      = private android.widget.CheckBox d(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] invokevirtual #182
+        + Methodref [com/dyslexicApps/MyActivity.findViewById (I)Landroid/view/View;]
+      [5] checkcast #82
+        + Class [android/widget/CheckBox]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e(I)Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView e(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] invokevirtual #182
+        + Methodref [com/dyslexicApps/MyActivity.findViewById (I)Landroid/view/View;]
+      [5] checkcast #84
+        + Class [android/widget/TextView]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       f(I)Landroid/widget/EditText;
+    Access flags: 0x2
+      = private android.widget.EditText f(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] invokevirtual #182
+        + Methodref [com/dyslexicApps/MyActivity.findViewById (I)Landroid/view/View;]
+      [5] checkcast #83
+        + Class [android/widget/EditText]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;Ljava/lang/String;)V
+    Access flags: 0x2
+      = private void a(java.lang.String,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 48, locals = 5, stack = 5):
+      [0] new #75
+        + Class [android/app/AlertDialog$Builder]
+      [3] dup
+      [4] aload_0 v0
+      [5] invokespecial #128
+        + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
+      [8] astore_3 v3
+      [9] aload_3 v3
+      [10] aload_1 v1
+      [11] invokevirtual #133
+        + Methodref [android/app/AlertDialog$Builder.setTitle (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+      [14] aload_2 v2
+      [15] invokevirtual #131
+        + Methodref [android/app/AlertDialog$Builder.setMessage (Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;]
+      [18] iconst_0
+      [19] invokevirtual #130
+        + Methodref [android/app/AlertDialog$Builder.setCancelable (Z)Landroid/app/AlertDialog$Builder;]
+      [22] ldc #52
+        + String [Close]
+      [24] new #93
+        + Class [com/dyslexicApps/g]
+      [27] dup
+      [28] aload_0 v0
+      [29] invokespecial #214
+        + Methodref [com/dyslexicApps/g.<init> (Lcom/dyslexicApps/MyActivity;)V]
+      [32] invokevirtual #132
+        + Methodref [android/app/AlertDialog$Builder.setNegativeButton (Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+      [35] pop
+      [36] aload_3 v3
+      [37] invokevirtual #129
+        + Methodref [android/app/AlertDialog$Builder.create ()Landroid/app/AlertDialog;]
+      [40] astore v4
+      [42] aload v4
+      [44] invokevirtual #127
+        + Methodref [android/app/AlertDialog.show ()V]
+      [47] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       f(Ljava/lang/String;)V
+    Access flags: 0x2
+      = private void f(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 13, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #185
+        + Methodref [com/dyslexicApps/MyActivity.getApplicationContext ()Landroid/content/Context;]
+      [4] aload_1 v1
+      [5] iconst_1
+      [6] invokestatic #151
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
+      [9] invokevirtual #152
+        + Methodref [android/widget/Toast.show ()V]
+      [12] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       g(I)Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String g(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] invokevirtual #186
+        + Methodref [com/dyslexicApps/MyActivity.getResources ()Landroid/content/res/Resources;]
+      [4] iload_1 v1
+      [5] invokevirtual #136
+        + Methodref [android/content/res/Resources.getString (I)Ljava/lang/String;]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       h(I)Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button h(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] iload_1 v1
+      [2] invokevirtual #182
+        + Methodref [com/dyslexicApps/MyActivity.findViewById (I)Landroid/view/View;]
+      [5] checkcast #81
+        + Class [android/widget/Button]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       i(I)Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String i(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 17, locals = 2, stack = 5):
+      [0] ldc #45
+        + String [%02d]
+      [2] iconst_1
+      [3] anewarray #100
+        + Class [java/lang/Object]
+      [6] dup
+      [7] iconst_0
+      [8] iload_1 v1
+      [9] invokestatic #225
+        + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
+      [12] aastore
+      [13] invokestatic #228
+        + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
+      [16] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/dyslexicApps/MyActivity;Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x1008
+      = static synthetic void a(com.dyslexicApps.MyActivity,android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] iload_2 v2
+      [3] invokespecial #156
+        + Methodref [com/dyslexicApps/MyActivity.a (Landroid/widget/CompoundButton;Z)V]
+      [6] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/dyslexicApps/MyActivity;Ljava/lang/String;)V
+    Access flags: 0x1008
+      = static synthetic void a(com.dyslexicApps.MyActivity,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #178
+        + Methodref [com/dyslexicApps/MyActivity.e (Ljava/lang/String;)V]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/d
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.dyslexicApps.d extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/view/View$OnClickListener]
+
+Constant Pool (count = 24):
+  + Class [android/view/View$OnClickListener]
+  + Class [com/dyslexicApps/MyActivity]
+  + Class [com/dyslexicApps/d]
+  + Class [java/lang/Object]
+  + Fieldref [com/dyslexicApps/d.a Lcom/dyslexicApps/MyActivity;]
+  + Methodref [com/dyslexicApps/MyActivity.btnSubmit_onClick (Landroid/view/View;)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/dyslexicApps/MyActivity;]
+  + NameAndType [btnSubmit_onClick (Landroid/view/View;)V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/view/View;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [a]
+  + Utf8 [android/view/View$OnClickListener]
+  + Utf8 [btnSubmit_onClick]
+  + Utf8 [com/dyslexicApps/MyActivity]
+  + Utf8 [com/dyslexicApps/d]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onClick]
+
+Fields (count = 1):
+  + Field:        a Lcom/dyslexicApps/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.dyslexicApps.MyActivity a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;)V
+    Access flags: 0x0
+      = d(com.dyslexicApps.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [com/dyslexicApps/d.a Lcom/dyslexicApps/MyActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #7
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onClick(Landroid/view/View;)V
+    Access flags: 0x1
+      = public void onClick(android.view.View)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/dyslexicApps/d.a Lcom/dyslexicApps/MyActivity;]
+      [4] aload_1 v1
+      [5] invokevirtual #6
+        + Methodref [com/dyslexicApps/MyActivity.btnSubmit_onClick (Landroid/view/View;)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/e
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.dyslexicApps.e extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/view/View$OnClickListener]
+
+Constant Pool (count = 24):
+  + Class [android/view/View$OnClickListener]
+  + Class [com/dyslexicApps/MyActivity]
+  + Class [com/dyslexicApps/e]
+  + Class [java/lang/Object]
+  + Fieldref [com/dyslexicApps/e.a Lcom/dyslexicApps/MyActivity;]
+  + Methodref [com/dyslexicApps/MyActivity.btnAbout_onClick (Landroid/view/View;)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/dyslexicApps/MyActivity;]
+  + NameAndType [btnAbout_onClick (Landroid/view/View;)V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/view/View;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [a]
+  + Utf8 [android/view/View$OnClickListener]
+  + Utf8 [btnAbout_onClick]
+  + Utf8 [com/dyslexicApps/MyActivity]
+  + Utf8 [com/dyslexicApps/e]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onClick]
+
+Fields (count = 1):
+  + Field:        a Lcom/dyslexicApps/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.dyslexicApps.MyActivity a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;)V
+    Access flags: 0x0
+      = e(com.dyslexicApps.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [com/dyslexicApps/e.a Lcom/dyslexicApps/MyActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #7
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onClick(Landroid/view/View;)V
+    Access flags: 0x1
+      = public void onClick(android.view.View)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/dyslexicApps/e.a Lcom/dyslexicApps/MyActivity;]
+      [4] aload_1 v1
+      [5] invokevirtual #6
+        + Methodref [com/dyslexicApps/MyActivity.btnAbout_onClick (Landroid/view/View;)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/f
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.dyslexicApps.f extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+
+Constant Pool (count = 24):
+  + Class [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Class [com/dyslexicApps/MyActivity]
+  + Class [com/dyslexicApps/f]
+  + Class [java/lang/Object]
+  + Fieldref [com/dyslexicApps/f.a Lcom/dyslexicApps/MyActivity;]
+  + Methodref [com/dyslexicApps/MyActivity.a (Lcom/dyslexicApps/MyActivity;Landroid/widget/CompoundButton;Z)V]
+  + Methodref [java/lang/Object.<init> ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (Lcom/dyslexicApps/MyActivity;Landroid/widget/CompoundButton;Z)V]
+  + NameAndType [a Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Landroid/widget/CompoundButton;Z)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [a]
+  + Utf8 [android/widget/CompoundButton$OnCheckedChangeListener]
+  + Utf8 [com/dyslexicApps/MyActivity]
+  + Utf8 [com/dyslexicApps/f]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onCheckedChanged]
+
+Fields (count = 1):
+  + Field:        a Lcom/dyslexicApps/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.dyslexicApps.MyActivity a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;)V
+    Access flags: 0x0
+      = f(com.dyslexicApps.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [com/dyslexicApps/f.a Lcom/dyslexicApps/MyActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #7
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    Access flags: 0x1
+      = public void onCheckedChanged(android.widget.CompoundButton,boolean)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/dyslexicApps/f.a Lcom/dyslexicApps/MyActivity;]
+      [4] aload_1 v1
+      [5] iload_2 v2
+      [6] invokestatic #6
+        + Methodref [com/dyslexicApps/MyActivity.a (Lcom/dyslexicApps/MyActivity;Landroid/widget/CompoundButton;Z)V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/g
+  Superclass:    java/lang/Object
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.dyslexicApps.g extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/content/DialogInterface$OnClickListener]
+
+Constant Pool (count = 24):
+  + Class [android/content/DialogInterface]
+  + Class [android/content/DialogInterface$OnClickListener]
+  + Class [com/dyslexicApps/g]
+  + Class [java/lang/Object]
+  + Fieldref [com/dyslexicApps/g.a Lcom/dyslexicApps/MyActivity;]
+  + Methodref [java/lang/Object.<init> ()V]
+  + InterfaceMethodref [android/content/DialogInterface.cancel ()V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a Lcom/dyslexicApps/MyActivity;]
+  + NameAndType [cancel ()V]
+  + Utf8 [()V]
+  + Utf8 [(Landroid/content/DialogInterface;I)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [a]
+  + Utf8 [android/content/DialogInterface]
+  + Utf8 [android/content/DialogInterface$OnClickListener]
+  + Utf8 [cancel]
+  + Utf8 [com/dyslexicApps/g]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onClick]
+
+Fields (count = 1):
+  + Field:        a Lcom/dyslexicApps/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.dyslexicApps.MyActivity a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;)V
+    Access flags: 0x0
+      = g(com.dyslexicApps.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #5
+        + Fieldref [com/dyslexicApps/g.a Lcom/dyslexicApps/MyActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #6
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onClick(Landroid/content/DialogInterface;I)V
+    Access flags: 0x1
+      = public void onClick(android.content.DialogInterface,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 3, stack = 1):
+      [0] aload_1 v1
+      [1] invokeinterface #7
+        + InterfaceMethodref [android/content/DialogInterface.cancel ()V]
+      [6] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/h
+  Superclass:    java/lang/Exception
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.dyslexicApps.h extends java.lang.Exception
+
+Interfaces (count = 0):
+
+Constant Pool (count = 29):
+  + Class [com/dyslexicApps/h]
+  + Class [com/dyslexicApps/j]
+  + Class [java/lang/Exception]
+  + Fieldref [com/dyslexicApps/h.a Lcom/dyslexicApps/MyActivity;]
+  + Fieldref [com/dyslexicApps/h.b Ljava/lang/String;]
+  + Fieldref [com/dyslexicApps/h.c Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+  + Methodref [java/lang/Exception.<init> (Ljava/lang/String;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [a Lcom/dyslexicApps/MyActivity;]
+  + NameAndType [b Ljava/lang/String;]
+  + NameAndType [c Lcom/dyslexicApps/j;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/j;Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [Lcom/dyslexicApps/j;]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [a]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/dyslexicApps/h]
+  + Utf8 [com/dyslexicApps/j]
+  + Utf8 [getMessage]
+  + Utf8 [java/lang/Exception]
+  + Utf8 [toString]
+
+Fields (count = 3):
+  + Field:        b Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String b
+  + Field:        c Lcom/dyslexicApps/j;
+    Access flags: 0x2
+      = private com.dyslexicApps.j c
+  + Field:        a Lcom/dyslexicApps/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.dyslexicApps.MyActivity a
+
+Methods (count = 3):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/j;Ljava/lang/String;)V
+    Access flags: 0x1
+      = public h(com.dyslexicApps.MyActivity,com.dyslexicApps.j,java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 33, locals = 4, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #4
+        + Fieldref [com/dyslexicApps/h.a Lcom/dyslexicApps/MyActivity;]
+      [5] aload_0 v0
+      [6] aload_3 v3
+      [7] invokespecial #8
+        + Methodref [java/lang/Exception.<init> (Ljava/lang/String;)V]
+      [10] aload_0 v0
+      [11] aconst_null
+      [12] putfield #5
+        + Fieldref [com/dyslexicApps/h.b Ljava/lang/String;]
+      [15] aload_0 v0
+      [16] getstatic #7
+        + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+      [19] putfield #6
+        + Fieldref [com/dyslexicApps/h.c Lcom/dyslexicApps/j;]
+      [22] aload_0 v0
+      [23] aload_2 v2
+      [24] putfield #6
+        + Fieldref [com/dyslexicApps/h.c Lcom/dyslexicApps/j;]
+      [27] aload_0 v0
+      [28] aload_3 v3
+      [29] putfield #5
+        + Fieldref [com/dyslexicApps/h.b Ljava/lang/String;]
+      [32] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       toString()Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String toString()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/dyslexicApps/h.b Ljava/lang/String;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       getMessage()Ljava/lang/String;
+    Access flags: 0x1
+      = public java.lang.String getMessage()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #5
+        + Fieldref [com/dyslexicApps/h.b Ljava/lang/String;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/i
+  Superclass:    android/os/AsyncTask
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.dyslexicApps.i extends android.os.AsyncTask
+
+Interfaces (count = 0):
+
+Constant Pool (count = 110):
+  + String [/GetTodaysWinningNumber]
+  + String [Accept]
+  + String [Content-type]
+  + String [application/json]
+  + Class [[Ljava/lang/String;]
+  + Class [android/os/AsyncTask]
+  + Class [com/dyslexicApps/MyActivity]
+  + Class [com/dyslexicApps/i]
+  + Class [java/io/InputStream]
+  + Class [java/io/InputStreamReader]
+  + Class [java/lang/Exception]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [org/apache/http/HttpEntity]
+  + Class [org/apache/http/HttpResponse]
+  + Class [org/apache/http/client/methods/HttpGet]
+  + Class [org/apache/http/impl/client/DefaultHttpClient]
+  + Fieldref [com/dyslexicApps/i.a Lcom/dyslexicApps/MyActivity;]
+  + Fieldref [com/dyslexicApps/i.b Ljava/lang/Exception;]
+  + Methodref [android/os/AsyncTask.<init> ()V]
+  + Methodref [com/dyslexicApps/MyActivity.a (Lcom/dyslexicApps/MyActivity;Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/i.<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + Methodref [com/dyslexicApps/i.a (Ljava/lang/String;)V]
+  + Methodref [com/dyslexicApps/i.a ([Ljava/lang/String;)Ljava/lang/String;]
+  + Methodref [java/io/InputStream.close ()V]
+  + Methodref [java/io/InputStreamReader.<init> (Ljava/io/InputStream;)V]
+  + Methodref [java/io/InputStreamReader.read ([C)I]
+  + Methodref [java/lang/String.<init> ([C)V]
+  + Methodref [java/lang/StringBuilder.<init> ()V]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [org/apache/http/client/methods/HttpGet.<init> (Ljava/lang/String;)V]
+  + Methodref [org/apache/http/client/methods/HttpGet.setHeader (Ljava/lang/String;Ljava/lang/String;)V]
+  + Methodref [org/apache/http/impl/client/DefaultHttpClient.<init> ()V]
+  + Methodref [org/apache/http/impl/client/DefaultHttpClient.execute (Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;]
+  + InterfaceMethodref [org/apache/http/HttpEntity.getContent ()Ljava/io/InputStream;]
+  + InterfaceMethodref [org/apache/http/HttpEntity.getContentLength ()J]
+  + InterfaceMethodref [org/apache/http/HttpResponse.getEntity ()Lorg/apache/http/HttpEntity;]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Lcom/dyslexicApps/MyActivity;)V]
+  + NameAndType [<init> (Ljava/io/InputStream;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [<init> ([C)V]
+  + NameAndType [a (Lcom/dyslexicApps/MyActivity;Ljava/lang/String;)V]
+  + NameAndType [a (Ljava/lang/String;)V]
+  + NameAndType [a ([Ljava/lang/String;)Ljava/lang/String;]
+  + NameAndType [a Lcom/dyslexicApps/MyActivity;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b Ljava/lang/Exception;]
+  + NameAndType [close ()V]
+  + NameAndType [execute (Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;]
+  + NameAndType [getContent ()Ljava/io/InputStream;]
+  + NameAndType [getContentLength ()J]
+  + NameAndType [getEntity ()Lorg/apache/http/HttpEntity;]
+  + NameAndType [read ([C)I]
+  + NameAndType [setHeader (Ljava/lang/String;Ljava/lang/String;)V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + Utf8 [()J]
+  + Utf8 [()Ljava/io/InputStream;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()Lorg/apache/http/HttpEntity;]
+  + Utf8 [()V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/d;)V]
+  + Utf8 [(Lcom/dyslexicApps/MyActivity;Ljava/lang/String;)V]
+  + Utf8 [(Ljava/io/InputStream;)V]
+  + Utf8 [(Ljava/lang/Object;)V]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)V]
+  + Utf8 [(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;]
+  + Utf8 [([C)I]
+  + Utf8 [([C)V]
+  + Utf8 [([Ljava/lang/Object;)Ljava/lang/Object;]
+  + Utf8 [([Ljava/lang/String;)Ljava/lang/String;]
+  + Utf8 [/GetTodaysWinningNumber]
+  + Utf8 [<init>]
+  + Utf8 [Accept]
+  + Utf8 [Code]
+  + Utf8 [Content-type]
+  + Utf8 [Lcom/dyslexicApps/MyActivity;]
+  + Utf8 [Ljava/lang/Exception;]
+  + Utf8 [[Ljava/lang/String;]
+  + Utf8 [a]
+  + Utf8 [android/os/AsyncTask]
+  + Utf8 [append]
+  + Utf8 [application/json]
+  + Utf8 [b]
+  + Utf8 [close]
+  + Utf8 [com/dyslexicApps/MyActivity]
+  + Utf8 [com/dyslexicApps/i]
+  + Utf8 [doInBackground]
+  + Utf8 [execute]
+  + Utf8 [getContent]
+  + Utf8 [getContentLength]
+  + Utf8 [getEntity]
+  + Utf8 [java/io/InputStream]
+  + Utf8 [java/io/InputStreamReader]
+  + Utf8 [java/lang/Exception]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [onPostExecute]
+  + Utf8 [org/apache/http/HttpEntity]
+  + Utf8 [org/apache/http/HttpResponse]
+  + Utf8 [org/apache/http/client/methods/HttpGet]
+  + Utf8 [org/apache/http/impl/client/DefaultHttpClient]
+  + Utf8 [read]
+  + Utf8 [setHeader]
+  + Utf8 [toString]
+
+Fields (count = 2):
+  + Field:        b Ljava/lang/Exception;
+    Access flags: 0x2
+      = private java.lang.Exception b
+  + Field:        a Lcom/dyslexicApps/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.dyslexicApps.MyActivity a
+
+Methods (count = 6):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;)V
+    Access flags: 0x2
+      = private i(com.dyslexicApps.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #18
+        + Fieldref [com/dyslexicApps/i.a Lcom/dyslexicApps/MyActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #20
+        + Methodref [android/os/AsyncTask.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a([Ljava/lang/String;)Ljava/lang/String;
+    Access flags: 0x84
+      = protected varargs java.lang.String a(java.lang.String[])
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 132, locals = 9, stack = 5):
+      [0] new #16
+        + Class [org/apache/http/client/methods/HttpGet]
+      [3] dup
+      [4] new #13
+        + Class [java/lang/StringBuilder]
+      [7] dup
+      [8] invokespecial #29
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [11] aload_1 v1
+      [12] iconst_0
+      [13] aaload
+      [14] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [17] ldc #1
+        + String [/GetTodaysWinningNumber]
+      [19] invokevirtual #30
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [22] invokevirtual #31
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [25] invokespecial #32
+        + Methodref [org/apache/http/client/methods/HttpGet.<init> (Ljava/lang/String;)V]
+      [28] astore_2 v2
+      [29] aload_2 v2
+      [30] ldc #2
+        + String [Accept]
+      [32] ldc #4
+        + String [application/json]
+      [34] invokevirtual #33
+        + Methodref [org/apache/http/client/methods/HttpGet.setHeader (Ljava/lang/String;Ljava/lang/String;)V]
+      [37] aload_2 v2
+      [38] ldc #3
+        + String [Content-type]
+      [40] ldc #4
+        + String [application/json]
+      [42] invokevirtual #33
+        + Methodref [org/apache/http/client/methods/HttpGet.setHeader (Ljava/lang/String;Ljava/lang/String;)V]
+      [45] new #17
+        + Class [org/apache/http/impl/client/DefaultHttpClient]
+      [48] dup
+      [49] invokespecial #34
+        + Methodref [org/apache/http/impl/client/DefaultHttpClient.<init> ()V]
+      [52] astore_3 v3
+      [53] aload_3 v3
+      [54] aload_2 v2
+      [55] invokevirtual #35
+        + Methodref [org/apache/http/impl/client/DefaultHttpClient.execute (Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;]
+      [58] astore v4
+      [60] aload v4
+      [62] invokeinterface #38
+        + InterfaceMethodref [org/apache/http/HttpResponse.getEntity ()Lorg/apache/http/HttpEntity;]
+      [67] astore v5
+      [69] aload v5
+      [71] invokeinterface #37
+        + InterfaceMethodref [org/apache/http/HttpEntity.getContentLength ()J]
+      [76] l2i
+      [77] newarray 5
+      [79] astore v6
+      [81] aload v5
+      [83] invokeinterface #36
+        + InterfaceMethodref [org/apache/http/HttpEntity.getContent ()Ljava/io/InputStream;]
+      [88] astore v7
+      [90] new #10
+        + Class [java/io/InputStreamReader]
+      [93] dup
+      [94] aload v7
+      [96] invokespecial #26
+        + Methodref [java/io/InputStreamReader.<init> (Ljava/io/InputStream;)V]
+      [99] astore v8
+      [101] aload v8
+      [103] aload v6
+      [105] invokevirtual #27
+        + Methodref [java/io/InputStreamReader.read ([C)I]
+      [108] pop
+      [109] aload v7
+      [111] invokevirtual #25
+        + Methodref [java/io/InputStream.close ()V]
+      [114] new #12
+        + Class [java/lang/String]
+      [117] dup
+      [118] aload v6
+      [120] invokespecial #28
+        + Methodref [java/lang/String.<init> ([C)V]
+      [123] areturn
+      [124] astore_2 v2
+      [125] aload_0 v0
+      [126] aload_2 v2
+      [127] putfield #19
+        + Fieldref [com/dyslexicApps/i.b Ljava/lang/Exception;]
+      [130] aconst_null
+      [131] areturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 123: 124):
+      + Class [java/lang/Exception]
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Ljava/lang/String;)V
+    Access flags: 0x4
+      = protected void a(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] getfield #18
+        + Fieldref [com/dyslexicApps/i.a Lcom/dyslexicApps/MyActivity;]
+      [4] aload_1 v1
+      [5] invokestatic #21
+        + Methodref [com/dyslexicApps/MyActivity.a (Lcom/dyslexicApps/MyActivity;Ljava/lang/String;)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onPostExecute(Ljava/lang/Object;)V
+    Access flags: 0x1004
+      = protected synthetic void onPostExecute(java.lang.Object)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] checkcast #12
+        + Class [java/lang/String]
+      [5] invokevirtual #23
+        + Methodref [com/dyslexicApps/i.a (Ljava/lang/String;)V]
+      [8] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    Access flags: 0x1004
+      = protected synthetic java.lang.Object doInBackground(java.lang.Object[])
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 9, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] checkcast #5
+        + Class [[Ljava/lang/String;]
+      [5] invokevirtual #24
+        + Methodref [com/dyslexicApps/i.a ([Ljava/lang/String;)Ljava/lang/String;]
+      [8] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>(Lcom/dyslexicApps/MyActivity;Lcom/dyslexicApps/d;)V
+    Access flags: 0x1000
+      = synthetic i(com.dyslexicApps.MyActivity,com.dyslexicApps.d)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 3, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #22
+        + Methodref [com/dyslexicApps/i.<init> (Lcom/dyslexicApps/MyActivity;)V]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/dyslexicApps/j
+  Superclass:    java/lang/Enum
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x4030
+    = final enum enum com.dyslexicApps.j extends java.lang.Enum
+
+Interfaces (count = 0):
+
+Constant Pool (count = 50):
+  + String [DuplicateFound]
+  + String [EmptyString]
+  + String [InvalidRange]
+  + String [InvalidString]
+  + Class [[Lcom/dyslexicApps/j;]
+  + Class [com/dyslexicApps/j]
+  + Class [java/lang/Enum]
+  + Fieldref [com/dyslexicApps/j.a Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.d Lcom/dyslexicApps/j;]
+  + Fieldref [com/dyslexicApps/j.e [Lcom/dyslexicApps/j;]
+  + Methodref [[Lcom/dyslexicApps/j;.clone ()Ljava/lang/Object;]
+  + Methodref [com/dyslexicApps/j.<init> (Ljava/lang/String;I)V]
+  + Methodref [java/lang/Enum.<init> (Ljava/lang/String;I)V]
+  + Methodref [java/lang/Enum.valueOf (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;]
+  + NameAndType [<init> (Ljava/lang/String;I)V]
+  + NameAndType [a Lcom/dyslexicApps/j;]
+  + NameAndType [b Lcom/dyslexicApps/j;]
+  + NameAndType [c Lcom/dyslexicApps/j;]
+  + NameAndType [clone ()Ljava/lang/Object;]
+  + NameAndType [d Lcom/dyslexicApps/j;]
+  + NameAndType [e [Lcom/dyslexicApps/j;]
+  + NameAndType [valueOf (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;]
+  + Utf8 [()Ljava/lang/Object;]
+  + Utf8 [()V]
+  + Utf8 [()[Lcom/dyslexicApps/j;]
+  + Utf8 [(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;]
+  + Utf8 [(Ljava/lang/String;)Lcom/dyslexicApps/j;]
+  + Utf8 [(Ljava/lang/String;I)V]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [DuplicateFound]
+  + Utf8 [EmptyString]
+  + Utf8 [InvalidRange]
+  + Utf8 [InvalidString]
+  + Utf8 [Lcom/dyslexicApps/j;]
+  + Utf8 [[Lcom/dyslexicApps/j;]
+  + Utf8 [a]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [clone]
+  + Utf8 [com/dyslexicApps/j]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [java/lang/Enum]
+  + Utf8 [valueOf]
+  + Utf8 [values]
+
+Fields (count = 5):
+  + Field:        a Lcom/dyslexicApps/j;
+    Access flags: 0x4019
+      = public static final com.dyslexicApps.j a
+  + Field:        b Lcom/dyslexicApps/j;
+    Access flags: 0x4019
+      = public static final com.dyslexicApps.j b
+  + Field:        c Lcom/dyslexicApps/j;
+    Access flags: 0x4019
+      = public static final com.dyslexicApps.j c
+  + Field:        d Lcom/dyslexicApps/j;
+    Access flags: 0x4019
+      = public static final com.dyslexicApps.j d
+  + Field:        e [Lcom/dyslexicApps/j;
+    Access flags: 0x101a
+      = private static final synthetic com.dyslexicApps.j[] e
+
+Methods (count = 4):
+  + Method:       values()[Lcom/dyslexicApps/j;
+    Access flags: 0x9
+      = public static com.dyslexicApps.j[] values()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 0, stack = 1):
+      [0] getstatic #12
+        + Fieldref [com/dyslexicApps/j.e [Lcom/dyslexicApps/j;]
+      [3] invokevirtual #13
+        + Methodref [[Lcom/dyslexicApps/j;.clone ()Ljava/lang/Object;]
+      [6] checkcast #5
+        + Class [[Lcom/dyslexicApps/j;]
+      [9] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       valueOf(Ljava/lang/String;)Lcom/dyslexicApps/j;
+    Access flags: 0x9
+      = public static com.dyslexicApps.j valueOf(java.lang.String)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 1, stack = 2):
+      [0] ldc #6
+        + Class [com/dyslexicApps/j]
+      [2] aload_0 v0
+      [3] invokestatic #16
+        + Methodref [java/lang/Enum.valueOf (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;]
+      [6] checkcast #6
+        + Class [com/dyslexicApps/j]
+      [9] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>(Ljava/lang/String;I)V
+    Access flags: 0x2
+      = private j(java.lang.String,int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] iload_2 v2
+      [3] invokespecial #15
+        + Methodref [java/lang/Enum.<init> (Ljava/lang/String;I)V]
+      [6] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 84, locals = 0, stack = 4):
+      [0] new #6
+        + Class [com/dyslexicApps/j]
+      [3] dup
+      [4] ldc #2
+        + String [EmptyString]
+      [6] iconst_0
+      [7] invokespecial #14
+        + Methodref [com/dyslexicApps/j.<init> (Ljava/lang/String;I)V]
+      [10] putstatic #8
+        + Fieldref [com/dyslexicApps/j.a Lcom/dyslexicApps/j;]
+      [13] new #6
+        + Class [com/dyslexicApps/j]
+      [16] dup
+      [17] ldc #4
+        + String [InvalidString]
+      [19] iconst_1
+      [20] invokespecial #14
+        + Methodref [com/dyslexicApps/j.<init> (Ljava/lang/String;I)V]
+      [23] putstatic #9
+        + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+      [26] new #6
+        + Class [com/dyslexicApps/j]
+      [29] dup
+      [30] ldc #3
+        + String [InvalidRange]
+      [32] iconst_2
+      [33] invokespecial #14
+        + Methodref [com/dyslexicApps/j.<init> (Ljava/lang/String;I)V]
+      [36] putstatic #10
+        + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+      [39] new #6
+        + Class [com/dyslexicApps/j]
+      [42] dup
+      [43] ldc #1
+        + String [DuplicateFound]
+      [45] iconst_3
+      [46] invokespecial #14
+        + Methodref [com/dyslexicApps/j.<init> (Ljava/lang/String;I)V]
+      [49] putstatic #11
+        + Fieldref [com/dyslexicApps/j.d Lcom/dyslexicApps/j;]
+      [52] iconst_4
+      [53] anewarray #6
+        + Class [com/dyslexicApps/j]
+      [56] dup
+      [57] iconst_0
+      [58] getstatic #8
+        + Fieldref [com/dyslexicApps/j.a Lcom/dyslexicApps/j;]
+      [61] aastore
+      [62] dup
+      [63] iconst_1
+      [64] getstatic #9
+        + Fieldref [com/dyslexicApps/j.b Lcom/dyslexicApps/j;]
+      [67] aastore
+      [68] dup
+      [69] iconst_2
+      [70] getstatic #10
+        + Fieldref [com/dyslexicApps/j.c Lcom/dyslexicApps/j;]
+      [73] aastore
+      [74] dup
+      [75] iconst_3
+      [76] getstatic #11
+        + Fieldref [com/dyslexicApps/j.d Lcom/dyslexicApps/j;]
+      [79] aastore
+      [80] putstatic #12
+        + Fieldref [com/dyslexicApps/j.e [Lcom/dyslexicApps/j;]
+      [83] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+

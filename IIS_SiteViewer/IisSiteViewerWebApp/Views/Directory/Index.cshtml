@@ -27,7 +27,10 @@
 </script>
 
 <h2>Directory</h2>
-
+@*, new { IdentityType = ddlIdentityType, ServiceAccount = ddlServiceAccount }*@
+@using (Ajax.BeginForm("IndexFilter", "Directory", FormMethod.Post, null))
+{
+@Html.AntiForgeryToken()
 <fieldset>
     <legend>Filter</legend>
     <div>
@@ -42,7 +45,10 @@ new { @class = "form-control" })
                  .Select(x => new SelectListItem() { Text = x, Value = x }),
             "All")
         </div>
-        <div><button type="submit" onclick="getFilterParameters()">Filter</button></div>
+        <div>
+            <button type="submit" onclick="getFilterParameters()">Filter</button>
+            @*<button type="submit">Filter</button>*@
+        </div>
     </div>
 </fieldset>
 <table class="table">
@@ -105,3 +111,4 @@ new { @class = "form-control" })
         </tr>
     }
 </table>
+}

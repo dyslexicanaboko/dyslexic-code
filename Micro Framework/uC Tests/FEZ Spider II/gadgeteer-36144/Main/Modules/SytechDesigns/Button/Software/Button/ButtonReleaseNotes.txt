@@ -1,0 +1,8 @@
+﻿V1.0.5.0
+13 Feb 2012
+
+Initial Version
+Supports Button press/release events
+Supports button press properties
+Supports LED direct control
+Supports Led auto attach to button modes

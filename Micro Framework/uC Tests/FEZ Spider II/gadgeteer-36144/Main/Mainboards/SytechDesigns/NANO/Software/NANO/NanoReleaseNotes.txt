@@ -1,0 +1,13 @@
+﻿V 1.0.5.0
+13 Feb 2012
+
+Version numbers alligned with Instal Kit Version.
+
+Added support for LCD Configuration changes to flash from the application level.
+Added support for Native Bitmap convert functions.
+This version requires the NANO Micro Framework firmware to be version NAN0 MXL G - dated 5 Jan 2012 or later.
+Earlier versions will not work.
+
+MSI install package now adds any required Device Solution Meridian SDK dlls.
+You do not need the Device Solutions SDK installed to use the NANO.
+The Device Solutions SDK is now optional.
