@@ -28,7 +28,7 @@
 
 <h2>Directory</h2>
 @*, new { IdentityType = ddlIdentityType, ServiceAccount = ddlServiceAccount }*@
-@using (Ajax.BeginForm("IndexFilter", "Directory", FormMethod.Post, null))
+@using (Html.BeginForm("IndexFilter", "Directory", FormMethod.Post, null))
 {
 @Html.AntiForgeryToken()
 <fieldset>
@@ -46,8 +46,8 @@ new { @class = "form-control" })
             "All")
         </div>
         <div>
-            <button type="submit" onclick="getFilterParameters()">Filter</button>
-            @*<button type="submit">Filter</button>*@
+            @*<button type="submit" onclick="getFilterParameters()">Filter</button>*@
+            <button type="submit">Filter</button>
         </div>
     </div>
 </fieldset>
