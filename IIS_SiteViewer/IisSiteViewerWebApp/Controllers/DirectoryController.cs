@@ -1,8 +1,8 @@
 ﻿using IisManagementTools;
+using Microsoft.Web.Administration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace IisSiteViewerWebApp.Controllers
@@ -13,10 +13,17 @@ namespace IisSiteViewerWebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult IndexFilter(Models.DirectoryModel directory)
+        public ActionResult IndexFilter(FormCollection form)
         {
-            var identityType = directory.IdentityType;
-            var serviceAccount = directory.ServiceAccount;
+            //Models.DirectoryModel directory
+
+            ProcessModelIdentityType? identityType = null;
+            ProcessModelIdentityType it = ProcessModelIdentityType.ApplicationPoolIdentity;
+
+            if (Enum.TryParse<ProcessModelIdentityType>(Convert.ToString(form["ddlIdentityType"]), out it))
+                identityType = it; 
+
+            var serviceAccount = Convert.ToString(form["ddlServiceAccount"]);
 
             //Microsoft.Web.Administration.ProcessModelIdentityType? identityType, string serviceAccount
 
