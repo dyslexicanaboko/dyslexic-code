@@ -1,4 +1,5 @@
 ﻿using IisManagementTools;
+using IisSiteViewerWebApp.Models;
 using Microsoft.Web.Administration;
 using System;
 using System.Collections.Generic;
@@ -13,32 +14,22 @@ namespace IisSiteViewerWebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult IndexFilter(FormCollection form)
+        public ActionResult IndexFilter(DirectoryModel model) //FormCollection form
         {
-            //Models.DirectoryModel directory
-
-            ProcessModelIdentityType? identityType = null;
-            ProcessModelIdentityType it = ProcessModelIdentityType.ApplicationPoolIdentity;
-
-            if (Enum.TryParse<ProcessModelIdentityType>(Convert.ToString(form["ddlIdentityType"]), out it))
-                identityType = it; 
-
-            var serviceAccount = Convert.ToString(form["ddlServiceAccount"]);
-
-            //Microsoft.Web.Administration.ProcessModelIdentityType? identityType, string serviceAccount
+            var m = model;
 
             List<SiteInfo> lst = GetAllSites();
 
             //Doing a lambda query was difficult
-            if (identityType.HasValue)
+            if (m.IdentityType.HasValue)
             {
 
                 IEnumerable<ApplicationInfo> remove = null;
 
-                if (serviceAccount == null)
-                    remove = lst.SelectMany(x => x.Applications.Where(y => y.ApplicationPool.IdentityType != identityType.Value));
+                if (m.ServiceAccount == null)
+                    remove = lst.SelectMany(x => x.Applications.Where(y => y.ApplicationPool.IdentityType != m.IdentityType.Value));
                 else
-                    remove = lst.SelectMany(x => x.Applications.Where(y => y.ApplicationPool.IdentityType != identityType.Value && y.ApplicationPool.IdentityUser != serviceAccount));
+                    remove = lst.SelectMany(x => x.Applications.Where(y => y.ApplicationPool.IdentityType != m.IdentityType.Value && y.ApplicationPool.IdentityUser != m.ServiceAccount));
 
                 List<ApplicationInfo> lstRemove = remove.ToList();
 
@@ -56,14 +47,30 @@ namespace IisSiteViewerWebApp.Controllers
                 }
             }
 
-            ModelState.Clear();
+            m.Data = lst;
 
-            return View("Index", lst);
+            return View("Index", m);
+        }
+
+        private void GetModelFromFormCollection(FormCollection form)
+        {
+            ProcessModelIdentityType? identityType = null;
+            ProcessModelIdentityType it = ProcessModelIdentityType.ApplicationPoolIdentity;
+
+            if (Enum.TryParse<ProcessModelIdentityType>(Convert.ToString(form["ddlIdentityType"]), out it))
+                identityType = it;
+
+            var serviceAccount = Convert.ToString(form["ddlServiceAccount"]);
+        }
+
+        private DirectoryModel GetModel(List<SiteInfo> data)
+        {
+            return new DirectoryModel() { Data = data };
         }
 
         public ActionResult Index()
         {
-            return View(GetAllSites());   
+            return View(GetModel(GetAllSites()));
         }
 
         private List<SiteInfo> GetAllSites()
