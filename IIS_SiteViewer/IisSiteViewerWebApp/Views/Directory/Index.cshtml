@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IisManagementTools.SiteInfo>
+﻿@model IisSiteViewerWebApp.Models.DirectoryModel
 
 @{
     ViewBag.Title = "Site Directory";
@@ -34,13 +34,13 @@
 <fieldset>
     <legend>Filter</legend>
     <div>
-        <div>Identity Type @Html.DropDownList("ddlIdentityType",
+        <div>Identity Type @Html.DropDownList("IdentityType",
 EnumHelper.GetSelectList(typeof(Microsoft.Web.Administration.ProcessModelIdentityType)),
 "All",
 new { @class = "form-control" })
         </div>
-        <div>Service Account @Html.DropDownList("ddlServiceAccount",
-            Model.SelectMany(x => x.Applications.Select(y => y.ApplicationPool.IdentityUser))
+        <div>Service Account @Html.DropDownList("ServiceAccount",
+            Model.Data.SelectMany(x => x.Applications.Select(y => y.ApplicationPool.IdentityUser))
                  .Distinct()
                  .Select(x => new SelectListItem() { Text = x, Value = x }),
             "All")
@@ -57,7 +57,7 @@ new { @class = "form-control" })
         <th>State</th>
         <th>Applications</th>
     </tr>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Data)
     {
         <tr>
             <td>

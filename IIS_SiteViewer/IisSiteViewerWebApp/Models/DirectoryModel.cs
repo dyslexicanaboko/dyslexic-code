@@ -13,5 +13,7 @@ namespace IisSiteViewerWebApp.Models
         public ProcessModelIdentityType? IdentityType { get; set; }
 
         public string ServiceAccount { get; set; }
+
+        public IEnumerable<SiteInfo> Data { get; set; }
     }
 }
