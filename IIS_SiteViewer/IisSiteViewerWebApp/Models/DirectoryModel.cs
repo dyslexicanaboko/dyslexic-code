@@ -14,6 +14,12 @@ namespace IisSiteViewerWebApp.Models
 
         public string ServiceAccount { get; set; }
 
+        public string[] SelectedApplicationPools { get; set; }
+        
+        public string NewUsername { get; set; }
+
+        public string NewPassword { get; set; }
+
         public IEnumerable<SiteInfo> Data { get; set; }
     }
 }
