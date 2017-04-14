@@ -14,7 +14,23 @@ namespace IisSiteViewerWebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult IndexFilter(DirectoryModel model) //FormCollection form
+        [MultipleButton(Name = "action", Argument = "UpdatePassword")]
+        public ActionResult UpdatePassword(DirectoryModel model) //FormCollection form
+        {
+            using (var svc = new IisManagementService())
+            {
+                foreach (string ap in model.SelectedApplicationPools)
+                    svc.ChangeCredentials(model.NewUsername, model.NewPassword, ap);
+            }
+
+            return Filter(model);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [MultipleButton(Name = "action", Argument = "Filter")]
+        public ActionResult Filter(DirectoryModel model) //FormCollection form
         {
             var m = model;
 
@@ -49,7 +65,12 @@ namespace IisSiteViewerWebApp.Controllers
 
             m.Data = lst;
 
-            return View("Index", m);
+            return GetIndexView(m);
+        }
+
+        private ActionResult GetIndexView(DirectoryModel model)
+        {
+            return View("Index", model);
         }
 
         private void GetModelFromFormCollection(FormCollection form)

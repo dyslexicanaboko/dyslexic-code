@@ -116,12 +116,21 @@ namespace IisManagementTools
 
         public void ChangeCredentials(string username, string password, string applicationPoolName = null)
         {
+            bool usernameOk = !string.IsNullOrWhiteSpace(username);
+            bool passwordOk = !string.IsNullOrWhiteSpace(password);
+            
+            if (!usernameOk && !passwordOk)
+                throw new UsernamePasswordException();
+
             List<ApplicationPoolCredential> lst = GetApplicationPoolCredentials(applicationPoolName);
 
             foreach (ApplicationPoolCredential pm in lst)
             {
-                pm.Username = username;
-                pm.Password = password;
+                if(usernameOk)
+                    pm.Username = username;
+
+                if(passwordOk)
+                    pm.Password = password;
             }
 
             _manager.CommitChanges();

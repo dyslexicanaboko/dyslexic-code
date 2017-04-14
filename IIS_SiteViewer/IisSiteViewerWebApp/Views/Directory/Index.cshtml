@@ -4,31 +4,9 @@
     ViewBag.Title = "Site Directory";
 }
 
-<script type="text/javascript">
-    function getFilterParameters() {
-        var ident =  $('#ddlIdentityType').val();
-        var sa = $('#ddlServiceAccount').val();
-
-        console.dir(ident);
-        console.dir(sa);
-
-        $.ajax({
-            url: '@Url.Action("IndexFilter","Directory")',
-            cache: false,
-            type: "POST", //Or GET
-            dataType: "json",
-            data: { IdentityType: ident, ServiceAccount: sa }, //here you set your dropdown selected value
-            success: function (data) {
-                //$("#results").append(data); //append your data from controller
-                console.dir(data);
-            }
-        });
-    }
-</script>
-
 <h2>Directory</h2>
-@*, new { IdentityType = ddlIdentityType, ServiceAccount = ddlServiceAccount }*@
-@using (Html.BeginForm("IndexFilter", "Directory", FormMethod.Post, null))
+@*@using (Html.BeginForm("IndexFilter", "Directory", FormMethod.Post, null))*@
+@using (Html.BeginForm("", "Directory", FormMethod.Post))
 {
 @Html.AntiForgeryToken()
 <fieldset>
@@ -44,15 +22,18 @@ new { @class = "form-control" })
                  .Distinct()
                  .Select(x => new SelectListItem() { Text = x, Value = x }),
             "All")
+            <button type="submit" name="action:Filter">Filter</button>
         </div>
         <div>
-            @*<button type="submit" onclick="getFilterParameters()">Filter</button>*@
-            <button type="submit">Filter</button>
+            Username @Html.TextBoxFor(m => m.NewUsername)
+            Password @Html.TextBoxFor(m => m.NewPassword)
+            <button type="submit" name="action:UpdatePassword">Update password</button>
         </div>
     </div>
 </fieldset>
 <table class="table">
     <tr>
+        <th>Select</th>
         <th>Site</th>
         <th>State</th>
         <th>Applications</th>
@@ -60,6 +41,7 @@ new { @class = "form-control" })
     @foreach (var item in Model.Data)
     {
         <tr>
+            <td><input type="checkbox" onchange="" /></td>
             <td>
                 @(item.Name)
             </td>
@@ -83,7 +65,7 @@ new { @class = "form-control" })
                     @foreach (var a in item.Applications)
                 {
                         <tr>
-                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" name="SelectedApplicationPools" value="@(a.ApplicationPool.Name)" /></td>
                             <td>@(a.Name)</td>
                             <td>
                                 <table class="table">
