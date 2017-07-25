@@ -112,3 +112,5 @@
 /EfCodeFirstPractice/bin/Debug
 /IIS_SiteViewer/IisManagementTools/bin
 /IIS_SiteViewer/packages
+/node_modules
+/quickstart/
