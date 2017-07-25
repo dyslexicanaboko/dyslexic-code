@@ -1,0 +1,88 @@
+﻿<a href="http://tasklistpool.archimedes.local/MillionThings/index">Reload</a>
+<div style="display:inline-block;">
+    <h2>Task Lists</h2>
+    Any task can be part of any task list. This is a container for tasks or a membership.<br/>
+    That way tasks can be lumped together in different task lists or groups of tasks.
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+    <br />
+    <a ui-sref="myTasks">
+        <span class="glyphicon glyphicon-circle-arrow-left" />&nbsp;Back to Task Pool
+    </a>
+    <form name="formTask">
+        <table border="1" class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th><span class="glyphicon glyphicon-cog"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t in taskGridData">
+                    <td>
+                        <input type="hidden" ng-model="t.TaskGroupId" />
+                        <span ng-hide="taskRowIsBeingEdited">{{t.Name}}</span>
+                        <input ng-show="taskRowIsBeingEdited" type="text" ng-model="t.Name" />
+                    </td>
+                    <td>
+                        <span ng-hide="taskRowIsBeingEdited">{{t.Description}}</span>
+                        <input ng-show="taskRowIsBeingEdited" type="text" ng-model="t.Description" />
+                    </td>
+                    <td>{{t.CreatedOn}}</td>
+                    <td>
+                        <button id="btnTaskGroupLists"
+                                class="btn btn-info btn-md"
+                                ng-hide="taskRowIsBeingEdited"
+                                ng-click="btnTaskGroupLists_click(t.TaskGroupId);">
+                            <span class="glyphicon glyphicon-list"></span>
+                        </button>
+                        <button id="btnTaskGroupEdit"
+                                class="btn btn-info btn-md"
+                                ng-hide="taskRowIsBeingEdited"
+                                ng-click="taskRowIsBeingEdited = true;">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button id="btnTaskGroupDelete"
+                                class="btn btn-info btn-md"
+                                ng-hide="taskRowIsBeingEdited"
+                                ng-click="btnTaskGroupDelete_click(t.TaskGroupId)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button id="btnTaskGroupOk"
+                                class="btn btn-info btn-md"
+                                ng-show="taskRowIsBeingEdited"
+                                ng-click="btnTaskGroupEdit_click(t); formTask.setPristine(); taskRowIsBeingEdited = false;">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
+                        </button>
+                        <button id="btnTaskGroupCancel"
+                                class="btn btn-info btn-md"
+                                ng-show="taskRowIsBeingEdited"
+                                ng-click="formTask.setPristine(); taskRowIsBeingEdited = false;">
+                            <span class="glyphicon glyphicon-remove-sign"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" ng-model="newTaskGroup.Name" style="width:100%;" />
+                    </td>
+                    <td colspan="2">
+                        <input type="text" ng-model="newTaskGroup.Description" style="width:100%;" />
+                    </td>
+                    <td>
+                        <button id="btnAddTaskGroup"
+                                ng-click="newTaskGroup.TaskGroupId = 0; btnAddTaskGroup_click(newTaskGroup);"
+                                class="btn btn-info btn-md">
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <tlp-modal header-title="Tasks" 
+                   body-template-url="MyApp/Templates/taskListTasks.html" 
+                   body-controller="MyTasksCtrl" />
+    </form>
+    <br />
+</div>

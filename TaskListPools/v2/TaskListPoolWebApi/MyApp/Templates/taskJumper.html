@@ -1,0 +1,18 @@
+﻿<div style="display:inline-block; padding: 5px 5px 5px 5px; border:1px solid black;">
+    <input 
+        type="number" 
+        min="1"
+        placeholder="TFS work item #" 
+        style="width:130px; text-align:right;" 
+        ng-model="taskJumperModel.workItemId"
+        data-ng-keypress="onEnterKeyPress($event)">
+    &nbsp;
+    <button 
+        ng-click="goToTaskByWorkItemId()"
+        class="btn btn-info btn-md">
+        <span class="glyphicon glyphicon-search"></span> Search
+    </button>
+</div>
+<div role="alert">
+    <span class="error" ng-show="showError">TFS work item Must be greater than zero!</span>
+</div>

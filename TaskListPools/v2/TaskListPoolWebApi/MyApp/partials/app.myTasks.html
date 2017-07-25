@@ -1,0 +1,60 @@
+﻿<div style="display:inline-block;">
+    <h2>Task pool</h2>
+    <a ui-sref="taskGroups()">
+        <span class="glyphicon glyphicon-folder-open"></span>
+    </a>
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+    <form name="formTask">
+        <table border="1" class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Date</th>
+                    <th><span class="glyphicon glyphicon-cog"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t in taskGridData">
+                    <td>
+                        <input type="hidden" ng-model="t.TaskId" />
+                        <span ng-hide="taskRowIsBeingEdited">{{t.Body}}</span>
+                        <input ng-show="taskRowIsBeingEdited" type="text" ng-model="t.Body" />
+                    </td>
+                    <td>{{t.CreatedOn}}</td>
+                    <td>
+                        <button id="btnTaskEdit"
+                                class="btn btn-info btn-md"
+                                ng-hide="taskRowIsBeingEdited"
+                                ng-click="taskRowIsBeingEdited = true;">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button id="btnTaskDelete"
+                                class="btn btn-info btn-md"
+                                ng-hide="taskRowIsBeingEdited"
+                                ng-click="btnTaskDelete_click(t.TaskId)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button id="btnTaskOk"
+                                class="btn btn-info btn-md"
+                                ng-show="taskRowIsBeingEdited"
+                                ng-click="btnTaskEdit_click(t); formTask.setPristine(); taskRowIsBeingEdited = false;">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
+                        </button>
+                        <button id="btnTaskCancel"
+                                class="btn btn-info btn-md"
+                                ng-show="taskRowIsBeingEdited"
+                                ng-click="formSessions.setPristine(); taskRowIsBeingEdited = false;">
+                            <span class="glyphicon glyphicon-remove-sign"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <add-task on-task-saved="refreshGrid" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <br />
+</div>

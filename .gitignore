@@ -114,3 +114,15 @@
 /IIS_SiteViewer/packages
 /node_modules
 /quickstart/
+/TaskListPools/v2/TaskListPoolDb/bin/Debug
+/TaskListPools/v2/TaskListPoolDb/obj/Debug
+/TaskListPools/v2/TaskListPoolWebApi/bin
+/TaskListPools/v2/TaskListPoolWebApi/obj/Debug
+/TaskListPools/v2/TaskListPoolTest/bin/Debug
+/TaskListPools/v2/TaskListPoolTest/obj/Debug
+/TaskListPools/v2/TaskListPoolLib/bin/Debug
+/TaskListPools/v2/TaskListPoolLib/obj/Debug
+/TaskListPools/v2/packages
+/TaskListPools/v2/TaskListPoolDb/TaskListPool.dbmdl
+/TaskListPools/v2/TaskListPoolDb/TaskListPool.jfm
+/TaskListPools/v1

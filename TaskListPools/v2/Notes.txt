@@ -1,0 +1,2 @@
+http://tasklistpool.archimedes.local/MillionThings/index
+http://tasklistpool.archimedes.local/MillionThings/VjsTest

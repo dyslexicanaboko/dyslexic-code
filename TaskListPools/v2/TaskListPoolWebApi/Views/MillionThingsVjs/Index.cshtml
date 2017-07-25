@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "VjsTest";
+}
+
+@*<script src="https://unpkg.com/axios/dist/axios.min.js"></script>*@
+@*<script src="https://unpkg.com/vue"></script>*@
+<script src="~/Scripts/Controllers/taskPoolController.js"></script>
+
+<a href="http://tasklistpool.archimedes.local/MillionThingsVjs" target="_self">refresh</a>
+<br />
+<br />
+This is a test - refreshed on @(ViewBag.RefreshTime)
+<br />
+<br />
+<table border="1" id="tblData">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Created On</th>
+            <th><span class="glyphicon glyphicon-cog"></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="t in tasks">
+            <td>
+                <input type="hidden" v-model="t.TaskId" />
+                <input v-if="t.taskRowIsBeingEdited" type="text" v-model="t.Body" />
+                <span v-else>{{t.Body}}</span>
+            </td>
+            <td>{{ t.CreatedOn }}</td>
+            <td>
+                <div v-if="t.taskRowIsBeingEdited">
+                    <button id="btnTaskOk"
+                            class="btn btn-info btn-md"
+                            v-on:click="btnTaskEdit_click(t); t.taskRowIsBeingEdited = false;">
+                        <span class="glyphicon glyphicon-ok-sign"></span>
+                    </button>
+                    <button id="btnTaskCancel"
+                            class="btn btn-info btn-md"
+                            v-on:click="t.taskRowIsBeingEdited = false;">
+                        <span class="glyphicon glyphicon-remove-sign"></span>
+                    </button>
+                </div>
+                <div v-else>
+                    <button id="btnTaskEdit"
+                            class="btn btn-info btn-md"
+                            v-on:click="t.taskRowIsBeingEdited = true;">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button id="btnTaskDelete"
+                            class="btn btn-info btn-md"
+                            v-on:click="btnTaskDelete_click(t.TaskId)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<v-add-task id="inputAddTask" />
+<script type="text/javascript">
+    initComponent();
+
+    //This will load the grid initially
+    loadTasks();
+</script>
