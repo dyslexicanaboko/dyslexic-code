@@ -1,0 +1,170 @@
+﻿<a href="http://intranetwebapi.win7dedicated.fmp.local/Tasks/myTasks">Reload MyTasks</a><br />
+<a ui-sref="myTasks" >
+    <span class="glyphicon glyphicon-circle-arrow-left" />&nbsp;Back to My Tasks
+</a>
+<task-jumper style="float:right;"></task-jumper>
+<toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+<div>
+    <form name="formTask" class="form-horizontal">
+        <fieldset>
+            <legend>Task {{devTaskId}}</legend>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Dev Task</label>  
+              <div class="col-md-4">
+                <input type="text" class="form-control input-md" ng-model="frmDevTask.TfsWorkItemChildId">
+                <span class="form-control">{{frmDevTask.TfsWorkItemChildTitle}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Parent Task</label>  
+              <div class="col-md-4">
+                <span class="form-control">{{frmDevTask.TfsWorkItemParentId}}</span>
+                <span class="form-control">{{frmDevTask.TfsWorkItemParentTitle}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Original Estimate</label>  
+              <div class="col-md-4">
+                <input type="text" placeholder="1" class="form-control input-md" ng-model="frmDevTask.OriginalEstimate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Bill Type</label>  
+              <div class="col-md-4">
+                  <input type="radio" ng-model="frmDevTask.IsCapEx" ng-value="true" /><img src="../../Images/dollar_sign.png" />Cap Ex<br />
+                  <input type="radio" ng-model="frmDevTask.IsCapEx" ng-value="false" /><img src="../../Images/code_bug.gif" />Op Ex
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">Created On</label>  
+              <div class="col-md-4">
+                  <span class="form-control">{{frmDevTask.CreatedOn | date:'MM/dd/yy HH:mm:ss'}}</span>
+              </div>
+            </div>
+            <div class="form-group">  
+                <div class="row-md-4">
+                    <button id="btnTaskAdd" 
+                        class="form-control btn btn-info btn-md" 
+                        title="Add a new task"
+                        ng-hide="isExistingTask"
+                        ng-click="btnTaskAdd_click(frmDevTask)" >
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                    </button>
+                    <button id="btnTaskSave" 
+                        class="form-control btn btn-info btn-md" 
+                        title="Edit this task"
+                        ng-show="isExistingTask"
+                        ng-click="btnTaskSave_click(frmDevTask)" >
+                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                    </button>
+                    <button id="btnTaskDelete" 
+                        class="form-control btn btn-info btn-md" 
+                        title="Delete this task"
+                        ng-show="isExistingTask"
+                        ng-click="btnTaskDelete_click(frmDevTask.DevTaskId)" >
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div google-charts-column-sessions id="divSessionsChart" class="devTaskSessionChart" ng-show="isExistingTask">
+</div>
+<br />
+<hr />
+<h2>Sessions</h2>
+<form name="formSessions">
+    Date Template <input type="datetime" id="txtDateTemplate" ng-model="dateTemplate.dateTime" /> <button ng-click="txtDateTemplate_click(dateTemplate.dateTime, sessionModel);" title="Apply the date template to the session form below.">Apply</button>
+    <br />
+    <table border="1" class="table table-striped table-bordered table-condensed" ng-show="isExistingTask">
+        <thead>
+            <tr>
+                <th>EntryId</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Completed</th>
+                <th>Estimate</th>
+                <th>Remaining</th>
+                <th>Rollup</th>
+                <th>Notes</th>
+                <th>Created On</th>
+                <th><span class="glyphicon glyphicon-cog"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="sgd in sessionsGridData">
+                <td>{{sgd.EntryId}}</td>
+                <td>
+                    <span ng-hide="sessionRowIsBeingEdited">{{sgd.SessionStart | date:'MM/dd/yy HH:mm'}}</span>
+                    <input ng-show="sessionRowIsBeingEdited" type="datetime" ng-model="sgd.SessionStart" />
+                </td>
+                <td>
+                    <span ng-hide="sessionRowIsBeingEdited">{{sgd.SessionEnd | date:'MM/dd/yy HH:mm'}}</span>
+                    <input ng-show="sessionRowIsBeingEdited" type="datetime" ng-model="sgd.SessionEnd" />
+                </td>
+                <td>{{sgd.HoursCompleted | number:2}}</td>
+                <td>
+                    <span ng-hide="sessionRowIsBeingEdited">{{sgd.HoursEstimate}}</span>
+                    <input ng-show="sessionRowIsBeingEdited" type="number" ng-model="sgd.HoursEstimate" />
+                </td>
+                <td>{{sgd.HoursRemaining | number:2}}</td>
+                <td>{{sgd.HoursCompletedRollup | number:2}}</td>
+                <td>
+                    <span ng-hide="sessionRowIsBeingEdited">{{sgd.Notes}}</span>
+                    <textarea ng-show="sessionRowIsBeingEdited" ng-model="sgd.Notes" ng-class="{'devTaskSessionText'}"></textarea>
+                </td>
+                <td>{{sgd.CreatedOn | date:'MM/dd/yy HH:mm:ss'}}</td>
+                <td>
+                    <button 
+                        id="btnSessionEdit" 
+                        class="btn btn-info btn-md"
+                        ng-hide="sessionRowIsBeingEdited"
+                        ng-click="sessionRowIsBeingEdited = true;">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button 
+                        id="btnSessionDelete" 
+                        class="btn btn-info btn-md"
+                        ng-hide="sessionRowIsBeingEdited"
+                        ng-click="btnSessionDelete_click(sgd)">
+                      <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                    <button 
+                        id="btnSessionOk" 
+                        class="btn btn-info btn-md"
+                        ng-show="sessionRowIsBeingEdited"
+                        ng-click="btnSessionEdit_click(sgd); formSessions.setPristine(); sessionRowIsBeingEdited = false;">
+                      <span class="glyphicon glyphicon-ok-sign"></span>
+                    </button>
+                    <button 
+                        id="btnSessionCancel" 
+                        class="btn btn-info btn-md"
+                        ng-show="sessionRowIsBeingEdited"
+                        ng-click="formSessions.setPristine(); sessionRowIsBeingEdited = false;">
+                      <span class="glyphicon glyphicon-remove-sign"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><!-- not editable EntryId --></td>
+                <td><input type="datetime" ng-model="sessionModel.SessionStart" /></td>
+                <td><input type="datetime" ng-model="sessionModel.SessionEnd" /></td>
+                <td><!-- not editable Completed --></td>
+                <td><input type="number" ng-model="sessionModel.HoursEstimate" /></td>
+                <td><!-- not editable Remaining --></td>
+                <td><!-- not editable Rollup --></td>
+                <td><textarea ng-model="sessionModel.Notes" class="devTaskSessionText" ></textarea></td>
+                <td><!-- not editable CreatedOn --></td>
+                <td>
+                    <button id="btnSessionAdd" 
+                        class="btn btn-info btn-md" 
+                        title="Add a new session for this task"
+                        ng-click="btnSessionAdd_click(sessionModel)" >
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

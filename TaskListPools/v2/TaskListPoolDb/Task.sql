@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Task]
+(
+	[TaskId] INT NOT NULL IDENTITY(1,1), 
+	[Body] VARCHAR(500) NOT NULL,
+	[IsDeleted] BIT CONSTRAINT DF_dbo_Task_IsDeleted DEFAULT (0) NOT NULL,
+	[CreatedOn] DATETIME2(0) CONSTRAINT DF_dbo_Task_CreatedOn DEFAULT (GETDATE()) NOT NULL,
+	CONSTRAINT PK_dbo_Task_TaskId PRIMARY KEY CLUSTERED ( TaskId ASC )
+)

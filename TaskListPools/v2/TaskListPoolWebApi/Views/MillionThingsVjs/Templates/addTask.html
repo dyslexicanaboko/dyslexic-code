@@ -1,0 +1,12 @@
+﻿<div style="float:left;">
+    <input type="text" id="txtBody" v-model="newTask.Body" style="width:100%;" />
+    &nbsp;
+</div>
+<div style="float:left;">
+    <button id="btnAddTask"
+            v-on:click="newTask.TaskId = 0; btnAddTask_click(newTask);"
+            class="btn btn-info btn-md">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+    </button>
+</div>
+<div style="clear:both;" />

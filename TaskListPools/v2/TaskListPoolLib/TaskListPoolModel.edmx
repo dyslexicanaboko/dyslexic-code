@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TaskListPoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Body" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskGroup">
+          <Key>
+            <PropertyRef Name="TaskGroupId" />
+          </Key>
+          <Property Name="TaskGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskGroupLink">
+          <Key>
+            <PropertyRef Name="TaskGroupLinkId" />
+          </Key>
+          <Property Name="TaskGroupLinkId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TaskGroupId" Type="int" Nullable="false" />
+          <Property Name="TaskId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_TaskGroup_TaskGroupId">
+          <End Role="TaskGroup" Type="Self.TaskGroup" Multiplicity="1" />
+          <End Role="TaskGroupLink" Type="Self.TaskGroupLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaskGroup">
+              <PropertyRef Name="TaskGroupId" />
+            </Principal>
+            <Dependent Role="TaskGroupLink">
+              <PropertyRef Name="TaskGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TaskGroupLink_TaskId">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="TaskGroupLink" Type="Self.TaskGroupLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="TaskGroupLink">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TaskListPoolModelStoreContainer">
+          <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskGroup" EntityType="Self.TaskGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskGroupLink" EntityType="Self.TaskGroupLink" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_TaskGroup_TaskGroupId" Association="Self.FK_dbo_TaskGroup_TaskGroupId">
+            <End Role="TaskGroup" EntitySet="TaskGroup" />
+            <End Role="TaskGroupLink" EntitySet="TaskGroupLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TaskGroupLink_TaskId" Association="Self.FK_dbo_TaskGroupLink_TaskId">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="TaskGroupLink" EntitySet="TaskGroupLink" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TaskListPoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Body" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="TaskGroupLinks" Relationship="Self.FK_dbo_TaskGroupLink_TaskId" FromRole="Task" ToRole="TaskGroupLink" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskGroup">
+          <Key>
+            <PropertyRef Name="TaskGroupId" />
+          </Key>
+          <Property Name="TaskGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="TaskGroupLinks" Relationship="TaskListPoolModel.FK_dbo_TaskGroup_TaskGroupId1" FromRole="TaskGroup" ToRole="TaskGroupLink" />
+        </EntityType>
+        <EntityType Name="TaskGroupLink">
+          <Key>
+            <PropertyRef Name="TaskGroupLinkId" />
+          </Key>
+          <Property Name="TaskGroupLinkId" Type="Guid" Nullable="false" />
+          <Property Name="TaskGroupId" Type="Int32" Nullable="false" />
+          <Property Name="TaskId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_dbo_TaskGroupLink_TaskId" FromRole="TaskGroupLink" ToRole="Task" />
+          <NavigationProperty Name="TaskGroup" Relationship="TaskListPoolModel.FK_dbo_TaskGroup_TaskGroupId1" FromRole="TaskGroupLink" ToRole="TaskGroup" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <Association Name="FK_dbo_TaskGroupLink_TaskId">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="TaskGroupLink" Type="Self.TaskGroupLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="TaskGroupLink">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TaskListPoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tasks" EntityType="Self.Task" />
+          <EntitySet Name="TaskGroups" EntityType="Self.TaskGroup" />
+          <EntitySet Name="TaskGroupLinks" EntityType="Self.TaskGroupLink" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_dbo_TaskGroupLink_TaskId" Association="Self.FK_dbo_TaskGroupLink_TaskId">
+            <End Role="Task" EntitySet="Tasks" />
+            <End Role="TaskGroupLink" EntitySet="TaskGroupLinks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TaskGroup_TaskGroupId1" Association="TaskListPoolModel.FK_dbo_TaskGroup_TaskGroupId1">
+            <End Role="TaskGroup" EntitySet="TaskGroups" />
+            <End Role="TaskGroupLink" EntitySet="TaskGroupLinks" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_dbo_TaskGroup_TaskGroupId1">
+          <End Type="TaskListPoolModel.TaskGroup" Role="TaskGroup" Multiplicity="1" />
+          <End Type="TaskListPoolModel.TaskGroupLink" Role="TaskGroupLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaskGroup">
+              <PropertyRef Name="TaskGroupId" />
+            </Principal>
+            <Dependent Role="TaskGroupLink">
+              <PropertyRef Name="TaskGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TaskListPoolModelStoreContainer" CdmEntityContainer="TaskListPoolEntities">
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="TaskListPoolModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskGroups">
+            <EntityTypeMapping TypeName="TaskListPoolModel.TaskGroup">
+              <MappingFragment StoreEntitySet="TaskGroup">
+                <ScalarProperty Name="TaskGroupId" ColumnName="TaskGroupId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskGroupLinks">
+            <EntityTypeMapping TypeName="TaskListPoolModel.TaskGroupLink">
+              <MappingFragment StoreEntitySet="TaskGroupLink">
+                <ScalarProperty Name="TaskGroupLinkId" ColumnName="TaskGroupLinkId" />
+                <ScalarProperty Name="TaskGroupId" ColumnName="TaskGroupId" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TaskListPoolModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
