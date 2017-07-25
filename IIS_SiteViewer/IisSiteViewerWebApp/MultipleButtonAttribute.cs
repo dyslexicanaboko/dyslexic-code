@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace IisSiteViewerWebApp
 {
+    //http://stackoverflow.com/questions/442704/how-do-you-handle-multiple-submit-buttons-in-asp-net-mvc-framework
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public class MultipleButtonAttribute : ActionNameSelectorAttribute
     {
