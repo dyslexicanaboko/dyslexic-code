@@ -251,6 +251,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\TaskListController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -1147,6 +1148,11 @@
     <Content Include="Views\MillionThings\Index.cshtml" />
     <Content Include="Views\MillionThingsVjs\Index.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
+    <Content Include="Views\TaskList\Create.cshtml" />
+    <Content Include="Views\TaskList\Delete.cshtml" />
+    <Content Include="Views\TaskList\Details.cshtml" />
+    <Content Include="Views\TaskList\Edit.cshtml" />
+    <Content Include="Views\TaskList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

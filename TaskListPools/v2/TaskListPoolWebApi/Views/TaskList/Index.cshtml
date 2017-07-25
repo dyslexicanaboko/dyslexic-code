@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TaskListPoolLib.Task>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>*@
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.TaskId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.TaskId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.TaskId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
