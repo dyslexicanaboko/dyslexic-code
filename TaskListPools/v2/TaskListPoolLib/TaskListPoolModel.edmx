@@ -65,6 +65,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="TaskGroup_GetAllWithSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="TaskListPoolModelStoreContainer">
           <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaskGroup" EntityType="Self.TaskGroup" Schema="dbo" store:Type="Tables" />
@@ -148,6 +149,7 @@
             <End Role="TaskGroup" EntitySet="TaskGroups" />
             <End Role="TaskGroupLink" EntitySet="TaskGroupLinks" />
           </AssociationSet>
+          <FunctionImport Name="TaskGroup_GetAllWithSummary" ReturnType="Collection(TaskListPoolModel.TaskGroup_GetAllWithSummary_Result)" />
         </EntityContainer>
         <Association Name="FK_dbo_TaskGroup_TaskGroupId1">
           <End Type="TaskListPoolModel.TaskGroup" Role="TaskGroup" Multiplicity="1" />
@@ -161,6 +163,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="TaskGroup_GetAllWithSummary_Result">
+          <Property Type="Int32" Name="TaskGroupId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Int32" Name="Tasks" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -207,6 +216,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TaskGroup_GetAllWithSummary" FunctionName="TaskListPoolModel.Store.TaskGroup_GetAllWithSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TaskListPoolModel.TaskGroup_GetAllWithSummary_Result">
+                <ScalarProperty Name="TaskGroupId" ColumnName="TaskGroupId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Tasks" ColumnName="Tasks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

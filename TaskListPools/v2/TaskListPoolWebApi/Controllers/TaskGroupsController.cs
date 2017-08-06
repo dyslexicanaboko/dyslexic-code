@@ -16,11 +16,13 @@ namespace TaskListPoolWebApi.Controllers
     {
         private TaskListPoolEntities db = new TaskListPoolEntities();
 
-        // GET: api/TaskGroups
-        public IQueryable<TaskGroup> GetTaskGroups()
-        {
-            return db.TaskGroups;
-        }
+        /* Getting all groups like this is not what I am going to do. I will use the summary object instead 
+         * which is more useful and lighter weight. */
+        //// GET: api/TaskGroups
+        //public IQueryable<TaskGroup> GetTaskGroups()
+        //{
+        //    return db.TaskGroups;
+        //}
 
         // GET: api/TaskGroups/5
         [ResponseType(typeof(TaskGroup))]

@@ -20,6 +20,11 @@ namespace TaskListPoolWebApi.Views.TaskList
             return View(db.Tasks.ToList());
         }
 
+        public ActionResult TaskGroups()
+        {
+            return View(db.TaskGroup_GetAllWithSummary().ToList());
+        }
+
         // GET: TaskList/Details/5
         public ActionResult Details(int? id)
         {
