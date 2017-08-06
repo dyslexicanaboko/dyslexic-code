@@ -348,6 +348,7 @@
     <Content Include="Scripts\axios.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Controllers\taskPoolController2.js" />
     <Content Include="Scripts\Controllers\taskPoolController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -1153,6 +1154,7 @@
     <Content Include="Views\TaskList\Details.cshtml" />
     <Content Include="Views\TaskList\Edit.cshtml" />
     <Content Include="Views\TaskList\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutRegular.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

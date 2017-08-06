@@ -9,7 +9,7 @@ namespace TaskListPoolWebApi
         public static void RegisterBundles(BundleCollection bundles)
         {
             //JavaScript Scripts
-            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jsfa").Include(
                 //Angular Scripts
                 "~/Scripts/modernizr-*",
                 "~/Scripts/angular.js",
@@ -20,27 +20,34 @@ namespace TaskListPoolWebApi
                 //angular-ui
                 "~/Scripts/angular-ui/ui-bootstrap.js",
                 "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
-                //Vue.js
-                "~/Scripts/vue.min.js",
                 //Other Third party scripts
-                "~/Scripts/jquery-{version}.js",
-                "~/Scripts/bootstrap.js",
-                "~/Scripts/respond.js",
-                "~/Scripts/underscore.js",
                 "~/Scripts/toaster.js", //This is for angular only
-                "~/Scripts/date.js",
-                "~/Scripts/underscore.js",
-                "~/Scripts/axios.min.js",
-                "~/Scripts/toastr.min.js",
-                "~/Scripts/require.js",
                 //Custom scripts for this application
-                "~/Scripts/Services/*.js",
                 "~/MyApp/*.js", //app and app.init
                 "~/MyApp/configs/*.js",
                 "~/MyApp/controllers/*.js",
                 "~/MyApp/services/*.js",
                 "~/MyApp/Directives/*.js",
                 "~/MyApp/Filters/*.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/jsfv").Include(
+                //Vue.js
+                "~/Scripts/vue.min.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+                //Other Third party scripts
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/respond.js",
+                "~/Scripts/date.js", 
+                "~/Scripts/underscore.js", //Lib for collections
+                "~/Scripts/axios.min.js", //HTTP lib for any framework
+                "~/Scripts/toastr.min.js", //Regular JS toaster
+                "~/Scripts/require.js",
+                //Custom scripts for this application
+                "~/Scripts/Services/*.js"
             ));
 
             //CSS Scripts
