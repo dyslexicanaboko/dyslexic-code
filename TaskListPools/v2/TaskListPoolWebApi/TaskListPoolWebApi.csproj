@@ -239,6 +239,7 @@
     <Compile Include="Controllers\MillionThingsController.cs" />
     <Compile Include="Controllers\MillionThingsVjsController.cs" />
     <Compile Include="Controllers\TaskGroupsController.cs" />
+    <Compile Include="Controllers\TaskGroup_GetAllWithSummary_ResultController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -348,6 +349,7 @@
     <Content Include="Scripts\axios.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Controllers\taskGroupsController.js" />
     <Content Include="Scripts\Controllers\taskPoolController2.js" />
     <Content Include="Scripts\Controllers\taskPoolController.js" />
     <Content Include="Scripts\errors.json" />
@@ -1155,6 +1157,7 @@
     <Content Include="Views\TaskList\Edit.cshtml" />
     <Content Include="Views\TaskList\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutRegular.cshtml" />
+    <Content Include="Views\TaskList\TaskGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<TaskListPoolLib.TaskGroup_GetAllWithSummary_Result>
+
+@{
+Layout = "~/Views/Shared/_LayoutRegular.cshtml";
+}
+<script src="~/Scripts/Controllers/taskGroupsController.js"></script>
+<table id="tblTaskGroups" class="table">
+    <tr>
+        <th>Group</th>
+        <th>Description</th>
+        <th>Created On</th>
+        <th>Tasks</th>
+        <th><span class="glyphicon glyphicon-cog"></span></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr id="row@(item.TaskGroupId)">
+        <td>
+            <span id="lblName@(item.TaskGroupId)" style="display:inline-block;">
+                @Html.DisplayFor(modelItem => item.Name)
+            </span>
+            <input id="txtName@(item.TaskGroupId)" type="text" style="display:none;" value="@Html.DisplayFor(modelItem => item.Name)" />
+        </td>
+        <td>
+            <span id="lblDescription@(item.TaskGroupId)" style="display:inline-block;">
+                @Html.DisplayFor(modelItem => item.Description)
+            </span>
+            <input id="txtDescription@(item.TaskGroupId)" type="text" style="display:none;" value="@Html.DisplayFor(modelItem => item.Description)" />
+        </td>
+        <td>
+            <span id="lblCreatedOn@(item.TaskGroupId)">@Html.DisplayFor(modelItem => item.CreatedOn)</span>
+        </td>
+        <td>
+            <span id="lblTaskCount@(item.TaskGroupId)">@Html.DisplayFor(modelItem => item.TaskCount)</span>
+        </td>
+        <td>
+            <div id="divReg@(item.TaskGroupId)" style="display:inline-block;">
+                <button id="btnTaskGroupEdit"
+                        class="btn btn-info btn-md"
+                        onclick="btnEditToggle_click(@(item.TaskGroupId), true)">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button id="btnTaskGroupDelete"
+                        class="btn btn-info btn-md"
+                        onclick="btnTaskGroupDelete_click(@(item.TaskGroupId))">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </div>
+            <div id="divEdit@(item.TaskGroupId)" style="display:none;" >
+                <button id="btnTaskGroupOk"
+                        class="btn btn-info btn-md"
+                        onclick="btnTaskGroupEdit_click(@(item.TaskGroupId));">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                </button>
+                <button id="btnTaskGroupCancel"
+                        class="btn btn-info btn-md"
+                        onclick="btnEditToggle_click(@(item.TaskGroupId), false)">
+                    <span class="glyphicon glyphicon-remove-sign"></span>
+                </button>
+            </div>
+        </td>
+    </tr>
+}
+    <tr>
+        <td>
+            <input id="txtBody0" type="text" />
+        </td>
+        <td />
+        <td />
+        <td />
+        <td>
+            <button id="btnTaskGroupAdd"
+                    class="btn btn-info btn-md"
+                    onclick="btnTaskGroupAdd_click()">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+
