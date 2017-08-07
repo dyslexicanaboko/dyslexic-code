@@ -12,7 +12,7 @@ using TaskListPoolLib;
 
 namespace TaskListPoolWebApi.Controllers
 {
-    [RoutePrefix("api/TaskGroup")]
+    [RoutePrefix("api/TaskGroups")]
     public class TaskGroup_GetAllWithSummary_ResultController : ApiController
     {
         private TaskListPoolEntities db = new TaskListPoolEntities();

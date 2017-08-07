@@ -38,7 +38,7 @@ function getTaskPoolService() {
             getAll: function () {
                 //console.log("devTasksFactory.getGraphData.userId:" + $rootScope.userId);
 
-                return axios.get(apiTaskGroups("")); //GET at root
+                return axios.get(apiTaskGroups("Summary")); //GET at root
             },
             save: function (obj) {
                 //devTask.UserId = $rootScope.userId;

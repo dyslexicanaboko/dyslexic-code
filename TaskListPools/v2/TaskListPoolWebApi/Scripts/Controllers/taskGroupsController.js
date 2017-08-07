@@ -1,156 +1,160 @@
-﻿function btnEditToggle_click(taskId, editMode) {
-    var r = $("#divReg" + taskId);
-    var e = $("#divEdit" + taskId);
-    var l = $("#lblBody" + taskId);
-    var t = $("#txtBody" + taskId);
-
+﻿function btnEditToggle_click(taskGroupId, editMode) {
+    var r = $("#divReg" + taskGroupId);
+    var e = $("#divEdit" + taskGroupId);
+    var m = getJQueryObjects(taskGroupId);
 
     if (editMode === true) {
         r.hide();
         e.show();
-        l.hide();
-        t.show();
+        m.Name.label.hide();
+        m.Name.text.show();
+        m.Description.label.hide();
+        m.Description.text.show();
     }
     else {
         r.show();
         e.hide();
-        l.show();
-        t.hide();
+        m.Name.label.show();
+        m.Name.text.hide();
+        m.Description.label.show();
+        m.Description.text.hide();
     }
 }
 
-function getTaskObject(taskId) {
-    var tb = $("#txtBody" + taskId);
-    var tc = $("#lblCreatedOn" + taskId);
-
+function getJQueryObjects(taskGroupId) {
     return {
-        TaskId: taskId,
-        Body: tb.val(),
-        CreatedOn: tc.text()
+        Name: { 
+            label: $("#lblName" + taskGroupId),
+            text: $("#txtName" + taskGroupId) 
+        },
+        Description: {
+            label: $("#lblDescription" + taskGroupId),
+            text: $("#txtDescription" + taskGroupId)
+        },
+        CreatedOn: $("#lblCreatedOn" + taskGroupId),
+        TaskCount: $("#lblTaskCount" + taskGroupId)
     };
 }
 
-function setTaskHtml(task) {
-    var tl = $("#lblBody" + task.TaskId);
-    var tc = $("#lblCreatedOn" + task.TaskId);
+function getModel(taskGroupId) {
+    var m = getJQueryObjects(taskGroupId);
 
-    tl.text(task.Body);
-    tc.text(task.CreatedOn);
+    return {
+        TaskGroupId: taskGroupId,
+        Name: m.Name.text.val(),
+        Description: m.Description.text.val(),
+        CreatedOn: m.CreatedOn.text(),
+        TaskCount: parseInt(m.TaskCount.text())
+    };
 }
 
-function loadGrid(tasks) {
-    var v = new Vue({
-        el: '#tblData',
-        data: {
-            tasks: tasks
-        }
-    });
+function setModelHtml(taskGroup) {
+    var m = getJQueryObjects(taskGroup.TaskGroupId);
+
+    m.Name.label.text(taskGroup.Name);
+    m.Description.label.text(taskGroup.Description);
+    m.Name.text.val(taskGroup.Name);
+    m.Description.text.val(taskGroup.Description);
+    m.CreatedOn.text(taskGroup.CreatedOn);
+    m.TaskCount.text(taskGroup.TaskCount);
 }
 
-function appendPropertyToObject(item) {
-    item.taskRowIsBeingEdited = false;
-}
-
-function loadTasks() {
+function page_load() {
     getTaskPoolService()
-        .tasks
+        .taskGroups
         .getAll()
         .then(function (response) {
             var arr = response.data;
 
-            _.forEach(arr, appendPropertyToObject);
-
-            //loadGrid(arr);
+            addModelsToTable(arr);
         })
         .catch(function (response) {
             toastMessages.errorHttp(response);
         });
 }
 
-function btnTaskAdd_click() {
-    //console.log("btnTaskAdd_click");
-    //console.dir(task);
-    var task = getTaskObject(0);
+function addModelsToTable(models) {
+    var templateRow = $("#row_id0");
 
-    saveTask(task, function (objTask) {
-        toastMessages.success("Task " + objTask.TaskId + " created successfully");
+    _.forEach(models, function (model) {
+        //Clone the template row
+        var tr = templateRow.clone();
 
-        var addRow = $("#tblTasks tr:last");
-
-        //Attempt to get the previous row, however in the edge case of an empty table this might not work
-        var lastRow = addRow.prev();
-
-        //If the table was empty, then just reload the page this first time
-        if (lastRow === undefined) {
-            location.reload();
-        }
-
-        //Clone the last row
-        var tr = lastRow.clone();
-
-        //Find the existing id and remove the text part to make it a number
-        var find_id = tr.attr("id").replace("row", "");
-        var new_id = objTask.TaskId;
+        //Replace the id attribute accordingly
+        tr.attr("id", "row" + model.TaskGroupId);
 
         //Mass replace all of the ids with the new id
-        tr.html(tr.html().replace(find_id, new_id));
+        tr.html(tr.html().replace(/_id0/g, model.TaskGroupId));
 
-        //Add the cloned row before the last row (which is strictly the add row)
-        lastRow.after(tr);
+        //Add the cloned row to the table
+        $("#tblModel tbody").append(tr);
 
         //Update the html normally
-        setTaskHtml(objTask);
+        setModelHtml(model);
 
-        $("#txtBody0").val("");
+        console.dir(tr);
     });
 }
 
-function btnTaskEdit_click(taskId) {
-    //console.log("btnTaskEdit_click");
-    //console.dir(task);
-    var task = getTaskObject(taskId);
+function btnTaskGroupAdd_click() {
+    var task = getModel(0);
 
-    saveTask(task, function (objTask) {
-        toastMessages.success("Task updated successfully");
+    saveTaskGroup(task, function (objTaskGroup) {
+        toastMessages.success("Group " + objTaskGroup.TaskGroupId + " created successfully");
 
-        btnEditToggle_click(taskId, false);
+        //Add the new model to the table
+        addModelsToTable([objTaskGroup]);
 
-        setTaskHtml(task);
+        //Clear out the input form
+        $("#txtName0").val("");
+        $("#txtDescription0").val("");
     });
 }
 
-function btnTaskDelete_click(taskId) {
-    if (!confirm("Are you sure you want to delete this task?")) {
+function btnTaskGroupEdit_click(taskGroupId) {
+    var task = getModel(taskGroupId);
+
+    saveTaskGroup(task, function (objTaskGroup) {
+        toastMessages.success("Group updated successfully");
+
+        btnEditToggle_click(taskGroupId, false);
+
+        setModelHtml(task);
+    });
+}
+
+function btnTaskGroupDelete_click(taskGroupId) {
+    if (!confirm("Are you sure you want to delete this group?")) {
         return;
     }
 
     getTaskPoolService()
-        .tasks
-        .delete(taskId)
+        .taskGroups
+        .delete(taskGroupId)
         .then(function (result) {
-            $("#row" + taskId).remove();
+            $("#row" + taskGroupId).remove();
         })
         .catch(function (response) {
             toastMessages.errorHttp(response);
         });
 }
 
-function saveTask(task, onSuccess) {
+function saveTaskGroup(task, onSuccess) {
     getTaskPoolService()
-        .tasks
+        .taskGroups
         .save(task)
         .then(function (result) {
-            var objTask = result.data;
+            var objTaskGroup = result.data;
 
             //console.log("getData.promise");
-            //console.dir(objTask);
+            //console.dir(objTaskGroup);
 
-            //_members.$scope.devTaskId = objTask.DevTaskId;
+            //_members.$scope.devTaskGroupId = objTaskGroup.DevTaskGroupId;
 
-            //_members.$scope.newTask = objTask;
+            //_members.$scope.newTaskGroup = objTaskGroup;
 
             if (onSuccess) {
-                onSuccess(objTask);
+                onSuccess(objTaskGroup);
             }
         })
         .catch(function (response) {
