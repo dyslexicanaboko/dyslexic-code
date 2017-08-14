@@ -1201,6 +1201,7 @@
     <Content Include="Views\TaskList\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutRegular.cshtml" />
     <Content Include="Views\TaskList\TaskGroups.cshtml" />
+    <Content Include="Views\TaskList\_TaskList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
