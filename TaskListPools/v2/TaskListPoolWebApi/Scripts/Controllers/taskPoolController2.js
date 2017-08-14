@@ -46,7 +46,9 @@ function setModelHtml(task) {
     m.CreatedOn.text(task.CreatedOn);
 }
 
-function page_load() {
+function page_load(taskGroupId) {
+    console.log("Load tasks for Group: " + taskGroupId);
+
     getTaskPoolService()
         .tasks
         .getAll()

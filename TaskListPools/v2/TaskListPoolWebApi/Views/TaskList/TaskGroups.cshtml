@@ -40,17 +40,14 @@
     </tfoot>
 </table>
 
-<div id="dialog-form" title="Create new user">
-    <p class="validateTips">All form fields are required.</p>
-
+<div id="dialog-form" title="Tasks">
     <form>
         <fieldset>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
-            <!-- Allow form submission with keyboard without duplicating the dialog button -->
-            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            <label for="name">Task Group Id</label>
+            <input type="text" id="txtTargetTaskGroupId" value="" class="text ui-widget-content ui-corner-all">
+            <div>
+                Load the groups tasks here
+            </div>
         </fieldset>
     </form>
 </div>

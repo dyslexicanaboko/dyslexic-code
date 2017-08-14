@@ -144,6 +144,8 @@ function btnTaskGroupDelete_click(taskGroupId) {
 function btnAddTasksToGroup_click(rowId) {
     console.log("click: " + rowId);
 
+    $("#txtTargetTaskGroupId").val(rowId);
+
     dialog.dialog("open");
 }
 
