@@ -5,64 +5,69 @@ Layout = "~/Views/Shared/_LayoutRegular.cshtml";
 }
 <script src="~/Scripts/Controllers/taskPoolController2.js"></script>
 @Html.ActionLink("Groups", "TaskGroups")
-<table id="tblTasks" class="table">
-    <tr>
-        <th>Task</th>
-        <th>Created On</th>
-        <th><span class="glyphicon glyphicon-cog"></span></th>
-    </tr>
-    
-@foreach (var item in Model) {
-    <tr id="row@(item.TaskId)">
-        <td>
-            <span id="lblBody@(item.TaskId)" style="display:inline-block;">
-                @Html.DisplayFor(modelItem => item.Body)
-            </span>
-            <input id="txtBody@(item.TaskId)" type="text" style="display:none;" value="@Html.DisplayFor(modelItem => item.Body)" />
-        </td>
-        <td>
-            <span id="lblCreatedOn@(item.TaskId)">@Html.DisplayFor(modelItem => item.CreatedOn)</span>
-        </td>
-        <td>
-            <div id="divReg@(item.TaskId)" style="display:inline-block;">
-                <button id="btnTaskEdit"
+<table id="tblModel" class="table">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Created On</th>
+            <th><span class="glyphicon glyphicon-cog"></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        @*This is where the template is applied for all elements of this model*@
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>
+                <input id="txtBody0" type="text" />
+            </td>
+            <td />
+            <td>
+                <button id="btnTaskAdd"
                         class="btn btn-info btn-md"
-                        onclick="btnEditToggle_click(@(item.TaskId), true)">
+                        onclick="btnTaskAdd_click()">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                </button>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<table id="trModelTemplate" style="visibility:hidden;">
+    <tr id="row_id0">
+        <td>
+            <span id="lblBody_id0" style="display:inline-block;"></span>
+            <input id="txtBody_id0" type="text" style="display:none;" />
+        </td>
+        <td>
+            <span id="lblCreatedOn_id0"></span>
+        </td>
+        <td>
+            <div id="divReg_id0" style="display:inline-block;">
+                <button id="btnTaskEdit_id0"
+                        class="btn btn-info btn-md"
+                        onclick="btnEditToggle_click(_id0, true)">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
-                <button id="btnTaskDelete"
+                <button id="btnTaskDelete_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskDelete_click(@(item.TaskId))">
+                        onclick="btnTaskDelete_click(_id0)">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
-            <div id="divEdit@(item.TaskId)" style="display:none;" >
-                <button id="btnTaskOk"
+            <div id="divEdit_id0" style="display:none;">
+                <button id="btnTaskOk_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskEdit_click(@(item.TaskId));">
+                        onclick="btnTaskEdit_click(_id0);">
                     <span class="glyphicon glyphicon-ok-sign"></span>
                 </button>
-                <button id="btnTaskCancel"
+                <button id="btnTaskCancel_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnEditToggle_click(@(item.TaskId), false)">
+                        onclick="btnEditToggle_click(_id0, false)">
                     <span class="glyphicon glyphicon-remove-sign"></span>
                 </button>
             </div>
         </td>
     </tr>
-}
-    <tr>
-        <td>
-            <input id="txtBody0" type="text" />
-        </td>
-        <td />
-        <td>
-            <button id="btnTaskAdd"
-                    class="btn btn-info btn-md"
-                    onclick="btnTaskAdd_click()">
-                <span class="glyphicon glyphicon-plus-sign"></span>
-            </button>
-        </td>
-    </tr>
 </table>
-
+<script type="text/javascript">page_load();</script>
