@@ -71,6 +71,8 @@ function page_load() {
         .catch(function (response) {
             toastMessages.errorHttp(response);
         });
+
+    preLoadModal();
 }
 
 function addModelsToTable(models) {
@@ -92,7 +94,7 @@ function addModelsToTable(models) {
         //Update the html normally
         setModelHtml(model);
 
-        console.dir(tr);
+        //console.dir(tr);
     });
 }
 
@@ -139,6 +141,18 @@ function btnTaskGroupDelete_click(taskGroupId) {
         });
 }
 
+function btnAddTasksToGroup_click(rowId) {
+    console.log("click: " + rowId);
+
+    dialog.dialog("open");
+}
+
+function btnShowTaskAddModal_click(taskGroupId) {
+    /* 1. Show existing tasks if any
+     * 2. All 
+     */
+}
+
 function saveTaskGroup(task, onSuccess) {
     getTaskPoolService()
         .taskGroups
@@ -162,3 +176,41 @@ function saveTaskGroup(task, onSuccess) {
         });
 }
 
+var dialog, form;
+
+function preLoadModal() {
+    dialog = $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 400,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Create an account": addUser,
+            Cancel: function() {
+                dialog.dialog( "close" );
+            }
+        },
+        close: function() {
+            form[ 0 ].reset();
+            //allFields.removeClass( "ui-state-error" );
+        }
+    });
+ 
+    form = dialog.find( "form" ).on( "submit", function( event ) {
+        event.preventDefault();
+        addUser();
+    });   
+}
+
+function addUser() {
+    allFields.removeClass("ui-state-error");
+
+    $("#users tbody").append("<tr>" +
+    "<td>" + name.val() + "</td>" +
+    "<td>" + email.val() + "</td>" +
+    "<td>" + password.val() + "</td>" +
+    "</tr>");
+    dialog.dialog("close");
+
+    return valid;
+}

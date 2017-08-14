@@ -39,6 +39,7 @@ namespace TaskListPoolWebApi
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                 //Other Third party scripts
                 "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery-ui-{version}.js", //The order matters, this has to come after jQuery
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js",
                 "~/Scripts/date.js", 
@@ -49,12 +50,16 @@ namespace TaskListPoolWebApi
                 //Custom scripts for this application
                 "~/Scripts/Services/*.js"
             ));
-
+            
             //CSS Scripts
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/toaster.css"));
+                      "~/Content/toaster.css",
+                      "~/Content/themes/base/jquery-ui.css",
+                      "~/Content/themes/base/theme.css",
+                      "~/Content/themes/base/dialog.css"
+            ));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

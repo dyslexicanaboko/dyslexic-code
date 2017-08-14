@@ -3,7 +3,9 @@
 @{
     Layout = "~/Views/Shared/_LayoutRegular.cshtml";
 }
-<script src="~/Scripts/Controllers/taskGroupsController.js"></script>
+@Scripts.Render("~/Scripts/Controllers/taskGroupsController.js")
+
+@Html.ActionLink("All tasks", "Index")
 <table id="tblModel" class="table">
     <thead>
         <tr>
@@ -38,6 +40,21 @@
     </tfoot>
 </table>
 
+<div id="dialog-form" title="Create new user">
+    <p class="validateTips">All form fields are required.</p>
+
+    <form>
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+    </form>
+</div>
+
 @*This table's id name should not change so that the associated JavaScript file can find it always*@
 <table id="trModelTemplate" style="visibility:hidden;">
     <tr id="row_id0">
@@ -57,29 +74,34 @@
         </td>
         <td>
             <div id="divReg_id0" style="display:inline-block;">
-                <button id="btnTaskGroupEdit"
+                <button id="btnTaskGroupEdit_id0"
                         class="btn btn-info btn-md"
                         onclick="btnEditToggle_click(_id0, true)">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
-                <button id="btnTaskGroupDelete"
+                <button id="btnTaskGroupDelete_id0"
                         class="btn btn-info btn-md"
                         onclick="btnTaskGroupDelete_click(_id0)">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
             <div id="divEdit_id0" style="display:none;">
-                <button id="btnTaskGroupOk"
+                <button id="btnTaskGroupOk_id0"
                         class="btn btn-info btn-md"
                         onclick="btnTaskGroupEdit_click(_id0);">
                     <span class="glyphicon glyphicon-ok-sign"></span>
                 </button>
-                <button id="btnTaskGroupCancel"
+                <button id="btnTaskGroupCancel_id0"
                         class="btn btn-info btn-md"
                         onclick="btnEditToggle_click(_id0, false)">
                     <span class="glyphicon glyphicon-remove-sign"></span>
                 </button>
             </div>
+            <button id="btnAddTasksToGroup_id0"
+                    class="btn btn-info btn-md"
+                    onclick="btnAddTasksToGroup_click(_id0)" >
+                <span class="glyphicon glyphicon-list"></span>
+            </button>
         </td>
     </tr>
 </table>
