@@ -1,116 +1,98 @@
 ﻿function btnEditToggle_click(taskId, editMode) {
     var r = $("#divReg" + taskId);
     var e = $("#divEdit" + taskId);
-    var l = $("#lblBody" + taskId);
-    var t = $("#txtBody" + taskId);
+    var m = getJQueryObjects(taskId);
 
 
     if (editMode === true) {
         r.hide();
         e.show();
-        l.hide();
-        t.show();
+        m.Body.label.hide();
+        m.Body.text.show();
     }
     else {
         r.show();
         e.hide();
-        l.show();
-        t.hide();
+        m.Body.label.show();
+        m.Body.text.hide();
     }
 }
 
-function getTaskObject(taskId) {
-    var tb = $("#txtBody" + taskId);
-    var tc = $("#lblCreatedOn" + taskId);
-
+function getJQueryObjects(taskId) {
     return {
-        TaskId: taskId,
-        Body: tb.val(),
-        CreatedOn: tc.text()
+        Body: { 
+            label: $("#lblBody" + taskId),
+            text: $("#txtBody" + taskId) 
+        },
+        CreatedOn: $("#lblCreatedOn" + taskId)
     };
 }
 
-function setTaskHtml(task) {
-    var tl = $("#lblBody" + task.TaskId);
-    var tc = $("#lblCreatedOn" + task.TaskId);
+function getModel(taskId) {
+    var m = getJQueryObjects(taskId);
 
-    tl.text(task.Body);
-    tc.text(task.CreatedOn);
+    return {
+        TaskId: taskId,
+        Body: m.Body.text.val(),
+        CreatedOn: m.CreatedOn.text()
+    };
 }
 
-function initComponent() {
-    var v = new Vue({
-        el: '#inputAddTask',
-        components: {
-            'v-add-task': {
-                template: '<div style="float:left;"><input type="text" id="txtBody" v-model="newTask.Body" style="width:100%;" />&nbsp;</div><div style="float:left;"><button id="btnAddTask" v-on:click="newTask.TaskId = 0; btnAddTask_click(newTask);" class="btn btn-info btn-md"><span class="glyphicon glyphicon-plus-sign"></span></button></div><div style="clear:both;" />'
-            }
-        }
-    });
+function setModelHtml(task) {
+    var m = getJQueryObjects(task.TaskId);
+
+    m.Body.label.text(task.Body);
+    m.Body.text.val(task.Body);
+    m.CreatedOn.text(task.CreatedOn);
 }
 
-function loadGrid(tasks) {
-    var v = new Vue({
-        el: '#tblData',
-        data: {
-            tasks: tasks
-        }
-    });
-}
-
-function appendPropertyToObject(item) {
-    item.taskRowIsBeingEdited = false;
-}
-
-function loadTasks() {
+function page_load() {
     getTaskPoolService()
         .tasks
         .getAll()
         .then(function (response) {
             var arr = response.data;
 
-            _.forEach(arr, appendPropertyToObject);
-
-            //loadGrid(arr);
+            addModelsToTable(arr);
         })
         .catch(function (response) {
             toastMessages.errorHttp(response);
         });
 }
 
+function addModelsToTable(models) {
+    var templateRow = $("#row_id0");
+
+    _.forEach(models, function (model) {
+        //Clone the template row
+        var tr = templateRow.clone();
+
+        //Replace the id attribute accordingly
+        tr.attr("id", "row" + model.TaskId);
+
+        //Mass replace all of the ids with the new id
+        tr.html(tr.html().replace(/_id0/g, model.TaskId));
+
+        //Add the cloned row to the table
+        $("#tblModel tbody").append(tr);
+
+        //Update the html normally
+        setModelHtml(model);
+
+        //console.dir(tr);
+    });
+}
+
 function btnTaskAdd_click() {
     //console.log("btnTaskAdd_click");
     //console.dir(task);
-    var task = getTaskObject(0);
+    var task = getModel(0);
 
     saveTask(task, function (objTask) {
         toastMessages.success("Task " + objTask.TaskId + " created successfully");
 
-        var addRow = $("#tblTasks tr:last");
-
-        //Attempt to get the previous row, however in the edge case of an empty table this might not work
-        var lastRow = addRow.prev();
-
-        //If the table was empty, then just reload the page this first time
-        if (lastRow === undefined) {
-            location.reload();
-        }
-
-        //Clone the last row
-        var tr = lastRow.clone();
-
-        //Find the existing id and remove the text part to make it a number
-        var find_id = tr.attr("id").replace("row", "");
-        var new_id = objTask.TaskId;
-
-        //Mass replace all of the ids with the new id
-        tr.html(tr.html().replace(find_id, new_id));
-
-        //Add the cloned row before the last row (which is strictly the add row)
-        lastRow.after(tr);
-
-        //Update the html normally
-        setTaskHtml(objTask);
+        //Add the new model to the table
+        addModelsToTable([objTask]);
 
         $("#txtBody0").val("");
     });
@@ -119,14 +101,14 @@ function btnTaskAdd_click() {
 function btnTaskEdit_click(taskId) {
     //console.log("btnTaskEdit_click");
     //console.dir(task);
-    var task = getTaskObject(taskId);
+    var task = getModel(taskId);
 
     saveTask(task, function (objTask) {
         toastMessages.success("Task updated successfully");
 
         btnEditToggle_click(taskId, false);
 
-        setTaskHtml(task);
+        setModelHtml(task);
     });
 }
 
@@ -153,13 +135,6 @@ function saveTask(task, onSuccess) {
         .then(function (result) {
             var objTask = result.data;
 
-            //console.log("getData.promise");
-            //console.dir(objTask);
-
-            //_members.$scope.devTaskId = objTask.DevTaskId;
-
-            //_members.$scope.newTask = objTask;
-
             if (onSuccess) {
                 onSuccess(objTask);
             }
@@ -168,19 +143,3 @@ function saveTask(task, onSuccess) {
             toastMessages.errorHttp(response);
         });
 }
-
-//function loadTaskGroupGrid(taskGroupId) {
-//    getTaskPoolService()
-//        .tasks.getAll(taskGroupId)
-//        .then(function (result) {
-//            _members.$scope.taskGroupGridData = _members.ServerResponseHelper.getData(result);
-
-//            //console.log("loadGrid.promise");
-//            //console.dir(scope.plots);
-//        })
-//        .catch(function (response) {
-//            //Not sure how to handle errors yet
-//            console.log(response);
-//        });
-//}
-
