@@ -126,3 +126,6 @@
 /TaskListPools/v2/TaskListPoolDb/TaskListPool.dbmdl
 /TaskListPools/v2/TaskListPoolDb/TaskListPool.jfm
 /TaskListPools/v1
+/PdfMergingTool/PdfMergingToolLib/obj/Debug
+/PdfMergingTool/PdfMergingToolUi/bin/Debug
+/PdfMergingTool/PdfMergingToolUi/obj/Debug
