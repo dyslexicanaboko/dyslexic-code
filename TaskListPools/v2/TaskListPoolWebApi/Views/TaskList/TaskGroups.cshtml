@@ -45,8 +45,8 @@
         <fieldset>
             <label for="name">Task Group Id</label>
             <input type="text" id="txtTargetTaskGroupId" value="" class="text ui-widget-content ui-corner-all">
-            <div>
-                Load the groups tasks here
+            <div id="divTasksForGroup">
+                @*The tasks for the current group will go here*@
             </div>
         </fieldset>
     </form>
@@ -96,7 +96,7 @@
             </div>
             <button id="btnAddTasksToGroup_id0"
                     class="btn btn-info btn-md"
-                    onclick="btnAddTasksToGroup_click(_id0)" >
+                    onclick="btnShowTaskAddModal_click(_id0, '@Url.Action("GetTasksByTaskGroupId", "TaskList", new { id = "_id0" } )')" >
                 <span class="glyphicon glyphicon-list"></span>
             </button>
         </td>

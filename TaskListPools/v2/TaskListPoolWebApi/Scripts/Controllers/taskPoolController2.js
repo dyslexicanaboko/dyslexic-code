@@ -49,17 +49,26 @@ function setModelHtml(task) {
 function page_load(taskGroupId) {
     console.log("Load tasks for Group: " + taskGroupId);
 
-    getTaskPoolService()
-        .tasks
-        .getAll()
-        .then(function (response) {
-            var arr = response.data;
+    var svc = getTaskPoolService().tasks;
 
-            addModelsToTable(arr);
-        })
-        .catch(function (response) {
-            toastMessages.errorHttp(response);
-        });
+    var f = null;
+
+    if(taskGroupId === 0) {
+        f = function() { return svc.getAll(); };
+    }
+    else {
+        f = function() { return svc.getByTaskGroupId(taskGroupId); };
+    }
+    
+    f()
+    .then(function (response) {
+        var arr = response.data;
+
+        addModelsToTable(arr);
+    })
+    .catch(function (response) {
+        toastMessages.errorHttp(response);
+    });
 }
 
 function addModelsToTable(models) {

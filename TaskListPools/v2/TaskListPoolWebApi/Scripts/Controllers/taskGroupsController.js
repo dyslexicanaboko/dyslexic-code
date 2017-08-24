@@ -149,10 +149,12 @@ function btnAddTasksToGroup_click(rowId) {
     dialog.dialog("open");
 }
 
-function btnShowTaskAddModal_click(taskGroupId) {
-    /* 1. Show existing tasks if any
-     * 2. All 
-     */
+function btnShowTaskAddModal_click(taskGroupId, url) {
+    var div = $("#divTasksForGroup");
+
+    $.get(url, function (data) {
+        div.replaceWith(data);
+    });
 }
 
 function saveTaskGroup(task, onSuccess) {
@@ -200,7 +202,7 @@ function preLoadModal() {
  
     form = dialog.find( "form" ).on( "submit", function( event ) {
         event.preventDefault();
-        addUser();
+        //addUser();
     });   
 }
 
@@ -215,4 +217,10 @@ function addUser() {
     dialog.dialog("close");
 
     return valid;
+}
+
+function loadTasksForGroup() {
+    
+
+
 }
