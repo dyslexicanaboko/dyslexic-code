@@ -36,6 +36,23 @@ namespace TaskListPoolWebApi.Controllers
             return Ok(task);
         }
 
+        //[Route("api/Task/GetTaskByTaskGroupId/{int:id}")]
+        [ResponseType(typeof(List<Task>))]
+        public IHttpActionResult GetTaskByTaskGroupId(int id)
+        {
+            var tasks = (from t in db.Tasks
+                         join l in db.TaskGroupLinks on t.TaskId equals l.TaskId
+                         where l.TaskGroupId == id
+                         select t).ToList();
+
+            if (tasks == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(tasks);
+        }
+
         // PUT: api/Tasks/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutTask(int id, Task task)

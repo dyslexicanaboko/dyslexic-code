@@ -10,6 +10,9 @@ function getTaskPoolService() {
 
                 return axios.get(apiTasks("")); //GET at root
             },
+            getByTaskGroupId: function (taskGroupId) {
+                return axios.get(apiTasks("GetTaskByTaskGroupId/" + taskGroupId)); //GET at root
+            },
             save: function (obj) {
                 //devTask.UserId = $rootScope.userId;
                 //console.log("taskSave");

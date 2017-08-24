@@ -1,5 +1,11 @@
 ﻿@model int
 
+@*The JS should only appear if this partial is being hit separately*@
+@if (Model > 0)
+{
+    @Scripts.Render("~/bundles/js")
+}
+
 @Scripts.Render("~/Scripts/Controllers/taskPoolController2.js")
 
 <table id="tblModel" class="table">
