@@ -8,7 +8,7 @@
 
 @Scripts.Render("~/Scripts/Controllers/taskPoolController2.js")
 
-<table id="tblModel" class="table">
+<table id="tblTasksModel" class="table">
     <thead>
         <tr>
             <th>Task</th>
@@ -28,7 +28,7 @@
             <td>
                 <button id="btnTaskAdd"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskAdd_click()">
+                        onclick="taskController.btnTaskAdd_click()">
                     <span class="glyphicon glyphicon-plus-sign"></span>
                 </button>
             </td>
@@ -36,7 +36,7 @@
     </tfoot>
 </table>
 
-<table id="trModelTemplate" style="visibility:hidden;">
+<table id="tblTasksTemplate" style="visibility:hidden;">
     <tr id="row_id0">
         <td>
             <span id="lblBody_id0" style="display:inline-block;"></span>
@@ -49,28 +49,28 @@
             <div id="divReg_id0" style="display:inline-block;">
                 <button id="btnTaskEdit_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnEditToggle_click(_id0, true)">
+                        onclick="taskController.btnEditToggle_click(_id0, true)">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
                 <button id="btnTaskDelete_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskDelete_click(_id0)">
+                        onclick="taskController.btnTaskDelete_click(_id0)">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
             <div id="divEdit_id0" style="display:none;">
                 <button id="btnTaskOk_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskEdit_click(_id0);">
+                        onclick="taskController.btnTaskEdit_click(_id0);">
                     <span class="glyphicon glyphicon-ok-sign"></span>
                 </button>
                 <button id="btnTaskCancel_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnEditToggle_click(_id0, false)">
+                        onclick="taskController.btnEditToggle_click(_id0, false)">
                     <span class="glyphicon glyphicon-remove-sign"></span>
                 </button>
             </div>
         </td>
     </tr>
 </table>
-<script type="text/javascript">page_load(@Model);</script>
+<script type="text/javascript">taskController.page_load("tblTasksTemplate", "tblTasksModel", @Model);</script>
