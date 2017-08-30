@@ -6,7 +6,7 @@
 @Scripts.Render("~/Scripts/Controllers/taskGroupsController.js")
 
 @Html.ActionLink("All tasks", "Index")
-<table id="tblModel" class="table">
+<table id="tblTaskGroupsModel" class="table">
     <thead>
         <tr>
             <th>Group</th>
@@ -32,7 +32,7 @@
             <td>
                 <button id="btnTaskGroupAdd"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskGroupAdd_click()">
+                        onclick="taskGroupController.btnTaskGroupAdd_click()">
                     <span class="glyphicon glyphicon-plus-sign"></span>
                 </button>
             </td>
@@ -53,7 +53,7 @@
 </div>
 
 @*This table's id name should not change so that the associated JavaScript file can find it always*@
-<table id="trModelTemplate" style="visibility:hidden;">
+<table id="tblTaskGroupsTemplate" style="visibility:hidden;">
     <tr id="row_id0">
         <td>
             <span id="lblName_id0" style="display:inline-block;"></span>
@@ -73,33 +73,33 @@
             <div id="divReg_id0" style="display:inline-block;">
                 <button id="btnTaskGroupEdit_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnEditToggle_click(_id0, true)">
+                        onclick="taskGroupController.btnEditToggle_click(_id0, true)">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
                 <button id="btnTaskGroupDelete_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskGroupDelete_click(_id0)">
+                        onclick="taskGroupController.btnTaskGroupDelete_click(_id0)">
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
             <div id="divEdit_id0" style="display:none;">
                 <button id="btnTaskGroupOk_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnTaskGroupEdit_click(_id0);">
+                        onclick="taskGroupController.btnTaskGroupEdit_click(_id0);">
                     <span class="glyphicon glyphicon-ok-sign"></span>
                 </button>
                 <button id="btnTaskGroupCancel_id0"
                         class="btn btn-info btn-md"
-                        onclick="btnEditToggle_click(_id0, false)">
+                        onclick="taskGroupController.btnEditToggle_click(_id0, false)">
                     <span class="glyphicon glyphicon-remove-sign"></span>
                 </button>
             </div>
             <button id="btnAddTasksToGroup_id0"
                     class="btn btn-info btn-md"
-                    onclick="btnShowTaskAddModal_click(_id0, '@Url.Action("GetTasksByTaskGroupId", "TaskList", new { id = "_id0" } )')" >
+                    onclick="taskGroupController.btnShowTaskAddModal_click(_id0, '@Url.Action("GetTasksByTaskGroupId", "TaskList", new { id = "_id0" } )')" >
                 <span class="glyphicon glyphicon-list"></span>
             </button>
         </td>
     </tr>
 </table>
-<script type="text/javascript">page_load();</script>
+<script type="text/javascript">taskGroupController.page_load("tblTaskGroupsTemplate", "tblTaskGroupsModel");</script>
