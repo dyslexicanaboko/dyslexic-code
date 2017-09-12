@@ -1,12 +1,15 @@
-﻿@model int
+﻿@model TaskListPoolWebApi.Models.TaskListModel
 
-@*The JS should only appear if this partial is being hit separately*@
-@if (Model > 0)
+@*The JS should only be rendered if this partial is being used by itself *@
+@if (Model.RenderJsBundles)
 {
     @Scripts.Render("~/bundles/js")
 }
 
-@Scripts.Render("~/Scripts/Controllers/taskPoolController2.js")
+@if (Model.RenderJsController)
+{
+    @Scripts.Render("~/Scripts/Controllers/taskPoolController2.js")
+}
 
 <table id="tblTasksModel" class="table">
     <thead>
@@ -73,4 +76,4 @@
         </td>
     </tr>
 </table>
-<script type="text/javascript">taskController.page_load("tblTasksTemplate", "tblTasksModel", @Model);</script>
+<script type="text/javascript">taskController.page_load("tblTasksTemplate", "tblTasksModel", @Model.TaskGroupId);</script>

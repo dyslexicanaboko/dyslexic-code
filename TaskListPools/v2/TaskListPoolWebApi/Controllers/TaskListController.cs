@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TaskListPoolLib;
+using TaskListPoolWebApi.Models;
 
 namespace TaskListPoolWebApi.Views.TaskList
 {
@@ -20,9 +21,9 @@ namespace TaskListPoolWebApi.Views.TaskList
             return View(db.Tasks.ToList());
         }
 
-        public ActionResult GetTasksByTaskGroupId(int id)
+        public ActionResult GetTasksByTaskGroupId(TaskListModel model)
         {
-            return PartialView("_TaskList", id);
+            return PartialView("_TaskList", model);
         }
 
         public ActionResult TaskGroups()

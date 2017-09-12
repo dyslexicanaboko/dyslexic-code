@@ -1,6 +1,8 @@
 ﻿var taskController = {};
 
-(function (context) { 
+(function (context) {
+    var _taskGroupId = -1;
+
     context.btnEditToggle_click = function btnEditToggle_click(taskId, editMode) {
         var r = $("#divReg" + taskId);
         var e = $("#divEdit" + taskId);
@@ -50,6 +52,8 @@
     }
 
     context.page_load = function page_load(tableTemplateId, tableModelId, taskGroupId) {
+        _taskGroupId = taskGroupId;
+
         console.log("Load tasks for Group: " + taskGroupId);
 
         var svc = getTaskPoolService().tasks;

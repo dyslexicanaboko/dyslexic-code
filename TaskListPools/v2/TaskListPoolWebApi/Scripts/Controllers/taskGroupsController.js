@@ -89,7 +89,11 @@
             tr.attr("id", "row" + model.TaskGroupId);
 
             //Mass replace all of the ids with the new id
-            tr.html(tr.html().replace(/_id0/g, model.TaskGroupId));
+            var str = tr.html().replace(/_id0/g, model.TaskGroupId);
+
+            str = str.replace("?TaskGroupId=0", "?TaskGroupId=" + model.TaskGroupId);
+
+            tr.html(str);
 
             //Add the cloned row to the table
             $("#" + tableModelId + " tbody").append(tr);

@@ -1,8 +1,10 @@
-﻿@model IEnumerable<TaskListPoolLib.TaskGroup_GetAllWithSummary_Result>
+﻿@using TaskListPoolWebApi.Models
+@model IEnumerable<TaskListPoolLib.TaskGroup_GetAllWithSummary_Result>
 
 @{
     Layout = "~/Views/Shared/_LayoutRegular.cshtml";
 }
+@Scripts.Render("~/Scripts/Controllers/taskPoolController2.js")
 @Scripts.Render("~/Scripts/Controllers/taskGroupsController.js")
 
 @Html.ActionLink("All tasks", "Index")
@@ -90,13 +92,13 @@
                 </button>
                 <button id="btnTaskGroupCancel_id0"
                         class="btn btn-info btn-md"
-                        onclick="taskGroupController.btnEditToggle_click(_id0, false)">
+                        onclick="taskGroupController.btnEditToggle_click(_id0, false);">
                     <span class="glyphicon glyphicon-remove-sign"></span>
                 </button>
             </div>
             <button id="btnAddTasksToGroup_id0"
                     class="btn btn-info btn-md"
-                    onclick="taskGroupController.btnShowTaskAddModal_click(_id0, '@Url.Action("GetTasksByTaskGroupId", "TaskList", new { id = "_id0" } )')" >
+                    onclick="taskGroupController.btnShowTaskAddModal_click(_id0, '@Url.Action("GetTasksByTaskGroupId", "TaskList", new TaskListModel { TaskGroupId = 0, RenderJsBundles = false, RenderJsController = false } )')" >
                 <span class="glyphicon glyphicon-list"></span>
             </button>
         </td>

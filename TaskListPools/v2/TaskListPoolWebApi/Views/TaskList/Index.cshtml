@@ -1,4 +1,5 @@
-﻿@model IEnumerable<TaskListPoolLib.Task>
+﻿@using TaskListPoolWebApi.Models
+@model IEnumerable<TaskListPoolLib.Task>
 
 @{
 Layout = "~/Views/Shared/_LayoutRegular.cshtml";
@@ -6,4 +7,4 @@ Layout = "~/Views/Shared/_LayoutRegular.cshtml";
 
 @Html.ActionLink("Groups", "TaskGroups")
 
-@{ Html.RenderPartial("~/Views/TaskList/_TaskList.cshtml", 0); }
+@{ Html.RenderPartial("~/Views/TaskList/_TaskList.cshtml", new TaskListModel() { RenderJsBundles = false }); }
