@@ -6,9 +6,9 @@ using System.Security.Principal;
 
 namespace AppPoolCredSecurityHoleConsoleApp
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             if (!IsAdministrator())
             {
@@ -19,14 +19,40 @@ namespace AppPoolCredSecurityHoleConsoleApp
                 return;
             }
 
-            //UpdateApplicationPoolPasswords();
-
-            PrintOutApplicationPools();
+            if (args.Length == 0)
+                ShowHints();
+            else switch (args[0])
+            {
+                case "/s":
+                case "-s":
+                    PrintOutApplicationPools();
+                    break;
+                case "/c":
+                case "-c":
+                    UpdateApplicationPoolPasswords(args[1], args[2]);
+                    break;
+                case "help":
+                case "?":
+                case "/?":
+                    ShowHints();
+                    break;
+                default:
+                    Console.WriteLine("Unrecognized input");
+                    ShowHints();
+                    break;
+            }
 
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Press any key to continue...");
+            Console.ResetColor();
             Console.Read();
+        }
+
+        public static void ShowHints()
+        {
+            Console.WriteLine("/s or -s                   //Shows your application pool usernames and passwords.");
+            Console.WriteLine("/c or -c username password //Update all of your application pool usernames and passwords in one shot.");
         }
 
         public static void UpdateApplicationPoolPasswords()
