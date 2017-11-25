@@ -25,7 +25,7 @@
     <tfoot>
         <tr>
             <td>
-                <input id="txtBody0" type="text" />
+                <input id="taskList_txtBody0" type="text" />
             </td>
             <td />
             <td>
@@ -40,17 +40,17 @@
 </table>
 
 <table id="tblTasksTemplate" style="visibility:hidden;">
-    <tr id="row_id0">
+    <tr id="taskList_row_id0">
         <td>
-            <span id="lblBody_id0" style="display:inline-block;"></span>
-            <input id="txtBody_id0" type="text" style="display:none;" />
+            <span id="taskList_lblBody_id0" style="display:inline-block;"></span>
+            <input id="taskList_txtBody_id0" type="text" style="display:none;" />
         </td>
         <td>
-            <span id="lblCreatedOn_id0"></span>
+            <span id="taskList_lblCreatedOn_id0"></span>
         </td>
         <td>
-            <div id="divReg_id0" style="display:inline-block;">
-                <button id="btnTaskEdit_id0"
+            <div id="taskList_divReg_id0" style="display:inline-block;">
+                <button id="taskList_btnTaskEdit_id0"
                         class="btn btn-info btn-md"
                         onclick="taskController.btnEditToggle_click(_id0, true)">
                     <span class="glyphicon glyphicon-pencil"></span>
@@ -61,7 +61,7 @@
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
-            <div id="divEdit_id0" style="display:none;">
+            <div id="taskList_divEdit_id0" style="display:none;">
                 <button id="btnTaskOk_id0"
                         class="btn btn-info btn-md"
                         onclick="taskController.btnTaskEdit_click(_id0);">

@@ -1,9 +1,12 @@
 ﻿var taskGroupController = {};
 
-(function (context) { 
+(function (context) {
+    var _tableTemplateId = null;
+    var _tableModelId = null;
+
     context.btnEditToggle_click = function btnEditToggle_click(taskGroupId, editMode) {
-        var r = $("#divReg" + taskGroupId);
-        var e = $("#divEdit" + taskGroupId);
+        var r = $("#taskGroup_divReg" + taskGroupId);
+        var e = $("#taskGroup_divEdit" + taskGroupId);
         var m = getJQueryObjects(taskGroupId);
 
         if (editMode === true) {
@@ -27,15 +30,15 @@
     function getJQueryObjects(taskGroupId) {
         return {
             Name: { 
-                label: $("#lblName" + taskGroupId),
-                text: $("#txtName" + taskGroupId) 
+                label: $("#taskGroup_lblName" + taskGroupId),
+                text: $("#taskGroup_txtName" + taskGroupId)
             },
             Description: {
-                label: $("#lblDescription" + taskGroupId),
-                text: $("#txtDescription" + taskGroupId)
+                label: $("#taskGroup_lblDescription" + taskGroupId),
+                text: $("#taskGroup_txtDescription" + taskGroupId)
             },
-            CreatedOn: $("#lblCreatedOn" + taskGroupId),
-            TaskCount: $("#lblTaskCount" + taskGroupId)
+            CreatedOn: $("#taskGroup_lblCreatedOn" + taskGroupId),
+            TaskCount: $("#taskGroup_lblTaskCount" + taskGroupId)
         };
     }
 
@@ -63,6 +66,9 @@
     }
 
     context.page_load = function page_load(tableTemplateId, tableModelId) {
+        _tableTemplateId = tableTemplateId;
+        _tableModelId = tableModelId;
+
         getTaskPoolService()
             .taskGroups
             .getAll()
@@ -79,14 +85,14 @@
     }
 
     function addModelsToTable(tableTemplateId, tableModelId, models) {
-        var templateRow = $("#" + tableTemplateId + " #row_id0");
+        var templateRow = $("#" + tableTemplateId + " #taskGroup_row_id0");
 
         _.forEach(models, function (model) {
             //Clone the template row
             var tr = templateRow.clone();
 
             //Replace the id attribute accordingly
-            tr.attr("id", "row" + model.TaskGroupId);
+            tr.attr("id", "taskGroup_row" + model.TaskGroupId);
 
             //Mass replace all of the ids with the new id
             var str = tr.html().replace(/_id0/g, model.TaskGroupId);
@@ -112,11 +118,11 @@
             toastMessages.success("Group " + objTaskGroup.TaskGroupId + " created successfully");
 
             //Add the new model to the table
-            addModelsToTable([objTaskGroup]);
+            addModelsToTable(_tableTemplateId, _tableModelId, [objTaskGroup]);
 
             //Clear out the input form
-            $("#txtName0").val("");
-            $("#txtDescription0").val("");
+            $("#taskGroup_txtName0").val("");
+            $("#taskGroup_txtDescription0").val("");
         });
     }
 
@@ -141,7 +147,7 @@
             .taskGroups
             .delete(taskGroupId)
             .then(function (result) {
-                $("#row" + taskGroupId).remove();
+                $("#taskGroup_row" + taskGroupId).remove();
             })
             .catch(function (response) {
                 toastMessages.errorHttp(response);
@@ -189,7 +195,7 @@
         dialog = $( "#dialog-form" ).dialog({
             autoOpen: false,
             height: 400,
-            width: 350,
+            width: "auto",
             modal: true,
             close: function() {
                 dialog.dialog("close");

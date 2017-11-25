@@ -238,6 +238,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MillionThingsController.cs" />
     <Compile Include="Controllers\MillionThingsVjsController.cs" />
+    <Compile Include="Controllers\TaskGroupLinksController.cs" />
     <Compile Include="Controllers\TaskGroupsController.cs" />
     <Compile Include="Controllers\TaskGroup_GetAllWithSummary_ResultController.cs" />
     <Compile Include="Controllers\TasksController.cs" />

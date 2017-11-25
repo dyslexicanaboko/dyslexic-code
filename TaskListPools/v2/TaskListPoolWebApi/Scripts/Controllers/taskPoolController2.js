@@ -2,10 +2,13 @@
 
 (function (context) {
     var _taskGroupId = -1;
+    var _tableTemplateId = null;
+    var _tableModelId = null;
+    var _fnSaveMethod = null;
 
     context.btnEditToggle_click = function btnEditToggle_click(taskId, editMode) {
-        var r = $("#divReg" + taskId);
-        var e = $("#divEdit" + taskId);
+        var r = $("#taskList_divReg" + taskId);
+        var e = $("#taskList_divEdit" + taskId);
         var m = getJQueryObjects(taskId);
 
 
@@ -26,10 +29,10 @@
     function getJQueryObjects(taskId) {
         return {
             Body: { 
-                label: $("#lblBody" + taskId),
-                text: $("#txtBody" + taskId) 
+                label: $("#taskList_lblBody" + taskId),
+                text: $("#taskList_txtBody" + taskId) 
             },
-            CreatedOn: $("#lblCreatedOn" + taskId)
+            CreatedOn: $("#taskList_lblCreatedOn" + taskId)
         };
     }
 
@@ -52,6 +55,8 @@
     }
 
     context.page_load = function page_load(tableTemplateId, tableModelId, taskGroupId) {
+        _tableTemplateId = tableTemplateId;
+        _tableModelId = tableModelId;
         _taskGroupId = taskGroupId;
 
         console.log("Load tasks for Group: " + taskGroupId);
@@ -61,10 +66,12 @@
         var f = null;
 
         if(taskGroupId === 0) {
-            f = function() { return svc.getAll(); };
+            f = function () { return svc.getAll(); };
+            _fnSaveMethod = function (task) { saveTask(task, successfullyAdded); };
         }
         else {
             f = function() { return svc.getByTaskGroupId(taskGroupId); };
+            _fnSaveMethod = function (task) { saveTask(task, linkTaskToGroup); };
         }
     
         f()
@@ -79,14 +86,14 @@
     }
 
     function addModelsToTable(tableTemplateId, tableModelId, models) {
-        var templateRow = $("#" + tableTemplateId + " #row_id0");
+        var templateRow = $("#" + tableTemplateId + " #taskList_row_id0");
 
         _.forEach(models, function (model) {
             //Clone the template row
             var tr = templateRow.clone();
 
             //Replace the id attribute accordingly
-            tr.attr("id", "row" + model.TaskId);
+            tr.attr("id", "taskList_row" + model.TaskId);
 
             //Mass replace all of the ids with the new id
             tr.html(tr.html().replace(/_id0/g, model.TaskId));
@@ -106,14 +113,16 @@
         //console.dir(task);
         var task = getModel(0);
 
-        saveTask(task, function (objTask) {
-            toastMessages.success("Task " + objTask.TaskId + " created successfully");
+        _fnSaveMethod(task);
+    }
 
-            //Add the new model to the table
-            addModelsToTable([objTask]);
+    function successfullyAdded(objTask) {
+        toastMessages.success("Task " + objTask.TaskId + " created successfully");
 
-            $("#txtBody0").val("");
-        });
+        //Add the new model to the table
+        addModelsToTable(_tableTemplateId, _tableModelId, [objTask]);
+
+        $("#taskList_txtBody0").val("");
     }
 
     context.btnTaskEdit_click = function btnTaskEdit_click(taskId) {
@@ -139,7 +148,7 @@
             .tasks
             .delete(taskId)
             .then(function (result) {
-                $("#row" + taskId).remove();
+                $("#taskList_row" + taskId).remove();
             })
             .catch(function (response) {
                 toastMessages.errorHttp(response);
@@ -156,6 +165,18 @@
                 if (onSuccess) {
                     onSuccess(objTask);
                 }
+            })
+            .catch(function (response) {
+                toastMessages.errorHttp(response);
+            });
+    }
+
+    function linkTaskToGroup(task) {
+        getTaskPoolService()
+            .taskGroupLinks
+            .add(task.TaskId, _taskGroupId)
+            .then(function () {
+                successfullyAdded(task);
             })
             .catch(function (response) {
                 toastMessages.errorHttp(response);

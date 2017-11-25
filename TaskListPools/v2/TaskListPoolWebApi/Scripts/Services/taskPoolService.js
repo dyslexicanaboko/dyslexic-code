@@ -67,6 +67,25 @@ function getTaskPoolService() {
                 return axios.delete(apiTaskGroups(id));
             }
         },
+        taskGroupLinks: {
+            //getAll: function () {
+            //    //console.log("devTasksFactory.getGraphData.userId:" + $rootScope.userId);
+
+            //    return axios.get(apiTaskGroupLinks("Summary")); //GET at root
+            //},
+            add: function (taskId, taskGroupId) {
+                var obj = {
+                    TaskId: taskId,
+                    TaskGroupId: taskGroupId
+                };
+
+                return axios.post(apiTaskGroupLinks(""), obj); //POST at root
+            }
+            //,
+            //delete: function (id) {
+            //    return axios.delete(apiTaskGroupLinks(id));
+            //}
+        },
         getSummaryGridData: function (dateRange) {
             return axios.get(getBasePath("GetTaskSummary") + getFilterQsp($rootScope.userId, dateRange));
         },
@@ -123,6 +142,10 @@ function singleArgument(action, argument) {
 
 function apiTaskGroups(action) {
     return "/api/TaskGroups/" + action;
+}
+
+function apiTaskGroupLinks(action) {
+    return "/api/TaskGroupLinks/" + action;
 }
 
 function apiTasks(action) {

@@ -24,10 +24,10 @@
     <tfoot>
         <tr>
             <td>
-                <input id="txtName0" type="text" />
+                <input id="taskGroup_txtName0" type="text" />
             </td>
             <td>
-                <input id="txtDescription0" type="text" />
+                <input id="taskGroup_txtDescription0" type="text" />
             </td>
             <td />
             <td />
@@ -56,23 +56,23 @@
 
 @*This table's id name should not change so that the associated JavaScript file can find it always*@
 <table id="tblTaskGroupsTemplate" style="visibility:hidden;">
-    <tr id="row_id0">
+    <tr id="taskGroup_row_id0">
         <td>
-            <span id="lblName_id0" style="display:inline-block;"></span>
-            <input type="text" id="txtName_id0" style="display:none;" />
+            <span id="taskGroup_lblName_id0" style="display:inline-block;"></span>
+            <input type="text" id="taskGroup_txtName_id0" style="display:none;" />
         </td>
         <td>
-            <span id="lblDescription_id0" style="display:inline-block;"></span>
-            <input type="text" id="txtDescription_id0" style="display:none;" />
+            <span id="taskGroup_lblDescription_id0" style="display:inline-block;"></span>
+            <input type="text" id="taskGroup_txtDescription_id0" style="display:none;" />
         </td>
         <td>
-            <span id="lblCreatedOn_id0" />
+            <span id="taskGroup_lblCreatedOn_id0" />
         </td>
         <td>
-            <span id="lblTaskCount_id0">0</span>
+            <span id="taskGroup_lblTaskCount_id0">0</span>
         </td>
         <td>
-            <div id="divReg_id0" style="display:inline-block;">
+            <div id="taskGroup_divReg_id0" style="display:inline-block;">
                 <button id="btnTaskGroupEdit_id0"
                         class="btn btn-info btn-md"
                         onclick="taskGroupController.btnEditToggle_click(_id0, true)">
@@ -84,7 +84,7 @@
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
             </div>
-            <div id="divEdit_id0" style="display:none;">
+            <div id="taskGroup_divEdit_id0" style="display:none;">
                 <button id="btnTaskGroupOk_id0"
                         class="btn btn-info btn-md"
                         onclick="taskGroupController.btnTaskGroupEdit_click(_id0);">
