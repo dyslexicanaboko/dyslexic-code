@@ -136,7 +136,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="TaskListPoolEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TaskListPoolEntities" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="Tasks" EntityType="Self.Task" />
           <EntitySet Name="TaskGroups" EntityType="Self.TaskGroup" />
           <EntitySet Name="TaskGroupLinks" EntityType="Self.TaskGroupLink" />

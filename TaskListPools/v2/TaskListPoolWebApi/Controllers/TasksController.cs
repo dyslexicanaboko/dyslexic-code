@@ -27,7 +27,12 @@ namespace TaskListPoolWebApi.Controllers
         [ResponseType(typeof(Task))]
         public IHttpActionResult GetTask(int id)
         {
-            Task task = db.Tasks.Find(id);
+            Task task = db
+                .Tasks
+                .Where(x => x.TaskId == id)
+                .Include(x => x.TaskGroupLinks.Select(y => y.TaskGroup))
+                .FirstOrDefault();
+
             if (task == null)
             {
                 return NotFound();
@@ -43,7 +48,9 @@ namespace TaskListPoolWebApi.Controllers
             var tasks = (from t in db.Tasks
                          join l in db.TaskGroupLinks on t.TaskId equals l.TaskId
                          where l.TaskGroupId == id
-                         select t).ToList();
+                         select t)
+                         .Include(x => x.TaskGroupLinks.Select(y => y.TaskGroup))
+                         .ToList();
 
             if (tasks == null)
             {

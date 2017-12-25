@@ -24,7 +24,7 @@
             m.Body.label.show();
             m.Body.text.hide();
         }
-    }
+    };
 
     function getJQueryObjects(taskId) {
         return {
@@ -75,15 +75,15 @@
 
         var f = null;
 
-        if(taskGroupId === 0) {
+        if (taskGroupId === 0) {
             f = function () { return svc.getAll(); };
             _fnSaveMethod = function (task) { saveTask(task, successfullyAdded); };
         }
         else {
-            f = function() { return svc.getByTaskGroupId(taskGroupId); };
+            f = function () { return svc.getByTaskGroupId(taskGroupId); };
             _fnSaveMethod = function (task) { saveTask(task, linkTaskToGroup); };
         }
-    
+
         f()
         .then(function (response) {
             var arr = response.data;
@@ -93,7 +93,7 @@
         .catch(function (response) {
             toastMessages.errorHttp(response);
         });
-    }
+    };
 
     function addModelsToTable(tableTemplateId, tableModelId, models) {
         var templateRow = $("#" + tableTemplateId + " #taskList_row_id0");
@@ -124,7 +124,7 @@
         var task = getModel(0);
 
         _fnSaveMethod(task);
-    }
+    };
 
     function successfullyAdded(objTask) {
         toastMessages.success("Task " + objTask.TaskId + " created successfully");
@@ -147,7 +147,7 @@
 
             setModelHtml(task);
         });
-    }
+    };
 
     context.btnTaskDelete_click = function btnTaskDelete_click(taskId) {
         if (!confirm("Are you sure you want to delete this task?")) {
@@ -163,7 +163,7 @@
             .catch(function (response) {
                 toastMessages.errorHttp(response);
             });
-    }
+    };
 
     function saveTask(task, onSuccess) {
         getTaskPoolService()

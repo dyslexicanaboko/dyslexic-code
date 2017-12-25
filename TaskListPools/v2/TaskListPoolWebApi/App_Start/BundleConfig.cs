@@ -53,6 +53,7 @@ namespace TaskListPoolWebApi
             
             //CSS Scripts
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap-glyphicons.css",
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/toaster.css",

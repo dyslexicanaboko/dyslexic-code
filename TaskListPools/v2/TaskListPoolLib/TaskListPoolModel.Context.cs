@@ -20,6 +20,7 @@ namespace TaskListPoolLib
         public TaskListPoolEntities()
             : base("name=TaskListPoolEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -27,6 +28,8 @@ namespace TaskListPoolLib
             throw new UnintentionalCodeFirstException();
         }
     
+    	//Added manually to the t4 template because EF wouldn't add it for me automatically
+    	public System.Data.Entity.DbSet<TaskListPoolLib.TaskGroup_GetAllWithSummary_Result> TaskGroup_GetAllWithSummary_Result { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<TaskGroup> TaskGroups { get; set; }
         public virtual DbSet<TaskGroupLink> TaskGroupLinks { get; set; }
@@ -36,7 +39,5 @@ namespace TaskListPoolLib
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TaskGroup_GetAllWithSummary_Result>("TaskGroup_GetAllWithSummary");
         }
-
-        public System.Data.Entity.DbSet<TaskListPoolLib.TaskGroup_GetAllWithSummary_Result> TaskGroup_GetAllWithSummary_Result { get; set; }
     }
 }

@@ -85,6 +85,8 @@ foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
         throw new UnintentionalCodeFirstException();
     }
 
+	//Added manually to the t4 template because EF wouldn't add it for me automatically
+	public System.Data.Entity.DbSet<TaskListPoolLib.TaskGroup_GetAllWithSummary_Result> TaskGroup_GetAllWithSummary_Result { get; set; }
 <#
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
     {
