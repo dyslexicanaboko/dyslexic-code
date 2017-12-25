@@ -44,13 +44,11 @@
 
 <div id="dialog-form" title="Tasks">
     <form>
-        <fieldset>
-            <label for="name">Task Group Id</label>
-            <input type="text" id="txtTargetTaskGroupId" value="" class="text ui-widget-content ui-corner-all">
-            <div id="divTasksForGroup">
-                @*The tasks for the current group will go here*@
-            </div>
-        </fieldset>
+        <span id="lblTaskGroupDescription" class="text ui-widget-content ui-corner-all" />
+        <hr />
+        <div id="divTasksForGroup" class="ui-dialog-content">
+            @*The tasks for the current group will go here*@
+        </div>
     </form>
 </div>
 

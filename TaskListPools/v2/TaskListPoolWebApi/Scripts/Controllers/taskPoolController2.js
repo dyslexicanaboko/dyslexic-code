@@ -30,7 +30,10 @@
         return {
             Body: { 
                 label: $("#taskList_lblBody" + taskId),
-                text: $("#taskList_txtBody" + taskId) 
+                text: $("#taskList_txtBody" + taskId)
+            },
+            TaskGroups: {
+                dropDown: $("#taskList_ddlBody" + taskId)
             },
             CreatedOn: $("#taskList_lblCreatedOn" + taskId)
         };
@@ -42,6 +45,7 @@
         return {
             TaskId: taskId,
             Body: m.Body.text.val(),
+            TaskGroupLinks: null, //Have to create a new object array, not sure what yet
             CreatedOn: m.CreatedOn.text()
         };
     }
@@ -52,6 +56,12 @@
         m.Body.label.text(task.Body);
         m.Body.text.val(task.Body);
         m.CreatedOn.text(task.CreatedOn);
+
+        var ddl = m.TaskGroups.dropDown;
+
+        $.each(result, function () {
+            ddl.append($("<option />").val(this.TaskGroupId).text(this.Name));
+        });
     }
 
     context.page_load = function page_load(tableTemplateId, tableModelId, taskGroupId) {

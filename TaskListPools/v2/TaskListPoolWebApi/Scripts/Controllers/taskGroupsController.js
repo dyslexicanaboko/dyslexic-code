@@ -25,7 +25,7 @@
             m.Description.label.show();
             m.Description.text.hide();
         }
-    }
+    };
 
     function getJQueryObjects(taskGroupId) {
         return {
@@ -82,7 +82,7 @@
             });
 
         preLoadModal();
-    }
+    };
 
     function addModelsToTable(tableTemplateId, tableModelId, models) {
         var templateRow = $("#" + tableTemplateId + " #taskGroup_row_id0");
@@ -124,7 +124,7 @@
             $("#taskGroup_txtName0").val("");
             $("#taskGroup_txtDescription0").val("");
         });
-    }
+    };
 
     context.btnTaskGroupEdit_click = function btnTaskGroupEdit_click(taskGroupId) {
         var task = getModel(taskGroupId);
@@ -136,7 +136,7 @@
 
             setModelHtml(task);
         });
-    }
+    };
 
     context.btnTaskGroupDelete_click = function btnTaskGroupDelete_click(taskGroupId) {
         if (!confirm("Are you sure you want to delete this group?")) {
@@ -152,19 +152,24 @@
             .catch(function (response) {
                 toastMessages.errorHttp(response);
             });
-    }
+    };
 
     context.btnShowTaskAddModal_click = function btnShowTaskAddModal_click(taskGroupId, url) {
         var div = $("#divTasksForGroup");
+
+        var m = getModel(taskGroupId);
+
+        //_dialog.attr("title", m.Name).dialog();
+
+        //Every time I enable this it doesn't allow for the div to be populated
+        //$("#lblTaskGroupDescription").text(m.Description);
 
         $.get(url, function (data) {
             div.replaceWith(data);
         });
 
-        $("#txtTargetTaskGroupId").val(taskGroupId);
-
         showModal();
-    }
+    };
 
     function saveTaskGroup(task, onSuccess) {
         getTaskPoolService()
@@ -189,26 +194,25 @@
             });
     }
 
-    var dialog, form;
+    var _dialog, _form;
 
     function preLoadModal() {
-        dialog = $( "#dialog-form" ).dialog({
+        _dialog = $( "#dialog-form" ).dialog({
             autoOpen: false,
             height: 400,
             width: "auto",
             modal: true,
             close: function() {
-                dialog.dialog("close");
+                _dialog.dialog("close");
             }
         });
  
-        form = dialog.find( "form" ).on( "submit", function( event ) {
+        _form = _dialog.find( "form" ).on( "submit", function( event ) {
             event.preventDefault();
-            //addUser();
         });   
     }
 
     function showModal() {
-        dialog.dialog("open");
+        _dialog.dialog("open");
     }
 })(taskGroupController);
