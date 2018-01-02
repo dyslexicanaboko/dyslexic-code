@@ -45,7 +45,7 @@
         return {
             TaskId: taskId,
             Body: m.Body.text.val(),
-            TaskGroupLinks: null, //Have to create a new object array, not sure what yet
+            TaskGroupLinks: generateTaskGroupObjects(m.TaskGroups.dropDown), //Have to create a new object array, not sure what yet
             CreatedOn: m.CreatedOn.text()
         };
     }
@@ -59,9 +59,27 @@
 
         var ddl = m.TaskGroups.dropDown;
 
-        $.each(result, function () {
-            ddl.append($("<option />").val(this.TaskGroupId).text(this.Name));
+        //task.TaskGroupLinks.TaskGroup //Multiple TaskGroup objects
+        $.each(task.TaskGroupLinks, function () {
+            ddl.append($("<option />")
+               .val(this.TaskGroup.TaskGroupId)
+               .text(this.TaskGroup.Name));
         });
+    }
+
+    function generateTaskGroupObjects(jQueryDropDown) {
+        var taskGroups = [];
+
+        jQueryDropDown.each(function () {
+            taskGroups.push({
+                TaskGroup: {
+                    TaskGroupId: this.val(),
+                    Name: this.text()
+                }
+            });
+        });
+
+        return taskGroups;
     }
 
     context.page_load = function page_load(tableTemplateId, tableModelId, taskGroupId) {

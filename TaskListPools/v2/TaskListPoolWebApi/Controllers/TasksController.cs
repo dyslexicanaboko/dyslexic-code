@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using TaskListPoolLib;
@@ -20,7 +19,7 @@ namespace TaskListPoolWebApi.Controllers
         // GET: api/Tasks
         public IQueryable<Task> GetTasks()
         {
-            return db.Tasks;
+            return db.Tasks.AsQueryable().Include();
         }
 
         // GET: api/Tasks/5
@@ -30,7 +29,7 @@ namespace TaskListPoolWebApi.Controllers
             Task task = db
                 .Tasks
                 .Where(x => x.TaskId == id)
-                .Include(x => x.TaskGroupLinks.Select(y => y.TaskGroup))
+                .Include()
                 .FirstOrDefault();
 
             if (task == null)
@@ -49,7 +48,7 @@ namespace TaskListPoolWebApi.Controllers
                          join l in db.TaskGroupLinks on t.TaskId equals l.TaskId
                          where l.TaskGroupId == id
                          select t)
-                         .Include(x => x.TaskGroupLinks.Select(y => y.TaskGroup))
+                         .Include()
                          .ToList();
 
             if (tasks == null)
