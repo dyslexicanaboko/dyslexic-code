@@ -65,6 +65,12 @@
                .val(this.TaskGroup.TaskGroupId)
                .text(this.TaskGroup.Name));
         });
+
+        ddl.SumoSelect({
+            placeholder: "Member of",
+            selectAll: true,
+            search: true
+        });
     }
 
     function generateTaskGroupObjects(jQueryDropDown) {

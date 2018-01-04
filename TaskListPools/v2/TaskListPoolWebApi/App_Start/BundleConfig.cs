@@ -40,6 +40,8 @@ namespace TaskListPoolWebApi
                 //Other Third party scripts
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery-ui-{version}.js", //The order matters, this has to come after jQuery
+                //"~/Scripts/jquery.multi-select.js",
+                "~/Scripts/jquery.sumoselect.js",
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js",
                 "~/Scripts/date.js", 
@@ -59,7 +61,10 @@ namespace TaskListPoolWebApi
                       "~/Content/toaster.css",
                       "~/Content/themes/base/jquery-ui.css",
                       "~/Content/themes/base/theme.css",
-                      "~/Content/themes/base/dialog.css"
+                      "~/Content/themes/base/dialog.css",
+                      //"~/Content/multi-select.css",
+                      "~/Content/sumoselect.css",
+                      "~/Content/sumoselect-overrides.css"
             ));
 
             // Set EnableOptimizations to false for debugging. For more information,
