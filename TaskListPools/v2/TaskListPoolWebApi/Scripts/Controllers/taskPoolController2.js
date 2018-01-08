@@ -5,6 +5,7 @@
     var _tableTemplateId = null;
     var _tableModelId = null;
     var _fnSaveMethod = null;
+    var _taskGroupSummarysForDropDown = null; //Running list of TaskGroupSummary objects for populating the drop down
 
     context.btnEditToggle_click = function btnEditToggle_click(taskId, editMode) {
         var r = $("#taskList_divReg" + taskId);
@@ -34,6 +35,7 @@
             },
             TaskGroups: {
                 dropDown: $("#taskList_ddlBody" + taskId)
+                //dropDownItems: $("#taskList_ddlBody" + taskId + " > option"),
             },
             CreatedOn: $("#taskList_lblCreatedOn" + taskId)
         };
@@ -60,10 +62,20 @@
         var ddl = m.TaskGroups.dropDown;
 
         //task.TaskGroupLinks.TaskGroup //Multiple TaskGroup objects
-        $.each(task.TaskGroupLinks, function () {
-            ddl.append($("<option />")
-               .val(this.TaskGroup.TaskGroupId)
-               .text(this.TaskGroup.Name));
+        $.each(_taskGroupSummarysForDropDown, function () {
+            //Loop through the list to see if this task is in the group already
+            var checked = isInGroup(task.TaskGroupLinks, this.TaskGroupId);
+
+            var opt = $("<option />")
+               .val(this.TaskGroupId)
+               .text(this.Name)
+
+            if(checked) {
+                opt.attr("selected", "selected");
+            }
+
+            ddl.append(opt);
+               
         });
 
         ddl.SumoSelect({
@@ -71,6 +83,16 @@
             selectAll: true,
             search: true
         });
+    }
+
+    function isInGroup(taskGroups, taskGroupId) {
+        for (var i = 0; i < taskGroups.length; i++) {
+            if (taskGroups[i].TaskGroup.TaskGroupId === taskGroupId) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     function generateTaskGroupObjects(jQueryDropDown) {
@@ -93,30 +115,41 @@
         _tableModelId = tableModelId;
         _taskGroupId = taskGroupId;
 
-        console.log("Load tasks for Group: " + taskGroupId);
+        var baseService = getTaskPoolService();
 
-        var svc = getTaskPoolService().tasks;
+        baseService.taskGroups
+            .getAll()
+            .then(function (response) {
+                _taskGroupSummarysForDropDown = response.data;
+                
+                console.log("Load tasks for Group: " + taskGroupId);
 
-        var f = null;
+                var svc = baseService.tasks;
 
-        if (taskGroupId === 0) {
-            f = function () { return svc.getAll(); };
-            _fnSaveMethod = function (task) { saveTask(task, successfullyAdded); };
-        }
-        else {
-            f = function () { return svc.getByTaskGroupId(taskGroupId); };
-            _fnSaveMethod = function (task) { saveTask(task, linkTaskToGroup); };
-        }
+                var f = null;
 
-        f()
-        .then(function (response) {
-            var arr = response.data;
+                if (taskGroupId === 0) {
+                    f = function () { return svc.getAll(); };
+                    _fnSaveMethod = function (task) { saveTask(task, successfullyAdded); };
+                }
+                else {
+                    f = function () { return svc.getByTaskGroupId(taskGroupId); };
+                    _fnSaveMethod = function (task) { saveTask(task, linkTaskToGroup); };
+                }
 
-            addModelsToTable(tableTemplateId, tableModelId, arr);
-        })
-        .catch(function (response) {
-            toastMessages.errorHttp(response);
-        });
+                f()
+                .then(function (response) {
+                    var arr = response.data;
+
+                    addModelsToTable(tableTemplateId, tableModelId, arr);
+                })
+                .catch(function (response) {
+                    toastMessages.errorHttp(response);
+                });
+            })
+            .catch(function (response) {
+                toastMessages.errorHttp(response);
+            });
     };
 
     function addModelsToTable(tableTemplateId, tableModelId, models) {
