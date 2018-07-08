@@ -53,6 +53,7 @@ namespace CfatLib
 
                 var l = GetLogEntry(i);
 
+                var f = 0;
                 var success = false;
 
                 //Keep attempting access until the resource is accessible
@@ -67,7 +68,9 @@ namespace CfatLib
                     }
                     catch (IOException)
                     {
-                        success = false;
+                        f++;
+
+                        Console.WriteLine($"Failure: {f:00} -> {l}");
                     }
                 }
             }
