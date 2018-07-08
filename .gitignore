@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -132,3 +132,6 @@
 /TaskListPools/v2/.vs/TaskList/v15/Server/sqlite3
 /DiPracticeTest/.vs/DiPracticeTest/v15/Server/sqlite3
 /TaskListPools/v2/.vs/TaskList/DesignTimeBuild/.dtbcache
+**/.vs/
+**/bin/
+**/obj/
