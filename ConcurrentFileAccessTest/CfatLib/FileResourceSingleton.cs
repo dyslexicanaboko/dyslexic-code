@@ -45,19 +45,19 @@ namespace CfatLib
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
-            //if (!File.Exists(strFullFilePath))
-            //    File.Create(strFullFilePath);
-
             _fullFilePath = strFullFilePath;
         }
 
         public void WriteToFile(string text)
         {
-            using (var sw = new StreamWriter(_fullFilePath, true))
+            lock (SyncRoot)
             {
-                Console.WriteLine(text);
+                using (var sw = new StreamWriter(_fullFilePath, true))
+                {
+                    Console.WriteLine(text);
 
-                sw.WriteLine(text);
+                    sw.WriteLine(text);
+                }
             }
         }
     }
