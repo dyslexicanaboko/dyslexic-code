@@ -14,5 +14,7 @@ namespace SimpleClassCreator
         StringBuilder BuildClass(ClassParameters parameters);
 
         AssemblyInfo GetClassProperties(string assembly, string className);
+
+        string GenerateDTO(string assembly, string className);
     }
 }

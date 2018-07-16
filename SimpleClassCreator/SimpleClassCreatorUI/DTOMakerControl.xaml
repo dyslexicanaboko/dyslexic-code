@@ -27,5 +27,6 @@
                 <CheckBox Content="Exclude Collections" Height="16" HorizontalAlignment="Left" Margin="6,6,0,0" Name="cbxExcludeCollections" VerticalAlignment="Top" ToolTip="Exclude collections from the DTO output" />
             </Grid>
         </GroupBox>
+        <Button Content="Generate DTO" Height="23" HorizontalAlignment="Left" Margin="576,497,0,0" Name="btnGenerate" VerticalAlignment="Top" Width="87" Click="btnGenerate_Click" />
     </Grid>
 </UserControl>

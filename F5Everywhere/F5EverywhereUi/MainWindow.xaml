@@ -1,0 +1,33 @@
+﻿<Window xmlns:my="clr-namespace:F5EverywhereUi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        x:Class="F5EverywhereUi.MainWindow"
+        Title="MainWindow" Height="668" Width="738">
+    <Grid KeyDown="Grid_KeyDown" Margin="0,0,2,7">
+        <my:ServerExplorerControl x:Name="ctrlServers" Margin="10,10,4,0" Height="292" VerticalAlignment="Top" Width="Auto" />
+        <my:SqlEditorControl x:Name="ctrlEditor" Margin="10,329,127,0" Height="126" VerticalAlignment="Top" />
+        <my:SqlResultsGridControl x:Name="ctrlResults" Margin="10,451,15,0" Width="Auto" />
+        <Button Name="btnExecuteSql" Margin="0,401,10,0" VerticalAlignment="Top" Height="45" Click="btnExecuteSql_Click" ToolTip="Execute F5 everywhere on the selected Targets. Woo!" Foreground="White" Background="#FFC32525" FontSize="14" FontWeight="Bold" FontFamily="Verdana" HorizontalAlignment="Right" Width="112">
+            <TextBlock>
+                Execute
+                <LineBreak/>
+                Squeely
+            </TextBlock>
+        </Button>
+        <Button x:Name="btnParseSql" Margin="0,351,10,0" VerticalAlignment="Top" Height="45" 
+                ToolTip="Parse your query to make sure it can execute properly." 
+                Foreground="White" 
+                Background="#FF15A22F" 
+                FontSize="14" 
+                FontWeight="Bold" 
+                FontFamily="Verdana" Click="btnParseSql_Click" HorizontalAlignment="Right" Width="112">
+            <TextBlock>
+                <Run Text="Parse"/>
+                <LineBreak/>
+                <Run Text="Squeely"/>
+            </TextBlock>
+        </Button>
+        <CheckBox Name="chkBxUnionResults" Content="Union Results" Margin="0,329,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="112" ToolTip="If checked, this option will produce a tab named &quot;Unioned Results&quot; that shows all of the results unioned together." />
+    </Grid>
+</Window>

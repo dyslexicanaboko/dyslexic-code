@@ -1,137 +1,15 @@
 ################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-/IIS_SiteViewer/IisManagementTools.Test/obj/Debug
-/IIS_SiteViewer/AppPoolCredSecurityHoleConsoleApp/bin/Debug
-/IIS_SiteViewer/AppPoolCredSecurityHoleConsoleApp/obj/Debug
-/IIS_SiteViewer/IisManagementTools/obj/Debug
-/IIS_SiteViewer/IisManagementTools/bin/Debug
-/IIS_SiteViewer/IIS_SiteViewerWebApp/packages
-/IIS_SiteViewer/IIS_SiteViewerWebApp/.vs/config
-/IIS_SiteViewer/IisSiteViewerWebApp/obj/Debug
-/IIS_SiteViewer/IisSiteViewerWebApp/bin
-*.apk
-/Android Projects/LifeSpanCalculator/bin
-/BingSearches/BingSearches/obj/Debug
-/BingSearches/BingSearches/bin/Debug
-/BingSearches/packages
-/CachingTests/packages
-/CachingTests/CachingNUnitTests/obj/Debug
-/CachingTests/CachingNUnitTests/bin/Debug
-/DepressingCalculatorApp/obj/Debug
-/DepressingCalculatorApp/bin/Debug
-/F5Everywhere/packages
-/F5Everywhere/F5EverywhereUi/obj/Debug
-/F5Everywhere/F5EverywhereUi/bin/Debug
-/F5Everywhere/F5EverywhereLib/obj/Debug
-/F5Everywhere/F5EverywhereNUnitTests/obj/Debug
-/Id3v1Tags/Id3v1TagAdjuster/obj/Debug
-/Id3v1Tags/Id3v1TagAdjuster/bin/Debug
-/Id3v1Tags/Id3v1TagAdjuster.NUnit.Tests/obj/Debug
-/Id3v1Tags/Id3v1TagAdjuster.NUnit.Tests/bin/Debug
-/IIS_SiteViewer/IisManagementTools.Test/bin/Debug
-/LifeSpanCalculator/LifeSpanLib/obj/Debug
-/LifeSpanCalculator/LifeSpanCalculator/obj/Debug
-/LifeSpanCalculator/LifeSpanCalculator/bin/Debug
-/LotteryApp/LotteryApp/obj/x86/Debug
-/LotteryApp/LotteryApp/bin/Debug
-/LotteryApp/LotteryAppMVC/obj/Debug
-/LotteryApp/LotteryBaseLogic/obj
-/LotteryApp/LotteryWcfHost/obj
-/LotteryApp/LotteryWcfService/obj
-/LotteryApp/LotteryWcfService/bin/Debug
-/LotteryApp/packages
-/MineCraftWindowsService/obj
-/MineCraftWindowsService/bin
-/MSMQ Test/MSMQManager/obj/Debug
-/MSMQ Test/MSMQConsoleApp/obj/x86/Debug
-/MSMQ Test/MSMQ-WCF-WalkThru - Start/CommonResources/obj
-/MSMQ Test/MSMQ-WCF-WalkThru - Start/Client/obj
-/Paging Switch Project/SerialComInterface/obj/Debug
-/Paging Switch Project/SerialComInterface/bin/Debug
-/Paging Switch Project/PagingSystemWindowsService/obj/Debug
-/Paging Switch Project/PagingSystemWindowsService/bin/Debug
-/Paging Switch Project/BeeperWebApp/obj/Debug
-/Proofs/obj/Debug
-/Proofs/bin/Debug
-/RouletteSimulator/obj/Debug
-/Remoting Test/WcfRemotingServiceLibrary/obj/Debug
-/Remoting Test/WcfRemotingServiceLibrary/bin/Debug
-/Remoting Test/RemotingServer/obj/Debug
-/Remoting Test/PublicWebService/obj/Debug
-/Remoting Test/PublicInterfaceLibrary/obj/Debug
-/Remoting Test/InterfaceLibrary/obj/Debug
-/Remoting Test/ClientApp/obj/x86/Debug
-/Remoting Test/ClientApp/bin/Debug
-/Remoting Test/BaseWebApp/obj/Debug
-/SimpleClassCreator/SimpleClassCreatorUI/obj/Debug
-/SimpleClassCreator/SimpleClassCreatorUI/bin/Debug
-/TestingGroundsCS/TestWebApp/obj/Debug
-/TestingGroundsCS/TestingGroundsCS/obj/Debug
-/TestingGroundsCS/TestingGroundsCS/bin/Debug
-/TestingGroundsCS/WcfRestfulServiceExample/obj/Debug
-/VBProjectConsoleApp/obj/x86/Debug
-/VBProjectConsoleApp/bin/Debug
-/WCF Service Authentication/WcfServicesSecurity/obj
-/WCF Service Authentication/WcfServicesSecurity/bin
-/Micro Framework/Micro .Net/Code Examples/FEZ Touch/FEZ Touch Example/FEZ Touch Example/obj/Debug
-/Micro Framework/Micro .Net/Code Examples/FEZ Touch/FEZ Touch Example/FEZ Touch Example/bin/Debug
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/GadgeteerCore/Libraries/Core/WebServer43/obj/Debug
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/GadgeteerCore/Gadgeteer43/obj/Debug
-/Micro Framework/uC Tests/FEZ Spider II/EthernetJ11DExample/bin/Debug
-/Micro Framework/Micro .Net/Projects/ServoTest/ServoTest/obj/Debug
-/Micro Framework/Micro .Net/Projects/ServoTest/ServoTest/bin/Debug
-/Micro Framework/Micro .Net/Projects/MFConsoleApplication1/MFConsoleApplication1/obj/Debug
-/Micro Framework/Micro .Net/Projects/MFConsoleApplication1/MFConsoleApplication1/bin/Debug
-/Micro Framework/Micro .Net/Projects/BlinkingLED/obj/Debug
-/Micro Framework/uC Tests/FEZ Spider II/HelloLED/bin/Debug
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/Modules/Seeed/Gyro/Software/GyroTestApp/obj/Release
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/Modules/Seeed/CurrentSensor/Software/CurrentSensorTestApp/obj/Debug
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/Modules/Seeed/Compass/Software/CompassTestApp/obj/Release
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/Modules/Seeed/CellularRadio/Software/CellularRadioTest/obj
-/Micro Framework/uC Tests/FEZ Spider II/gadgeteer-36144/Main/Modules/Seeed/Accelerometer/Software/AccelerometerTestApp/obj/Release
-/Micro Framework/uC Tests/MicroControllerConsole/obj/Debug
-/Micro Framework/uC Tests/MicroControllerConsole/bin/Debug
-/Micro Framework/uC Tests/MFConsoleApplication1/obj/Debug
-/Micro Framework/uC Tests/MFConsoleApplication1/bin/Debug
-/Micro Framework/uC Tests/FEZ Touch/FEZ Touch Image Converter/FEZ Touch Image Converter/obj/x86/Release
-/Micro Framework/uC Tests/FEZ Touch/FEZ Touch Image Converter/FEZ Touch Image Converter/bin/Release
-/Micro Framework/uC Tests/FEZ Touch/FEZ Touch Example/FEZ Touch Example/obj/Debug
-/Micro Framework/uC Tests/FEZ Touch/FEZ Touch Example/FEZ Touch Example/bin/Debug
-/Micro Framework/uC Tests/FEZ Spider II/HelloLED/obj/Debug
-/Micro Framework/uC Tests/MicroControllerConsole2010/obj/x86/Debug
-/Micro Framework/uC Tests/FEZ Spider II/EthernetJ11DExample/obj/Debug
-/MSMQ Test/MSMQ-WCF-WalkThru - Start/Server/obj
-/MSMQ Test/MSMQ-WCF-WalkThru - Start/Server/bin/Debug
-/DiPracticeTest/packages
-/DiPracticeTest/obj/Debug
-/DiPracticeTest/bin/Debug
-/EfCodeFirstPractice/packages
-/EfCodeFirstPractice/obj/Debug
-/EfCodeFirstPractice/bin/Debug
-/IIS_SiteViewer/IisManagementTools/bin
-/IIS_SiteViewer/packages
-/node_modules
+/node_modules/
 /quickstart/
-/TaskListPools/v2/TaskListPoolDb/bin/Debug
-/TaskListPools/v2/TaskListPoolDb/obj/Debug
-/TaskListPools/v2/TaskListPoolWebApi/bin
-/TaskListPools/v2/TaskListPoolWebApi/obj/Debug
-/TaskListPools/v2/TaskListPoolTest/bin/Debug
-/TaskListPools/v2/TaskListPoolTest/obj/Debug
-/TaskListPools/v2/TaskListPoolLib/bin/Debug
-/TaskListPools/v2/TaskListPoolLib/obj/Debug
-/TaskListPools/v2/packages
-/TaskListPools/v2/TaskListPoolDb/TaskListPool.dbmdl
-/TaskListPools/v2/TaskListPoolDb/TaskListPool.jfm
-/TaskListPools/v1
-/PdfMergingTool/PdfMergingToolLib/obj/Debug
-/PdfMergingTool/PdfMergingToolUi/bin/Debug
-/PdfMergingTool/PdfMergingToolUi/obj/Debug
-/TaskListPools/v2/.vs/TaskList/v15/Server/sqlite3
-/DiPracticeTest/.vs/DiPracticeTest/v15/Server/sqlite3
-/TaskListPools/v2/.vs/TaskList/DesignTimeBuild/.dtbcache
+/TaskListPools/v1/
+*.apk
+*.dbmdl
+*.jfm
+*.MDF
+*.LDF
 **/.vs/
 **/bin/
 **/obj/
+**/packages/

@@ -1,0 +1,866 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlueProjectSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Screens>
+    <ScreenSave>
+      <Properties />
+      <States />
+      <StateCategoryList />
+      <Events />
+      <IsOnOwnLayer>false</IsOnOwnLayer>
+      <CustomVariables />
+      <Name>Screens\GameScreen</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <Name>Screens/GameScreen/CollisionFile.shcx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>false</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>BeefballContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <Name>Screens/GameScreen/GoalAreaFile.shcx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>false</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>BeefballContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <CustomProperty>
+            <Type>Color</Type>
+            <Member>BodyColor</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Single</Type>
+            <Member>BodyRadius</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Single</Type>
+            <Member>BodyDrag</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <ContainerType>Screen</ContainerType>
+          <SourceType>Entity</SourceType>
+          <SourceClassType>Entities\Puck</SourceClassType>
+          <InstanceName>PuckInstance</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\PlayerBall</SourceClassGenericType>
+          <InstanceName>PlayerBallList</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects>
+            <NamedObjectSave>
+              <Properties />
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>MovementSpeed</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>Drag</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>X</Member>
+                <ValueAsFloat>10</ValueAsFloat>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>Y</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>DashSpeed</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>DashFrequency</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>CooldownCircleRadius</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Color</Type>
+                <Member>CooldownCircleColor</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <ContainerType>Screen</ContainerType>
+              <SourceType>Entity</SourceType>
+              <SourceClassType>Entities\PlayerBall</SourceClassType>
+              <InstanceName>PlayerBallInstance</InstanceName>
+              <HasPublicProperty>false</HasPublicProperty>
+              <SetByDerived>false</SetByDerived>
+              <ExposedInDerived>false</ExposedInDerived>
+              <SetByContainer>false</SetByContainer>
+              <AttachToContainer>false</AttachToContainer>
+              <AttachToCamera>false</AttachToCamera>
+              <AddToManagers>true</AddToManagers>
+              <IncludeInIVisible>true</IncludeInIVisible>
+              <IncludeInIClickable>true</IncludeInIClickable>
+              <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+              <DefinedByBase>false</DefinedByBase>
+              <InstantiatedByBase>false</InstantiatedByBase>
+              <IsDisabled>false</IsDisabled>
+              <VariablesToReset>
+                <string>Position</string>
+              </VariablesToReset>
+              <IgnoresPausing>false</IgnoresPausing>
+              <CallActivity>true</CallActivity>
+              <ContainedObjects />
+              <Events />
+              <Is2D>false</Is2D>
+            </NamedObjectSave>
+            <NamedObjectSave>
+              <Properties />
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>MovementSpeed</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>Drag</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>X</Member>
+                <ValueAsFloat>-10</ValueAsFloat>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>Y</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>DashSpeed</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>DashFrequency</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>CooldownCircleRadius</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Color</Type>
+                <Member>CooldownCircleColor</Member>
+                <Time>0</Time>
+              </CustomProperty>
+              <ContainerType>Screen</ContainerType>
+              <SourceType>Entity</SourceType>
+              <SourceClassType>Entities\PlayerBall</SourceClassType>
+              <InstanceName>PlayerBallInstance2</InstanceName>
+              <HasPublicProperty>false</HasPublicProperty>
+              <SetByDerived>false</SetByDerived>
+              <ExposedInDerived>false</ExposedInDerived>
+              <SetByContainer>false</SetByContainer>
+              <AttachToContainer>true</AttachToContainer>
+              <AttachToCamera>false</AttachToCamera>
+              <AddToManagers>true</AddToManagers>
+              <IncludeInIVisible>true</IncludeInIVisible>
+              <IncludeInIClickable>true</IncludeInIClickable>
+              <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+              <DefinedByBase>false</DefinedByBase>
+              <InstantiatedByBase>false</InstantiatedByBase>
+              <IsDisabled>false</IsDisabled>
+              <VariablesToReset>
+                <string>Position</string>
+              </VariablesToReset>
+              <IgnoresPausing>false</IgnoresPausing>
+              <CallActivity>true</CallActivity>
+              <ContainedObjects />
+              <Events />
+              <Is2D>false</Is2D>
+            </NamedObjectSave>
+          </ContainedObjects>
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <CustomProperty>
+            <Type>Boolean</Type>
+            <Member>Visible</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <ContainerType>Screen</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Screens/GameScreen/GoalAreaFile.shcx</SourceFile>
+          <SourceName>LeftGoal (AxisAlignedRectangle)</SourceName>
+          <InstanceName>LeftGoal</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>false</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <CustomProperty>
+            <Type>Boolean</Type>
+            <Member>Visible</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <ContainerType>Screen</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Screens/GameScreen/GoalAreaFile.shcx</SourceFile>
+          <SourceName>RightGoal (AxisAlignedRectangle)</SourceName>
+          <InstanceName>RightGoal</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>false</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <SourceType>Entity</SourceType>
+          <SourceClassType>Entities\ScoreHud</SourceClassType>
+          <InstanceName>ScoreHudInstance</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <LayerOn>HudLayer</LayerOn>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>Layer</SourceClassType>
+          <InstanceName>HudLayer</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>true</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <Behaviors />
+      <UseGlobalContent>false</UseGlobalContent>
+      <IsRequiredAtStartup>false</IsRequiredAtStartup>
+    </ScreenSave>
+  </Screens>
+  <Entities>
+    <EntitySave>
+      <Properties />
+      <States>
+        <StateSave>
+          <InstructionSaves>
+            <InstructionSave>
+              <Type>Single</Type>
+              <Member>CooldownCircleRadius</Member>
+              <ValueAsFloat>0</ValueAsFloat>
+              <Time>0</Time>
+            </InstructionSave>
+          </InstructionSaves>
+          <NamedObjectPropertyOverrides />
+          <Name>Tired</Name>
+        </StateSave>
+        <StateSave>
+          <InstructionSaves>
+            <InstructionSave>
+              <Type>Single</Type>
+              <Member>CooldownCircleRadius</Member>
+              <ValueAsFloat>1</ValueAsFloat>
+              <Time>0</Time>
+            </InstructionSave>
+          </InstructionSaves>
+          <NamedObjectPropertyOverrides />
+          <Name>Rested</Name>
+        </StateSave>
+      </States>
+      <StateCategoryList />
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>MovementSpeed</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">33</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Drag</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">1</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>X</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Y</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>DashSpeed</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">30</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>DashFrequency</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">2</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CooldownCircleRadius</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <SourceObject>CooldownCircle</SourceObject>
+          <SourceObjectProperty>Radius</SourceObjectProperty>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>Color</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CooldownCircleColor</Name>
+          <Type>Color</Type>
+          <DefaultValue xsi:type="xsd:string"></DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <SourceObject>CooldownCircle</SourceObject>
+          <SourceObjectProperty>Color</SourceObjectProperty>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+      </CustomVariables>
+      <IsUnique>false</IsUnique>
+      <ImplementsIClickable>false</ImplementsIClickable>
+      <ImplementsIVisible>false</ImplementsIVisible>
+      <ImplementsIWindow>false</ImplementsIWindow>
+      <Name>Entities\PlayerBall</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <CustomProperty>
+            <Type>Boolean</Type>
+            <Member>Visible</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <ContainerType>Entity</ContainerType>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>Circle</SourceClassType>
+          <InstanceName>Body</InstanceName>
+          <HasPublicProperty>true</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <CustomProperty>
+            <Type>Boolean</Type>
+            <Member>Visible</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <ContainerType>Entity</ContainerType>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>Circle</SourceClassType>
+          <InstanceName>CooldownCircle</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles />
+      <Behaviors />
+      <CreatedByOtherEntities>false</CreatedByOtherEntities>
+      <PooledByFactory>false</PooledByFactory>
+      <UseGlobalContent>false</UseGlobalContent>
+    </EntitySave>
+    <EntitySave>
+      <Properties />
+      <States />
+      <StateCategoryList />
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>Color</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>BodyColor</Name>
+          <Type>Color</Type>
+          <DefaultValue xsi:type="xsd:string">Red</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <SourceObject>Body</SourceObject>
+          <SourceObjectProperty>Color</SourceObjectProperty>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>BodyRadius</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0.5</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <SourceObject>Body</SourceObject>
+          <SourceObjectProperty>Radius</SourceObjectProperty>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>BodyDrag</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0.7</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <SourceObject>Body</SourceObject>
+          <SourceObjectProperty>Drag</SourceObjectProperty>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+      </CustomVariables>
+      <IsUnique>false</IsUnique>
+      <ImplementsIClickable>false</ImplementsIClickable>
+      <ImplementsIVisible>false</ImplementsIVisible>
+      <ImplementsIWindow>false</ImplementsIWindow>
+      <Name>Entities\Puck</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <CustomProperty>
+            <Type>Boolean</Type>
+            <Member>Visible</Member>
+            <Time>0</Time>
+          </CustomProperty>
+          <ContainerType>Entity</ContainerType>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>Circle</SourceClassType>
+          <InstanceName>Body</InstanceName>
+          <HasPublicProperty>true</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles />
+      <Behaviors />
+      <CreatedByOtherEntities>false</CreatedByOtherEntities>
+      <PooledByFactory>false</PooledByFactory>
+      <UseGlobalContent>false</UseGlobalContent>
+    </EntitySave>
+    <EntitySave>
+      <Properties />
+      <States />
+      <StateCategoryList />
+      <CustomVariables />
+      <IsUnique>false</IsUnique>
+      <ImplementsIClickable>false</ImplementsIClickable>
+      <ImplementsIVisible>false</ImplementsIVisible>
+      <ImplementsIWindow>false</ImplementsIWindow>
+      <Name>Entities\ScoreHud</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Entities/ScoreHud/SceneFile.scnx</SourceFile>
+          <SourceName>Entire File (Scene)</SourceName>
+          <InstanceName>EntireScene</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Entities/ScoreHud/SceneFile.scnx</SourceFile>
+          <SourceName>Team1Score (Text)</SourceName>
+          <InstanceName>Team1Score</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Entities/ScoreHud/SceneFile.scnx</SourceFile>
+          <SourceName>Team2Score (Text)</SourceName>
+          <InstanceName>Team2Score</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <Name>Entities/ScoreHud/SceneFile.scnx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>true</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>BeefballContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <Behaviors />
+      <CreatedByOtherEntities>false</CreatedByOtherEntities>
+      <PooledByFactory>false</PooledByFactory>
+      <UseGlobalContent>false</UseGlobalContent>
+    </EntitySave>
+  </Entities>
+  <GlobalFiles />
+  <GlobalContentSettingsSave>
+    <LoadAsynchronously>false</LoadAsynchronously>
+    <RecordLockContention>false</RecordLockContention>
+  </GlobalContentSettingsSave>
+  <SyncedProjects />
+  <StartUpScreen>Screens\GameScreen</StartUpScreen>
+  <In2D>false</In2D>
+  <SetResolution>false</SetResolution>
+  <ResolutionWidth>800</ResolutionWidth>
+  <ResolutionHeight>600</ResolutionHeight>
+  <SetOrthogonalResolution>false</SetOrthogonalResolution>
+  <OrthogonalWidth>800</OrthogonalWidth>
+  <OrthogonalHeight>600</OrthogonalHeight>
+  <PerformanceSettingsSave>
+    <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>
+  </PerformanceSettingsSave>
+  <IgnoredDirectories />
+  <CustomClasses />
+  <TranslatedFiles>
+    <TranslatedFileSave>
+      <FileName>Entities\PlayerBall.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+    <TranslatedFileSave>
+      <FileName>Entities\PlayerBall.Generated.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+  </TranslatedFiles>
+</GlueProjectSave>

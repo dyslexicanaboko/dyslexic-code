@@ -89,6 +89,7 @@ namespace SimpleClassCreator.DataAccess
             //If you don't use SQL Server then change this to your flavor of DB Driver
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = (SqlCommand)dbCommand;
+            adapter.FillSchema(dt, SchemaType.Source);
             adapter.Fill(dt);
             adapter.Dispose();
 

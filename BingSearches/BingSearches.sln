@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingSearches", "BingSearches\BingSearches.csproj", "{DACF8458-3B75-4865-9C1E-8CF3965C9E50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DACF8458-3B75-4865-9C1E-8CF3965C9E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACF8458-3B75-4865-9C1E-8CF3965C9E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACF8458-3B75-4865-9C1E-8CF3965C9E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACF8458-3B75-4865-9C1E-8CF3965C9E50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

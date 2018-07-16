@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="F5EverywhereUi.ServerExplorerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="716.999" Height="280.666">
+    <GroupBox Header="SQL Servers">
+        <Grid Margin="0,0,-2,1">
+            <Button Content="Test" Height="25" HorizontalAlignment="Left" Margin="311,0,0,0" x:Name="btnServerTest" VerticalAlignment="Top" Width="40" Click="btnServerTest_Click" />
+            <ComboBox Height="25" HorizontalAlignment="Left" Name="cbServers" VerticalAlignment="Top" Width="304" IsEditable="True" ItemsSource="{Binding}" DisplayMemberPath="ServerName" SelectedValuePath="ServerName" KeyDown="cbServers_KeyDown" />
+            <Label Content="Current Servers" Margin="-7,30,483,113" />
+            <ListBox x:Name="lstBxCurrentServers" HorizontalAlignment="Left" Height="170" Margin="0,60,0,0" VerticalAlignment="Top" Width="127" SelectionChanged="lstBxCurrentServers_SelectionChanged" />
+            <Label Content="Databases" Margin="132,29,306,113" />
+            <ListBox x:Name="lstBxDatabases" 
+                    HorizontalAlignment="Left" Height="170" Margin="132,60,0,0" 
+                    VerticalAlignment="Top" Width="259"
+                    ItemsSource="{Binding}"
+                    DisplayMemberPath="Name" 
+                    SelectedValuePath="Name" 
+                    SelectionMode="Extended">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <EventSetter Event="MouseDoubleClick" Handler="ListBoxItem_MouseDoubleClick" />
+                        <EventSetter Event="KeyDown" Handler="ListBoxItem_KeyDown" />
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+            <Label Content="Targets" Margin="396,29,10,113" />
+            <DataGrid x:Name="dgTargets" HorizontalAlignment="Left" Margin="396,60,0,0" VerticalAlignment="Top" Height="170" Width="301" AutoGenerateColumns="False" ColumnWidth="SizeToHeader">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="Exec" Binding="{Binding Path=IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="25">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox Name="dgTargets_chkBxSelectAll" 
+                                          Checked="dgTargets_chkBxSelectAll_Toggle" 
+                                          Unchecked="dgTargets_chkBxSelectAll_Toggle" 
+                                          IsChecked="True" />
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Server" Binding="{Binding Path=Server}" Width="*" />
+                    <DataGridTextColumn Header="Database" Binding="{Binding Path=Database}" Width="*" />
+                    <DataGridTemplateColumn Header="Delete" Width="50">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="dgTargets_btnRemove" Content="Remove" Click="dgTargets_btnRemove_Click"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Name="btnServerAdd" Content="Add" Height="25" HorizontalAlignment="Left" Margin="356,0,0,0" VerticalAlignment="Top" Width="40" Click="btnServerAdd_Click" />
+            <Button Name="btnAddMultipleTargets" Content="Add as Target" HorizontalAlignment="Left" Margin="301,235,0,0" VerticalAlignment="Top" Width="90" Height="23" Click="btnAddMultipleTargets_Click" />
+        </Grid>
+    </GroupBox>
+</UserControl>

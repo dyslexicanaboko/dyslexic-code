@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlueProjectSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Screens>
+    <ScreenSave>
+      <Properties>
+        <PropertySave>
+          <Name>IsLoadingScreen</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
+      <States />
+      <StateCategoryList />
+      <Events />
+      <IsOnOwnLayer>false</IsOnOwnLayer>
+      <CustomVariables />
+      <Name>Screens\GameScreen</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <Name>Screens/GameScreen/TrackAnimationChainListFile.achx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>false</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <Name>Screens/GameScreen/TrackScene.scnx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>false</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <SourceType>Entity</SourceType>
+          <SourceClassType>Entities\Dash</SourceClassType>
+          <InstanceName>DashInstance</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\Obstacles</SourceClassGenericType>
+          <InstanceName>ObstaclesList</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects>
+            <NamedObjectSave>
+              <Properties />
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>X</Member>
+                <ValueAsFloat>-10</ValueAsFloat>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>Y</Member>
+                <ValueAsFloat>10</ValueAsFloat>
+                <Time>0</Time>
+              </CustomProperty>
+              <ContainerType>Screen</ContainerType>
+              <SourceType>Entity</SourceType>
+              <SourceClassType>Entities\Obstacles</SourceClassType>
+              <InstanceName>ObstaclesInstance</InstanceName>
+              <HasPublicProperty>false</HasPublicProperty>
+              <SetByDerived>false</SetByDerived>
+              <ExposedInDerived>false</ExposedInDerived>
+              <SetByContainer>false</SetByContainer>
+              <AttachToContainer>false</AttachToContainer>
+              <AttachToCamera>false</AttachToCamera>
+              <AddToManagers>true</AddToManagers>
+              <IncludeInIVisible>true</IncludeInIVisible>
+              <IncludeInIClickable>true</IncludeInIClickable>
+              <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+              <DefinedByBase>false</DefinedByBase>
+              <InstantiatedByBase>false</InstantiatedByBase>
+              <IsDisabled>false</IsDisabled>
+              <VariablesToReset />
+              <IgnoresPausing>false</IgnoresPausing>
+              <CallActivity>true</CallActivity>
+              <ContainedObjects />
+              <Events />
+              <Is2D>false</Is2D>
+            </NamedObjectSave>
+            <NamedObjectSave>
+              <Properties />
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>X</Member>
+                <ValueAsFloat>10</ValueAsFloat>
+                <Time>0</Time>
+              </CustomProperty>
+              <CustomProperty>
+                <Type>Single</Type>
+                <Member>Y</Member>
+                <ValueAsFloat>10</ValueAsFloat>
+                <Time>0</Time>
+              </CustomProperty>
+              <ContainerType>Screen</ContainerType>
+              <SourceType>Entity</SourceType>
+              <SourceClassType>Entities\Obstacles</SourceClassType>
+              <InstanceName>ObstaclesInstance2</InstanceName>
+              <HasPublicProperty>false</HasPublicProperty>
+              <SetByDerived>false</SetByDerived>
+              <ExposedInDerived>false</ExposedInDerived>
+              <SetByContainer>false</SetByContainer>
+              <AttachToContainer>false</AttachToContainer>
+              <AttachToCamera>false</AttachToCamera>
+              <AddToManagers>true</AddToManagers>
+              <IncludeInIVisible>true</IncludeInIVisible>
+              <IncludeInIClickable>true</IncludeInIClickable>
+              <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+              <DefinedByBase>false</DefinedByBase>
+              <InstantiatedByBase>false</InstantiatedByBase>
+              <IsDisabled>false</IsDisabled>
+              <VariablesToReset />
+              <IgnoresPausing>false</IgnoresPausing>
+              <CallActivity>true</CallActivity>
+              <ContainedObjects />
+              <Events />
+              <Is2D>false</Is2D>
+            </NamedObjectSave>
+          </ContainedObjects>
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Screen</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Screens/GameScreen/TrackScene.scnx</SourceFile>
+          <SourceName>Entire File (Scene)</SourceName>
+          <InstanceName>TrackAnimation</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>false</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>false</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <Behaviors />
+      <UseGlobalContent>false</UseGlobalContent>
+      <IsRequiredAtStartup>false</IsRequiredAtStartup>
+    </ScreenSave>
+  </Screens>
+  <Entities>
+    <EntitySave>
+      <Properties />
+      <States />
+      <StateCategoryList />
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>CurrentChain</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string"></DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <SourceObject>SpriteInstance</SourceObject>
+          <SourceObjectProperty>Name</SourceObjectProperty>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+      </CustomVariables>
+      <IsUnique>false</IsUnique>
+      <ImplementsIClickable>false</ImplementsIClickable>
+      <ImplementsIVisible>false</ImplementsIVisible>
+      <ImplementsIWindow>false</ImplementsIWindow>
+      <Name>Entities\Button</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Entities/Button/AnimationChainListFile.achx</SourceFile>
+          <SourceName>Entire File (AnimationChainList)</SourceName>
+          <InstanceName>SpriteInstance</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <Name>Entities/Button/AnimationChainListFile.achx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>true</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <Name>Entities/Button/SceneFile.scnx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>true</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <Behaviors />
+      <CreatedByOtherEntities>false</CreatedByOtherEntities>
+      <PooledByFactory>false</PooledByFactory>
+      <UseGlobalContent>false</UseGlobalContent>
+    </EntitySave>
+    <EntitySave>
+      <Properties />
+      <States />
+      <StateCategoryList />
+      <CustomVariables />
+      <IsUnique>false</IsUnique>
+      <ImplementsIClickable>false</ImplementsIClickable>
+      <ImplementsIVisible>false</ImplementsIVisible>
+      <ImplementsIWindow>false</ImplementsIWindow>
+      <Name>Entities\Dash</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Entities/Dash/DashScene.scnx</SourceFile>
+          <SourceName>Entire File (Scene)</SourceName>
+          <InstanceName>DashAnimation</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <Name>Entities/Dash/DashAnimationChainList.achx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>true</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <Name>Entities/Dash/DashScene.scnx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>true</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <Behaviors />
+      <CreatedByOtherEntities>false</CreatedByOtherEntities>
+      <PooledByFactory>false</PooledByFactory>
+      <UseGlobalContent>false</UseGlobalContent>
+    </EntitySave>
+    <EntitySave>
+      <Properties />
+      <States />
+      <StateCategoryList />
+      <CustomVariables>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>X</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>float</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Y</Name>
+          <Type>float</Type>
+          <DefaultValue xsi:type="xsd:float">0</DefaultValue>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <SetByDerived>false</SetByDerived>
+          <IsShared>false</IsShared>
+          <DefinedByBase>false</DefinedByBase>
+          <CreatesEvent>false</CreatesEvent>
+        </CustomVariable>
+      </CustomVariables>
+      <IsUnique>false</IsUnique>
+      <ImplementsIClickable>false</ImplementsIClickable>
+      <ImplementsIVisible>false</ImplementsIVisible>
+      <ImplementsIWindow>false</ImplementsIWindow>
+      <Name>Entities\Obstacles</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <SourceType>File</SourceType>
+          <SourceFile>Entities/Obstacles/ObstacleImage.scnx</SourceFile>
+          <SourceName>Entire File (Scene)</SourceName>
+          <InstanceName>EntireScene</InstanceName>
+          <HasPublicProperty>false</HasPublicProperty>
+          <SetByDerived>false</SetByDerived>
+          <ExposedInDerived>false</ExposedInDerived>
+          <SetByContainer>false</SetByContainer>
+          <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>false</AttachToCamera>
+          <AddToManagers>true</AddToManagers>
+          <IncludeInIVisible>true</IncludeInIVisible>
+          <IncludeInIClickable>true</IncludeInIClickable>
+          <FulfillsRequirement>&lt;NONE&gt;</FulfillsRequirement>
+          <DefinedByBase>false</DefinedByBase>
+          <InstantiatedByBase>false</InstantiatedByBase>
+          <IsDisabled>false</IsDisabled>
+          <VariablesToReset />
+          <IgnoresPausing>false</IgnoresPausing>
+          <CallActivity>true</CallActivity>
+          <ContainedObjects />
+          <Events />
+          <Is2D>false</Is2D>
+        </NamedObjectSave>
+      </NamedObjects>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Properties />
+          <ContainerType>Entity</ContainerType>
+          <Name>Entities/Obstacles/ObstacleImage.scnx</Name>
+          <IsManuallyUpdated>false</IsManuallyUpdated>
+          <IsSharedStatic>true</IsSharedStatic>
+          <IncludeDirectoryRelativeToContainer>false</IncludeDirectoryRelativeToContainer>
+          <LoadedOnlyWhenReferenced>false</LoadedOnlyWhenReferenced>
+          <ContentProjectParent>DashRunningContent</ContentProjectParent>
+          <HasPublicProperty>false</HasPublicProperty>
+          <OpensWith>&lt;DEFAULT&gt;</OpensWith>
+          <LoadedAtRuntime>true</LoadedAtRuntime>
+          <CreatesDictionary>false</CreatesDictionary>
+          <CsvDelimiter>Comma</CsvDelimiter>
+          <TreatAsCsv>false</TreatAsCsv>
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <Behaviors />
+      <CreatedByOtherEntities>false</CreatedByOtherEntities>
+      <PooledByFactory>false</PooledByFactory>
+      <UseGlobalContent>false</UseGlobalContent>
+    </EntitySave>
+  </Entities>
+  <GlobalFiles />
+  <GlobalContentSettingsSave>
+    <LoadAsynchronously>false</LoadAsynchronously>
+    <RecordLockContention>false</RecordLockContention>
+  </GlobalContentSettingsSave>
+  <SyncedProjects />
+  <StartUpScreen>Screens\GameScreen</StartUpScreen>
+  <In2D>false</In2D>
+  <SetResolution>false</SetResolution>
+  <ResolutionWidth>800</ResolutionWidth>
+  <ResolutionHeight>600</ResolutionHeight>
+  <SetOrthogonalResolution>false</SetOrthogonalResolution>
+  <OrthogonalWidth>800</OrthogonalWidth>
+  <OrthogonalHeight>600</OrthogonalHeight>
+  <PerformanceSettingsSave>
+    <ThrowExceptionOnPostInitializeContentLoad>false</ThrowExceptionOnPostInitializeContentLoad>
+  </PerformanceSettingsSave>
+  <IgnoredDirectories />
+  <CustomClasses />
+  <TranslatedFiles>
+    <TranslatedFileSave>
+      <FileName>Screens\Screen.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+    <TranslatedFileSave>
+      <FileName>Screens\GameScreen.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+  </TranslatedFiles>
+</GlueProjectSave>

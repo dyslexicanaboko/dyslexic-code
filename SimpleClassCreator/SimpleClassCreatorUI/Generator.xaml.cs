@@ -64,7 +64,7 @@ namespace SimpleClassCreatorUI
             TestConnectionString();
         }
 
-        private bool TestConnectionString()
+        private bool TestConnectionString(bool showMessageOnFailureOnly = false)
         {
             ConnectionManager.Connection con = CurrentConnection;
 
@@ -76,7 +76,13 @@ namespace SimpleClassCreatorUI
 
             cbConnectionString_Refresh();
 
-            Warning(obj.Success ? "Connected Successfully" : "Connection Failed. Returned error: " + obj.Message);
+            bool showMessage = true;
+
+            if (showMessageOnFailureOnly)
+                showMessage = !obj.Success;
+
+            if (showMessage)
+                Warning(obj.Success ? "Connected Successfully" : "Connection Failed. Returned error: " + obj.Message);
 
             return obj.Success;
         }

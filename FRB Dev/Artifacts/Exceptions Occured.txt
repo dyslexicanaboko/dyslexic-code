@@ -1,0 +1,220 @@
+This exception occured after following this tutorial:
+http://www.flatredball.com/frb/docs/index.php?title=Tutorials:Beefball:Creating_the_Puck_Entity
+
+See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at FlatRedBall.Glue.FormHelpers.PropertyGridHelper.ReactToCustomVariableChangedValue(String changedMember, Object oldValue) in T:\Glue\Glue\FormHelpers\PropertyGridHelper.cs:line 771
+   at FlatRedBall.Glue.FormHelpers.PropertyGridHelper.PropertyValueChanged(Object s, PropertyValueChangedEventArgs e) in T:\Glue\Glue\FormHelpers\PropertyGridHelper.cs:line 93
+   at Glue.Form1.propertyGrid1_PropertyValueChanged(Object s, PropertyValueChangedEventArgs e) in T:\Glue\Glue\Form1.cs:line 757
+   at System.Windows.Forms.PropertyGrid.OnPropertyValueChanged(PropertyValueChangedEventArgs e)
+   at System.Windows.Forms.PropertyGrid.OnPropertyValueSet(GridItem changedItem, Object oldValue)
+   at System.Windows.Forms.PropertyGridInternal.PropertyGridView.CommitValue(GridEntry ipeCur, Object value)
+   at System.Windows.Forms.PropertyGridInternal.PropertyGridView.CommitValue(Object value)
+   at System.Windows.Forms.PropertyGridInternal.PropertyGridView.CommitText(String text)
+   at System.Windows.Forms.PropertyGridInternal.PropertyGridView.OnListClick(Object sender, EventArgs e)
+   at System.Windows.Forms.PropertyGridInternal.PropertyGridView.OnListMouseUp(Object sender, MouseEventArgs me)
+   at System.Windows.Forms.Control.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ListBox.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** Loaded Assemblies **************
+mscorlib
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.235 (RTMGDR.030319-2300)
+    CodeBase: file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/mscorlib.dll
+----------------------------------------
+Glue
+    Assembly Version: 2011.7.12.1344
+    Win32 Version: 2011.07.12.1344
+    CodeBase: file:///C:/Program%20Files%20(x86)/FlatRedBall/FRBDK/Xna%204%20Tools/Glue.exe
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.235 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System.Drawing
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 built by: RTMRel
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+System
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Core
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 built by: RTMRel
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Core/v4.0_4.0.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+System.Configuration
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 (RTMRel.030319-0100)
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Configuration/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Xml
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 built by: RTMRel
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Xml/v4.0_4.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+FlatRedBall
+    Assembly Version: 2011.7.12.1344
+    Win32 Version: 2011.7.12.1344
+    CodeBase: file:///C:/Program%20Files%20(x86)/FlatRedBall/FRBDK/Xna%204%20Tools/FlatRedBall.DLL
+----------------------------------------
+Microsoft.Build.Engine
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 built by: RTMRel
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/Microsoft.Build.Engine/v4.0_4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Engine.dll
+----------------------------------------
+EditorObjectsXna
+    Assembly Version: 0.0.0.0
+    Win32 Version: 0.0.0.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/FlatRedBall/FRBDK/Xna%204%20Tools/EditorObjectsXna.DLL
+----------------------------------------
+Microsoft.Xna.Framework
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.20823.0 built by: xnabldr
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_32/Microsoft.Xna.Framework/v4.0_4.0.0.0__842cf8be1de50553/Microsoft.Xna.Framework.dll
+----------------------------------------
+Microsoft.Xna.Framework.Graphics
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.20823.0 built by: xnabldr
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_32/Microsoft.Xna.Framework.Graphics/v4.0_4.0.0.0__842cf8be1de50553/Microsoft.Xna.Framework.Graphics.dll
+----------------------------------------
+Microsoft.Xna.Framework.Game
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.20823.0
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_32/Microsoft.Xna.Framework.Game/v4.0_4.0.0.0__842cf8be1de50553/Microsoft.Xna.Framework.Game.dll
+----------------------------------------
+System.ComponentModel.Composition
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.ComponentModel.Composition/v4.0_4.0.0.0__b77a5c561934e089/System.ComponentModel.Composition.dll
+----------------------------------------
+Microsoft.Xna.Framework.Content.Pipeline
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.20823.0 built by: xnabldr
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_32/Microsoft.Xna.Framework.Content.Pipeline/v4.0_4.0.0.0__842cf8be1de50553/Microsoft.Xna.Framework.Content.Pipeline.dll
+----------------------------------------
+1pwtt3jk
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+wsu114wt
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+tgrei3bj
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+4aalafhz
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+SelectionInterface
+    Assembly Version: 1.0.0.1
+    Win32 Version: 1.0.0.1
+    CodeBase: file:///c:/program%20files%20(x86)/flatredball/frbdk/xna%204%20tools/plugins/glueview/selectioninterface.dll
+----------------------------------------
+xxl405gk
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+1gjovp0u
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+50bdp25w
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+oei0c2b5
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+SelectionInterface
+    Assembly Version: 1.0.0.0
+    Win32 Version: 1.0.0.0
+    CodeBase: file:///C:/Program%20Files%20(x86)/FlatRedBall/FRBDK/Xna%204%20Tools/SelectionInterface.DLL
+----------------------------------------
+System.Runtime.Remoting
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 (RTMRel.030319-0100)
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Runtime.Remoting/v4.0_4.0.0.0__b77a5c561934e089/System.Runtime.Remoting.dll
+----------------------------------------
+ih5cvwas
+    Assembly Version: 2011.7.12.1344
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+Microsoft.Build.Framework
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 built by: RTMRel
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/Microsoft.Build.Framework/v4.0_4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Framework.dll
+----------------------------------------
+t45spwrm
+    Assembly Version: 2011.7.12.1344
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Runtime.Serialization.Formatters.Soap
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 (RTMRel.030319-0100)
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System.Runtime.Serialization.Formatters.Soap/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll
+----------------------------------------
+Accessibility
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.30319.1 built by: RTMRel
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/Accessibility/v4.0_4.0.0.0__b03f5f7f11d50a3a/Accessibility.dll
+----------------------------------------
+Microsoft.Xna.Framework.Xact
+    Assembly Version: 4.0.0.0
+    Win32 Version: 4.0.20823.0 built by: xnabldr
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_32/Microsoft.Xna.Framework.Xact/v4.0_4.0.0.0__842cf8be1de50553/Microsoft.Xna.Framework.Xact.dll
+----------------------------------------
+4qmpoeul
+    Assembly Version: 2011.7.12.1344
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+p4jsir1s
+    Assembly Version: 0.0.0.0
+    Win32 Version: 4.0.30319.232 built by: RTMGDR
+    CodeBase: file:///C:/Windows/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+
+************** JIT Debugging **************
+To enable just-in-time (JIT) debugging, the .config file for this
+application or computer (machine.config) must have the
+jitDebugging value set in the system.windows.forms section.
+The application must also be compiled with debugging
+enabled.
+
+For example:
+
+<configuration>
+    <system.windows.forms jitDebugging="true" />
+</configuration>
+
+When JIT debugging is enabled, any unhandled exception
+will be sent to the JIT debugger registered on the computer
+rather than be handled by this dialog box.

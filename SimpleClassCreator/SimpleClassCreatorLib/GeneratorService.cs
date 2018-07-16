@@ -28,5 +28,10 @@ namespace SimpleClassCreator
         {
             return new DtoGenerator(assembly).GetClassProperties(className);
         }
+
+        public string GenerateDTO(string assembly, string className)
+        {
+            return new DtoGenerator(assembly).MakeDTO(className);
+        }
     }
 }

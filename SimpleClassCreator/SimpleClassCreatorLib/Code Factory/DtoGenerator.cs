@@ -66,12 +66,12 @@ namespace SimpleClassCreator.Code_Factory
             return asm;
         }
 
-        public void MakeDTO(string className)
+        public string MakeDTO(string className)
         {
             Type t = PrintClass(className);
 
             if (t == null)
-                return;
+                return "Type cannot be null";
 
             StringBuilder sbC = new StringBuilder();
             StringBuilder sbT = new StringBuilder();
@@ -113,10 +113,12 @@ namespace SimpleClassCreator.Code_Factory
             sbC.Append(sbT);
             sbC.AppendLine("}");
 
-            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(Path.Combine(BasePath, t.Name + ".cs"), false))
-            {
-                sw.Write(sbC.ToString());
-            }
+            //using (System.IO.StreamWriter sw = new System.IO.StreamWriter(Path.Combine(BasePath, t.Name + ".cs"), false))
+            //{
+            //    sw.Write(sbC.ToString());
+            //}
+
+            return sbC.ToString();
         }
 
         public string GetTypeAsString(Type target)

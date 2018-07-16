@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <AnimationChain>
+    <Name>Normal</Name>
+    <ColorKey>0</ColorKey>
+    <Frame>
+      <FlipHorizontal>false</FlipHorizontal>
+      <FlipVertical>false</FlipVertical>
+      <TextureName>button_normal.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>1</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>1</BottomCoordinate>
+      <RelativeX>0</RelativeX>
+      <RelativeY>0</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Inactive</Name>
+    <ColorKey>0</ColorKey>
+    <Frame>
+      <FlipHorizontal>false</FlipHorizontal>
+      <FlipVertical>false</FlipVertical>
+      <TextureName>button_inactive.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>1</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>1</BottomCoordinate>
+      <RelativeX>0</RelativeX>
+      <RelativeY>0</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Press</Name>
+    <ColorKey>0</ColorKey>
+    <Frame>
+      <FlipHorizontal>false</FlipHorizontal>
+      <FlipVertical>false</FlipVertical>
+      <TextureName>button_press.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>1</RightCoordinate>
+      <TopCoordinate>0</TopCoordinate>
+      <BottomCoordinate>1</BottomCoordinate>
+      <RelativeX>0</RelativeX>
+      <RelativeY>0</RelativeY>
+    </Frame>
+  </AnimationChain>
+  <FileName>C:\Users\eli\Documents\Projects\FRB Dev\DashRunning\DashRunning\DashRunningContent\Entities\Button/AnimationChainListFile.achx</FileName>
+</AnimationChainArraySave>

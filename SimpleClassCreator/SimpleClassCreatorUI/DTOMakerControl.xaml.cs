@@ -112,5 +112,12 @@ Please keep in mind casing matters.";
 
             return sp;
         }
+
+        private void btnGenerate_Click(object sender, RoutedEventArgs e)
+        {
+            ResultWindow win = new ResultWindow(Proxy.GenerateDTO(AssemblyName, ClassName));
+            
+            win.Show();
+        }
     }
 }

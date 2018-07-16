@@ -69,14 +69,13 @@ namespace SimpleClassCreator
         public override void CreateObjectGenerationMethod(StringBuilder sb, string body)
         {
             //Public Shared Function ObjectGeneration(dt As DataTable) As List(Of Product)
-            sb.AppendFormat("Public Shared Function ObjectGeneration(dt As DataTable) As {0}{2}Dim obj As {1} = Nothing{2}Dim lst As New {0}(){2}{2}",
-                ListOfTarget, //0
-                ClassName, //1
-                Environment.NewLine);
+            sb.AppendFormat("Public Shared Function ObjectGeneration(dr As IDataReader) As {0}{1}Dim obj As {0} = Nothing{1}{1}",
+                ClassName, //0
+                Environment.NewLine); //1
 
-            CreateForEach(sb, "dr", "DataRow", "dt.Rows", string.Format("obj = New {0}(){1}{2}{3}lst.Add(obj)", ClassName, LineTerminator, body, Environment.NewLine));
+            //CreateForEach(sb, "dr", "DataRow", "dt.Rows", string.Format("obj = New {0}(){1}{2}{3}lst.Add(obj)", ClassName, LineTerminator, body, Environment.NewLine));
 
-            sb.AppendFormat("{0}{0}Return lst{0}End Function{0}{0}", Environment.NewLine);
+            sb.AppendFormat("{0}{0}Return obj{0}End Function{0}{0}", Environment.NewLine);
         }
 
         protected override void CreateForEach(StringBuilder sb, string name, string dataType, string collection, string body)

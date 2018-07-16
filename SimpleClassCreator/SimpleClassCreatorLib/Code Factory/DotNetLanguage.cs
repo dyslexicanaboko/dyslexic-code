@@ -119,19 +119,33 @@ namespace SimpleClassCreator
                     _provider = new CSharpCodeProvider();
                 else
                     _provider = new VBCodeProvider();
+
+                IsNullable = dc.AllowDBNull && dc.DataType != typeof(string);
                 
                 ColumnName = dc.ColumnName.Contains(" ") ? "[" + dc.ColumnName + "]" : dc.ColumnName;
-                Property = dc.ColumnName.Trim().Replace(" ", "");
+                
+                //Removing any whitespace
+                Property = dc.ColumnName.Trim().Replace(" ", string.Empty);
+                
+                //Camel Casing the property name
                 Property = Property.Substring(0, 1).ToUpper() + Property.Substring(1, Property.Length - 1);
+                
                 Member = memberPrefix + "_" + Property.Substring(0, 1).ToLower() + Property.Substring(1, Property.Length - 1);
+
+                //Getting the base type
                 SystemType = GetTypeAsString(dc.DataType);
   
+                //If this column is nullable then mark it with a question mark
+                if (IsNullable)
+                    SystemType = SystemType + "?";
+
                 //These statements are a matter of preference
                 StringValue = dc.DataType.Equals(typeof(string)) || dc.DataType.Equals(typeof(DateTime)) ? "AddString(" + Property + ")" : Property; //it is important to filter strings for SQL Injection, hence the AddString method
                 ConvertTo = "Convert.To" + (dc.DataType.Equals(typeof(Byte)) ? "Int32" : dc.DataType.Name) + "("; //A byte can fit inside of an Int32
             }
 
             public string ColumnName { get; set; }
+            public bool IsNullable { get; set; }
             public string Member { get; set; }
             public string Property { get; set; }
             public string SystemType { get; set; }
@@ -142,36 +156,6 @@ namespace SimpleClassCreator
             {
                 return _provider.GetTypeOutput(new CodeTypeReference(target));
             }
-
-            //Deprecated - didn't realize there was code that did this already
-            //public string SystemTypeToString(CodeType codeType, Type targetType)
-            //{
-            //    string strType = targetType.Name;
-
-            //    if (codeType == CodeType.CSharp)
-            //        strType = GetTypeAsString(targetType);
-            //    else
-            //    {
-            //        //This is a matter of preference
-            //        if (targetType.Equals(typeof(Int32)) || targetType.Equals(typeof(Byte)))
-            //            strType = codeType == CodeType.CSharp ? "int" : "Integer";
-            //        else if (targetType.Equals(typeof(Boolean)))
-            //            strType = codeType == CodeType.CSharp ? "bool" : "Boolean";
-            //        else if (targetType.Equals(typeof(Int16)))
-            //            strType = targetType.Name;
-            //        else if (codeType == CodeType.CSharp)
-            //        {
-            //            if (targetType.Equals(typeof(DateTime)))
-            //                strType = targetType.Name;
-            //            else if (targetType.IsValueType || targetType.Equals(typeof(string)))
-            //                strType = targetType.Name.ToLower();
-            //        }
-            //        else
-            //            strType = targetType.Name;
-            //    }
-
-            //    return strType;
-            //}
         }
     }
 }

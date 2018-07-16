@@ -30,6 +30,11 @@ namespace SimpleClassCreatorUI
             return Client().GetClassProperties(assembly, className);
         }
 
+        public static string GenerateDTO(string assembly, string className)
+        {
+            return Client().GenerateDTO(assembly, className);
+        }
+
         private static GeneratorService Client()
         {
             return new GeneratorService();
