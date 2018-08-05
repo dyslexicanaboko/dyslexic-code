@@ -113,12 +113,5 @@ namespace AlgorithmProofs.Sorting
 
             return loops;
         }
-
-        private int GetMiddleIndex(int leftStartIndex, int rightEndIndex)
-        {
-            var i = (leftStartIndex + rightEndIndex) / 2;
-
-            return i;
-        }
     }
 }

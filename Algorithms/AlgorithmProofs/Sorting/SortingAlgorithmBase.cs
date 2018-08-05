@@ -27,5 +27,20 @@
 
             return s;
         }
+
+        protected int GetMiddleIndex(int leftStartIndex, int rightEndIndex)
+        {
+            var i = (leftStartIndex + rightEndIndex) / 2;
+
+            return i;
+        }
+
+        protected void SwapElements(int[] array, int leftIndex, int rightIndex)
+        {
+            var eL = array[leftIndex];
+
+            array[leftIndex] = array[rightIndex];
+            array[rightIndex] = eL;
+        }
     }
 }
