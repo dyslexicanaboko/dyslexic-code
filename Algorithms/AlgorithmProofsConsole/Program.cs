@@ -12,7 +12,8 @@ namespace AlgorithmProofsConsole
             var lst = new List<SortingAlgorithmBase>
             {
                 //new BubbleSort(),
-                new SelectionSort()
+                //new SelectionSort(),
+                new MergeSort()
             };
 
             //var s = new Sequence(true, 12);
