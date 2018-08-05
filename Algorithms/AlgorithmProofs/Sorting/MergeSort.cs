@@ -77,7 +77,7 @@ namespace AlgorithmProofs.Sorting
              * Length */
             Array.Copy(leftArray, iLeft, rightArray, i, l1);
             Array.Copy(leftArray, iRight, rightArray, i, l2);
-            Array.Copy(rightArray, leftStartIndex, rightArray, leftStartIndex, size);
+            Array.Copy(rightArray, leftStartIndex, leftArray, leftStartIndex, size);
 
             //Aggregating the loops performed
             loops += i + l1 + l2 + size;
