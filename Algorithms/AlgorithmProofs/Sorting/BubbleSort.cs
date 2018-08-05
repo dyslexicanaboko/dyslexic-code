@@ -1,4 +1,4 @@
-﻿namespace AlgorithmProofs
+﻿namespace AlgorithmProofs.Sorting
 {
     public class BubbleSort
         : ISort

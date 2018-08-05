@@ -1,4 +1,5 @@
 ﻿using AlgorithmProofs;
+using AlgorithmProofs.Sorting;
 using System;
 
 namespace AlgorithmProofsConsole
