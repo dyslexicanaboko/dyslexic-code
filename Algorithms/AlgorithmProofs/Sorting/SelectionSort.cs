@@ -15,13 +15,7 @@ namespace AlgorithmProofs.Sorting
 
         public override int SortingAlgorithm(int[] array)
         {
-            var sorted = false;
             var loops = 0;
-
-            //while (!sorted)
-            //{
-            //    //Set as sorted initially because maybe it is this time around
-            //    sorted = true;
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -53,12 +47,8 @@ namespace AlgorithmProofs.Sorting
                 array[i] = minValue;  //Promoted
                 array[minIndex] = e0; //Demoted
 
-                sorted = false;
-
                 loops++;
             }
-
-            //}
 
             return loops;
         }
