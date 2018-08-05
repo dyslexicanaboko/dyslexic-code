@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AlgorithmProofs.Sorting;
+using System;
 using System.IO;
 using System.Linq;
-using AlgorithmProofs.Sorting;
 
 namespace AlgorithmProofs
 {
@@ -11,15 +9,19 @@ namespace AlgorithmProofs
     {
         private readonly string RandomSequencePath;
         private const int DefaultArraySize = 10;
+        private const int SeedSize = 100;
         private readonly int[] _arr;
+        private readonly int _arraySize;
 
-        public Sequence()
+        public Sequence(bool generateNewSequence = false, int arraySize = DefaultArraySize)
         {
             RandomSequencePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RandomSequence.txt");
 
-            _arr = GetTestSequence();
+            _arraySize = arraySize;
 
-            //GenerateRandomIntegerSequence(10);
+            _arr = generateNewSequence ? 
+                GenerateRandomIntegerSequence(arraySize) : 
+                GetSavedSequence();
 
             Console.WriteLine("Unsorted================================");
             _arr.Dump();
@@ -38,12 +40,12 @@ namespace AlgorithmProofs
             Console.WriteLine();
         }
 
-        private int[] GetTestSequence()
+        private int[] GetSavedSequence()
         {
             Console.WriteLine($"Opening: {RandomSequencePath}");
 
             if (!File.Exists(RandomSequencePath))
-                GenerateRandomIntegerSequence(DefaultArraySize);
+                GenerateRandomIntegerSequence(_arraySize);
 
             var arr = File.ReadAllLines(RandomSequencePath)
                 .Select(x => Convert.ToInt32(x))
@@ -52,24 +54,25 @@ namespace AlgorithmProofs
             return arr;
         }
 
-        // Define other methods and classes here
-        private void GenerateRandomIntegerSequence(int count)
+        private int[] GenerateRandomIntegerSequence(int count)
         {
             var r = new Random();
 
-            var sb = new StringBuilder();
+            var arr = new int[count];
 
             for (int i = 0; i < count; i++)
             {
-                sb.AppendLine(r.Next(100).ToString());
+                arr[i] = r.Next(SeedSize);
             }
 
-            var content = sb.ToString();
+            var content = string.Join(Environment.NewLine, arr);
 
             Console.WriteLine("Sequence generated:");
             Console.WriteLine(content);
 
             File.WriteAllText(RandomSequencePath, content);
+
+            return arr;
         }
     }
 }

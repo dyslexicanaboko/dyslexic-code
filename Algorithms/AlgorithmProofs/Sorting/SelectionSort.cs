@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AlgorithmProofs.Sorting
+﻿namespace AlgorithmProofs.Sorting
 {
     public class SelectionSort
         : SortingAlgorithmBase

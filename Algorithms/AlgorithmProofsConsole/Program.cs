@@ -11,10 +11,11 @@ namespace AlgorithmProofsConsole
         {
             var lst = new List<SortingAlgorithmBase>
             {
-                new BubbleSort(),
+                //new BubbleSort(),
                 new SelectionSort()
             };
 
+            //var s = new Sequence(true, 12);
             var s = new Sequence();
 
             lst.ForEach(x => s.TestSortAlgorithm(x));
