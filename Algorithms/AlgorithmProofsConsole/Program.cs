@@ -16,8 +16,18 @@ namespace AlgorithmProofsConsole
                 new MergeSort()
             };
 
-            //var s = new Sequence(true, 12);
+            //Run the current sequence and print all
             var s = new Sequence();
+
+            //Generate a new sequence and print all
+            //var s = new Sequence(generateNewSequence: true, arraySize: 15);
+
+            //Generate a new large sequence and don't print anything
+            //var s = new Sequence(showUnsortedArray: false, generateNewSequence: true, arraySize: 1000) { ShowSortedResult = false };
+            
+            //Run the current sequence and don't print anything
+            //var s = new Sequence(showUnsortedArray: false) { ShowSortedResult = false };
+
 
             lst.ForEach(x => s.TestSortAlgorithm(x));
             

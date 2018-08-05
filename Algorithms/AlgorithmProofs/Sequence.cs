@@ -13,7 +13,10 @@ namespace AlgorithmProofs
         private readonly int[] _arr;
         private readonly int _arraySize;
 
-        public Sequence(bool generateNewSequence = false, int arraySize = DefaultArraySize)
+        public bool ShowSortedResult { get; set; } = true;
+        public bool ShowUnsortedArray { get; }
+
+        public Sequence(bool showUnsortedArray = true, bool generateNewSequence = false, int arraySize = DefaultArraySize)
         {
             RandomSequencePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RandomSequence.txt");
 
@@ -22,6 +25,10 @@ namespace AlgorithmProofs
             _arr = generateNewSequence ? 
                 GenerateRandomIntegerSequence(arraySize) : 
                 GetSavedSequence();
+
+            ShowUnsortedArray = showUnsortedArray;
+
+            if (!showUnsortedArray) return;
 
             Console.WriteLine("Unsorted================================");
             _arr.Dump();
@@ -34,6 +41,8 @@ namespace AlgorithmProofs
 
             Console.WriteLine("Statistics =================================");
             s.Dump();
+
+            if (!ShowSortedResult) return;
 
             Console.WriteLine("Sorted =================================");
             _arr.Dump();
@@ -67,8 +76,11 @@ namespace AlgorithmProofs
 
             var content = string.Join(Environment.NewLine, arr);
 
-            Console.WriteLine("Sequence generated:");
-            Console.WriteLine(content);
+            if (ShowUnsortedArray)
+            {
+                Console.WriteLine("Sequence generated:");
+                Console.WriteLine(content);
+            }
 
             File.WriteAllText(RandomSequencePath, content);
 

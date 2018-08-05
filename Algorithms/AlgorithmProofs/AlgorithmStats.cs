@@ -31,9 +31,9 @@ namespace AlgorithmProofs
         public override string ToString()
         {
             return $"Algorithm:\t{AlgorithmName}\n" + 
-                   $"Elements:\t{Elements}\n" +
-                   $"N-Passes:\t{Passes}\n" +
-                   $"Elapsed:\t{Elapsed.TotalMilliseconds}ms\n";
+                   $"Elements:\t{Elements:n0}\n" +
+                   $"N-Passes:\t{Passes:n0}\n" +
+                   $"Elapsed:\t{Elapsed.TotalMilliseconds:n4}ms\n";
         }
     }
 }
