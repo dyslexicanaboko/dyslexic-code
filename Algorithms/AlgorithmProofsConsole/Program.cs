@@ -1,6 +1,7 @@
 ﻿using AlgorithmProofs;
 using AlgorithmProofs.Sorting;
 using System;
+using System.Collections.Generic;
 
 namespace AlgorithmProofsConsole
 {
@@ -8,12 +9,16 @@ namespace AlgorithmProofsConsole
     {
         static void Main(string[] args)
         {
-            var b = new BubbleSort();
+            var lst = new List<SortingAlgorithmBase>
+            {
+                new BubbleSort(),
+                new SelectionSort()
+            };
 
             var s = new Sequence();
 
-            s.TestSortAlgorithm(b);
-
+            lst.ForEach(x => s.TestSortAlgorithm(x));
+            
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }

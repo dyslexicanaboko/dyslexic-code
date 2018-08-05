@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using AlgorithmProofs.Sorting;
 
 namespace AlgorithmProofs
 {
@@ -10,29 +11,30 @@ namespace AlgorithmProofs
     {
         private readonly string RandomSequencePath;
         private const int DefaultArraySize = 10;
+        private readonly int[] _arr;
 
         public Sequence()
         {
             RandomSequencePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "RandomSequence.txt");
 
-            //GenerateRandomIntegerSequence(10);
-        }
+            _arr = GetTestSequence();
 
-        public void TestSortAlgorithm(ISort sortAlgorithm)
-        {
-            var arr = GetTestSequence();
+            //GenerateRandomIntegerSequence(10);
 
             Console.WriteLine("Unsorted================================");
-            arr.Dump();
+            _arr.Dump();
             Console.WriteLine();
+        }
 
-            var s = sortAlgorithm.Sort(arr);
+        public void TestSortAlgorithm(SortingAlgorithmBase sortAlgorithm)
+        {
+            var s = sortAlgorithm.Sort(_arr);
 
             Console.WriteLine("Statistics =================================");
             s.Dump();
 
             Console.WriteLine("Sorted =================================");
-            arr.Dump();
+            _arr.Dump();
             Console.WriteLine();
         }
 

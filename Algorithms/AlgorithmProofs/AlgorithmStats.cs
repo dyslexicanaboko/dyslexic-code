@@ -10,8 +10,6 @@ namespace AlgorithmProofs
 
         public int Passes { get; set; }
 
-        public int TotalLoops => Elements * Passes;
-
         public DateTime TimeStart { get; set; }
 
         public DateTime TimeEnd { get; set; }
@@ -32,7 +30,10 @@ namespace AlgorithmProofs
 
         public override string ToString()
         {
-            return $"Algorithm: {AlgorithmName}\nN-Passes: {Passes}\nTotal loops: {TotalLoops}\nElapsed: {Elapsed.TotalMilliseconds}ms\n";
+            return $"Algorithm:\t{AlgorithmName}\n" + 
+                   $"Elements:\t{Elements}\n" +
+                   $"N-Passes:\t{Passes}\n" +
+                   $"Elapsed:\t{Elapsed.TotalMilliseconds}ms\n";
         }
     }
 }
