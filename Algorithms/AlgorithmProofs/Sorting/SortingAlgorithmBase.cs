@@ -1,4 +1,6 @@
-﻿namespace AlgorithmProofs.Sorting
+﻿using System;
+
+namespace AlgorithmProofs.Sorting
 {
     public abstract class SortingAlgorithmBase
     {
@@ -41,6 +43,13 @@
 
             array[leftIndex] = array[rightIndex];
             array[rightIndex] = eL;
+        }
+
+        protected int GetDigitLength(int number)
+        {
+            var length = Convert.ToInt32(Math.Ceiling(Math.Log10(number)));
+
+            return length;
         }
     }
 }
