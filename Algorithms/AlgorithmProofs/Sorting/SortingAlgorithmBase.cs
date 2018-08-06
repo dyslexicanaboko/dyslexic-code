@@ -47,6 +47,8 @@ namespace AlgorithmProofs.Sorting
 
         protected int GetDigitLength(int number)
         {
+            if (number == 0) return 1;
+
             var length = Convert.ToInt32(Math.Ceiling(Math.Log10(number)));
 
             return length;

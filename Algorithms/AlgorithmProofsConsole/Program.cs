@@ -15,7 +15,8 @@ namespace AlgorithmProofsConsole
                 //new SelectionSort(),
                 //new MergeSort(),
                 //new QuickSort(),
-                new RadixSort()
+                //new RadixSortBad(),
+                new RadixSort(),
             };
 
             //Run the current sequence and print all

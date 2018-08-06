@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace AlgorithmProofs.Sorting
 {
@@ -13,95 +11,36 @@ namespace AlgorithmProofs.Sorting
 
         }
 
-        //https://www.youtube.com/watch?v=XiuSW_mEn7g -- best explanation I have seen
+        //C# implementation I found
+        //https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-10.php
         public override int SortingAlgorithm(int[] array)
         {
             var loops = 0;
 
-            /* 1. To start with look at every number by its last digit 
-             * 2. Sort by that last number 
-             * 3. Move to the left digit and repeat step 2
-             *      If a number doesn't have a digit in that position it is zero. */
+            var tmp = new int[array.Length];
 
-            var maxDigitCount = GetMaxDigitCount(array);
-
-            for (var i = 0; i < maxDigitCount; i++)
+            for (var shift = 31; shift > -1; --shift)
             {
-                loops++;
-
-                var dict = new SortedDictionary<int, List<int>>();
-
-                foreach (var v in array)
-                {
-                    var k = GetNthDigit(i, v);
-
-                    IndexDigit(dict, k, v);
-
-                    loops++;
-                }
-
                 var j = 0;
 
-                //Recreate array in order
-                foreach (var kvp in dict)
-                {
-                    foreach (var e in kvp.Value)
-                    {
-                        array[j] = e;
+                loops++;
 
-                        j++;
-                        loops++;
-                    }
+                for (var i = 0; i < array.Length; ++i)
+                {
+                    var move = (array[i] << shift) >= 0;
+
+                    if (shift == 0 ? !move : move)
+                        array[i - j] = array[i];
+                    else
+                        tmp[j++] = array[i];
 
                     loops++;
                 }
+
+                Array.Copy(tmp, 0, array, array.Length - j, j);
             }
 
             return loops;
-        }
-
-        private void IndexDigit(SortedDictionary<int, List<int>> dictionary, int key, int number)
-        {
-            var d = dictionary;
-
-            if (d.ContainsKey(key))
-            {
-                d[key].Add(number);
-            }
-            else
-            {
-                d.Add(key, new List<int>() { number });
-            }
-        }
-
-        private int GetNthDigit(int position, int number)
-        {
-            var p = (position + 1) * 10;
-
-            var l1 = GetDigitLength(p);
-            var l2 = GetDigitLength(number);
-
-            if (l1 > l2) return 0;
-
-            var n = (number % p);
-
-            return n;
-        }
-
-        private int GetMaxDigitCount(int[] array)
-        {
-            var m = array.Max();
-
-            var r = GetDigitLength(m);
-
-            return r;
-        }
-
-        private struct Number
-        {
-            public int Value;
-
-            public int Digits;
         }
     }
 }
