@@ -11,8 +11,12 @@ namespace AlgorithmProofs.Sorting
 
         }
 
-        //C# implementation I found
-        //https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-10.php
+        /* C# implementation I found
+         * https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-10.php
+         * https://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Radix_sort
+         *
+         * The 31 and -1 shown below are the number of possible bits for an integer.
+         * An integer is 32 bits wide. */
         public override int SortingAlgorithm(int[] array)
         {
             var loops = 0;
