@@ -10,15 +10,15 @@ namespace AlgorithmProofsConsole
     {
         static void Main(string[] args)
         {
-            var bt = new BinaryTree();
+            //This has good data in it
+            //https://www.quora.com/What-is-the-difference-between-a-binary-tree-and-a-binary-search-tree
+            var bt = new BinarySearchTree(38, 13, 51, 10, 12, 40, 84, 25, 89, 37, 66, 95);
+            
+            //Console.WriteLine($"{bt.Root.Number}");
+            //Console.WriteLine($"{bt.Root.Left.Number}");
+            //Console.WriteLine($"{bt.Root.Right.Number}");
 
-            bt.Add(2);
-            bt.Add(1);
-            bt.Add(3);
-
-            Console.WriteLine($"{bt.Root.Number}");
-            Console.WriteLine($"{bt.Root.Left.Number}");
-            Console.WriteLine($"{bt.Root.Right.Number}");
+            Console.WriteLine(bt);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
