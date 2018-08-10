@@ -28,6 +28,7 @@ namespace AlgorithmProofsConsole
             //Console.WriteLine($"{bt.Root.Left.Number}");
             //Console.WriteLine($"{bt.Root.Right.Number}");
 
+            Console.WriteLine(bt.PrintStats());
             Console.WriteLine(bt);
 
             Console.WriteLine("Press any key to continue");

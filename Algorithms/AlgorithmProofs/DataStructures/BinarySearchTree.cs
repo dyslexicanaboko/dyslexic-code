@@ -98,30 +98,56 @@ namespace AlgorithmProofs.DataStructures
             //Since the children can be null, predict the level
             var level = parent.Level + 1;
 
-            AddOrUpdate(dict, parent.Left, level);
+            AddOrUpdate(dict, level, parent.Left);
 
             if (parent.Left != null)
             {
                 GetChildren(dict, parent.Left);
             }
+            else
+            {
+                AddNullChildren(dict, level);
+            }
 
-            AddOrUpdate(dict, parent.Right, level);
+            AddOrUpdate(dict, level, parent.Right);
 
-            if (parent.Right == null) return;
+            if (parent.Right == null)
+            {
+                AddNullChildren(dict, level);
+
+                return;
+            }
 
             GetChildren(dict, parent.Right);
         }
 
-        private void AddOrUpdate(Dictionary<int, List<Node>> dict, Node node, int depth)
+        private void AddNullChildren(Dictionary<int, List<Node>> dict, int level)
         {
-            if (!dict.TryGetValue(depth, out var lst))
+            var nextLevel = level + 1;
+
+            AddOrUpdate(dict, nextLevel, null, null);
+        }
+
+        private void AddOrUpdate(Dictionary<int, List<Node>> dict, int level, params Node[] node)
+        {
+            if (!dict.TryGetValue(level, out var lst))
             {
                 lst = new List<Node>();
 
-                dict.Add(depth, lst);
+                dict.Add(level, lst);
             }
 
-            lst.Add(node);
+            lst.AddRange(node);
+        }
+
+        public string PrintStats()
+        {
+            var str = 
+                $"Count     : {Count}\n" +
+                $"Max Levels: {MaxLevel}\n" +
+                $"Max Size  : {MaxSize}";
+
+            return str;
         }
 
         public override string ToString()
@@ -132,19 +158,14 @@ namespace AlgorithmProofs.DataStructures
 
             var rows = new List<string>(dict.Count);
 
-            //Create the tree from the bottom up
-            for (var i = dict.Count - 1; i > 0; i--)
+            for (var i = 1; i < dict.Count; i++)
             {
                 var lst = dict[i];
-
-                var row = i + 1; //Level is zero based, so advancing it
 
                 //PrintBranches(i, maxDepth);
 
                 rows.Add(PrintNumbers(lst));
             }
-
-            rows.Reverse();
 
             var str = string.Join(Environment.NewLine, rows);
 
