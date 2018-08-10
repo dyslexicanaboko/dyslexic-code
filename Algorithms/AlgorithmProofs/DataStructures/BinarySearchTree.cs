@@ -11,7 +11,11 @@ namespace AlgorithmProofs.DataStructures
 
         public Node Root { get; private set; }
 
-        public int Count { get; set; }
+        public int Count { get; private set; }
+
+        public int MaxLevel { get; private set; }
+
+        public int MaxSize { get; private set; }
 
         public BinarySearchTree()
         {
@@ -47,6 +51,8 @@ namespace AlgorithmProofs.DataStructures
                 if (parent.Left == null)
                 {
                     parent.Left = new Node(parent, number);
+
+                    SetMaxDepth(parent.Left);
                 }
                 else
                 {
@@ -58,6 +64,8 @@ namespace AlgorithmProofs.DataStructures
                 if (parent.Right == null)
                 {
                     parent.Right = new Node(parent, number);
+
+                    SetMaxDepth(parent.Right);
                 }
                 else
                 {
@@ -75,7 +83,8 @@ namespace AlgorithmProofs.DataStructures
         {
             var dict = new Dictionary<int, List<Node>>();
 
-            dict.Add(0, new List<Node>() { Root });
+            //This is a base case
+            dict.Add(1, new List<Node>() { Root });
 
             GetChildren(dict, Root);
 
@@ -84,27 +93,32 @@ namespace AlgorithmProofs.DataStructures
 
         private void GetChildren(Dictionary<int, List<Node>> dict, Node parent)
         {
+            //Storing node regardless of value because it is about position
+
+            //Since the children can be null, predict the level
+            var level = parent.Level + 1;
+
+            AddOrUpdate(dict, parent.Left, level);
+
             if (parent.Left != null)
             {
-                AddOrUpdate(dict, parent.Left);
-
                 GetChildren(dict, parent.Left);
             }
 
-            if (parent.Right == null) return;
+            AddOrUpdate(dict, parent.Right, level);
 
-            AddOrUpdate(dict, parent.Right);
+            if (parent.Right == null) return;
 
             GetChildren(dict, parent.Right);
         }
 
-        private void AddOrUpdate(Dictionary<int, List<Node>> dict, Node node)
+        private void AddOrUpdate(Dictionary<int, List<Node>> dict, Node node, int depth)
         {
-            if (!dict.TryGetValue(node.Depth, out var lst))
+            if (!dict.TryGetValue(depth, out var lst))
             {
                 lst = new List<Node>();
 
-                dict.Add(node.Depth, lst);
+                dict.Add(depth, lst);
             }
 
             lst.Add(node);
@@ -114,21 +128,20 @@ namespace AlgorithmProofs.DataStructures
         {
             var dict = GetAll();
 
-            //Depth is zero based, so adding one
-            var maxDepth = dict.Keys.Max() + 1;
+            var maxWidth = Count * 2;
 
             var rows = new List<string>(dict.Count);
 
             //Create the tree from the bottom up
-            for (var i = dict.Count - 1; i >= 0; i--)
+            for (var i = dict.Count - 1; i > 0; i--)
             {
                 var lst = dict[i];
 
-                var row = i + 1; //Depth is zero based, so advancing it
+                var row = i + 1; //Level is zero based, so advancing it
 
                 //PrintBranches(i, maxDepth);
 
-                rows.Add(PrintNumbers(lst, row));
+                rows.Add(PrintNumbers(lst));
             }
 
             rows.Reverse();
@@ -138,29 +151,11 @@ namespace AlgorithmProofs.DataStructures
             return str;
         }
 
-        private string PrintNumbers(List<Node> nodes, int row)
+        private string PrintNumbers(List<Node> nodes)
         {
-            var sb = new StringBuilder();
+            var lst = nodes.Select(x => x?.Number.ToString() ?? "[]").ToList();
 
-            //var spaces = row * 2; //14
-
-            sb.Append("  ");
-
-            //  4   5  6   7
-            //foreach (var node in nodes)
-            for (int i = 0; i < nodes.Count; i++)
-            {
-                var node = nodes[i];
-
-                sb.Append(node.Number).Append("   ");
-
-                if (i % 2 == 1)
-                {
-                    sb.Append("  ");
-                }
-            }
-
-            var str = sb.ToString();
+            var str = string.Join(" ", lst);
 
             return str;
         }
@@ -181,6 +176,23 @@ namespace AlgorithmProofs.DataStructures
             sb.AppendLine();
         }
 
+        private void SetMaxDepth(Node node)
+        {
+            if (node.Level <= MaxLevel) return;
+
+            MaxLevel = node.Level;
+
+            //MaxSize = 2^L - 1
+            MaxSize = MaxNodesPerLevel(MaxLevel);
+        }
+
+        private int MaxNodesPerLevel(int level)
+        {
+            var e = Convert.ToInt32(Math.Pow(2, level) - 1);
+
+            return e;
+        }
+
         public class Node
         {
             public Node(int number)
@@ -193,14 +205,14 @@ namespace AlgorithmProofs.DataStructures
             {
                 Parent = parent;
 
-                Depth = (parent?.Depth + 1) ?? 0;
+                Level = (parent?.Level + 1) ?? 1;
 
                 Number = number;
             }
 
             public int Number { get; set; }
 
-            public int Depth { get; set; }
+            public int Level { get; set; }
 
             public Node Parent { get; set; }
 

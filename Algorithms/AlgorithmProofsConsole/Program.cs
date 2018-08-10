@@ -12,8 +12,18 @@ namespace AlgorithmProofsConsole
         {
             //This has good data in it
             //https://www.quora.com/What-is-the-difference-between-a-binary-tree-and-a-binary-search-tree
-            var bt = new BinarySearchTree(38, 13, 51, 10, 12, 40, 84, 25, 89, 37, 66, 95);
             
+            //This produces a fuller tree
+            var bt = new BinarySearchTree(38, 13, 51, 10, 12, 40, 84, 25, 89, 37, 66, 95);
+
+            //This produces a straight line
+            //var bt = new BinarySearchTree();
+
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    bt.Add(i);
+            //}
+
             //Console.WriteLine($"{bt.Root.Number}");
             //Console.WriteLine($"{bt.Root.Left.Number}");
             //Console.WriteLine($"{bt.Root.Right.Number}");
