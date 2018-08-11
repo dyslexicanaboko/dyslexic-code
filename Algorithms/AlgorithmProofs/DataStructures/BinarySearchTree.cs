@@ -11,6 +11,13 @@ namespace AlgorithmProofs.DataStructures
         private const char L = '/';
         private const char R = '\\';
 
+        public enum Side
+        {
+            Root,
+            Left,
+            Right
+        }
+
         public Node Root { get; private set; }
 
         public int Count { get; private set; }
@@ -59,11 +66,17 @@ namespace AlgorithmProofs.DataStructures
 
         public void Add(int number)
         {
-            Count++;
+            ReAdd(number, true);
+        }
+
+        private void ReAdd(int number, bool adjustCount)
+        {
+            if(adjustCount) Count++;
 
             if (Root == null)
             {
                 Root = new Node(number);
+                Root.Side = Side.Root;
 
                 return;
             }
@@ -78,6 +91,7 @@ namespace AlgorithmProofs.DataStructures
                 if (parent.Left == null)
                 {
                     parent.Left = new Node(parent, number);
+                    parent.Left.Side = Side.Left;
 
                     SetMaxDepth(parent.Left);
                 }
@@ -91,6 +105,7 @@ namespace AlgorithmProofs.DataStructures
                 if (parent.Right == null)
                 {
                     parent.Right = new Node(parent, number);
+                    parent.Right.Side = Side.Right;
 
                     SetMaxDepth(parent.Right);
                 }
@@ -141,7 +156,98 @@ namespace AlgorithmProofs.DataStructures
 
         public void Remove(int number)
         {
+            var t = Search(number);
+
+            if (t == null) return;
+
             Count--;
+
+            //To remove a node, you have to disassociate all of its parts
+            /*       P
+             *      / 
+             *    T       <-- target
+             *   / \
+             * L    R  */
+
+            //For now the only idea I have for fixing this is to make a straight line
+            var n = NodeToPromote(t.Left, t.Right);
+
+            //Determine which node didn't get promoted
+            var other = n.Side == Side.Left ? t.Right : t.Left;
+
+            //Update the parent with the promoted node
+            UpdateParentNode(t, n);
+
+            //Re-add the sub tree
+            var lst = GetValuesAsList(other);
+
+            foreach (var value in lst)
+            {
+                ReAdd(value, false);
+            }
+        }
+
+        private void UpdateParentNode(Node target, Node replacement)
+        {
+            var t = target;
+            var p = target.Parent;
+            var r = replacement;
+
+            //Can't update the parent if there is no parent
+            if (p == null) return;
+
+            r.Parent = p;
+
+            if (t.Side == Side.Left)
+            {
+                p.Left = r;
+            }
+            else
+            {
+                p.Right = r;
+            }
+        }
+
+        private Node NodeToPromote(Node left, Node right)
+        {
+            //If both nodes are null, return null
+            if (left == null && right == null) return null;
+
+            //If the left is null then return right
+            if (left == null) return right;
+
+            //If the right is null then return left
+            if (right == null) return left;
+
+            //At this point neither nodes are null determine based on who is larger
+            var node = left.Number > right.Number ? left : right;
+
+            return node;
+        }
+
+        private List<int> GetValuesAsList(Node startingNode)
+        {
+            var lst = new List<int>();
+
+            GetValuesAsList(lst, startingNode);
+
+            return lst;
+        }
+
+        private void GetValuesAsList(List<int> values, Node parent)
+        {
+            if (parent == null) return;
+            
+            values.Add(parent.Number);
+
+            if (parent.Left != null)
+            {
+                GetValuesAsList(values, parent.Left);
+            }
+
+            if (parent.Right == null) return;
+
+            GetValuesAsList(values, parent.Right);
         }
 
         #region Printing
@@ -300,6 +406,8 @@ namespace AlgorithmProofs.DataStructures
             public int Number { get; set; }
 
             public int Level { get; set; }
+
+            public Side Side { get; set; }
 
             public Node Parent { get; set; }
 

@@ -27,7 +27,8 @@ namespace AlgorithmProofsConsole
             //Console.WriteLine(bt.PrintStats());
             Console.WriteLine(bt);
 
-            SearchTree(bt, 89);
+            //SearchTree(bt, 89);
+            bt.Remove(51);
 
             Console.WriteLine(bt);
 
