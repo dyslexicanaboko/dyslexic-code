@@ -32,6 +32,31 @@ namespace AlgorithmProofs.DataStructures
             }
         }
 
+        private void SetMaxDepth(Node node)
+        {
+            if (node.Level <= MaxLevel) return;
+
+            MaxLevel = node.Level;
+
+            MaxSize = MaxElements(MaxLevel);
+        }
+
+        private int MaxNodesForLevel(int level)
+        {
+            //Max nodes for level = 2^(L - 1)
+            var e = Convert.ToInt32(Math.Pow(2, level - 1));
+
+            return e;
+        }
+
+        private int MaxElements(int maxLevels)
+        {
+            //Max size = 2^L - 1
+            var e = Convert.ToInt32(Math.Pow(2, maxLevels) - 1);
+
+            return e;
+        }
+
         public void Add(int number)
         {
             Count++;
@@ -75,36 +100,116 @@ namespace AlgorithmProofs.DataStructures
                 }
             }
         }
-        
+
+        public Node Search(int number)
+        {
+            var node = Search(Root, number);
+
+            return node;
+        }
+
+        private Node Search(Node parent, int number)
+        {
+            if (IsFound(parent, number)) return parent;
+
+            Node node;
+
+            if (number < parent.Number)
+            {
+                if (parent.Left == null) return null;
+
+                node = Search(parent.Left, number);
+            }
+            else
+            {
+                if (parent.Right == null) return null;
+
+                node = Search(parent.Right, number);
+            }
+
+            return node;
+        }
+
+        private bool IsFound(Node node, int number)
+        {
+            if (node == null) return false;
+
+            var isFound = node.Number == number;
+
+            return isFound;
+        }
+
         public void Remove(int number)
         {
             Count--;
+        }
+
+        #region Printing
+        public override string ToString()
+        {
+            var dict = GetAll();
+
+            var sb = new StringBuilder();
+
+            //Minus 2 because fake row at the bottom and the formula requires -1
+            var j = dict.Count - 2;
+
+            for (var i = 1; i < dict.Count; i++)
+            {
+                var spaces = MaxNodesForLevel(j);
+
+                j--;
+
+                var span = new string(S, spaces);
+
+                var lst = dict[i];
+
+                //Branches row
+                if (i > 1)
+                {
+                    sb.Append(span);
+
+                    PrintBranches(sb, lst.Count, span)
+                        .AppendLine();
+                }
+
+                //Numbers row
+                sb.Append(span);
+
+                sb.Append(PrintNumbers(lst, span));
+
+                sb.AppendLine();
+            }
+
+            var str = sb.ToString();
+
+            return str;
         }
 
         private Dictionary<int, List<Node>> GetAll()
         {
             var dict = new Dictionary<int, List<Node>>();
 
-            //This is a base case
+            //This is a base case - Root node is level 1 always
             dict.Add(1, new List<Node>() { Root });
 
-            GetChildren(dict, Root);
+            GetChildrenForPrint(dict, Root);
 
             return dict;
         }
 
-        private void GetChildren(Dictionary<int, List<Node>> dict, Node parent)
+        private void GetChildrenForPrint(Dictionary<int, List<Node>> dict, Node parent)
         {
             //Storing node regardless of value because it is about position
-
             //Since the children can be null, predict the maxLevels
+            //This will produce a fake row which should be removed later
             var level = parent.Level + 1;
 
             AddOrUpdate(dict, level, parent.Left);
 
             if (parent.Left != null)
             {
-                GetChildren(dict, parent.Left);
+                GetChildrenForPrint(dict, parent.Left);
             }
             else
             {
@@ -120,7 +225,7 @@ namespace AlgorithmProofs.DataStructures
                 return;
             }
 
-            GetChildren(dict, parent.Right);
+            GetChildrenForPrint(dict, parent.Right);
         }
 
         private void AddNullChildren(Dictionary<int, List<Node>> dict, int level)
@@ -144,51 +249,10 @@ namespace AlgorithmProofs.DataStructures
 
         public string PrintStats()
         {
-            var str = 
+            var str =
                 $"Count     : {Count}\n" +
                 $"Max Levels: {MaxLevel}\n" +
                 $"Max Size  : {MaxSize}";
-
-            return str;
-        }
-
-        public override string ToString()
-        {
-            var dict = GetAll();
-
-            var sb = new StringBuilder();
-
-            //Minus 2 because fake row at the bottom and the formula requires -1
-            var j = dict.Count - 2;
-
-            for (var i = 1; i < dict.Count; i++)
-            {
-                var spaces = MaxNodesForLevel(j);
-
-                j--;
-
-                var span = new string(S, spaces);
-
-                var lst = dict[i];
-                
-                //Branches row
-                if (i > 1)
-                {
-                    sb.Append(span);
-
-                    PrintBranches(sb, lst.Count, span)
-                    .AppendLine();
-                }
-
-                //Numbers row
-                sb.Append(span);
-
-                sb.Append(PrintNumbers(lst, span));
-
-                sb.AppendLine();
-            }
-
-            var str = sb.ToString();
 
             return str;
         }
@@ -213,32 +277,8 @@ namespace AlgorithmProofs.DataStructures
             }
 
             return sb;
-        }
-
-        private void SetMaxDepth(Node node)
-        {
-            if (node.Level <= MaxLevel) return;
-
-            MaxLevel = node.Level;
-
-            MaxSize = MaxElements(MaxLevel);
-        }
-
-        private int MaxNodesForLevel(int level)
-        {
-            //Max nodes for level = 2^(L - 1)
-            var e = Convert.ToInt32(Math.Pow(2, level - 1));
-
-            return e;
-        }
-
-        private int MaxElements(int maxLevels)
-        {
-            //Max size = 2^L - 1
-            var e = Convert.ToInt32(Math.Pow(2, maxLevels) - 1);
-
-            return e;
-        }
+        } 
+        #endregion
 
         public class Node
         {
@@ -265,7 +305,12 @@ namespace AlgorithmProofs.DataStructures
 
             public Node Left { get; set; }
 
-            public Node Right { get; set; }  
+            public Node Right { get; set; }
+
+            public override string ToString()
+            {
+                return $"Number: {Number}, Level: {Level}";
+            }
         }
     }
 }

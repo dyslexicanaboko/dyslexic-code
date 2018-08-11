@@ -24,15 +24,27 @@ namespace AlgorithmProofsConsole
             //    bt.Add(i);
             //}
 
-            //Console.WriteLine($"{bt.Root.Number}");
-            //Console.WriteLine($"{bt.Root.Left.Number}");
-            //Console.WriteLine($"{bt.Root.Right.Number}");
+            //Console.WriteLine(bt.PrintStats());
+            Console.WriteLine(bt);
 
-            Console.WriteLine(bt.PrintStats());
+            SearchTree(bt, 89);
+
             Console.WriteLine(bt);
 
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
+        }
+
+        private static void SearchTree(BinarySearchTree bt, int number)
+        {
+            var node = bt.Search(number);
+
+            if (node == null)
+                Console.WriteLine("Not found");
+            else
+            {
+                Console.WriteLine(node);
+            }
         }
 
         private static void SortingTests()
