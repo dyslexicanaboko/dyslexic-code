@@ -97,7 +97,7 @@ namespace AlgorithmProofs.DataStructures
         {
             //Storing node regardless of value because it is about position
 
-            //Since the children can be null, predict the level
+            //Since the children can be null, predict the maxLevels
             var level = parent.Level + 1;
 
             AddOrUpdate(dict, level, parent.Left);
@@ -163,7 +163,7 @@ namespace AlgorithmProofs.DataStructures
 
             for (var i = 1; i < dict.Count; i++)
             {
-                var spaces = Convert.ToInt32(Math.Pow(2, j - 1));
+                var spaces = MaxNodesForLevel(j);
 
                 j--;
 
@@ -221,13 +221,21 @@ namespace AlgorithmProofs.DataStructures
 
             MaxLevel = node.Level;
 
-            //MaxSize = 2^L - 1
-            MaxSize = MaxNodesPerLevel(MaxLevel);
+            MaxSize = MaxElements(MaxLevel);
         }
 
-        private int MaxNodesPerLevel(int level)
+        private int MaxNodesForLevel(int level)
         {
-            var e = Convert.ToInt32(Math.Pow(2, level) - 1);
+            //Max nodes for level = 2^(L - 1)
+            var e = Convert.ToInt32(Math.Pow(2, level - 1));
+
+            return e;
+        }
+
+        private int MaxElements(int maxLevels)
+        {
+            //Max size = 2^L - 1
+            var e = Convert.ToInt32(Math.Pow(2, maxLevels) - 1);
 
             return e;
         }
