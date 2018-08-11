@@ -7,7 +7,9 @@ namespace AlgorithmProofs.DataStructures
 {
     public class BinarySearchTree
     {
-        private const string B = "/ \\ ";
+        private const char S = ' ';
+        private const char L = '/';
+        private const char R = '\\';
 
         public Node Root { get; private set; }
 
@@ -154,47 +156,63 @@ namespace AlgorithmProofs.DataStructures
         {
             var dict = GetAll();
 
-            var maxWidth = Count * 2;
+            var sb = new StringBuilder();
 
-            var rows = new List<string>(dict.Count);
+            //Minus 2 because fake row at the bottom and the formula requires -1
+            var j = dict.Count - 2;
 
             for (var i = 1; i < dict.Count; i++)
             {
+                var spaces = Convert.ToInt32(Math.Pow(2, j - 1));
+
+                j--;
+
+                var span = new string(S, spaces);
+
                 var lst = dict[i];
+                
+                //Branches row
+                if (i > 1)
+                {
+                    sb.Append(span);
 
-                //PrintBranches(i, maxDepth);
+                    PrintBranches(sb, lst.Count, span)
+                    .AppendLine();
+                }
 
-                rows.Add(PrintNumbers(lst));
+                //Numbers row
+                sb.Append(span);
+
+                sb.Append(PrintNumbers(lst, span));
+
+                sb.AppendLine();
             }
 
-            var str = string.Join(Environment.NewLine, rows);
+            var str = sb.ToString();
 
             return str;
         }
 
-        private string PrintNumbers(List<Node> nodes)
+        private string PrintNumbers(List<Node> nodes, string span)
         {
-            var lst = nodes.Select(x => x?.Number.ToString() ?? "[]").ToList();
+            var lst = nodes.Select(x => x?.Number.ToString() ?? "n").ToList();
 
-            var str = string.Join(" ", lst);
+            var str = string.Join(span, lst);
 
             return str;
         }
 
-        private void PrintBranches(StringBuilder sb, int depth, int maxDepth)
+        private StringBuilder PrintBranches(StringBuilder sb, int repeatFor, string span)
         {
-            if (depth == 0) return;
-
-            var repeat = depth + 3;
-
-            var space = new string(' ', repeat);
-
-            for (var i = 0; i < depth; i++)
+            for (var i = 0; i < repeatFor; i++)
             {
-                sb.Append(space).Append(B);
+                //Alternate between left and right
+                var c = i % 2 == 0 ? L : R;
+
+                sb.Append(c).Append(span);
             }
 
-            sb.AppendLine();
+            return sb;
         }
 
         private void SetMaxDepth(Node node)
