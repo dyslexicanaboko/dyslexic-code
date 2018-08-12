@@ -64,14 +64,9 @@ namespace AlgorithmProofs.DataStructures
             return e;
         }
 
-        public void Add(int number)
+        private void Add(int number)
         {
-            ReAdd(number, true);
-        }
-
-        private void ReAdd(int number, bool adjustCount)
-        {
-            if(adjustCount) Count++;
+            Count++;
 
             if (Root == null)
             {
@@ -154,6 +149,8 @@ namespace AlgorithmProofs.DataStructures
             return isFound;
         }
 
+        //This has a very good explanation as to how to delete a node
+        //https://www.youtube.com/watch?v=wcIRPqTR3Kc
         public void Remove(int number)
         {
             var t = Search(number);
@@ -167,62 +164,50 @@ namespace AlgorithmProofs.DataStructures
              *      / 
              *    T       <-- target
              *   / \
-             * L    R  */
+             * L    R  
+             *
+             * The replacement node has to be a node with no children
+             * that still satisfies the current conditions. Look to the
+             * right of the node to find something just larger than the
+             * target node*/
 
-            //For now the only idea I have for fixing this is to make a straight line
-            var n = NodeToPromote(t.Left, t.Right);
+            //If the right is null then return left
+            var n = t.Right == null ? t.Left : PromoteNextNode(t.Right);
 
-            //Determine which node didn't get promoted
-            var other = n.Side == Side.Left ? t.Right : t.Left;
+            //This is sort of cheating, but works in this situation
+            t.Number = n.Number; //Promoting the number, no disassociation needed
 
-            //Update the parent with the promoted node
-            UpdateParentNode(t, n);
+            var p = n.Parent;
 
-            //Re-add the sub tree
-            var lst = GetValuesAsList(other);
+            //Get the non-null child
+            var c = n.Left ?? n.Right;
 
-            foreach (var value in lst)
+            //Update the correct side of the parent's reference
+            if (n.Side == Side.Left)
             {
-                ReAdd(value, false);
-            }
-        }
-
-        private void UpdateParentNode(Node target, Node replacement)
-        {
-            var t = target;
-            var p = target.Parent;
-            var r = replacement;
-
-            //Can't update the parent if there is no parent
-            if (p == null) return;
-
-            r.Parent = p;
-
-            if (t.Side == Side.Left)
-            {
-                p.Left = r;
+                p.Left = c;
             }
             else
             {
-                p.Right = r;
+                p.Right = c;
             }
+
+            //Update the child's link
+            if (c == null) return;
+
+            c.Parent = p;
         }
 
-        private Node NodeToPromote(Node left, Node right)
+        //Find the next eligible node for promotion. It must have zero to one children.
+        private Node PromoteNextNode(Node node)
         {
-            //If both nodes are null, return null
-            if (left == null && right == null) return null;
+            var children = node.CountChildren();
 
-            //If the left is null then return right
-            if (left == null) return right;
+            if (children < 2) return node;
 
-            //If the right is null then return left
-            if (right == null) return left;
+            var n = PromoteNextNode(node.Left);
 
-            //At this point neither nodes are null determine based on who is larger
-            var node = left.Number > right.Number ? left : right;
-
-            return node;
+            return n;
         }
 
         private List<int> GetValuesAsList(Node startingNode)
@@ -414,6 +399,17 @@ namespace AlgorithmProofs.DataStructures
             public Node Left { get; set; }
 
             public Node Right { get; set; }
+
+            public int CountChildren()
+            {
+                var count = 0;
+
+                if (Left != null) count++;
+
+                if (Right != null) count++;
+
+                return count;
+            }
 
             public override string ToString()
             {
