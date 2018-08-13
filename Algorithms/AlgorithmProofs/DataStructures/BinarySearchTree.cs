@@ -179,10 +179,11 @@ namespace AlgorithmProofs.DataStructures
 
             var p = n.Parent;
 
-            //Get the non-null child
+            //Get the non-null child - however it is possible for both to be null
             var c = n.Left ?? n.Right;
 
             //Update the correct side of the parent's reference
+            //This can null out the reference
             if (n.Side == Side.Left)
             {
                 p.Left = c;
@@ -192,9 +193,10 @@ namespace AlgorithmProofs.DataStructures
                 p.Right = c;
             }
 
-            //Update the child's link
+            //If the child is null, nothing more that can be done
             if (c == null) return;
 
+            //Update the child's link
             c.Parent = p;
         }
 
