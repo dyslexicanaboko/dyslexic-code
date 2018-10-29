@@ -1,13 +1,16 @@
-﻿namespace AlgorithmProofs
+﻿namespace AlgorithmProofs.Sorting
 {
     public class BubbleSort
-        : ISort
+        : SortingAlgorithmBase
     {
-        public AlgorithmStats Sort(int[] array)
+        public BubbleSort()
+            : base(nameof(BubbleSort))
         {
-            var s = new AlgorithmStats();
-            s.Start();
 
+        }
+
+        public override int SortingAlgorithm(int[] array)
+        {
             var sorted = false;
             var passes = 0;
 
@@ -18,6 +21,8 @@
 
                 for (int i = 0; i < array.Length; i++)
                 {
+                    passes++;
+
                     var e0 = array[i];
 
                     var j = i + 1;
@@ -39,12 +44,7 @@
                 passes++;
             }
 
-            s.Stop();
-            s.AlgorithmName = nameof(BubbleSort);
-            s.Passes = passes;
-            s.Elements = array.Length;
-
-            return s;
+            return passes;
         }
     }
 }
