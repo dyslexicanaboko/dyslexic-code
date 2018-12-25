@@ -3,7 +3,7 @@
 void Main()
 {
 	//Generate a named foreign key constraint
-	GenerateNamedForeignKeyConstraint("Jobs.JobSchedule", "Jobs.FrequencyUnit", "FrequencyUnitId").Dump();
+	GenerateNamedForeignKeyConstraint("dbo.BillingCategory", "dbo.User", "UserId").Dump();
 }
 
 private string GenerateNamedForeignKeyConstraint(string thisTable, string otherTable, string sharedKey)
