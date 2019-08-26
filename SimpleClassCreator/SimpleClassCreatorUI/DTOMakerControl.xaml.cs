@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SimpleClassCreator.Code_Factory;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
-using SimpleClassCreator.Code_Factory;
 
 namespace SimpleClassCreatorUI
 {
@@ -21,8 +10,8 @@ namespace SimpleClassCreatorUI
     /// </summary>
     public partial class DTOMakerControl : UserControl
     {
-        private string AssemblyName { get { return txtAssemblyFullFilePath.Text; } }
-        private string ClassName { get { return txtFullyQualifiedClassName.Text; } }
+        private string AssemblyName => txtAssemblyFullFilePath.Text;
+        private string ClassName => txtFullyQualifiedClassName.Text;
 
         public DTOMakerControl()
         {
