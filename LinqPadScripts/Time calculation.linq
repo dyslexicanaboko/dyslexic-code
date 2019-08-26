@@ -2,24 +2,51 @@
 
 void Main()
 {
-	CalculateSpan("2017-04-01");
+	CalculateSpan("2019-04-06");
 	//GetMonthCount("2018-03-01", "2018-02-01").Dump(); //Exception
 	//GetMonthCount("2018-03-01", "2018-03-01").Dump();
 	//GetMonthCount("2018-02-01", "2018-03-01").Dump();
+	//GetXDaysFromToday(30);
+}
+
+public void GetXDaysFromToday(int days)
+{
+	GetXDaysFromDate(DateTime.Today, days);
+}
+
+public void GetXDaysFromDate(DateTime date, int days)
+{
+	var dtm = date.AddDays(days);
+	
+	Console.WriteLine(dtm.ToLongDateString());
 }
 
 // Define other methods and classes here
 public void CalculateSpan(string dateTimeStart)
 {
-	var dtmEnd = DateTime.Today;
 	var dtmStart = DateTime.Parse(dateTimeStart);
-	var ts = (dtmEnd - dtmStart);
-	var months = GetMonthCount(dtmStart, dtmEnd);
+	var dtmEnd = DateTime.Today;
+	
+	CalculateSpan(dtmStart, dtmEnd);
+}
+
+public void CalculateSpan(string start, string end)
+{
+	var dtmStart = DateTime.Parse(start);
+	var dtmEnd = DateTime.Parse(end);
+
+	CalculateSpan(dtmStart, dtmEnd);
+}
+
+public void CalculateSpan(DateTime start, DateTime end)
+{
+	var ts = (end - start);
+	var months = GetMonthCount(start, end);
 
 	//ts.Dump();
 
-	Console.WriteLine($"Start: {dtmStart}");
-	Console.WriteLine($"End: {dtmEnd}");
+	Console.WriteLine($"Start: {start}");
+	Console.WriteLine($"End: {end}");
 	Console.WriteLine($"Days: {ts.Days}");
 	Console.WriteLine("Percent of year: {0:p2}", ((decimal)ts.Days / 365.0M));
 	Console.WriteLine($"Weeks: {(ts.Days / 7)}");

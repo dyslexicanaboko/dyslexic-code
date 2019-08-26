@@ -78,7 +78,7 @@ namespace SimpleClassCreator.Code_Factory
 
             string strClassName = t.Name + "DTO";
 
-            sbC.AppendLine("[DataContract]");
+            //sbC.AppendLine("[DataContract]");
             sbC.Append("public class ").AppendLine(strClassName);
             sbC.AppendLine("{");
 
@@ -95,12 +95,11 @@ namespace SimpleClassCreator.Code_Factory
 
                 tp = pi.PropertyType;
 
-                sbC.AppendLine("[DataMember]");
+                //sbC.AppendLine("[DataMember]");
                 sbC.Append("public ").Append(GetTypeAsString(tp));
 
-                //TODO: This is totally optional. Convert "System.Nullable<T>" to "T?" Where T is a generic type
-
-                sbC.Append(" ").Append(pi.Name).AppendLine(" { get; set; } ");
+                sbC.Append(" ").Append(pi.Name).AppendLine(" { get; set; } ")
+                   .AppendLine();
 
                 sbT.Append("dto.").Append(pi.Name).Append(" = obj.").Append(pi.Name).AppendLine(";");
             }
@@ -110,7 +109,7 @@ namespace SimpleClassCreator.Code_Factory
             sbT.AppendLine("return dto;");
             sbT.AppendLine("}");
 
-            sbC.Append(sbT);
+            //sbC.Append(sbT);
             sbC.AppendLine("}");
 
             //using (System.IO.StreamWriter sw = new System.IO.StreamWriter(Path.Combine(BasePath, t.Name + ".cs"), false))
@@ -123,7 +122,27 @@ namespace SimpleClassCreator.Code_Factory
 
         public string GetTypeAsString(Type target)
         {
-            return _compiler.GetTypeOutput(new CodeTypeReference(target));
+            if (target.IsValueType && target.Name == "Nullable`1")
+            {
+                var typeT = target.GetGenericArguments();
+
+                var typeAsString = GetTypeOutput(typeT[0]);
+
+                var strNullableType = $"{typeAsString}?";
+
+                return strNullableType;
+            }
+
+            var str = GetTypeOutput(target);
+
+            return str;
+        }
+
+        private string GetTypeOutput(Type target)
+        {
+            var str = _compiler.GetTypeOutput(new CodeTypeReference(target));
+
+            return str;
         }
 
         public void PrintClasses()
