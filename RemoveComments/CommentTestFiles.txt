@@ -1,0 +1,28 @@
+//This is a comment on one line
+Don't delete this
+
+///This is an XML comment
+Don't delete this
+
+/* This is a single line star comment */
+Don't delete this
+
+/* This is a multi line star comment 
+ * Star on the line 
+   No star on the line */
+Don't delete this
+
+/* This is a multi line star comment 
+ * Star on the line 
+   No star on the line 
+*/
+Don't delete this
+Don't delete this
+
+/* This is a multi line star comment 
+ * Star on the line 
+   No star on the line 
+   //Regular comment inside of a star comment
+*/   
+Don't delete this
+Don't delete this
