@@ -1,0 +1,22 @@
+Regex
+
+This will match all double and triple slash comments
+//?/
+
+This will match all lines that start with double and triple slash comments, plus the rest of the line
+^//?/.+
+
+This will match a single line star comment regardless of length
+^/\*.+(?=\*/)\*/
+
+This will match a multi line star comment regardless of length and style
+^/\*.+(?=\*/)\*/
+
+This will match all types of comments regardless of style
+https://blog.ostermiller.org/find-comment
+(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)
+(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)\r\n|(//.*)\r\n
+
+Find multiple blank lines
+^(\s*\r\n){2,}
+^\s*[\r\n]{2,}
