@@ -1,6 +1,8 @@
 SELECT
-	  s.name + '.' + T.name AS FullTableName
+	   s.name AS SchemaName
+	  ,t.name AS TableName
+	  ,'[' + s.name + '].[' + t.name + ']' AS QualifiedSchemaAndTable
 FROM sys.tables t
 	INNER JOIN sys.schemas s
 		ON t.schema_id = s.schema_id
-WHERE T.name <> '__MigrationHistory'
+WHERE t.name <> '__MigrationHistory'

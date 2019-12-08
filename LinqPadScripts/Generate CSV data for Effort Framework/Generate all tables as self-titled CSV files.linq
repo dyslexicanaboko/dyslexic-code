@@ -1,8 +1,9 @@
 <Query Kind="Program">
   <Connection>
-    <ID>b9a76bc9-f2fa-4fd3-bf8d-9c56d5cc2343</ID>
+    <ID>eac9ecfc-eff2-4a24-81af-e3ace612cbda</ID>
     <Persist>true</Persist>
     <Server>.</Server>
+    <IsProduction>true</IsProduction>
     <Database>EmployeeDefense</Database>
     <ShowServer>true</ShowServer>
   </Connection>
@@ -12,53 +13,82 @@
  * This is for the Effort Framework to consume https://entityframework-effort.net/ 
  * The goal is to keep it SIMPLE. */
 string BasePath = Path.GetDirectoryName(Util.CurrentQueryPath);
-string CsvFiles = @"D:\Dump\CsvFiles\";
+string CsvFiles = @"J:\Dump\CsvFiles\";
 
 void Main()
 {
+	Directory.CreateDirectory(CsvFiles);
+	
 	var lstTables = GetTables();
+	//var lstTables = new List<string> { "[dbo].[User]" };
 	
 	GenerateCsvFiles(lstTables);
 }
 
-public void GenerateCsvFiles(List<string> tables)
+public void GenerateCsvFiles(List<TableInfo> tables)
 {
 	foreach (var t in tables)
 	{
-		GetSchema(t);
+		GenerateCsvFile(t);
+		
+		Console.WriteLine();
 	}
 }
 
-public void GenerateCsvFile(string table)
+public void GenerateCsvFile(TableInfo tableInfo)
 {
-	var dt = GetSchema(table);
-	
-	var columns = string.Join(",", dt.Columns);
+	var dt = GetData(tableInfo.QualifiedSchemaAndTable);
+
+	Console.WriteLine($"Table: {tableInfo} -> Rows: {dt.Rows.Count:n0}");
+
+	string[] arr = dt.Columns
+		.Cast<DataColumn>()
+		.Select(x => x.ColumnName)
+		.ToArray();
+
+	var columns = string.Join(",", arr);
 	
 	var sb = new StringBuilder();
 
-	foreach (var row in dt.Rows)
-	{
-		foreach (var col in dt.Columns)
-		{
+	sb.AppendLine(columns);
 
+	foreach (var row in dt.Select())
+	{
+		for (var c = 0; c < dt.Columns.Count; c++)
+		{
+			sb.Append(row[c]).Append(",");
 		}
+		
+		//Remove trailing comma
+		sb.Remove(sb.Length - 1, 1);
+		
+		sb.AppendLine();
 	}
+	
+	var text = sb.ToString();
+
+	var saveAs = Path.Combine(CsvFiles, tableInfo.TableName + ".csv");
+
+	Console.WriteLine($"Saved as: {saveAs} -> Bytes: {text.Length:n0}");
+
+	File.WriteAllText(saveAs, text, Encoding.ASCII);
 }
 
-public List<string> GetTables()
+public List<TableInfo> GetTables()
 {
 	using (var r = ExecuteReader("GetTables.sql"))
 	{
-		var lst = new List<string>();
+		var lst = new List<TableInfo>();
 		
-		while (r.HasRows)
+		while (r.Read())
 		{
-			r.Read();
+			var m = new TableInfo();
+
+			m.SchemaName = Convert.ToString(r["SchemaName"]);
+			m.TableName = Convert.ToString(r["TableName"]);
+			m.QualifiedSchemaAndTable = Convert.ToString(r["QualifiedSchemaAndTable"]);
 			
-			var s = Convert.ToString(r["FullTableName"]);
-			
-			lst.Add(s);
+			lst.Add(m);
 		}
 		
 		return lst;
@@ -89,7 +119,7 @@ private string GetQuery(string fileName)
 	return text;
 }
 
-private DataTable GetSchema(string schemaAndTableName)
+private DataTable GetData(string schemaAndTableName)
 {
 	var dt = new DataTable(schemaAndTableName);
 
@@ -99,14 +129,30 @@ private DataTable GetSchema(string schemaAndTableName)
 
 		var query = "SELECT * FROM " + schemaAndTableName;
 
-		using (var command = new SqlCommand(query, connection))
-		{
-			using (var da = new SqlDataAdapter(command))
+		try
+		{	        
+			using (var command = new SqlCommand(query, connection))
 			{
-				da.Fill(dt);
+				using (var da = new SqlDataAdapter(command))
+				{
+					da.Fill(dt);
+				}
 			}
+		}
+		catch
+		{
+			Console.WriteLine($"Query -> {query}");
+			
+			throw;
 		}
 	}
 
 	return dt;
+}
+
+public class TableInfo
+{
+	public string SchemaName { get; set; }
+	public string TableName { get; set; }
+	public string QualifiedSchemaAndTable { get; set; }
 }
