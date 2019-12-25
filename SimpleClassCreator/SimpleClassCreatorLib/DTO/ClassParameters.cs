@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SimpleClassCreator.DTO
+﻿namespace SimpleClassCreator.DTO
 {
     public class ClassParameters
     {
@@ -11,7 +6,8 @@ namespace SimpleClassCreator.DTO
         public SourceTypeEnum SourceType { get; set; }
         public string ClassSource { get; set; }
         public CodeType LanguageType { get; set; }
-        public bool IncludeWCFTags { get; set; }
+        public bool IncludeWcfTags { get; set; }
+        public bool IncludeCloneMethod { get; set; }
         public bool BuildOutClassProperties { get; set; }
         public bool IncludeMemberPrefix { get; set; }
         public string MemberPrefix { get; set; }
@@ -22,5 +18,8 @@ namespace SimpleClassCreator.DTO
         public bool ReplaceExisting { get; set; }
         public string Filepath { get; set; }
         public string Filename { get; set; }
+        public bool IncludeSerializeablePropertiesOnly { get; set; }
+        public bool ExcludeCollections { get; set; }
+        public bool IncludeTranslateMethod { get; set; }
     }
 }

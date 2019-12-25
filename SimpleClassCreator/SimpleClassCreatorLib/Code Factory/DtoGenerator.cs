@@ -1,34 +1,38 @@
 ﻿using System;
 using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
 using System.IO;
+using System.Reflection;
+using System.Text;
 using Microsoft.CSharp;
+using SimpleClassCreator.DTO;
 
 namespace SimpleClassCreator.Code_Factory
 {
     public class DtoGenerator
     {
-        public string AssemblyPath { get; set; }
-        public string FileName { get; set; }
-        public string BasePath { get; private set; }
-        public Assembly AssemblyReference { get; private set; }
-        private CSharpCodeProvider _compiler;
+        private readonly CSharpCodeProvider _compiler;
 
         public DtoGenerator(string assemblyPath)
         {
             AssemblyPath = assemblyPath;
+
             BasePath = Path.GetDirectoryName(assemblyPath);
+
             FileName = Path.GetFileName(assemblyPath);
+
             AssemblyReference = Assembly.LoadFile(AssemblyPath);
+
             _compiler = new CSharpCodeProvider();
         }
 
+        public string AssemblyPath { get; set; }
+        public string FileName { get; set; }
+        public string BasePath { get; }
+        public Assembly AssemblyReference { get; }
+
         public Type PrintClass(string className)
         {
-            Type t = AssemblyReference.GetType(className, false, false);
+            var t = AssemblyReference.GetType(className, false, false);
 
             if (t != null)
                 Console.WriteLine(t.FullName);
@@ -40,24 +44,24 @@ namespace SimpleClassCreator.Code_Factory
 
         public AssemblyInfo GetClassProperties(string className)
         {
-            AssemblyInfo asm = new AssemblyInfo();
+            var asm = new AssemblyInfo();
 
             asm.Name = FileName;
 
-            Type t = PrintClass(className);
+            var t = PrintClass(className);
 
             if (t == null)
                 return asm;
 
-            ClassInfo cInfo = asm.AddClass(className);
+            var cInfo = asm.AddClass(className);
 
-            foreach (System.Reflection.PropertyInfo pi in t.GetProperties())
+            foreach (var pi in t.GetProperties())
             {
                 Console.WriteLine(pi.Name);
 
-                cInfo.Properties.Add(new PropertyInfo 
-                { 
-                    Name = pi.Name, 
+                cInfo.Properties.Add(new PropertyInfo
+                {
+                    Name = pi.Name,
                     TypeName = GetTypeAsString(pi.PropertyType),
                     IsSerializable = pi.PropertyType.IsDefined(typeof(SerializableAttribute), false)
                 });
@@ -66,56 +70,77 @@ namespace SimpleClassCreator.Code_Factory
             return asm;
         }
 
-        public string MakeDTO(string className)
+        public string MakeDto(string className, ClassParameters parameters)
         {
-            Type t = PrintClass(className);
+            var p = parameters;
+
+            var t = PrintClass(className);
 
             if (t == null)
                 return "Type cannot be null";
 
-            StringBuilder sbC = new StringBuilder();
-            StringBuilder sbT = new StringBuilder();
+            var sbC = new StringBuilder(); //Class
+            var sbTm = new StringBuilder(); //Translate method
+            var sbCm = new StringBuilder(); //Clone method
 
-            string strClassName = t.Name + "DTO";
+            var cn = t.Name + "Dto";
 
-            //sbC.AppendLine("[DataContract]");
-            sbC.Append("public class ").AppendLine(strClassName);
+            var wcfOk = p.IncludeSerializeablePropertiesOnly && p.IncludeWcfTags;
+
+            //Class declaration
+            if (wcfOk) sbC.AppendLine("[DataContract]");
+
+            sbC.Append("public class ").AppendLine(cn);
             sbC.AppendLine("{");
 
-            sbT.Append("public ").Append(strClassName).Append(" Translate(").Append(t.Name).AppendLine(" obj)");
-            sbT.AppendLine("{");
-            sbT.Append(strClassName).Append(" dto = new ").Append(strClassName).AppendLine("();");
-            sbT.AppendLine();
+            //Translate method
+            sbTm.Append("public ").Append(cn).Append(" Translate(").Append(t.Name).AppendLine(" obj)");
+            sbTm.AppendLine("{");
+            sbTm.Append("var dto = new ").Append(cn).AppendLine("();");
+            sbTm.AppendLine();
 
-            Type tp;
+            sbCm.Append("public ").Append(cn).AppendLine(" Clone()");
+            sbCm.AppendLine("{");
+            sbCm.Append("var c = new ").Append(cn).AppendLine("();");
+            sbCm.AppendLine();
 
-            foreach (System.Reflection.PropertyInfo pi in t.GetProperties())
+            foreach (var pi in t.GetProperties())
             {
                 Console.WriteLine(pi.Name);
 
-                tp = pi.PropertyType;
+                var tp = pi.PropertyType;
 
-                //sbC.AppendLine("[DataMember]");
+                //Class properties
+                if (wcfOk) sbC.AppendLine("[DataMember]");
+
                 sbC.Append("public ").Append(GetTypeAsString(tp));
 
                 sbC.Append(" ").Append(pi.Name).AppendLine(" { get; set; } ")
-                   .AppendLine();
+                    .AppendLine();
 
-                sbT.Append("dto.").Append(pi.Name).Append(" = obj.").Append(pi.Name).AppendLine(";");
+                //Translate method
+                sbTm.Append("dto.").Append(pi.Name).Append(" = obj.").Append(pi.Name).AppendLine(";");
+
+                //Translate method
+                sbCm.Append("c.").Append(pi.Name).Append(" = ").Append(pi.Name).AppendLine(";");
             }
 
             sbC.AppendLine();
 
-            sbT.AppendLine("return dto;");
-            sbT.AppendLine("}");
+            //Translate method close
+            sbTm.AppendLine("return dto;");
+            sbTm.AppendLine("}");
 
-            //sbC.Append(sbT);
+            //Clone method close
+            sbCm.AppendLine("return c;");
+            sbCm.AppendLine("}");
+
+            //Methods to include in the class
+            if(p.IncludeTranslateMethod) sbC.Append(sbTm);
+
+            if(p.IncludeCloneMethod) sbC.Append(sbCm);
+
             sbC.AppendLine("}");
-
-            //using (System.IO.StreamWriter sw = new System.IO.StreamWriter(Path.Combine(BasePath, t.Name + ".cs"), false))
-            //{
-            //    sw.Write(sbC.ToString());
-            //}
 
             return sbC.ToString();
         }
@@ -147,15 +172,12 @@ namespace SimpleClassCreator.Code_Factory
 
         public void PrintClasses()
         {
-            //D:\Dev\fsrtfs01.fmp.local\Connect\Source Code\Dev\Connect.Entities\UnitsResidentsBase.generated.cs
-
-
             if (true) ;
 
-            int i = 0;
+            var i = 0;
 
             //This is a dangerous call for any large assemblies
-            foreach (Type type in AssemblyReference.GetTypes())
+            foreach (var type in AssemblyReference.GetTypes())
             {
                 Console.WriteLine(type.FullName);
 

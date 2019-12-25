@@ -3,12 +3,13 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
+using SimpleClassCreatorUI;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SimpleClassCreatorUI")]
-[assembly: AssemblyDescription("If you found this application to be useful or just enjoyed it then please consider giving me a tip. There is a link located below. This application is free to use and distribute always. http://dyslexicanaboko.blogspot.com/p/dyslexicapps.html")]
+[assembly: AssemblyDescription("If you found this application to be useful or just enjoyed it then please consider giving me a tip. There is a link located below. This application is free to use and distribute always. " + AboutSimpleClassCreator.DyslexicAppsUrl)]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dyslexic Apps")]
 [assembly: AssemblyProduct("Simple Class Creator")]
@@ -51,5 +52,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.2.0.0")]

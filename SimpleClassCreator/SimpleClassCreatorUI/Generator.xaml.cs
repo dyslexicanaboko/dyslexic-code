@@ -364,7 +364,7 @@ namespace SimpleClassCreatorUI
                 return null;
 
             obj.LanguageType = GetCodeType();
-            obj.IncludeWCFTags = GetCheckBoxState(cbIncludeWCFTags);
+            obj.IncludeWcfTags = GetCheckBoxState(cbIncludeWCFTags);
             obj.BuildOutClassProperties = cbBuildClassProperties.IsChecked.Value;
             obj.IncludeMemberPrefix = GetCheckBoxState(cbMemberPrefix);
             obj.IncludeNamespace = GetCheckBoxState(cbIncludeNamespace);

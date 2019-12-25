@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using SimpleClassCreator.DTO;
 
 namespace SimpleClassCreatorUI
 {
@@ -60,17 +61,17 @@ Please keep in mind casing matters.";
 
         private void LoadTreeView(AssemblyInfo assembly)
         { 
-            TreeViewItem asm = new TreeViewItem();
-            TreeViewItem cls = null;
+            var asm = new TreeViewItem();
             
             asm.Header = assembly.Name;
 
-            foreach(ClassInfo ci in assembly.Classes)
+            foreach(var ci in assembly.Classes)
             {
-                cls = new TreeViewItem();
+                var cls = new TreeViewItem();
                 cls.Header = ci.FullName;
+                cls.IsExpanded = true;
 
-                foreach(PropertyInfo pi in ci.Properties)
+                foreach(var pi in ci.Properties)
                     cls.Items.Add(MakeOption(pi));
 
                 asm.Items.Add(cls);
@@ -81,30 +82,49 @@ Please keep in mind casing matters.";
 
         private StackPanel MakeOption(PropertyInfo info)
         {
-            CheckBox cbx = new CheckBox();
+            var cbx = new CheckBox();
             cbx.Name = "cbx_" + info.Name;
             cbx.IsChecked = true;
 
-            Label lbl = new Label();
+            var lbl = new Label();
             lbl.Name = "lbl_" + info.Name;
             lbl.Content = info.ToString();
 
-            StackPanel sp = new StackPanel();
+            var sp = new StackPanel();
             sp.Orientation = Orientation.Horizontal;
             sp.Children.Add(cbx);
             sp.Children.Add(lbl);
-
-            //TreeViewItem tvi = new TreeViewItem();
-
-            //tvi.Items.Add(sp);
-            //tvi.Header = info.ToString();
-
+            
             return sp;
+        }
+
+        private ClassParameters GetParametersFromUi()
+        {
+            //Not every parameter will be in use yet
+            var p = new ClassParameters
+            {
+                IncludeCloneMethod = GetValue(cbxIncludeCloneMethod),
+                IncludeSerializeablePropertiesOnly = GetValue(cbxSerializableOnly),
+                IncludeWcfTags = GetValue(cbxWcfEnabled),
+                ExcludeCollections = GetValue(cbxExcludeCollections),
+                IncludeTranslateMethod = GetValue(cbxIncludeTranslateMethod)
+            };
+
+            return p;
+        }
+
+        private bool GetValue(CheckBox cb)
+        {
+            var value = cb.IsChecked.GetValueOrDefault();
+
+            return value;
         }
 
         private void btnGenerate_Click(object sender, RoutedEventArgs e)
         {
-            ResultWindow win = new ResultWindow(Proxy.GenerateDTO(AssemblyName, ClassName));
+            var p = GetParametersFromUi();
+
+            var win = new ResultWindow(Proxy.GenerateDto(AssemblyName, ClassName, p));
             
             win.Show();
         }
