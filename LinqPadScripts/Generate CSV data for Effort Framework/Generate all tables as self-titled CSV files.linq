@@ -14,6 +14,7 @@
  * The goal is to keep it SIMPLE. */
 string BasePath = Path.GetDirectoryName(Util.CurrentQueryPath);
 string CsvFiles = @"J:\Dump\CsvFiles\";
+const string D = ","; //Delimiter 
 
 void Main()
 {
@@ -46,7 +47,7 @@ public void GenerateCsvFile(TableInfo tableInfo)
 		.Select(x => x.ColumnName)
 		.ToArray();
 
-	var columns = string.Join(",", arr);
+	var columns = string.Join(D, arr);
 	
 	var sb = new StringBuilder();
 
@@ -56,7 +57,9 @@ public void GenerateCsvFile(TableInfo tableInfo)
 	{
 		for (var c = 0; c < dt.Columns.Count; c++)
 		{
-			sb.Append(row[c]).Append(",");
+			var str = FormatData(row[c]);
+			
+			sb.Append(str).Append(D);
 		}
 		
 		//Remove trailing comma
@@ -72,6 +75,43 @@ public void GenerateCsvFile(TableInfo tableInfo)
 	Console.WriteLine($"Saved as: {saveAs} -> Bytes: {text.Length:n0}");
 
 	File.WriteAllText(saveAs, text, Encoding.ASCII);
+}
+
+public string FormatData(object columnData)
+{
+	//If it is DB NULL then return null
+	if (columnData == DBNull.Value)
+		return null;
+
+	//Convert the data to the string equivalent
+	var str = Convert.ToString(columnData);
+
+	//If the data converted to string is whitespace don't continue
+	if (string.IsNullOrWhiteSpace(str))
+		return str;
+
+	//If the original data is NOT a string don't continue
+	if (!(columnData is string))
+		return str;
+
+	//It appears that hard quotes don't need to be escaped for Effort
+
+	//If the string contains soft quotes they need to be escaped
+	if (str.Contains("\""))
+		str = str.Replace("\"", "\"\"");
+
+	//If the string contains a back slash it needs to be escaped - this is an effort specific problem
+	if (str.Contains("\\"))
+		str = str.Replace("\\", "\\\\");
+
+	//If the string does not contain the delimeter or new line characters, then it doesn't need to be text qualified
+	if (!str.Contains(D) && !str.Contains("\n") && !str.Contains("\r"))
+		return str;
+
+	//If the delimiter is found then the data has to be text qualified
+	str = $"\"{str}\"";
+	
+	return str;
 }
 
 public List<TableInfo> GetTables()
