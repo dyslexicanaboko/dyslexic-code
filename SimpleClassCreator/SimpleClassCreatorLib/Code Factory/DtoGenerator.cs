@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -23,8 +24,13 @@ namespace SimpleClassCreator.Code_Factory
             AssemblyReference = Assembly.LoadFile(AssemblyPath);
 
             _compiler = new CSharpCodeProvider();
+
+            var dir = AppDomain.CurrentDomain.BaseDirectory;
+
+            _templatesPath = Path.Combine(dir, "Templates");
         }
 
+        private string _templatesPath;
         public string AssemblyPath { get; set; }
         public string FileName { get; set; }
         public string BasePath { get; }
@@ -79,70 +85,147 @@ namespace SimpleClassCreator.Code_Factory
             if (t == null)
                 return "Type cannot be null";
 
-            var sbC = new StringBuilder(); //Class
-            var sbTm = new StringBuilder(); //Translate method
-            var sbCm = new StringBuilder(); //Clone method
+            var sb = new StringBuilder(); //Class
 
             var cn = t.Name + "Dto";
 
             var wcfOk = p.IncludeSerializeablePropertiesOnly && p.IncludeWcfTags;
 
             //Class declaration
-            if (wcfOk) sbC.AppendLine("[DataContract]");
+            if (wcfOk) sb.AppendLine("[DataContract]");
 
-            sbC.Append("public class ").AppendLine(cn);
-            sbC.AppendLine("{");
+            sb.Append("public class ").AppendLine(cn);
 
-            //Translate method
-            sbTm.Append("public ").Append(cn).Append(" Translate(").Append(t.Name).AppendLine(" obj)");
-            sbTm.AppendLine("{");
-            sbTm.Append("var dto = new ").Append(cn).AppendLine("();");
-            sbTm.AppendLine();
+            if (p.IncludeIEquatableOfTMethods) sb.Append("\t : IEquatable<").Append(cn).AppendLine(">");
 
-            sbCm.Append("public ").Append(cn).AppendLine(" Clone()");
-            sbCm.AppendLine("{");
-            sbCm.Append("var c = new ").Append(cn).AppendLine("();");
-            sbCm.AppendLine();
+            sb.AppendLine("{");
 
-            foreach (var pi in t.GetProperties())
+            var arrProperties = t.GetProperties();
+
+            var lstPropertyNames = new List<string>(arrProperties.Length);
+
+            foreach (var pi in arrProperties)
             {
                 Console.WriteLine(pi.Name);
 
+                lstPropertyNames.Add(pi.Name);
+                
                 var tp = pi.PropertyType;
 
                 //Class properties
-                if (wcfOk) sbC.AppendLine("[DataMember]");
+                if (wcfOk) sb.AppendLine("[DataMember]");
 
-                sbC.Append("public ").Append(GetTypeAsString(tp));
+                sb.Append("public ").Append(GetTypeAsString(tp));
 
-                sbC.Append(" ").Append(pi.Name).AppendLine(" { get; set; } ")
-                    .AppendLine();
-
-                //Translate method
-                sbTm.Append("dto.").Append(pi.Name).Append(" = obj.").Append(pi.Name).AppendLine(";");
-
-                //Translate method
-                sbCm.Append("c.").Append(pi.Name).Append(" = ").Append(pi.Name).AppendLine(";");
+                sb.Append(" ").Append(pi.Name).AppendLine(" { get; set; } ").AppendLine();
             }
 
-            sbC.AppendLine();
-
-            //Translate method close
-            sbTm.AppendLine("return dto;");
-            sbTm.AppendLine("}");
-
-            //Clone method close
-            sbCm.AppendLine("return c;");
-            sbCm.AppendLine("}");
+            sb.AppendLine();
 
             //Methods to include in the class
-            if(p.IncludeTranslateMethod) sbC.Append(sbTm);
+            if (p.IncludeTranslateMethod)
+            {
+                var tm = GetTranslateMethod(t.Name, cn, lstPropertyNames);
 
-            if(p.IncludeCloneMethod) sbC.Append(sbCm);
+                sb.Append(tm);
+            }
 
-            sbC.AppendLine("}");
+            if (p.IncludeCloneMethod)
+            {
+                var cm = GetCloneMethod(cn, lstPropertyNames);
 
-            return sbC.ToString();
+                sb.Append(cm);
+            }
+
+            if (p.IncludeIEquatableOfTMethods)
+            {
+                var eq = GetIEquatableOfTMethods(cn, lstPropertyNames);
+
+                sb.Append(eq);
+            }
+
+            sb.AppendLine("}");
+
+            return sb.ToString();
+        }
+
+        private StringBuilder GetIEquatableOfTMethods(string className, List<string> propertyNames)
+        {
+            var cn = className;
+            
+            var sb = new StringBuilder();
+
+            var template = File.ReadAllText(Path.Combine(_templatesPath, "IEquatableOfT.cs"));
+
+            sb.Append(template);
+            
+            var hc = new StringBuilder();
+            var eq = new StringBuilder();
+
+            propertyNames.ForEach(x =>
+            {
+                hc.Append("\t\t\t").Append(x).AppendLine(".GetHashCode() + ");
+
+                eq.Append("\t\t\t").Append(x).Append(" == o.").Append(x).AppendLine(" &&");
+            });
+
+            //Remove trailing "+ \n\r" in order to terminate the statement
+            hc.Remove(hc.Length - 5, 5);
+
+            //Remove trailing " && \n\r" in order to terminate the statement
+            eq.Remove(eq.Length - 5, 5);
+
+            sb.Replace("%className%", cn)
+              .Replace("%hashCode%", hc.ToString())
+              .Replace("%equals%", eq.ToString());
+
+            sb.AppendLine();
+
+            return sb;
+        }
+
+        private StringBuilder GetTranslateMethod(string originalClassName, string dtoClassName, List<string> propertyNames)
+        {
+            var cn = dtoClassName;
+
+            var sb = new StringBuilder();
+
+            //Open
+            sb.Append("public ").Append(cn).Append(" Translate(").Append(originalClassName).AppendLine(" obj)");
+            sb.AppendLine("{");
+            sb.Append("var dto = new ").Append(cn).AppendLine("();");
+            sb.AppendLine();
+
+            //Properties
+            propertyNames.ForEach(x => sb.Append("dto.").Append(x).Append(" = obj.").Append(x).AppendLine(";"));
+
+            //Close
+            sb.AppendLine("return dto;");
+            sb.AppendLine("}");
+
+            return sb;
+        }
+
+        private StringBuilder GetCloneMethod(string className, List<string> propertyNames)
+        {
+            var cn = className;
+
+            var sb = new StringBuilder();
+
+            //Open
+            sb.Append("public ").Append(cn).AppendLine(" Clone()");
+            sb.AppendLine("{");
+            sb.Append("var c = new ").Append(cn).AppendLine("();");
+            sb.AppendLine();
+
+            //Properties
+            propertyNames.ForEach(x => sb.Append("c.").Append(x).Append(" = ").Append(x).AppendLine(";"));
+
+            //Close
+            sb.AppendLine("return c;");
+            sb.AppendLine("}");
+
+            return sb;
         }
 
         public string GetTypeAsString(Type target)

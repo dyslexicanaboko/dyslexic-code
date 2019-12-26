@@ -107,7 +107,8 @@ Please keep in mind casing matters.";
                 IncludeSerializeablePropertiesOnly = GetValue(cbxSerializableOnly),
                 IncludeWcfTags = GetValue(cbxWcfEnabled),
                 ExcludeCollections = GetValue(cbxExcludeCollections),
-                IncludeTranslateMethod = GetValue(cbxIncludeTranslateMethod)
+                IncludeTranslateMethod = GetValue(cbxIncludeTranslateMethod),
+                IncludeIEquatableOfTMethods = GetValue(cbxIncludeIEquatableOfTMethod)
             };
 
             return p;
