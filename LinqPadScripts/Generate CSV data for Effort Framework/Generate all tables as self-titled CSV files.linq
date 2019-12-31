@@ -19,9 +19,12 @@ const string D = ","; //Delimiter
 void Main()
 {
 	Directory.CreateDirectory(CsvFiles);
-	
-	var lstTables = GetTables();
-	//var lstTables = new List<string> { "[dbo].[User]" };
+
+	//var lstTables = GetTables();
+	var lstTables = new List<TableInfo> 
+	{ 
+		new TableInfo("dbo", "EventCategory") 
+	};
 	
 	GenerateCsvFiles(lstTables);
 }
@@ -40,7 +43,7 @@ public void GenerateCsvFile(TableInfo tableInfo)
 {
 	var dt = GetData(tableInfo.QualifiedSchemaAndTable);
 
-	Console.WriteLine($"Table: {tableInfo} -> Rows: {dt.Rows.Count:n0}");
+	Console.WriteLine($"Table: {tableInfo.QualifiedSchemaAndTable} -> Rows: {dt.Rows.Count:n0}");
 
 	string[] arr = dt.Columns
 		.Cast<DataColumn>()
@@ -72,7 +75,7 @@ public void GenerateCsvFile(TableInfo tableInfo)
 
 	var saveAs = Path.Combine(CsvFiles, tableInfo.TableName + ".csv");
 
-	Console.WriteLine($"Saved as: {saveAs} -> Bytes: {text.Length:n0}");
+	Console.WriteLine($"\tSaved as: {saveAs} -> Bytes: {text.Length:n0}");
 
 	File.WriteAllText(saveAs, text, Encoding.ASCII);
 }
@@ -192,6 +195,18 @@ private DataTable GetData(string schemaAndTableName)
 
 public class TableInfo
 {
+	public TableInfo()
+	{
+	
+	}
+	
+	public TableInfo(string schemaName, string tableName)
+	{
+		SchemaName = schemaName;
+		TableName = tableName;
+		QualifiedSchemaAndTable = $"[{schemaName}].[{tableName}]";
+	}
+	
 	public string SchemaName { get; set; }
 	public string TableName { get; set; }
 	public string QualifiedSchemaAndTable { get; set; }
