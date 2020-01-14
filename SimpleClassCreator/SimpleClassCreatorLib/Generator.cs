@@ -122,7 +122,7 @@ namespace SimpleClassCreator
                 LanguageType = language,
                 MemberPrefix = memberPrefix,
                 ClassName = className,
-                IncludeWCFTags = includeWCFTags,
+                IncludeWcfTags = includeWCFTags,
                 BuildOutClassProperties = buildOutProperties
             });
         }
@@ -134,9 +134,9 @@ namespace SimpleClassCreator
             DotNetLanguage motif;
 
             if (p.LanguageType == CodeType.CSharp)
-                motif = new CSharpLanguage(p.ClassName, p.IncludeWCFTags, p.BuildOutClassProperties);
+                motif = new CSharpLanguage(p.ClassName, p.IncludeWcfTags, p.BuildOutClassProperties);
             else
-                motif = new VBDotNetLanguage(p.ClassName, p.IncludeWCFTags);
+                motif = new VBDotNetLanguage(p.ClassName, p.IncludeWcfTags);
 
             if (parameters.IncludeNamespace)
                 motif.NamespaceName = parameters.Namespace;

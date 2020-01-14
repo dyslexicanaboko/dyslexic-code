@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SimpleClassCreator.Code_Factory;
 using SimpleClassCreator.DTO;
-using SimpleClassCreator.Code_Factory;
+using System.Text;
 
 namespace SimpleClassCreator
 {
@@ -15,6 +12,6 @@ namespace SimpleClassCreator
 
         AssemblyInfo GetClassProperties(string assembly, string className);
 
-        string GenerateDTO(string assembly, string className);
+        string GenerateDto(string assembly, string className, ClassParameters parameters);
     }
 }

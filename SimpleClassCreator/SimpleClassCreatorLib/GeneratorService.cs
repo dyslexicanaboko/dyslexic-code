@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SimpleClassCreator.Code_Factory;
 using SimpleClassCreator.DTO;
-using SimpleClassCreator.Code_Factory;
+using System.Text;
 
 namespace SimpleClassCreator
 {
-    public class GeneratorService : IGeneratorService
+    public class GeneratorService 
+        : IGeneratorService
     {
         public ConnectionResult TestConnectionString(string connectionString)
         {
-            return SimpleClassCreator.DataAccess.DAL.TestConnectionString(connectionString);
+            return DataAccess.DAL.TestConnectionString(connectionString);
         }
 
         public StringBuilder BuildClass(ClassParameters parameters)
         {
-            return SimpleClassCreator.Generator.Execute(parameters);
+            return Generator.Execute(parameters);
         }
 
         public StringBuilder BuildGridViewColumns(ClassParameters parameters)
         {
-            return SimpleClassCreator.Generator.GenerateGridViewColumns(parameters);
+            return Generator.GenerateGridViewColumns(parameters);
         }
 
         public AssemblyInfo GetClassProperties(string assembly, string className)
@@ -29,9 +27,9 @@ namespace SimpleClassCreator
             return new DtoGenerator(assembly).GetClassProperties(className);
         }
 
-        public string GenerateDTO(string assembly, string className)
+        public string GenerateDto(string assembly, string className, ClassParameters parameters)
         {
-            return new DtoGenerator(assembly).MakeDTO(className);
+            return new DtoGenerator(assembly).MakeDto(className, parameters);
         }
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SimpleClassCreator;
-using SimpleClassCreator.DTO;
+﻿using SimpleClassCreator;
 using SimpleClassCreator.Code_Factory;
+using SimpleClassCreator.DTO;
+using System.Text;
 
 namespace SimpleClassCreatorUI
 {
@@ -30,9 +27,9 @@ namespace SimpleClassCreatorUI
             return Client().GetClassProperties(assembly, className);
         }
 
-        public static string GenerateDTO(string assembly, string className)
+        public static string GenerateDto(string assembly, string className, ClassParameters parameters)
         {
-            return Client().GenerateDTO(assembly, className);
+            return Client().GenerateDto(assembly, className, parameters);
         }
 
         private static GeneratorService Client()
