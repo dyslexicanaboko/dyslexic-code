@@ -1,8 +1,6 @@
 ###### Custom adds =================================================
 *.idea
 *.rar
-/EmployeeDefense/~$Todo.docx
-/EmployeeDefense/Todo.docx
 *.jfm
 *.dbmdl
 *.user
@@ -10,6 +8,11 @@
 **/packages/
 **/obj/
 **/bin/
+**/.nuget/NuGet.exe
+/LotteryApp/Dependencies
+/ServerOps
+/ZedGraphSample/zedgraph_dll_v515/zedgraph_dll_v5.1.5
+/FRB Dev
 
 ###### Visual studio and C# ignores ================================
 ## Ignore Visual Studio temporary files, build results, and
@@ -490,5 +493,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-*.exe
-*.dll

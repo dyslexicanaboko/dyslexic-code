@@ -34,9 +34,9 @@ void Main()
 
 	foreach (var p in lst)
 	{
-		var m = p.Middle == null ? "NULL" : "'" + p.Middle + "'";
+		var m = p.Middle == null ? "NULL" : "N'" + p.Middle + "'";
 
-		Console.WriteLine($",('{p.First}', {m}, '{p.Last}', NULL, 0)");
+		Console.WriteLine($"EXEC dbo.AddPerson @firstName = N'{p.First}', @middleName = {m}, @lastName = N'{p.Last}', @genderId = 1, @userId = 1;");
 	}
 }
 
