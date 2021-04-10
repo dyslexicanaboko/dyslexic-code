@@ -1,7 +1,6 @@
 <Query Kind="Program">
   <Connection>
     <ID>eac9ecfc-eff2-4a24-81af-e3ace612cbda</ID>
-    <Persist>true</Persist>
     <Server>.</Server>
     <IsProduction>true</IsProduction>
     <Database>EmployeeDefense</Database>
@@ -13,7 +12,7 @@
  * This is for the Effort Framework to consume https://entityframework-effort.net/ 
  * The goal is to keep it SIMPLE. */
 string BasePath = Path.GetDirectoryName(Util.CurrentQueryPath);
-string CsvFiles = @"J:\Dump\CsvFiles\";
+string CsvFiles = @"C:\Dump\CsvFiles\";
 const string D = ","; //Delimiter 
 
 void Main()
@@ -23,7 +22,7 @@ void Main()
 	//var lstTables = GetTables();
 	var lstTables = new List<TableInfo> 
 	{ 
-		new TableInfo("dbo", "EventCategory") 
+		new TableInfo("dbo", "EventLogParticipant") 
 	};
 	
 	GenerateCsvFiles(lstTables);
