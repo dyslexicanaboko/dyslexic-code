@@ -9,6 +9,7 @@ void Main()
 	ByteArraySizes(characters);
 }
 
+//Not saying this is accurate - I used this to test out some things and I don't think it worked out too well
 public void ByteArraySizes(string characters)
 {
 	var lstEncodings = new List<Encoding>
