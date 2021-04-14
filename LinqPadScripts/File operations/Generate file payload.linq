@@ -2,7 +2,28 @@
 
 void Main()
 {
-	CreateDummyFiles(5, 5000, @"C:\Dump\Data\", "DummyFile", ".txt");
+	var size = GetFileSizeInBytes(Unit.MegaBytes, 1);
+	
+	CreateDummyFiles(1, size, @"J:\Dump\", "LargeGarbageFile", ".dat");
+	
+	Console.WriteLine($"Finished @ {DateTime.Now}");
+}
+
+public enum Unit
+{ 
+	Bytes = 0,
+	KiloBytes = 10,
+	MegaBytes = 20,
+	GigaBytes = 30
+}
+
+public int GetFileSizeInBytes(Unit unit, int units)
+{
+	var power = (double)unit;
+	
+	var fileSize = Convert.ToInt32(Math.Pow(2, power) * units);
+	
+	return fileSize;
 }
 
 public void CreateDummyFiles(int numberOfFiles, int fileSizesInBytes, string saveTo, string saveAs, string extension)
@@ -13,7 +34,7 @@ public void CreateDummyFiles(int numberOfFiles, int fileSizesInBytes, string sav
 		
 		var path = Path.Combine(saveTo, file);
 
-		var txt = GetPayLoad(5000);
+		var txt = GetPayLoad(fileSizesInBytes);
 		
 		File.WriteAllText(path, txt);
 	}
@@ -34,7 +55,7 @@ public string GetPayLoad(int bytes)
 
 		var n = r.Next(255); //ASCII limits
 
-		var b = new byte[]{ Convert.ToByte(n) };
+		var b = new byte[] { Convert.ToByte(n) };
 
 		string s = Encoding.ASCII.GetString(b);
 
