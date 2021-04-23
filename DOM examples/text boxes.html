@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text boxes</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="text boxes.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            Text box
+        </div>
+        <div class="col">
+            Span for getter
+        </div>
+        <div class="col">
+            Span for getter 2
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          <input type="text" id="txt" class="form-control" />
+        </div>
+        <div class="col">
+            <span id="spanForGet" class="form-control"></span>
+        </div>
+        <div class="col">
+            <span id="spanForGet2" class="form-control"></span>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="row">
+        <div class="col">
+            &nbsp;
+        </div>
+        <div class="col">
+            Vanilla JS
+        </div>
+        <div class="col">
+            jQuery
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Set text box text
+        </div>
+        <div class="col">
+            <button onclick="vjsSetText()" class="form-control" >A</button>
+        </div>
+        <div class="col">
+            <button onclick="jqSetText()" class="form-control" >B</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Get text box text via Inner HTML
+        </div>
+        <div class="col">
+            <button onclick="vjsGetText()" class="form-control" >C</button>
+        </div>
+        <div class="col">
+            <button onclick="jqGetText()" class="form-control" >D</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Get text box text via Inner Text
+        </div>
+        <div class="col">
+            <button onclick="vjsGetText2()" class="form-control" >E</button>
+        </div>
+        <div class="col">
+            <button onclick="jqGetText2()" class="form-control" >F</button>
+        </div>
+    </div>
+</footer>
+</html>
