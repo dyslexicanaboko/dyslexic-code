@@ -10,6 +10,13 @@ function jqPrint(text) {
     span.html(text);
 }
 
+//https://www.w3schools.com/js/js_random.asp
+function getRandomNumberInclusive(min, max) {
+    var n = Math.floor(Math.random() * (max - min + 1) ) + min;
+
+    return n;
+}
+
 function vjsGetSelectedValue() {
     var ddl = document.getElementById("ddl");
 
@@ -91,6 +98,9 @@ function getNextIndex(selectedIndex) {
         case 2:
             i = 0;
             break;
+        default:
+            i = getRandomNumberInclusive(0, 2);
+            break;
     }
 
     return i;
@@ -129,6 +139,9 @@ function getNextValue(selectedValue) {
             break;
         case "3":
             v = "1";
+            break;
+        default:
+            v = getRandomNumberInclusive(1, 3) + "";
             break;
     }
 
@@ -196,17 +209,36 @@ function getNextText(selectedText) {
         case "Item C":
             t = "Item A";
             break;
+        default:
+            var ddl = $("#ddl");
+
+            var i = getNextIndex(100); //Force default
+
+            ddl.prop("selectedIndex", i);
+            break;    
     }
 
     return t;
 }
 
+//https://stackoverflow.com/questions/12802739/deselect-selected-options-in-select-menu-with-multiple-and-optgroups
 function vjsClearSelection() {
+    vjsPrint('<span style="color:red;">Select an item for full effect.</span><br /><i>look to your left</i>');
 
+    var ddl = document.getElementById("ddl");
+
+    //There are too many ways to do this, this is the most logical in my opinion
+    ddl.selectedIndex = -1;
+
+    //Looping is not necessary
 }
 
 function jqClearSelection() {
+    jqPrint('<span style="color:red;">Select an item for full effect.</span><br /><i>look to your left</i>');
 
+    var ddl = $("#ddl");
+
+    ddl.prop("selectedIndex", -1);
 }
 
 function vjsDisableDropDown() {
@@ -229,32 +261,108 @@ function jqEnableDropDown() {
     $("#ddl").prop("disabled", false);
 }
 
-function vjsInsertItem() {
+//Global variable just for generating item ids
+var _itemId = 0;
 
+//https://www.w3schools.com/jsref/met_select_add.asp
+function vjsInsertItem() {
+    var ddl = document.getElementById("ddl");
+
+    var option = document.createElement("option");
+    
+    option.value = 3;
+    option.text = "Item " + _itemId;
+    
+    ddl.add(option);
+
+    _itemId++;
+ 
+    vjsPrint('<span style="color:red;">Open drop down.</span> Added: ' + option.text);
 }
 
 function jqInsertItem() {
+    var ddl = $("#ddl");
 
+    var text = "Item " + _itemId;
+
+    ddl.append(
+        $('<option></option>').val(4).html(text)
+    );
+
+    _itemId++;
+
+    jqPrint('<span style="color:red;">Open drop down.</span> Added: ' + text);
 }
 
+//https://www.w3schools.com/jsref/prop_option_text.asp
 function vjsUpdateItem() {
-    //https://www.w3schools.com/jsref/prop_option_text.asp
+    var ddl = document.getElementById("ddl");
+
+    var option = ddl.options[ddl.selectedIndex];
+    
+    option.text = option.text + "`";
+
+    vjsPrint('<span style="color:red;">Added back tick to selected item.</span> Added: ' + option.text);
 }
 
 function jqUpdateItem() {
+    var ddl = $("#ddl");
 
+    var option = ddl.children("option").filter(":selected");
+
+    option.text(option.text() + "`");
+
+    jqPrint('<span style="color:red;">Added back tick to selected item.</span> Added: ' + option.text());
 }
 
+//https://stackoverflow.com/questions/7601691/remove-item-from-dropdown-list-on-page-load-no-jquery
 function vjsRemoveItem() {
+    var ddl = document.getElementById("ddl");
 
+    var i = ddl.selectedIndex;
+
+    //https://www.w3schools.com/jsref/prop_select_length.asp
+    if(i > -1 && ddl.length > 0) {
+        ddl.remove(i);
+
+        vjsPrint('Removed item. Remainder: ' + ddl.length);
+    } else {
+        vjsPrint('<span style="color:red;">No items to remove.</span>');
+    }
 }
 
+//https://stackoverflow.com/questions/1982449/jquery-to-remove-an-option-from-drop-down-list-given-options-text-value
 function jqRemoveItem() {
+    var ddl = $("#ddl");
 
+    var i = ddl.prop("selectedIndex");
+
+    //https://www.w3schools.com/jsref/prop_select_length.asp
+    if(i > -1 && ddl.length > 0) {
+        var option = ddl.children("option").filter(":selected");
+
+        option.remove();
+
+        jqPrint('Removed item. Remainder: ' + ddl.prop("length"));
+    } else {
+        jqPrint('<span style="color:red;">No items to remove.</span>');
+    }
 }
 
+//https://stackoverflow.com/questions/3364493/how-do-i-clear-all-options-in-a-dropdown-box
 function vjsClearList() {
+    var ddl = document.getElementById("ddl");
 
+    //https://www.w3schools.com/jsref/prop_select_length.asp
+    if(ddl.length > 0) {
+        for(var i = 0; i < ddl.length; i++) {
+            ddl.remove(i);
+        }
+
+        vjsPrint('Removed item. Remainder: ' + ddl.length);
+    } else {
+        vjsPrint('<span style="color:red;">No items to remove.</span>');
+    }
 }
 
 function jqClearList() {
