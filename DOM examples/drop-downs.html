@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drop downs</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="site.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="drop-downs.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Target drop down (select)
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                Vanilla JS output
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                jQuery on output
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <!-- 
+                    ddl = Drop down list
+                    some people use drop down as in ddn
+                    some people use combo list, but that's a remenant from WinForms
+                    some people use sel for select. It's just important to be
+                    consistent. 
+                -->
+                <select id="ddl">
+                    <option value="1">Item A</option>
+                    <option value="2">Item B</option>
+                    <option value="3">Item C</option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <span id="spanForGet" class="form-control"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <span id="spanForGet2" class="form-control"></span>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                &nbsp;
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                Vanilla JS
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                jQuery
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Get selected option value
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsGetSelectedValue()" class="form-control btn btn-primary">A.value</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqGetSelectedValue()" class="form-control btn btn-danger">B.value</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Get selected option text
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsGetSelectedText()" class="form-control btn btn-primary">A.text</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqGetSelectedText()" class="form-control btn btn-danger">B.text</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Set selected item by index
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsSetSelectedByIndex()" class="form-control btn btn-primary">C.index</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqSetSelectedByIndex()" class="form-control btn btn-danger">D.index</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Set selected item by value
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsSetSelectedByValue()" class="form-control btn btn-primary">C.value</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqSetSelectedByValue()" class="form-control btn btn-danger">D.value</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Set selected item by text
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsSetSelectedByText()" class="form-control btn btn-primary">C.text</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqSetSelectedByText()" class="form-control btn btn-danger">D.text</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Clear selection
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsClearSelection()" class="form-control btn btn-primary">E</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqClearSelection()" class="form-control btn btn-danger">F</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Disable drop down
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsDisableDropDown()" class="form-control btn btn-primary">G</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqDisableDropDown()" class="form-control btn btn-danger">H</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Enable button
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsEnableDropDown()" class="form-control btn btn-primary">I</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqEnableDropDown()" class="form-control btn btn-danger">J</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Insert item
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsInsertItem()" class="form-control btn btn-primary">K</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqInsertItem()" class="form-control btn btn-danger">L</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Update item
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsUpdateItem()" class="form-control btn btn-primary">M</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqUpdateItem()" class="form-control btn btn-danger">N</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Remove item
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsRemoveItem()" class="form-control btn btn-primary">O</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqRemoveItem()" class="form-control btn btn-danger">P</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Clear list
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsClearList()" class="form-control btn btn-primary">Q</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqClearList()" class="form-control btn btn-danger">R</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Load list
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsLoadList()" class="form-control btn btn-primary">S</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqLoadList()" class="form-control btn btn-danger">T</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Wire up drop down
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsBindOnChange()" class="form-control btn btn-primary">U</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqBindOnChange()" class="form-control btn btn-danger">V</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

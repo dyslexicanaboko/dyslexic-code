@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Buttons</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="site.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="buttons.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Target button
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                Vanilla JS click event output
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                jQuery click event output
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <button id="btn">Target button</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <span id="spanForGet" class="form-control"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <span id="spanForGet2" class="form-control"></span>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                &nbsp;
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                Vanilla JS
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                jQuery
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Set button text
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsSetText()" class="form-control btn btn-primary">A</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqSetText()" class="form-control btn btn-danger">B</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Wire up button
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsSetClickEvent()" class="form-control btn btn-primary">C</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqSetClickEvent()" class="form-control btn btn-danger">D</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Disable button
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsDisableButton()" class="form-control btn btn-primary">E</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqDisableButton()" class="form-control btn btn-danger">F</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                Enable button
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="vjsEnableButton()" class="form-control btn btn-primary">G</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <button onclick="jqEnableButton()" class="form-control btn btn-danger">H</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
