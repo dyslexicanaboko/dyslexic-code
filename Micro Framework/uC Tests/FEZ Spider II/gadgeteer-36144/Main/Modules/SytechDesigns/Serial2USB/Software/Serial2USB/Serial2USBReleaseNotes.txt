@@ -1,4 +1,0 @@
-﻿V 1.0.5.0
-13 feb 2012
-
-Initial version with version number synced to Kit SDK version

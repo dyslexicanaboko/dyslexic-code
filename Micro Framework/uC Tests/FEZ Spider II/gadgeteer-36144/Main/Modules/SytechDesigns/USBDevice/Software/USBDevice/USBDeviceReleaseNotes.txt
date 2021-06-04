@@ -1,6 +1,0 @@
-﻿V 1.0.5.0
-13 Feb 2012
-
-initial version.
-
-Module does not really have any Gadgeteer code, just supplies power and the USB connection.
