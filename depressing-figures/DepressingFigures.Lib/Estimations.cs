@@ -4,22 +4,14 @@
     {
         public DateTime Expiration { get; set; }
 
-        public double YearsSpent { get; set; }
+        public Ratios Years { get; set; } = new Ratios();
         
-        public double YearsRemaining { get; set; }
+        public Ratios Seconds { get; set; } = new Ratios();
 
-        public double SecondsSpent { get; set; }
+        public Ratios Sleep { get; set; } = new Ratios();
 
-        public double SecondsRemaining { get; set; }
-
-        public double SleepSpent { get; set; }
+        public Ratios Awake { get; set; } = new Ratios();
         
-        public double SleepRemainder { get; set; }
-
-        public double AwakeSpent { get; set; }
-
-        public double AwakeRemainder { get; set; }
-
-
+        public Ratios Working { get; set; } = new Ratios();
     }
 }

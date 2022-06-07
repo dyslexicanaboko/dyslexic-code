@@ -7,6 +7,9 @@
         /// <summary>Used to determine the user's age.</summary>
         public DateTime BirthDate { get; set; }
 
+        /// <summary>Override value that user can provide to override the their expected max age.</summary>
+        public int ExpectedMaxAge { get; set; }
+
         /// <summary>Biological gender of the user at birth. Women live longer than men typically.</summary>
         public Gender BiologicalGender { get; set; }
 
