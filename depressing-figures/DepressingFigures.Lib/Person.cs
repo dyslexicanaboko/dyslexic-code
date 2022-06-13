@@ -29,5 +29,7 @@
             
             Remainder = Expiration - Current; //From today to expiration
         }
+
+        public void OverrideMaxAgeYears(int years) => MaxAgeYears = years;
     }
 }
