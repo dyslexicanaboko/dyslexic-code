@@ -1,13 +1,9 @@
-﻿namespace DepressingFigures.Lib
+﻿using C = DepressingFigures.Lib.Constants;
+
+namespace DepressingFigures.Lib
 {
     public class LifeSpanService
-    {
-        public const double SecondsInDay = 86400;
-        public const double HoursPerDay = 24;
-        public const double DaysInYear = 365;
-        public const double HoursInYear = DaysInYear * HoursPerDay;
-        public const double SecondsInYear = DaysInYear * SecondsInDay;
-
+    {   
         public Estimations Calculate(Profile profile)
         {
             var result = new Estimations();
@@ -20,39 +16,39 @@
             //Only override the max age if an age is provided
             if (profile.ExpectedMaxAgeYears.HasValue) person.OverrideMaxAgeYears(profile.ExpectedMaxAgeYears.Value);
 
-            var maxSeconds = SecondsInYear * person.MaxAgeYears;
-            var spentYears = person.Spent.TotalDays / DaysInYear;
-            var maxHours = person.MaxAgeYears * HoursInYear;
+            person.SetConstants(profile.SleepHoursPerNight);
+
+            if (profile.IsEmployed) person.SetWorkHours(profile.WorkHoursPerWeek);
 
             result.Person = person;
             result.Expiration = person.Expiration;
-            result.Years = SetRatios(person.MaxAgeYears, spentYears);
-            result.Seconds = SetRatios(maxSeconds, person.Spent.TotalSeconds);
-            (result.SleepHours, result.AwakeHours) = CalculateSleepHours(person, maxHours, profile.SleepHoursPerNight);
+            result.Years = SetRatios(person.MaxYears, person.SpentYears);
+            result.Seconds = SetRatios(person.MaxSeconds, person.Spent.TotalSeconds);
+            (result.SleepHours, result.AwakeHours) = CalculateSleepHours(person, profile.SleepHoursPerNight);
             
-            if(profile.IsEmployed) result.WorkingHours = CalculateWorkingHours(person, maxHours, profile.WorkHoursPerWeek);
+            if(profile.IsEmployed) result.WorkingHours = CalculateWorkingHours(person, profile.WorkHoursPerWeek);
 
             return result;
         }
 
-        private Ratios CalculateWorkingHours(Person person, double maxHours, int workHoursPerWeek)
+        private Ratios CalculateWorkingHours(Person person, int workHoursPerWeek)
         {
             //Number of hours spent working in lifetime
-            var working = person.Spent.TotalDays * workHoursPerWeek;
+            var working = person.SpentWeeks * workHoursPerWeek;
 
-            var slaving = SetRatios(maxHours, working);
+            var slaving = SetRatios(person.MaxWorkHours, working);
 
             return slaving;
         }
 
-        private (Ratios, Ratios) CalculateSleepHours(Person person, double maxHours, int sleepHoursPerNight)
+        private (Ratios, Ratios) CalculateSleepHours(Person person, int sleepHoursPerNight)
         {
             //Number of hours spent sleeping in lifetime
             var asleep = person.Spent.TotalDays * sleepHoursPerNight;
-            var awake = HoursPerDay - asleep;
+            var awake = person.Spent.TotalDays * (C.HoursPerDay - sleepHoursPerNight);
 
-            var sleeping = SetRatios(maxHours, asleep);
-            var waking = SetRatios(maxHours, awake);
+            var sleeping = SetRatios(person.MaxSleepHours, asleep);
+            var waking = SetRatios(person.MaxAwakeHours, awake);
 
             return (sleeping, waking);
         }
@@ -64,7 +60,7 @@
             r.Remaining = total - part;
             r.Spent = part;
             r.PercentSpent = SafeDivide(r.Spent, total);
-            r.PercentRemaining = 1.0 - r.PercentSpent;
+            r.PercentRemaining = 1d - r.PercentSpent;
 
             return r;
         }

@@ -3,6 +3,6 @@
     public class Male
         : Person
     {
-        public override int MaxAgeYears { get; protected set; } = 79;
+        public override int MaxYears { get; protected set; } = 79;
     }
 }
